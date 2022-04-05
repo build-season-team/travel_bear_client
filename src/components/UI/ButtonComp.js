@@ -32,7 +32,7 @@ export const ButtonComp = ({ filled, text, icon, ...props }) => {
             }}
             {...props}
         >
-            {text}   {icon}
+            {text} {icon}
         </Box>
     );
 };

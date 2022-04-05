@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box, VStack, HStack, Text, Image} from '@chakra-ui/react'
+import {Box, HStack, Text, Image} from '@chakra-ui/react'
 import ButtonComp from './UI/ButtonComp'
 
 import HomeImage from '../assets/images/acommohomes.jpg'
