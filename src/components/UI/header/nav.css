@@ -1,0 +1,32 @@
+.nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.nav ul li {
+    display: inline-block;
+    margin: 10px;
+    font-weight: 450px;
+    line-height: 24px;
+}
+
+.nav .right > * {
+    margin: 10px;
+}
+
+.nav .right > *:first-child {
+    color: var(--grey2);
+}
+
+.logo {
+    color: var(--primary-blue);
+    font-weight: 700;
+    font-size: 21px;
+    margin-right: 30px;
+}
