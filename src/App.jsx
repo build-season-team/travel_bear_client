@@ -1,16 +1,11 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
 import Button from './components/UI/Button';
-<<<<<<< HEAD
 import DollarIcon from './assets/images/dollar-circle.svg';
 import Toast from './components/UI/Toast';
 import Divider from './components/UI/Divider';
 import ShortletCard from './components/UI/ShortletCard';
-=======
 import FormInput from './components/UI/FormInput/Index';
-
-import CheckMark from './assets/icons/check-mark.svg'
->>>>>>> ec49b8db2fe53f430eab609a48f700748b000bfa
 
 function App() {
   return (
