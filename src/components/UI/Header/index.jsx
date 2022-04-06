@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import Nav from './nav'
 
-import HeaderLogo from '../../../assets/icons/header-logo.svg'
+import './header.css'
+import HeaderLogo from '../../../assets/icons/logo.svg'
+import Hamburger from '../../../assets/icons/hamburger.svg'
 
 const Header = ()=> {
 
@@ -22,9 +24,11 @@ const Header = ()=> {
                 </div>
                         
                 <div className="hamburger-menu hamburger-mini mini" onClick={showDropMenu}>
-                    <span style={{"--w": 1}}></span>
+                    <img src={Hamburger} alt="hamburger menu" />
+
+                    {/* <span style={{"--w": 1}}></span>
                     <span style={{"--w": .75}}></span>
-                    <span style={{"--w": .5}}></span>
+                    <span style={{"--w": .5}}></span> */}
                 </div>
             </div>
             <Nav dropMenuIsVisible={dropMenuIsVisible} setDropMenuIsVisible={setDropMenuIsVisible} />
@@ -32,7 +36,7 @@ const Header = ()=> {
         
         <header className="header macro">
             <div className="container main-header">
-                <span className="logo logo-desk">resource edge</span>
+                <span className="logo logo-desk"><img src={HeaderLogo} alt="logo" /></span>
 
                 {/* Navigation component belongs here */}
                 <Nav />

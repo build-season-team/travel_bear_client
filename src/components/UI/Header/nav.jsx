@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
-import '/nav.css'
+import '../Header/nav.css'
+import Button from '../Button';
 
-import HeaderLogo from '../../../assets/icons/header-logo.svg'
+import HeaderLogo from '../../../assets/icons/logo.svg'
 
 const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
 
@@ -26,8 +27,9 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                         <div className="close" onClick={closeDropMenu}>&times;</div>
                     </div>
                     <ul>
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Partnership</a></li>
                     </ul>
                     <div className="right">
                         <Link to="/signup">Sign Up</Link>
@@ -35,12 +37,12 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                     </div>
                 </div>
              </div>
-             
-
+            
 
             <ul className="macro">
-                <li><a href="#">Features</a></li>
-                <li><a href="#">About</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Partnership</a></li>
             </ul>
             <div className="right macro">
                 <Link to="/signup">Sign Up</Link>
