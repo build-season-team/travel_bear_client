@@ -1,6 +1,7 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
 import Button from './components/UI/Button';
+import WhyUs from './components/WhyUs/WhyUs.jsx'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
              <br></br> <br></br>
             
             </div>}></Route>
+            
         </Routes>
       </Router>
     </div>
