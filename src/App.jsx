@@ -28,14 +28,6 @@ function App() {
              <ShortletCard  />
             
             </div>}></Route>
-            <Route path='/input' element={ <div> 
-              <FormInput type='password' placeholder={'enter password'}  children />
-              <br />
-              <FormInput label={'Password'} type='text' disabled={true} placeholder={'enter password'}  />
-              <br />
-              <FormInput type='text' required={true} placeholder={'enter number'} text={'Ensure you enter correct details!!!'} />
-              <FormInput type='date' placeholder={'enter password'}  />
-            </div>  } > </Route>
         </Routes>
       </Router>
     </div>
