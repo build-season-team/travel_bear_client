@@ -2,6 +2,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
 import Button from './components/UI/Button';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import WhyUs from './components/WhyUs/WhyUs.jsx'
 =======
 import FormInput from './components/UI/FormInput/Index';
@@ -9,20 +10,33 @@ import FormInput from './components/UI/FormInput/Index';
 import CheckMark from './assets/icons/check-mark.svg'
 >>>>>>> ec49b8db2fe53f430eab609a48f700748b000bfa
 
+=======
+import DollarIcon from './assets/images/dollar-circle.svg';
+import Toast from './components/UI/Toast';
+import Divider from './components/UI/Divider';
+import ShortletCard from './components/UI/ShortletCard';
+import FormInput from './components/UI/FormInput/Index';
+
+>>>>>>> f338e451c4b3b506a1cae4100317aa03bae0c9e3
 function App() {
   return (
     <div className="App">
+      
       <Router >
         <Routes>
           <Route path='/components' element={<div>
-            <Button name='primary' primary link='/about'  />
+            <Button name='primary' primary    />
             <br></br> <br></br>
             <Button name='secondary' secondary/>
              <br></br> <br></br>
             <Button name='danger' danger  />
              <br></br> <br></br>
-            <Button name='dark' dark />
+            <Button name='dark' dark icon={DollarIcon} iconPosition='left' />
              <br></br> <br></br>
+             <Toast emoji={'😱'} success />
+             <Divider />
+             <br></br> <br></br>
+             <ShortletCard  />
             
             </div>}></Route>
             
