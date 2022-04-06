@@ -1,5 +1,5 @@
 .container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -30,6 +30,10 @@
 }
 
 .logo-mini-container {
+    display: none;
+}
+
+.hamburger-menu{
     display: none;
 }
 
@@ -68,6 +72,10 @@
     .main-header-mini {
         position: fixed;
     }    
+
+    .hamburger-menu{
+        display: block;
+    }
 
     .main-header {
         justify-content: space-between;

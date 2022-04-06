@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
 import '../Header/nav.css'
+import Close from '../../../assets/images/cancel.svg'
 import Button from '../Button';
 
 import HeaderLogo from '../../../assets/icons/logo.svg'
@@ -24,12 +25,12 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                             <span className="logo-mini"><img src={ HeaderLogo } alt="Logo" /></span>
                         </div>
                                 
-                        <div className="close" onClick={closeDropMenu}>&times;</div>
+                        <div className="close" onClick={closeDropMenu}> <img src={Close} alt=" close drop nav button" /> </div>
                     </div>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Partnership</a></li>
+                        <li><Link to='/'>Home</Link></li>
+                        <li><Link to='/'>About Us</Link></li>
+                        <li><Link to='/'>Partnership</Link></li>
                     </ul>
                     <div className="right">
                         <Link to="/signup">Sign Up</Link>
@@ -40,13 +41,13 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
             
 
             <ul className="macro">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Partnership</a></li>
+                        <li><Link to='/'>Home</Link></li>
+                        <li><Link to='/'>About Us</Link></li>
+                        <li><Link to='/'>Partnership</Link></li>
             </ul>
             <div className="right macro">
-                <Link to="/signup">Sign Up</Link>
-                <Link to="/login" className="btn" >Sign In</Link>
+                <Button name='Sign Up' primary link='/auth' />
+                <Button name='Log In' secondary link='/login' />
             </div>
         </nav>
     )
