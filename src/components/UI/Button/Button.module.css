@@ -2,7 +2,7 @@
 .btn__link {
     text-decoration: none;
     color: var(--color-dark);
-    padding: 1.2rem, 4.6rem;
+    padding: 1.2rem 2rem 1.2rem 2rem;
     font-size: 1.4rem;
     border-radius: .4rem;
     outline: none;
@@ -15,7 +15,7 @@
 .btn__primary {
     background: var(--color-primary);
     color: var(--color-white);
-    padding: 1.2rem 4.6rem;
+    
 }
 
 .btn__primary:hover {
@@ -38,7 +38,7 @@
     background: var(--color-white);
     color: var(--color-primary);
     border: .1rem solid var(--color-primary);
-    padding: 1.2rem 4.6rem;
+
 }
 
 .btn__secondary:hover {

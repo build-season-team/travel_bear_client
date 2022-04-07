@@ -41,9 +41,20 @@
     bottom: 0%; 
 }
 
+
 .input_field{
         width: 100%;
         padding: 10px;
         text-align: center;
 }
 
+.error{
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+}
+
+.error_message{
+    font-size: 11px;
+    font-weight: 400;
+}

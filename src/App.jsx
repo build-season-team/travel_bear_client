@@ -23,16 +23,12 @@ function App() {
             
             </div>}></Route>
             <Route path='/input' element={ <div> 
+      
               
-              <FormInput label={'Password'} type='text' disabled={true} placeholder={'enter password'}  />
-              <br />
-              <FormInput type='text' required={true} placeholder={'enter number'} text={'Ensure you enter correct details!!!'} />
-              <FormInput type='date' placeholder={'enter password'}  />
-              <br />
-              <FormInput type='text' placeholder={'Enter details'} icon={ <img src= { CheckMark } />} /> 
-              </div>  } > </Route>
+              <FormInput type='text' placeholder={'Enter details'} /> 
+              </div>  } > </Route> 
 
-            <Route path='/header' element={ <Header/> } ></Route>
+            <Route path='/header' element={ <Header/> } success ></Route>
         </Routes>
       </Router>
     </div>
