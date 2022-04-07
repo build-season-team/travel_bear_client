@@ -34,6 +34,7 @@ function App() {
              <ShortletCard  />
             
             </div>}></Route>
+<<<<<<< HEAD
             
             <Route path='/input' element={ <div> 
               <FormInput type='password' placeholder={'enter password'}  children />
@@ -44,6 +45,8 @@ function App() {
               <FormInput type='date' placeholder={'enter password'}  />
             </div>  } > </Route>
             <Route path='/whyus' element={<WhyUs />}></Route>
+=======
+>>>>>>> 8d7a3805958052303f0f22fcdaf5ba7e5fa9443f
         </Routes>
       </Router>
     </div>
