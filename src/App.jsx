@@ -1,23 +1,18 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
 import Button from './components/UI/Button';
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import WhyUs from './components/WhyUs/WhyUs.jsx'
-=======
+
 import FormInput from './components/UI/FormInput/Index';
 
-import CheckMark from './assets/icons/check-mark.svg'
->>>>>>> ec49b8db2fe53f430eab609a48f700748b000bfa
 
-=======
 import DollarIcon from './assets/images/dollar-circle.svg';
 import Toast from './components/UI/Toast';
 import Divider from './components/UI/Divider';
 import ShortletCard from './components/UI/ShortletCard';
-import FormInput from './components/UI/FormInput/Index';
 
->>>>>>> f338e451c4b3b506a1cae4100317aa03bae0c9e3
+
 function App() {
   return (
     <div className="App">
@@ -48,6 +43,7 @@ function App() {
               <FormInput type='text' required={true} placeholder={'enter number'} text={'Ensure you enter correct details!!!'} />
               <FormInput type='date' placeholder={'enter password'}  />
             </div>  } > </Route>
+            <Route path='/whyus' element={<WhyUs />}></Route>
         </Routes>
       </Router>
     </div>
