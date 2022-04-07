@@ -2,9 +2,9 @@
 .btn__link {
     text-decoration: none;
     color: var(--color-dark);
-    padding: 1.6rem;
+    padding: 1.2rem, 4.6rem;
     font-size: 1.4rem;
-    border-radius: .8rem;
+    border-radius: .4rem;
     outline: none;
     transition: all .5s;
     border: none;
@@ -15,11 +15,13 @@
 .btn__primary {
     background: var(--color-primary);
     color: var(--color-white);
+    padding: 1.2rem 4.6rem;
 }
 
 .btn__primary:hover {
     background: var(--color-primary-dark);
     cursor: pointer;
+    
 }
 
 .btn__primary:active {
@@ -36,7 +38,7 @@
     background: var(--color-white);
     color: var(--color-primary);
     border: .1rem solid var(--color-primary);
-   
+    padding: 1.2rem 4.6rem;
 }
 
 .btn__secondary:hover {
@@ -54,11 +56,13 @@
 .btn__danger {
     background: var(--color-danger);
     color: var(--color-white);
+    padding: 1.2rem 2rem;
 }
 
 .btn__danger:hover {
     background: var(--color-danger-dark);
     cursor: pointer;
+    
 }
 
 .btn__danger:active {

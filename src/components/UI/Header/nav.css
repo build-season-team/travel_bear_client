@@ -17,21 +17,24 @@
     margin: 10px;
     font-weight: 450px;
     line-height: 24px;
+    font-size: 16px;
+    list-style: none;
 }
 
 .nav .right > * {
-    margin: 10px;
+    margin: 0px;
 }
 
-.nav .right > *:first-child {
+a.link:visited, a.visited{
+    text-decoration: none;
+}
+
+/* .nav .right > *:first-child {
     color: var(--grey2);
-}
+} */
 
-.logo {
-    color: var(--primary-blue);
-    font-weight: 700;
-    font-size: 21px;
-    margin-right: 30px;
+.macro{
+    margin-right: 2rem;
 }
 
 .drop-menu-container {
@@ -94,21 +97,25 @@
 }
 
 .drop-menu ul li {
-    padding: 10px 0;
+    
+    padding: 15px 0 15px 5rem;
 }
 
 .close {
-    font-size: 2rem;
+    position: absolute;
+    left: 78%;
+    top: 4%;
     cursor: pointer;
 }
 
 .drop-menu .right {
     width: 100%;
     display: flex;
+    justify-content: flex-start;
     flex-direction: column;
 }
 
-.drop-menu .right a {
+/* .drop-menu .right a {
     width: 100%;
 }
 
@@ -118,7 +125,7 @@
 
 .drop-menu .right a:first-child {
     order: 2;
-}
+} */
 
 .main-header {
     height: 100%;
@@ -126,16 +133,16 @@
     align-items: center;
 }
 
-.logo-mini-container {
+/* .logo-mini-container {
     display: none;
-}
+} */
 
 .logo-mini {
-    background: var(--primary-blue);
+    /* background: var(--primary-blue); */
     width: 30px;
     max-width: 30px;
-    height: 30px;
-    max-height: 30px;
+    /* height: 30px; */
+    max-height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -146,11 +153,6 @@
     width: 80% !important;
     border-radius: 0 !important;
     height: auto;
-}
-
-.close {
-    font-size: 2rem;
-    cursor: pointer;
 }
 
 .drop-menu .right {
@@ -194,7 +196,7 @@
 
 /* Bell icon */
 .right > img:first-child {
-    margin: 0 20px;
+    margin: 0 50px;
     cursor: pointer;
 }
 
@@ -205,17 +207,40 @@
     cursor: pointer;
 }
 
+.desktop_nav{
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+    align-items: center;
+}
 
+.nav_Style{
+    margin: -4rem auto 0 auto;
+}
 
-@media screen and (min-width: 278px) and (max-width: 767px) {
+@media screen and (min-width: 200px) and (max-width: 1200px) {
 
     .main-header {
         justify-content: space-between;
+    }
+
+    .desktop_nav_logo{
+        position: absolute;
+        bottom: 30%;
+        left: 10%;
+        z-index: 100;
     }
 
     .logo-mini-container {
         display: block;
     }
 
+    .macro{
+        display: none;
+    }
+
+    .logo-mini{
+        width: 120px;
+    }
     
 }

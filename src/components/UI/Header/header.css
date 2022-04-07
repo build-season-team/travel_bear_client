@@ -4,9 +4,14 @@
 }
 
 .header {
-    height: 72px;
+    height: 0px;
     width: 100%;
 } 
+
+.logo {
+    
+    margin-right: 30px;
+}
 
 .logo-desk {
     display: block;
@@ -24,7 +29,6 @@
     top: 0 !important;
     left: 0 !important;
     width: 100%;
-    height: 72px;
     background-color: #fff;
     z-index: 100;
 }
@@ -67,7 +71,7 @@
 
 
 
-@media screen and (min-width: 278px) and (max-width: 767px) {
+@media screen and (min-width: 278px) and (max-width: 1200px) {
     
     .main-header-mini {
         position: fixed;

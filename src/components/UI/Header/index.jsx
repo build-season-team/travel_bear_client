@@ -16,8 +16,8 @@ const Header = ()=> {
     return (
 
         <>
-            {/* Header for smaller devices (devices other than a desktop) */}
-        {/* <div className="main-header-mini mini">
+            Header for smaller devices (devices other than a desktop)
+         <div className="main-header-mini mini">
             <div className="container main-header">
                 <div className="logo-mini-container">
                     <span className="logo-mini"><img src={ HeaderLogo } alt="Logo" /></span>
@@ -29,10 +29,10 @@ const Header = ()=> {
                     {/* <span style={{"--w": 1}}></span>
                     <span style={{"--w": .75}}></span>
                     <span style={{"--w": .5}}></span> */}
-                {/* </div>
+                 </div>
             </div>
             <Nav dropMenuIsVisible={dropMenuIsVisible} setDropMenuIsVisible={setDropMenuIsVisible} />
-        </div> */} 
+        </div> 
         
         <header className="header macro">
             <div className="container main-header">

@@ -18,7 +18,7 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
 
     return (
         <nav className="nav">
-             <div className={dropMenuIsVisible ? "drop-menu-container show-drop-menu-container" : "drop-menu-container"}>
+            <div className={dropMenuIsVisible ? "show-drop-menu-container" : "drop-menu-container"}>
                 <div className={dropMenuIsVisible ? "drop-menu show-drop-menu mini" : "drop-menu mini"}>
                     <div className="main-header">
                         <div className="logo-mini-container">
@@ -32,23 +32,32 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                         <li><Link to='/'>About Us</Link></li>
                         <li><Link to='/'>Partnership</Link></li>
                     </ul>
-                    <div className="right">
-                        <Link to="/signup">Sign Up</Link>
-                        <Link to="/login" className="btn" >Sign In</Link>
+                    <div className="right mini_btn">
+                        <Button name='Sign Up' primary link='/auth' />
+                        <Button name='Log In' secondary link='/login' />
                     </div>
                 </div>
-             </div>
-            
-
-            <ul className="macro">
+            </div>
+            <div className='nav_Style'>
+                <div className='desktop_nav'>
+                    <span className='desktop_nav_logo' ><img src={ HeaderLogo } alt="Logo" /></span>
+                    
+                    <ul className="macro">
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/'>About Us</Link></li>
-                        <li><Link to='/'>Partnership</Link></li>
-            </ul>
-            <div className="right macro">
-                <Button name='Sign Up' primary link='/auth' />
-                <Button name='Log In' secondary link='/login' />
+                        <li><Link to='#'>Partnership</Link></li>
+                        
+                    </ul>
+                    <div className="right macro">
+                        <Button name='Sign Up' primary link='/auth' />
+                        <Button name='Log In' secondary link='/login' />
+                    </div>
+                
+
+                </div>
             </div>
+            
+                
         </nav>
     )
 }
