@@ -5,6 +5,7 @@ import FormInput from './components/UI/FormInput/Index';
 import Header from './components/UI/Header/index'
 
 import CheckMark from './assets/icons/check-mark.svg'
+import HeroSection from './components/UI/HeroSection/HeroSection';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               </div>  } > </Route> 
 
             <Route path='/header' element={ <Header/> } success ></Route>
+            <Route path='/' element={ <HeroSection/> } success ></Route>
         </Routes>
       </Router>
     </div>
