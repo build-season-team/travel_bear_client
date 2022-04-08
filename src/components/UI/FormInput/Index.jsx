@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import classes from './FormInput.module.css'
 
 
@@ -7,17 +7,27 @@ import QuestionIcon from '../../../assets/icons/question.svg'
 
 
 
-const FormInput = ({id, name, label, text, active, required, disabled, value, type, icon, error, success, onChange, iconPosition, placeholder,
+const FormInput = ({id, name, label, text, active, required, disabled, type, icon, error, success, iconPosition, placeholder,
   ...props }) => {
-
-    // let successCheck;
-    // if(error) {
-    //   successCheck = 'error';
-    // }else if(success){
-    //   successCheck = 'error';
-    // }else{
-    //   successCheck=''
-    // };
+   
+    const pwdRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#-\$%\^&\*])(?=.{6,})")
+    let emailRegex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
+    
+    const [valid , setValid] = useState(null)
+    const [value, setValue] = useState('')
+    const checkValid = (type,value) => {
+        if(value.length == 0) setValid(null)
+        if(type === 'password') pwdRegex.test(value) ? setValid(true): setValid(false)
+        if(type === 'email')  emailRegex.test(value) ? setValid(true): setValid(false)
+        return
+    }
+    const onChange = ({target})=>{
+       const {value} = target
+       setValue(value)
+       if(value === '') setValid(null)
+       checkValid(type, value)
+    }
+   
 
   return (
     
@@ -43,7 +53,7 @@ const FormInput = ({id, name, label, text, active, required, disabled, value, ty
               {error && <p className="error_message">"Something is wrong, please check your name."</p>} */}
 
           <span className={classes.icon}> {icon} </span>
-          <span className={classes.error}> {success ? <img src= { CheckMark } alt="" /> : <img src= { QuestionIcon } alt="" />} </span>
+          <span className={classes.error}> {valid === null ? null : valid === true ? <img src= { CheckMark } alt="" /> : <img src= { QuestionIcon } alt="" />} </span>
 
       </div>
       <p className={classes.some_copy}>{text}</p>

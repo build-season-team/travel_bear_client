@@ -26,10 +26,12 @@ function App() {
             <Route path='/input' element={ <div> 
       
               
-              <FormInput type='text' placeholder={'Enter details'} /> 
+              <FormInput type='password' placeholder={'Enter details'} /> 
+              <FormInput type='email' placeholder={'Enter details'} /> 
+
               </div>  } > </Route> 
 
-            <Route path='/header' element={ <Header/> } success ></Route>
+            {/* <Route path='/header' element={ <Header/> } success ></Route> */}
             <Route path='/' element={ <HeroSection/> } success ></Route>
         </Routes>
       </Router>
