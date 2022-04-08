@@ -1,8 +1,7 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
 import Button from './components/UI/Button';
-import FormInput from './components/UI/FormInput/Index';
-import Header from './components/UI/Header/index'
+import SearchBar from './components/UI/SearchBar/SearchBar';
 
 function App() {
   return (
@@ -20,8 +19,9 @@ function App() {
              <br></br> <br></br>
             
             </div>}></Route>
-            
+            <Route path='/search' element={ <SearchBar /> } ></Route>
         </Routes>
+        
       </Router>
     </div>
   );

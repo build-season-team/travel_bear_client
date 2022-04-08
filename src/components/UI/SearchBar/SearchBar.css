@@ -1,0 +1,56 @@
+.search_bar{
+    width: 85%;
+    background-color: #000;
+}
+
+.search_box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.search_box_options{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}
+
+.search_box_options1{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    
+}
+
+p{
+    display: block;
+}
+
+.accomo{
+    background-color: #007AEC1A;
+    border-radius: 4px;
+}
+
+.travel{
+    background-color: #FF4B4B1A;
+    border-radius: 4px;
+    margin-left: 30px;
+}
+
+.trips{
+    background-color: #FC980F1A;
+    border-radius: 4px;
+    margin-left: 30px;
+}
+
+.house{
+    background-color: #007AEC1A;
+    border-radius: 4px;
+    margin-left: 30px;
+}
+
+.search_box_input{
+    width: 40%;
+}
