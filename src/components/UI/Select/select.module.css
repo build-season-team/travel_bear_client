@@ -1,0 +1,10 @@
+.main{
+    width: 43.8rem;
+    height: 6.1rem;
+    padding: 2rem;
+    border: 1px solid black;
+}
+
+.main select{
+    display: none;
+}
