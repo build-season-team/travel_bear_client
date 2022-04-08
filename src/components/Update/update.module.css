@@ -24,6 +24,7 @@
     font-weight: 800;
     color: white;
     line-height: 54px;
+    width: 45rem;
 }
 
 .sub{
@@ -31,7 +32,7 @@
    width: 35rem;
    background-color: white;
    border-radius: 1rem;
-   padding: 2px;
+   padding: 0.5rem;
    display: flex;
    margin-top: 1.5rem;
 }
@@ -98,9 +99,9 @@
         width: 30rem;
         background-color: white;
         border-radius: 1rem;
-        padding: 0.4rem;
         display: flex;
         margin-top: 1rem;
+        padding: 0.5rem;
         position: absolute;
         width: 32.8rem;
         height: 5.1rem;
@@ -154,6 +155,7 @@
         font-weight: 800;
         color: white;
         line-height: 3.4rem;
+        width: 35rem;
     }
     
     .sub{
@@ -161,7 +163,6 @@
        width: 30rem;
        background-color: white;
        border-radius: 1rem;
-       padding: 1px;
        display: flex;
        margin-top: 1rem;
     }
