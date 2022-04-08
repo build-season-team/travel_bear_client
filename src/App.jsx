@@ -4,9 +4,6 @@ import Button from './components/UI/Button';
 import FormInput from './components/UI/FormInput/Index';
 import Header from './components/UI/Header/index'
 
-import CheckMark from './assets/icons/check-mark.svg'
-import HeroSection from './components/UI/HeroSection/HeroSection';
-
 function App() {
   return (
     <div className="App">
@@ -23,16 +20,7 @@ function App() {
              <br></br> <br></br>
             
             </div>}></Route>
-            <Route path='/input' element={ <div> 
-      
-              
-              <FormInput type='password' placeholder={'Enter details'} /> 
-              <FormInput type='email' placeholder={'Enter details'} /> 
-
-              </div>  } > </Route> 
-
-            {/* <Route path='/header' element={ <Header/> } success ></Route> */}
-            <Route path='/' element={ <HeroSection/> } success ></Route>
+            
         </Routes>
       </Router>
     </div>

@@ -16,7 +16,7 @@ const FormInput = ({id, name, label, text, active, required, disabled, type, ico
     const [valid , setValid] = useState(null)
     const [value, setValue] = useState('')
     const checkValid = (type,value) => {
-        if(value.length == 0) setValid(null)
+        
         if(type === 'password') pwdRegex.test(value) ? setValid(true): setValid(false)
         if(type === 'email')  emailRegex.test(value) ? setValid(true): setValid(false)
         return
@@ -24,7 +24,7 @@ const FormInput = ({id, name, label, text, active, required, disabled, type, ico
     const onChange = ({target})=>{
        const {value} = target
        setValue(value)
-       if(value === '') setValid(null)
+       
        checkValid(type, value)
     }
    
@@ -47,6 +47,10 @@ const FormInput = ({id, name, label, text, active, required, disabled, type, ico
             icon={icon}
             success={success}
             error={error}
+            onBlur = {()=>{
+              
+              if(value === '') setValid(null)
+            }}
           />
 
               {/* {success && <p>""</p>}
