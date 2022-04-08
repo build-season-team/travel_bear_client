@@ -1,56 +1,258 @@
 .search_bar{
     width: 85%;
-    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .search_box{
     width: 100%;
     display: flex;
-    justify-content: center;
+    padding: 5rem;
+    justify-content: space-between;
     border-radius: 8px;
     background-color: #fff;
+    padding: 3rem;
+    box-shadow: 0 5rem 10rem #0000001C;
 }
 
 .search_box_options{
     display: flex;
     width: 60%;
     justify-content: space-between;
+    
 }
 
 .search_box_options1{
     display: flex;
     align-items: center;
-    font-size: 16px;
-    
+    font-size: 16px; 
+    cursor: pointer;
+    /* padding-top: 1rem;
+    padding-bottom: 1rem; */
+    padding-left: 1rem;
 }
 
 p{
-    display: block;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .accomo{
     background-color: #007AEC1A;
-    border-radius: 4px;
+    border-radius: 0.4rem;
+    width: fit-content;
+    padding-right: 1rem;
 }
 
 .travel{
     background-color: #FF4B4B1A;
-    border-radius: 4px;
-    margin-left: 30px;
+    border-radius: 0.4rem;
+    margin-left: 3rem;
 }
 
 .trips{
     background-color: #FC980F1A;
-    border-radius: 4px;
-    margin-left: 30px;
+    border-radius: 0.4rem;
+    margin-left: 3rem;
 }
 
 .house{
     background-color: #007AEC1A;
-    border-radius: 4px;
-    margin-left: 30px;
+    border-radius: 0.4rem;
+    margin-left: 3rem;
 }
 
 .search_box_input{
-    width: 40%;
+    width: 30%;
+}
+
+.select_options{
+    z-index: 100;
+}
+
+@media only screen and (max-width: 767px){
+    .search_bar{
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    
+    .search_box{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 5rem;
+        justify-content: center;
+        border-radius: 8px;
+        background-color: #fff;
+        padding: 3rem;
+        box-shadow: 0 4rem 5rem #0000001C;
+    }
+    
+    .search_box_options{
+        display: flex;
+        width: 60%;
+        flex-direction: column;
+        justify-content: left;
+        
+    }
+    
+    .search_box_options1{
+        display: flex;
+        align-items: center;
+        font-size: 16px; 
+        margin-top: 2.4rem;
+        /* padding-top: 1rem;
+        padding-bottom: 1rem; */
+        padding: 1rem;
+    }
+    
+    
+    .accomo{
+        background-color: #007AEC1A;
+        border-radius: 0.4rem;
+        width: fit-content;
+        padding-right: 1rem;
+    }
+    
+    .travel{
+        background-color: #FF4B4B1A;
+        border-radius: 0.4rem;
+        margin-left: 0;
+        width: fit-content;
+    }
+    
+    .trips{
+        background-color: #FC980F1A;
+        border-radius: 0.4rem;
+        margin-left: 0;
+        width: fit-content;
+    }
+    
+    .house{
+        background-color: #007AEC1A;
+        border-radius: 0.4rem;
+        margin-left: 0;
+        width: fit-content;
+    }
+    
+    .search_box_input{
+        width: 100%;
+        margin: 5rem auto 0 auto;
+    }
+
+    
+       
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+    .search_bar{
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    
+    .search_box{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 5rem;
+        justify-content: center;
+        border-radius: 8px;
+        background-color: #fff;
+        padding: 3rem;
+        box-shadow: 0 4rem 5rem #0000001C;
+    }
+    
+    .search_box_options{
+        display: flex;
+        width: 60%;
+        flex-direction: column;
+        justify-content: left;
+        
+    }
+    
+    .search_box_options1{
+        display: flex;
+        align-items: center;
+        font-size: 16px; 
+        margin-top: 2.4rem;
+        /* padding-top: 1rem;
+        padding-bottom: 1rem; */
+        padding: 1rem;
+    }
+    
+    
+    .accomo{
+        background-color: #007AEC1A;
+        border-radius: 0.4rem;
+        width: fit-content;
+        padding-right: 1rem;
+    }
+    
+    .travel{
+        background-color: #FF4B4B1A;
+        border-radius: 0.4rem;
+        margin-left: 0;
+        width: fit-content;
+    }
+    
+    .trips{
+        background-color: #FC980F1A;
+        border-radius: 0.4rem;
+        margin-left: 0;
+        width: fit-content;
+    }
+    
+    .house{
+        background-color: #007AEC1A;
+        border-radius: 0.4rem;
+        margin-left: 0;
+        width: fit-content;
+    }
+    
+    .search_box_input{
+        width: 80%;
+        margin: 5rem auto 0 auto;
+    }
+
+    .btn{
+        width: 10%;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1200px){
+    .search_bar{
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    
+    .search_box{
+        width: 100%;
+        display: flex;
+        padding: 5rem;
+        justify-content: space-between;
+        border-radius: 8px;
+        background-color: #fff;
+        padding: 3rem;
+        box-shadow: 0 5rem 10rem #0000001C;
+    }
+    
+    .search_box_options{
+        display: flex;
+        width: 60%;
+        justify-content: space-between;
+        
+    }
+
+    
 }

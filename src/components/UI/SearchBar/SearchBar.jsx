@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './SearchBar.css'
 import FormInput from '../FormInput/Index'
 import Button from '../Button'
@@ -12,11 +12,15 @@ import SearchIcon from '../../../assets/images/search.svg'
 
 
 const SearchBar = () => {
+
+    const [select, setSelect]=useState();
+    const handleClick = ()=> setSelect(<SelectOptions />);
+
   return (
     <section className='search_bar'>
         <div className='search_box'>
             <div className='search_box_options'>
-                <div className='search_box_options1 accomo'>
+                <div className='search_box_options1 accomo' onClick={()=> handleClick}>
                     <img src={ BuildingIcon } alt="an icon representing a building" />
                     <p>Box Accomodation</p>
                     <img src={DropDownIcon} alt=" a dropdown icon" />
@@ -39,11 +43,23 @@ const SearchBar = () => {
             </div>
 
             <div className='search_box_input'>
-                <FormInput icon={<Button primary icon={ <img src={SearchIcon} /> } />} placeholder={'Quick search by type, city'} />
+                <FormInput className='search_box_input' icon={<Button  className='btn' primary name='' iconPosition='right' icon={<img src={ <SearchIcon/>} alt='ffdj' />} />} placeholder={'Quick search by type, city'} />
             </div>
-        </div>
+        </div>  
     </section>
   )
+}
+
+const SelectOptions = ()=>{
+    return(
+        <div className='select_options'>
+            <ul>
+                <li>Hotels</li>
+                <li>Shortlets</li>
+            </ul>
+            
+        </div>
+    )
 }
 
 export default SearchBar
