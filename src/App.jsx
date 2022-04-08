@@ -5,6 +5,8 @@ import Button from './components/UI/Button';
 import WhyUs from './components/WhyUs/WhyUs.jsx'
 
 import FormInput from './components/UI/FormInput/Index';
+import Select from './components/UI/Select/select'
+import Update from './components/Update/update'
 import Header from './components/UI/Header/index'
 
 
@@ -45,6 +47,8 @@ function App() {
               <FormInput type='date' placeholder={'enter password'}  />
             </div>  } > </Route>
             <Route path='/whyus' element={<WhyUs />}></Route>
+            <Route path='/select' element={<Select/>}></Route>
+            <Route path='/update' element={<Update/>}></Route>
         </Routes>
       </Router>
     </div>
