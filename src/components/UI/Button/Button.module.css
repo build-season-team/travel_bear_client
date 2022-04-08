@@ -8,6 +8,9 @@
     outline: none;
     transition: all .5s;
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 
 }
@@ -81,4 +84,26 @@
 
 .btn__dark:active {
     background: var(--color-grey-light)
+}
+
+.btn__logo {
+    padding: 0;
+    height: 1.4rem;
+    width: 1.4rem;
+    margin-right: .5rem;
+}
+
+.left__margin {
+    margin-left: .5rem;
+}
+
+.right__margin {
+    margin-right: .5rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .btn__link {
+        font-size: 1.5rem;
+        padding: 1.2rem 2rem 1.2rem 2rem;
+    }
 }
