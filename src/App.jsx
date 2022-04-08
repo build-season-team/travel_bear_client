@@ -5,6 +5,7 @@ import Button from './components/UI/Button';
 import WhyUs from './components/WhyUs/WhyUs.jsx'
 
 import FormInput from './components/UI/FormInput/Index';
+import Header from './components/UI/Header/index'
 
 
 import DollarIcon from './assets/images/dollar-circle.svg';
