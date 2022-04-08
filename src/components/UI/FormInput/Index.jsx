@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react'
 import classes from './FormInput.module.css'
 
@@ -62,6 +63,13 @@ const FormInput = ({id, name, label, text, active, required, disabled, type, ico
       </div>
       <p className={classes.some_copy}>{text}</p>
     </div>
+=======
+import React from 'react'
+
+const FormInput = ({inputType, }) => {
+  return (
+    <div>FormInput</div>
+>>>>>>> dev
   )
 }
 
