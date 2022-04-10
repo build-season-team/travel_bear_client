@@ -86,6 +86,11 @@
     background: var(--color-grey-light)
 }
 
+.btn__linked {
+    background: #c3def7;
+    color: var(--color-primary);
+}
+
 .btn__logo {
     padding: 0;
     height: 1.4rem;
@@ -103,7 +108,12 @@
 
 @media only screen and (max-width: 600px) {
     .btn__link {
-        font-size: 1.5rem;
+        font-size: .8rem;
+        padding: .8rem 2rem .8rem 2rem;
+    }
+
+    .btn__big__link {
         padding: 1.2rem 2rem 1.2rem 2rem;
+        font-size: 1.4rem;
     }
 }

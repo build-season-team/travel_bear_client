@@ -35,7 +35,7 @@ const Toast = ({success, info, danger, message, emoji}) => {
   return (
     <div className={`${classes.toast} ${classes[toastType]} ${showToast ? '' : classes.hide__toast}`}>
         <div className={classes.toast__emoji}><span >{emoji}</span></div>
-        <div className={classes.toast__message}>  Oh dear! Something has gone wrong has gone wrong has gone wrong</div>
+        <div className={classes.toast__message}>  {message}</div>
         <div onClick={handleCtaClick} className={classes.toast_action}> {cta} </div>
     </div>
   )
