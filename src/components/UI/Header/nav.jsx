@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
 import '../Header/nav.css'
-import Close from '../../../assets/images/cancel.svg'
+import Close from '../../../assets/icons/cancel.svg'
 import Button from '../Button';
 
 import HeaderLogo from '../../../assets/icons/logo.svg'

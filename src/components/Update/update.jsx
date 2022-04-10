@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './update.module.css';
-import envelope from '../../assets/images/Envelope.svg'
+import envelope from '../../assets/icons/Envelope.svg'
 import Button from '../UI/Button'
 
 function update() {

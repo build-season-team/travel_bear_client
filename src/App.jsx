@@ -10,7 +10,7 @@ import Update from './components/Update/update'
 import Header from './components/UI/Header/index'
 
 
-import DollarIcon from './assets/images/dollar-circle.svg';
+import DollarIcon from './assets/icons/dollar-circle.svg';
 import Toast from './components/UI/Toast';
 import Divider from './components/UI/Divider';
 import ShortletCard from './components/UI/ShortletCard';
@@ -31,7 +31,7 @@ function App() {
              <br></br> <br></br>
             <Button name='dark' dark icon={DollarIcon} iconPosition='left' />
              <br></br> <br></br>
-             <Toast emoji={'😱'} success />
+             <Toast emoji={'😱'} danger />
              <Divider />
              <br></br> <br></br>
              <ShortletCard  />

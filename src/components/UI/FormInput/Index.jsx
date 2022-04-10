@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import classes from './FormInput.module.css'
 
 
-import CheckMark from '../../../assets/icons/check-mark.svg'
+import CheckMark from '../../../assets/icons/tick.svg'
 import QuestionIcon from '../../../assets/icons/question.svg'
 
 
