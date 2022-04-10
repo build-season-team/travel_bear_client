@@ -14,7 +14,7 @@ import SearchIcon from '../../../assets/images/search.svg'
 const SearchBar = () => {
 
     const [select, setSelect]=useState();
-    const handleClick = ()=> setSelect(<SelectOptions />);
+    const handleClick = ()=> setSelect({});
 
   return (
     <section className='search_bar'>
@@ -25,6 +25,14 @@ const SearchBar = () => {
                     <p>Box Accomodation</p>
                     <img src={DropDownIcon} alt=" a dropdown icon" />
                 </div>
+
+                {/* <div className='select_options'>
+                    <ul>
+                        <li>Hotels</li>
+                        <li>Shortlets</li>
+                    </ul>
+            
+                </div> */}
 
                 <div className='search_box_options1 travel'>
                     <img src={TravelIcon} alt="a airplane icon" />
@@ -46,20 +54,22 @@ const SearchBar = () => {
                 <FormInput className='search_box_input' icon={<Button  className='btn' primary name='' iconPosition='right' icon={<img src={ <SearchIcon/>} alt='ffdj' />} />} placeholder={'Quick search by type, city'} />
             </div>
         </div>  
+
+        
     </section>
   )
 }
 
-const SelectOptions = ()=>{
-    return(
-        <div className='select_options'>
-            <ul>
-                <li>Hotels</li>
-                <li>Shortlets</li>
-            </ul>
+// const SelectOptions = ()=>{
+//     return(
+//         <div className='select_options'>
+//             <ul>
+//                 <li>Hotels</li>
+//                 <li>Shortlets</li>
+//             </ul>
             
-        </div>
-    )
-}
+//         </div>
+//     )
+// }
 
 export default SearchBar

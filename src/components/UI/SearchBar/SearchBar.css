@@ -3,7 +3,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    margin: -5rem auto 0 auto;
+    
 }
 
 .search_box{
@@ -26,6 +27,7 @@
 
 .search_box_options1{
     display: flex;
+    justify-content: space-between;
     align-items: center;
     font-size: 16px; 
     cursor: pointer;
@@ -40,6 +42,7 @@ p{
 }
 
 .accomo{
+    
     background-color: #007AEC1A;
     border-radius: 0.4rem;
     width: fit-content;
@@ -49,18 +52,21 @@ p{
 .travel{
     background-color: #FF4B4B1A;
     border-radius: 0.4rem;
+    padding-right: 1rem;
     margin-left: 3rem;
 }
 
 .trips{
     background-color: #FC980F1A;
     border-radius: 0.4rem;
+    padding-right: 1rem;
     margin-left: 3rem;
 }
 
 .house{
     background-color: #007AEC1A;
     border-radius: 0.4rem;
+    padding-right: 1rem;
     margin-left: 3rem;
 }
 
@@ -69,16 +75,29 @@ p{
 }
 
 .select_options{
+    background-color: rgb(122, 115, 115);
+    border-radius: 0.8rem;
+    padding: 2.5rem;
+    font-size: 1.6rem;
     z-index: 100;
+    width: fit-content;
+}
+
+.select_options ul{
+    list-style: none;
+}
+
+.select_options ul li:last-child{
+    margin-top: 1rem;
 }
 
 @media only screen and (max-width: 767px){
     .search_bar{
-        width: 90%;
+        width: 95%;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 auto;
+        margin: -5rem auto 0 auto;
     }
     
     .search_box{
@@ -155,7 +174,7 @@ p{
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 auto;
+        margin: -5rem auto 0 auto;
     }
     
     .search_box{
@@ -233,7 +252,7 @@ p{
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 auto;
+        margin: -5rem auto 0 auto;
     }
     
     .search_box{
