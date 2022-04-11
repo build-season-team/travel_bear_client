@@ -1,0 +1,33 @@
+.label{
+    padding-left: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4E4D4F;
+}
+
+input{
+    border: 1px solid #858585;
+    border-radius: 5px;
+    padding: 1rem;
+}
+input:focus{
+    -webkit-transition: 0.5s;
+    transition: 0.7s;
+    outline: none;
+    border: 1px solid #2196F3;
+}
+
+.form-item input {
+    background-color: transparent;
+    height: 40px;
+    width: 90%;
+    padding: 8px 12px;
+    outline: none;
+    margin-right: 10px;
+}
+
+.password_image{
+    position: absolute;
+    top: 41%;
+    right: 12%;
+}

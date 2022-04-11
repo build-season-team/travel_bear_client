@@ -4,6 +4,10 @@ import { useNavigate } from 'react-router-dom'
 
 import Page from '..'
 import FormInput from '../../components/UI/FormInput/Index'
+import './authentication.css'
+
+import show from '../../assets/icons/show.png'
+import hide from '../../assets/icons/hide.svg'
 
 const SignUp = () => {
     return <Page ChildComponent={ChildComponent} title="SignUp" caption="Sign up today to get started" link="Login if already signed up" path="/login" />   
@@ -54,8 +58,24 @@ const ChildComponent = () =>{
             <span>You’re a few steps away from an awesome experience </span>
             <form className="form-control sign-up-form" onSubmit={console.log('successful')}>
                 <div  style={{display: "flex" }}>
-                    <FormInput placeholder='First name' type='password' />
-                    <FormInput type='password' />
+                    <FormInput label='First name' placeholder='First name' type='name' />
+                    <FormInput label='Last name' placeholder='Last name' type='name' />
+                </div>
+
+                <div>
+                    <FormInput label='Email address' placeholder='+234' type='email' />
+                </div>
+                
+                <div>
+                    <FormInput label='Phone number' placeholder='Enter Password' type='number' />
+                </div>
+
+                <div className="form-item">
+                    <label className='label'>Password</label>
+                    <div className="form-group-item">
+                        <input type={!showPassword ? "password" : "text"} placeholder="Enter your choice password" name="password" onChange={onInputChange} value={user.password} />
+                        <img className='password_image' width='20px' src={!showPassword ? hide : show} alt="Show password" onClick={togglePassword} />
+                    </div>
                 </div>
 
             </form>
