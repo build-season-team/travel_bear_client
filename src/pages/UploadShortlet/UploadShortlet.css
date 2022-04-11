@@ -1,0 +1,67 @@
+.upload_shortlet{
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.upload_form{
+    width: 40%;
+}
+
+p{
+    color: #2B2A2A;
+    padding-left: 0;
+}
+
+.shortlet_info{
+    color: #FC980F;
+    font-size: 3.2rem;
+    font-weight: 500;
+    padding-left: 0;
+}
+
+.shortlet_sub_info{
+    margin-bottom: 4.6rem;
+    font-size: 2rem;
+    color: #2B2A2A;
+    padding-left: 0;
+}
+
+.house_details{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.house_details1{
+    margin-top: 1.4rem;
+}
+
+.house_condition{
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding-left: 0;
+    margin-top: 4.6rem;
+    margin-bottom: 1rem;
+}
+.radio_input{
+    margin-bottom: 1.5rem;
+}
+
+.form_input{
+    margin-bottom: 2.4rem;
+}
+
+.upload_images_Box{
+    padding-left: 0;
+    font-size: 3.2rem;
+    font-weight: 500;
+    margin-top: 7rem;
+}
+
+.image_details{
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 3.6rem;
+}

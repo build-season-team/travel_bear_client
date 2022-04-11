@@ -29,11 +29,14 @@ const FormInput = ({id, name, label, text, active, required, disabled, type, ico
        checkValid(type, value)
     }
    
-
+    let files;
+    if(type==='file') {
+      files = 'form_file';
+    }
   return (
     
     <div>
-      <div className={classes.form_input}>
+      <div className={`${classes.form_input} ${classes.form_file}`}>
         {label && <label className={classes.label} htmlFor={id}>{label}</label>}
           <input 
             type={type} 

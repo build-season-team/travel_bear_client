@@ -9,6 +9,7 @@ import FormInput from './components/UI/FormInput/Index';
 import Select from './components/UI/Select/select'
 import Update from './components/Update/update'
 import Header from './components/UI/Header/index'
+import UploadShortlet from './pages/UploadShortlet/UploadShortlet';
 
 import HeroSection from './components/UI/HeroSection/HeroSection'
 
@@ -27,8 +28,10 @@ function App() {
       
 
       {/* <Header /> */}
-      <HeroSection />
-      <SearchBar/>
+      {/* <HeroSection />
+      <SearchBar/> */}
+
+      <UploadShortlet />
 
       {/* <FooterWrap /> */}
       
