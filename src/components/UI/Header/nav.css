@@ -92,6 +92,7 @@ a.link:visited, a.visited{
 
 .drop-menu ul {
     display: flex;
+    margin-top: 10rem;
     justify-content: center;
     flex-direction: column;
     height: 200px;
@@ -102,10 +103,16 @@ a.link:visited, a.visited{
     padding: 15px 0 15px 5rem;
 }
 
+.drop-menu ul li a{
+    color: #000;
+    text-decoration: none;
+}
+
+
 .close {
     position: absolute;
-    left: 78%;
-    top: 4%;
+    left: 91%;
+    top: 8%;
     cursor: pointer;
 }
 
@@ -195,6 +202,19 @@ a.link:visited, a.visited{
     justify-content: center;
 }
 
+.mini-btn{
+    display: flex;
+    justify-content: left;
+}
+
+.btn-class{
+    padding: 1rem;
+}
+
+.btn-class :last-child{
+    margin-left: 1rem;
+}
+
 /* Bell icon */
 .right > img:first-child {
     margin: 0 50px;
@@ -209,6 +229,7 @@ a.link:visited, a.visited{
 }
 
 .desktop_nav{
+    display: none;
     display: flex;
     justify-content: space-between;
     width: 90vw;
@@ -216,21 +237,26 @@ a.link:visited, a.visited{
 }
 
 .nav_Style{
-    margin: -4rem auto 0 auto;
+    margin: 0rem auto 0 auto;
 }
 
-@media screen and (min-width: 200px) and (max-width: 1200px) {
+@media screen and (min-width: 200px) and (max-width: 970px) {
 
     .main-header {
         justify-content: space-between;
     }
 
     .desktop_nav_logo{
+        
         position: absolute;
-        bottom: 30%;
+        /* bottom:10%; */
         left: 10%;
         z-index: 100;
     }
+
+    .nav_Style{
+        margin: -4rem auto 0 auto;
+    }    
 
     .logo-mini-container {
         display: block;
