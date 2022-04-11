@@ -51,7 +51,7 @@ const SearchBar = () => {
             </div>
 
             <div className='search_box_input'>
-                <FormInput className='search_box_input' icon={<Button  className='btn' primary name='' iconPosition='right' icon={<img src={ <SearchIcon/>} alt='ffdj' />} />} placeholder={'Quick search by type, city'} />
+                <FormInput className='search_box_input' icon={<Button  className='btn' primary name='' iconPosition='right' icon={SearchIcon} />} placeholder={'Quick search by type, city'} />
             </div>
         </div>  
 

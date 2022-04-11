@@ -1,7 +1,11 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
 import Header from './components/UI/Header/index';
+import Footer from './components/UI/Footer';
+import HeroSection from './components/UI/HeroSection/HeroSection';
+import SearchBar from './components/UI/SearchBar/SearchBar';
 import Update from './components/Update/update';
+import Nav from './components/UI/Header/nav';
 
 
 
@@ -11,7 +15,12 @@ function App() {
       
       <Router >
         <Routes>
-          <Route path='/update' element={<Header />} />
+          <Route path='/nav' element={<div>
+            <HeroSection />
+            <SearchBar />
+             {/* <Footer /> */}
+             <Update />
+          </div> } />
           <Route path='/' element={<div>hello world</div>} />
         </Routes>
       </Router>
