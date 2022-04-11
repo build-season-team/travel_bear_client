@@ -72,7 +72,8 @@
         position: absolute;
         width: 15.6rem;
         height: 14.263rem;
-        left: 11rem;
+        left: 50%;
+        transform: translateX(-50%);
         top: 19.769rem;
     }
 
@@ -90,22 +91,22 @@
         position: absolute;
         width: 31rem;
         height: 7.6rem;
-        left: 3.29rem;
+        left: 50%;
+        transform: translateX(-50%);
         top: 6.5rem;
     }
 
     .sub{
         border: none; 
-        width: 30rem;
         background-color: white;
         border-radius: 1rem;
         display: flex;
         margin-top: 1rem;
         padding: 0.5rem;
         position: absolute;
-        width: 32.8rem;
-        height: 5.1rem;
-        left: 2.3rem;
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
         top: 37rem;
      }
 
