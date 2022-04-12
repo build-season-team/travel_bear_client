@@ -12,27 +12,28 @@
 }
 
 input{
-    border: 1px solid #858585;
-    border-radius: 5px;
-    padding: 1rem;
+    border: 0px solid;
+    
 }
 
 input[type=password]{
     width: 100%;
 }
 
-input:focus{
+/* input:focus{
     -webkit-transition: 0.5s;
     transition: 0.7s;
     outline: none;
     border: 1px solid #2196F3;
-}
+} */
 
 .form-item{
     width: 100%;
 }
 
 .form-group-item{
+    border: 1px solid #858585;
+    border-radius: 0.5rem;
     width: 100% ;
     position: relative;
 }

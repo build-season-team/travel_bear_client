@@ -1,21 +1,35 @@
 
 .form_input{
     display: flex;
+    border-radius: 0.5rem;
+    justify-content: space-between;
     flex-direction: column;
     position: relative;
     width: 100%;
 }
 
-.form_input input{
+.form_outline{
+    flex: 1;
     border: 1px solid #858585;
+    outline: 1px;
     border-radius: 5px;
+}
+
+.form_outline input{
+    width: 85%;
+}
+
+.form_input input{
+    border: 0px;
+    outline: 0;
     padding: 1rem;
 }
 
-.form_input input:focus{
+
+.form_outline:focus{
     -webkit-transition: 0.5s;
     transition: 0.7s;
-    outline: none;
+    outline: 1px;
     border: 1px solid #2196F3;
 }
 
@@ -62,6 +76,11 @@
     font-size: 11px;
     font-weight: 400;
 }
+/* 
+input{
+    outline: 0px !important;
+    border: 0px solid
+} */
 
 input[type=file]{
     padding: 3rem;

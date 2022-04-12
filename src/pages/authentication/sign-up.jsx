@@ -84,7 +84,7 @@ const ChildComponent = () =>{
                 </div>
 
                 <div className='agreement'>
-                    <FormInput type='checkbox' />
+                    <input type='checkbox' />
                     <span>I agree with<span style={{color: '#007AEC', marginLeft: '3px'}}>TravelBear Terms & Conditions </span>  and <span style={{color: '#007AEC', marginLeft: '3px'}}>Privacy Policy </span></span>
                 </div>
                 <div style={{display: 'flex', justifyContent: 'center'}}>
