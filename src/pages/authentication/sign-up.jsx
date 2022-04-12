@@ -72,7 +72,7 @@ const ChildComponent = () =>{
                 </div>
                 
                 <div>
-                    <FormInput label='Phone number' placeholder='+234' type='number' />
+                    <FormInput label='Phone number' placeholder='+234' type='text' />
                 </div>
 
                 <div className="form-item">
