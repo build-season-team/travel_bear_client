@@ -20,9 +20,10 @@ const ChildComponent = () =>{
 
     const navigate = useNavigate();
     const [user, setUser] = useState({
-        'fullname': '',
+        'firstname': '',
+        'lastname': '',
         'email': '',
-        'password': ''
+        'password': '',
     });
 
     const onInputChange = (e)=> {
@@ -85,13 +86,13 @@ const ChildComponent = () =>{
 
                 <div className='agreement'>
                     <input type='checkbox' />
-                    <span>I agree with<span style={{color: '#007AEC', marginLeft: '3px'}}>TravelBear Terms & Conditions </span>  and <span style={{color: '#007AEC', marginLeft: '3px'}}>Privacy Policy </span></span>
+                    <span>I agree with<span style={{color: '#007AEC', marginLeft: '.3rem', cursor: 'pointer'}}>TravelBear Terms & Conditions </span>  and <span style={{color: '#007AEC', marginLeft: '3px', cursor: 'pointer'}}>Privacy Policy </span></span>
                 </div>
                 <div style={{display: 'flex', justifyContent: 'center'}}>
                     <Button name='Create account' primary />
                 </div>
                 <div style={{fontSize: '1.3rem', textAlign: 'center', marginTop: '1.6rem'}}>
-                    <span style={{fontSize: '1.3rem', textAlign: 'center'}} >Have an account? <span style={{color: '#007AEC', textAlign: 'center'}}><a href="/login">Sign In</a></span></span>
+                    <span style={{fontSize: '1.3rem', textAlign: 'center',}} >Have an account? <span style={{color: '#007AEC', textAlign: 'center'}}><a href="/login">Sign In</a></span></span>
                 </div>
                 
 
