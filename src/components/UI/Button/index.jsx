@@ -23,7 +23,7 @@ const Button = ({primary, secondary, dark, btnLink, bigCard, danger, disabled, i
         btnSpace = 'right__margin';
     }
 
-    if(!navBtn) {
+    if(navBtn) {
         width = 'nav__btn';
     }
 

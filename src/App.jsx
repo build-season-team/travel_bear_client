@@ -17,6 +17,7 @@ function App() {
       <Router >
         <Routes>
           <Route path='/nav' element={<div>
+            <Header />
             <HeroSection />
             <SearchBar />
              {/* <Footer /> */}
