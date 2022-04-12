@@ -32,9 +32,9 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                         <li><Link to='/'>About Us</Link></li>
                         <li><Link to='/'>Partnership</Link></li>
                     </ul>
-                    <div className="right mini_btn">
-                        <Button name='Sign Up' primary link='/auth' />
-                        <Button name='Log In' secondary link='/login' />
+                    <div className="right mini_btn ">
+                        <Button name='Sign Up' bigCard primary link='/auth' />
+                        <Button name='Log In' bigCard secondary link='/login' />
                     </div>
                 </div>
             </div>
@@ -48,9 +48,9 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                         <li><Link to='#'>Partnership</Link></li>
                         
                     </ul>
-                    <div className="right macro">
-                        <Button name='Sign Up' primary link='/auth' />
-                        <Button name='Log In' secondary link='/login' />
+                    <div className="right macro btn-class">
+                        <Button name='Sign Up' navBtn primary link='/auth' />
+                        <Button name='Log In' navBtn secondary link='/login' />
                     </div>
                 
 
