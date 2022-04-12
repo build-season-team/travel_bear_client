@@ -5,7 +5,7 @@ import Travel from '../assets/icons/travel.svg'
 import Header from '../components/UI/Header'
 
 import './authentication/authentication.css'
-import Header from '../components/UI/Header'
+
 
 
 const Page = ({title, caption, link, path=null, ChildComponent=null, user=null, setState=null }) => {

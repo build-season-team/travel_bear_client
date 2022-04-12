@@ -5,12 +5,9 @@ import Footer from './components/UI/Footer';
 import HeroSection from './components/UI/HeroSection/HeroSection';
 import SearchBar from './components/UI/SearchBar/SearchBar';
 import Update from './components/Update/update';
-<<<<<<< HEAD
-import Login from './pages/authentication/login'
-=======
 import Nav from './components/UI/Header/nav';
->>>>>>> dev
 import SignUp from './pages/authentication/sign-up';
+import Login from './pages/authentication/login';
 
 
 
@@ -30,6 +27,7 @@ function App() {
           </div> } />
           <Route path='/' element={<div>hello world</div>} />
           <Route path='/signup' element={<SignUp />} />
+          <Route path='/login' element={<Login />} />
         </Routes>
       </Router>
     </div>

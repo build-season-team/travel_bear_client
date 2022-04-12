@@ -1,18 +1,18 @@
 *{
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /* password input*/
 
 .label{
-    padding-left: 0px;
-    font-size: 14px;
+    padding-left: 0rem;
+    font-size: 1.4rem;
     font-weight: 500;
     color: #4E4D4F;
 }
 
 input{
-    border: 0px solid;
+    border: 0rem solid;
     
 }
 
@@ -29,6 +29,7 @@ input[type=password]{
 
 .form-item{
     width: 100%;
+    margin-top: 2.4rem;
 }
 
 .form-group-item{
@@ -40,9 +41,9 @@ input[type=password]{
 
 .form-item input {
     background-color: transparent;
-    height: 40px;
+    height: 4rem;
     width: 100%;
-    padding: 8px 12px;
+    padding: .8rem 1.2rem;
     outline: none;
     margin-right: 10px;
 }
@@ -53,7 +54,7 @@ input[type=password]{
     right: 7%;
 }
 
-.box {
+/* .box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,18 +65,36 @@ input[type=password]{
     top: 10.55rem;
     background: #FFFFFF;
     box-shadow: 0px 1rem 6.4rem rgba(0, 0, 0, 0.05);
-    border-radius: 2rem;
+    border-radius: 2rem; */
     /* text-align: center; */
-    overflow: hidden;
+    /* overflow: hidden;
     transition: all 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+} */
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6.3rem 8.5rem;
+    height: auto;
+    width: 61rem;
+    background: #FFFFFF;
+    box-shadow: 0px 1rem 6.4rem rgba(0, 0, 0, 0.05);
+    border-radius: 2rem;
+    transition: all 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    margin: 5rem auto;
 }
 
-.box a {
+.box a:hover {
+    border-color: var(--primary-blue);
+}
+
+/* .box a {
     font-size: 1.4rem;
     color: var(--primary-blue);
     text-decoration: none;
     border-bottom: 1px solid transparent;
-}
+} */
 
 .box a:hover {
     border-color: var(--primary-blue);
@@ -86,28 +105,33 @@ input[type=password]{
     width: calc(490.96px * .9);
     height: calc(430.03px * .9);
     bottom: -10%;
-    overflow: hidden;
 }
 
 
 /* left illustration */
 .page-illustration img:first-child {
-    left: -10px;
+    left: -1rem;
 }
 
 /* right illustration */
 .page-illustration img:last-child {
-    right: -10px;
+    right: -1rem;
 }
 
 .page {
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+/* .page {
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100vw;
-}
+} */
 
 .form_email{
     width: 100%;
@@ -125,13 +149,14 @@ input[type=password]{
 
 
 .form-control {
-    width: 90%;
+    width: 100%;
     margin-top: 4rem;
     margin-bottom: -3rem;
 }
 
 .agreement{
     display: flex;
+    justify-content: space-between;
     margin-top: 1.4rem;
     margin-bottom: 2.8rem;
 }
@@ -152,16 +177,13 @@ input[type=password]{
         display: none;
     } 
 
-    .page {
-        /* background-image: ; */
-    }
 
     .form-control {
         width: 100%;
     }
 
     .box{
-        width: 90%;
+        width: 100%;
     }
 
     .form-group{
