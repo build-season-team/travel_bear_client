@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import BigHouse from '../assets/icons/big-house.svg'
 import Travel from '../assets/icons/travel.svg'
 
@@ -22,7 +22,7 @@ const Page = ({title, caption, link, path=null, ChildComponent=null, user=null, 
                 ChildComponent ? <ChildComponent user={user} setUser={setState} /> : null
             }
 
-        <Link to={path}>{link}</Link>
+        {/* <Link style={{marginTop: '1.5rem'}} to={path}>{link}</Link> */}
 
         </div>
     

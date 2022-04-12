@@ -11,7 +11,7 @@ import show from '../../assets/icons/show.png'
 import hide from '../../assets/icons/hide.svg'
 
 const SignUp = () => {
-    return <Page ChildComponent={ChildComponent} title="SignUp" caption="Sign up today to get started" link="Have an account? Sign in" path="/login" />   
+    return <Page ChildComponent={ChildComponent} title="SignUp" caption="Sign up today to get started" />   
 }
 
 const ChildComponent = () =>{
@@ -48,8 +48,10 @@ const ChildComponent = () =>{
             'password': ''
         })
 
-        alert('Congratulations, you have be signed up. We are taking you to the login page now!');
-        navigate("/login");
+        // alert('Congratulations, you have be signed up. We are taking you to the login page now!');
+        // navigate("/login");
+
+        
     }
 
 
@@ -58,11 +60,11 @@ const ChildComponent = () =>{
 
     return (
         <>
-            <span style={{fontWeight: '500', fontSize: '1.4rem'}}>You’re a few steps away from an awesome experience </span>
-            <form className="form-control sign-up-form" onSubmit={console.log('successful')}>
-                <div className='form-group' style={{display: "flex",justifyContent: 'space-between' }}>
-                    <div style={{width: '49%'}}><FormInput label='First name' placeholder='First name' type='name' /></div>
-                    <div style={{width: '49%'}}><FormInput label='Last name' placeholder='Last name' type='name' /></div>
+            <span style={{fontWeight: '500', fontSize: '1.4rem', marginTop:'1.5rem'}}>You’re a few steps away from an awesome experience </span>
+            <form className="form-control sign-up-form" onSubmit={onSignup}>
+                <div className='form-group' style={{display: "flex", justifyContent: 'space-between' }}>
+                    <div className='form-group-content' style={{width: '49%'}}><FormInput label='First name' placeholder='First name' type='name' /></div>
+                    <div className='form-group-content' style={{width: '49%'}}><FormInput label='Last name' placeholder='Last name' type='name' /></div>
                 </div>
 
                 <div>
@@ -83,10 +85,15 @@ const ChildComponent = () =>{
 
                 <div className='agreement'>
                     <FormInput type='checkbox' />
-                    <span>I agree with<span style={{color: '#007AEC', marginLeft: '0px'}}>TravelBear Terms & Conditions </span>  and Privacy Policy </span>
+                    <span>I agree with<span style={{color: '#007AEC', marginLeft: '3px'}}>TravelBear Terms & Conditions </span>  and <span style={{color: '#007AEC', marginLeft: '3px'}}>Privacy Policy </span></span>
                 </div>
-
-                <Button name='Create account' primary />
+                <div style={{display: 'flex', justifyContent: 'center'}}>
+                    <Button name='Create account' primary />
+                </div>
+                <div style={{fontSize: '1.3rem', textAlign: 'center', marginTop: '1.6rem'}}>
+                    <span style={{fontSize: '1.3rem', textAlign: 'center'}} >Have an account? <span style={{color: '#007AEC', textAlign: 'center'}}><a href="/login">Sign In</a></span></span>
+                </div>
+                
 
             </form>
         </>

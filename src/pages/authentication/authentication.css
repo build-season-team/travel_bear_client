@@ -34,13 +34,13 @@ input:focus{
 
 .form-group-item{
     width: 100% ;
+    position: relative;
 }
 
 .form-item input {
     background-color: transparent;
-    position: relative;
     height: 40px;
-    width: 90%;
+    width: 100%;
     padding: 8px 12px;
     outline: none;
     margin-right: 10px;
@@ -48,8 +48,8 @@ input:focus{
 
 .password_icon{
     position: absolute;
-    top: 65%;
-    right: 41%;
+    top: 29%;
+    right: 7%;
 }
 
 .box {
@@ -113,9 +113,9 @@ input:focus{
     margin-bottom: 40px;
 }
 
-.form-group{
+/* .form-group{
     
-}
+} */
 
 
 .form-control {
@@ -125,7 +125,7 @@ input:focus{
 .agreement{
     display: flex;
     margin-top: 1.4rem;
-    margin-bottom: 3.8rem;
+    margin-bottom: 2.8rem;
 }
 .agreement :last-child{
     margin-left: 1rem;
@@ -138,3 +138,40 @@ input:focus{
     padding: 7.6rem;
     border-radius: 2rem;
 } */
+
+@media screen and (min-width: 0px) and (max-width: 667px) {
+    .page-illustration img{
+        display: none;
+    } 
+
+    .page {
+        /* background-image: ; */
+    }
+
+    .form-control {
+        width: 100%;
+    }
+
+    .box{
+        width: 90%;
+    }
+
+    .form-group{
+        flex-direction: column;
+    }
+    
+    .form-group-content{
+        width: 100% !important;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1080px) {
+    .page-illustration img{
+        display: none;
+    } 
+
+    .page {
+
+    }
+
+}
