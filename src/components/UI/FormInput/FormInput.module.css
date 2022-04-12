@@ -1,9 +1,5 @@
 
 .form_input{
-    display: flex;
-    border-radius: 0.5rem;
-    justify-content: space-between;
-    flex-direction: column;
     position: relative;
     width: 100%;
 }
@@ -11,8 +7,11 @@
 .form_outline{
     flex: 1;
     border: 1px solid #858585;
-    outline: 1px;
-    border-radius: 5px;
+    border-radius: 1rem;
+    padding: .4rem;
+    display: flex;
+    justify-content: space-between;
+    transition: all .5s;
 }
 
 .form_outline input{
@@ -22,7 +21,7 @@
 .form_input input{
     border: 0px;
     outline: 0;
-    padding: 1rem;
+    padding: 1rem 2rem;
 }
 
 
@@ -53,11 +52,7 @@
     font-weight: 400;
 }
 
-.form_input .icon{
-    position: absolute;
-    right: 0%;
-    bottom: 0%; 
-}
+
 
 
 .input_field{
@@ -75,6 +70,10 @@
 .error_message{
     font-size: 11px;
     font-weight: 400;
+}
+
+.border__blue  {
+    border: 1px solid var(--color-primary);
 }
 /* 
 input{

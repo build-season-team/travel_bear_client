@@ -39,6 +39,7 @@ const Header = ()=> {
                 <span className="logo logo-desk"><img src={HeaderLogo} alt="logo" /></span>
 
                 {/* Navigation component belongs here */}
+                
                 <Nav />
             </div>  
         </header>

@@ -8,7 +8,7 @@ const HeroSection = () => {
         
         <div className='hero_section_background' style={{ backgroundImage: `url(${HeroImage})`, backgroundSize: "cover", backgroundPosition: "50%" }} >
             <div>
-                <p>
+                <p className='hero_main_paragraph'>
                     Find The Best Hotels & Shortlets Around.
                 </p>
                 <p className='hero_img_explainer' >

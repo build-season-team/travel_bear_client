@@ -1,9 +1,10 @@
 import React from 'react'
 import classes from "./Button.module.css";
 
-const Button = ({primary, secondary, dark, btnLink, bigCard, danger, disabled, icon, iconPosition, name, onClick}) => {
+const Button = ({primary, secondary, dark, btnLink, bigCard, danger, disabled, icon, iconPosition, name, onClick, navBtn , authBtn}) => {
     let btn;
     let btnSpace;
+    let width;
     if(primary) {
         btn = 'btn__primary';
     }else if(secondary) {
@@ -22,12 +23,18 @@ const Button = ({primary, secondary, dark, btnLink, bigCard, danger, disabled, i
         btnSpace = 'right__margin';
     }
 
+    if(navBtn) {
+        width = 'nav__btn';
+    }else if (authBtn) {
+        width = 'auth__btn';
+    }
+
 
   return (
     <div className={classes.btn}>
         <button 
             disabled={disabled} 
-            className={`${classes.btn__link} ${classes[btn]} ${bigCard ? classes.btn__big__link : ''}`} 
+            className={`${classes.btn__link} ${classes[btn]} ${bigCard ? classes.btn__big__link : ''} ${width ? classes[width] : ''} `} 
             onClick={onClick ? onClick : () =>  {}} 
             >
                 {icon && iconPosition === 'left' && <img  src={icon} alt="btn icon" />}
