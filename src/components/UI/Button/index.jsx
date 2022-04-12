@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from "./Button.module.css";
 
-const Button = ({primary, secondary, dark, btnLink, bigCard, danger, disabled, icon, iconPosition, name, onClick, navBtn}) => {
+const Button = ({primary, secondary, dark, btnLink, bigCard, danger, disabled, icon, iconPosition, name, onClick, navBtn , authBtn}) => {
     let btn;
     let btnSpace;
     let width;
@@ -25,6 +25,8 @@ const Button = ({primary, secondary, dark, btnLink, bigCard, danger, disabled, i
 
     if(navBtn) {
         width = 'nav__btn';
+    }else if (authBtn) {
+        width = 'auth__btn';
     }
 
 

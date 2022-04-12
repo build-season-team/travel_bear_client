@@ -6,6 +6,7 @@ import HeroSection from './components/UI/HeroSection/HeroSection';
 import SearchBar from './components/UI/SearchBar/SearchBar';
 import Update from './components/Update/update';
 import Nav from './components/UI/Header/nav';
+import SignUp from './pages/authentication/sign-up';
 
 
 
@@ -24,6 +25,7 @@ function App() {
              <Update />
           </div> } />
           <Route path='/' element={<div>hello world</div>} />
+          <Route path='/signup' element={<SignUp />} />
         </Routes>
       </Router>
     </div>

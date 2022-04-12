@@ -9,6 +9,7 @@ import './authentication.css'
 
 import show from '../../assets/icons/show.png'
 import hide from '../../assets/icons/hide.svg'
+import Header from '../../components/UI/Header'
 
 const SignUp = () => {
     return <Page ChildComponent={ChildComponent} title="SignUp" caption="Sign up today to get started" />   
@@ -60,6 +61,9 @@ const ChildComponent = () =>{
 
     return (
         <>
+
+
+            
             <span style={{fontWeight: '500', fontSize: '1.4rem', marginTop:'1.5rem'}}>You’re a few steps away from an awesome experience </span>
             <form className="form-control sign-up-form" onSubmit={onSignup}>
                 <div className='form-group' style={{display: "flex", justifyContent: 'space-between' }}>
@@ -87,9 +91,8 @@ const ChildComponent = () =>{
                     <input type='checkbox' />
                     <span>I agree with<span style={{color: '#007AEC', marginLeft: '3px'}}>TravelBear Terms & Conditions </span>  and <span style={{color: '#007AEC', marginLeft: '3px'}}>Privacy Policy </span></span>
                 </div>
-                <div style={{display: 'flex', justifyContent: 'center'}}>
-                    <Button name='Create account' primary />
-                </div>
+                
+                    <Button name='Create account' authBtn primary />
                 <div style={{fontSize: '1.3rem', textAlign: 'center', marginTop: '1.6rem'}}>
                     <span style={{fontSize: '1.3rem', textAlign: 'center'}} >Have an account? <span style={{color: '#007AEC', textAlign: 'center'}}><a href="/login">Sign In</a></span></span>
                 </div>

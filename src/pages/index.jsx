@@ -2,12 +2,17 @@ import React from 'react'
 // import { Link } from 'react-router-dom';
 import BigHouse from '../assets/icons/big-house.svg'
 import Travel from '../assets/icons/travel.svg'
+import Header from '../components/UI/Header'
 
 import './authentication/authentication.css'
 
 const Page = ({title, caption, link, path=null, ChildComponent=null, user=null, setState=null }) => {
   return (
     <div className='page'>
+      <div className="page__header">
+        <Header />
+      </div>
+      
 
         <div className="page-illustration">
             <img src={BigHouse} style={{"--shift": "-200"}} />
