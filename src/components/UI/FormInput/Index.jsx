@@ -15,7 +15,8 @@ const FormInput = ({id, name, label, text, active, required, disabled, type, ico
     let emailRegex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
     
     const [valid , setValid] = useState(null)
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState('');
+    const [borderColor, setBorderColor] = useState(null)
     const checkValid = (type,value) => {
         
         if(type === 'password') pwdRegex.test(value) ? setValid(true): setValid(false)
@@ -37,8 +38,8 @@ const FormInput = ({id, name, label, text, active, required, disabled, type, ico
     
     <div>
       <div className={`${classes.form_input} ${classes.form_file}`}>
-        {label && <label className={classes.label} htmlFor={id}>{label}</label>}
-          <div className={classes.form_outline}>
+        {label && <label className={`${classes.label} `} htmlFor={id}>{label}</label>}
+          <div className={`${classes.form_outline} ${borderColor ? classes[borderColor] : ''}`}>
             <input 
               type={type} 
               id={id} 
@@ -52,8 +53,9 @@ const FormInput = ({id, name, label, text, active, required, disabled, type, ico
               icon={icon}
               success={success}
               error={error}
+              onFocus={() => setBorderColor('border__blue')}
               onBlur = {()=>{
-                
+                setBorderColor(null)
                 if(value === '') setValid(null)
               }}
             />
