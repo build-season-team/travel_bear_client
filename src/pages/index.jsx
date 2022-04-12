@@ -10,7 +10,7 @@ import Header from '../components/UI/Header'
 const Page = ({title, caption, link, path=null, ChildComponent=null, user=null, setState=null }) => {
   return (
     <div className='page'>
-      
+
         <div className="page-illustration">
             <img src={BigHouse} style={{"--shift": "-200"}} />
             <img src={Travel} style={{"--shift": "200"}} />
