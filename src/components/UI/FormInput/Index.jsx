@@ -39,36 +39,36 @@ const FormInput = ({id, name, label, text, active, required, disabled, type, ico
       <div className={`${classes.form_input} ${classes.form_file}`}>
         {label && <label className={classes.label} htmlFor={id}>{label}</label>}
           <div className={classes.form_outline}>
-          <input 
-            type={type} 
-            id={id} 
-            placeholder={placeholder}
-            value={value}
-            name={name}
-            disabled={disabled ? true : false}
-            required={required ? true : false}
-            onChange={onChange}
-            label={label}            
-            icon={icon}
-            success={success}
-            error={error}
-            onBlur = {()=>{
-              
-              if(value === '') setValid(null)
-            }}
-          />
+            <input 
+              type={type} 
+              id={id} 
+              placeholder={placeholder}
+              value={value}
+              name={name}
+              disabled={disabled ? true : false}
+              required={required ? true : false}
+              onChange={onChange}
+              label={label}            
+              icon={icon}
+              success={success}
+              error={error}
+              onBlur = {()=>{
+                
+                if(value === '') setValid(null)
+              }}
+            />
 
               {/* {success && <p>""</p>}
               {error && <p className="error_message">"Something is wrong, please check your name."</p>} */}
 
           
+            {icon && <span className={classes.icon}> {icon} </span>}
+            <span className={classes.error}> {valid === null ? null : valid === true ? <img src= { CheckMark } alt="" /> : <img src= { QuestionIcon } alt="" />} </span>
           </div>
-          <span className={classes.icon}> {icon} </span>
-          <span className={classes.error}> {valid === null ? null : valid === true ? <img src= { CheckMark } alt="" /> : <img src= { QuestionIcon } alt="" />} </span>
 
           
       </div>
-      <p className={classes.some_copy}>{text}</p>
+      {text && <p className={classes.some_copy}>{text}</p>}
     </div>
   )
 }
