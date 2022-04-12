@@ -106,6 +106,10 @@
     margin-right: .5rem;
 }
 
+.nav__btn {
+    min-width: 14.5rem;
+}
+
 @media only screen and (max-width: 600px) {
     .btn__link {
         font-size: .8rem;
