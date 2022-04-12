@@ -5,6 +5,7 @@ import DollarIcon from './assets/images/dollar-circle.svg';
 import Toast from './components/UI/Toast';
 import Divider from './components/UI/Divider';
 import ShortletCard from './components/UI/ShortletCard';
+import ErrorPage from './components/UI/404page';
 import FormInput from './components/UI/FormInput/Index';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
              <ShortletCard  />
             
             </div>}></Route>
+            <Route path='/404' element={<ErrorPage />}></Route>
         </Routes>
       </Router>
     </div>
