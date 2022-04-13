@@ -23,18 +23,81 @@ const ChildComponent = () =>{
     const [showPassword, setShowpassword] = useState(false);
     const [borderColor, setBorderColor] = useState(null);
 
-    const navigate = useNavigate();
+    const navigate = useNavigate(false);
+    const [isValid, setIsValid] = useState(false);
+    const [progress, setProgress] = useState(0); //Monitors progress, 1 is forward, -1 is backward 
+    
+    // This goes off
     const [user, setUser] = useState({
         'firstname': '',
         'lastname': '',
         'email': '',
         'password': '',
     });
+// Here upwards
 
+//Validate email and password on value change
+    const validateInput = (e)=> {
+        if(e.target.type === 'email'){
+            setUser({...user, email: e.target.value});
+            const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]+))$/;
+            
+            if(regex.test(user.email || e.target.value)) setIsValid(true);
+            else setIsValid(false);
+
+            //Check if input is empty
+            if(e.target.value === '') setIsValid(false);
+            
+        } else {
+
+            //Check if password is upto 6 characters
+            if(e.target.value.length < 6) setIsValid(false);
+            else setIsValid(true);
+
+            //Update user state password value with input value
+            setUser({...user, password: e.target.value});
+        }     
+        
+    }
+
+    // this goes off
     const onInputChange = (e)=> {
 
         setUser({...user, [e.target.name]: e.target.value});
     }
+
+    const nextStep = (e)=> {
+        e.preventDefault();
+
+        const users = JSON.parse(localStorage.getItem('users')); //Load users from localDB
+        const you = users.filter(singleUser => singleUser.email === user.email)[0];
+
+        if(progress === 1){
+            //Login
+            if(you.password === user.password) navigate(`/signup/}`);
+            else {
+                alert("Password incorrect. Please input a valid password");
+            }
+            
+
+        } else {
+            
+            //Check if you exist in the DB
+            if(you) {
+                setUser({...user, fullname: you.fullname});
+                setProgress(1);
+            } else {
+                alert("Invalid login details");
+                // Navigate("/signup");
+            }
+
+            
+        }
+        
+    }
+
+    const backStep = ()=> setProgress(-1);
+
 
     const onSignup = (e)=> {
         e.preventDefault();
@@ -59,7 +122,7 @@ const ChildComponent = () =>{
 
         
     }
-
+        // to here
 
        //Toggle password anonimity
        const togglePassword = ()=> setShowpassword(!showPassword);
@@ -67,12 +130,15 @@ const ChildComponent = () =>{
 
     return(
         <>
+
+        
+
         <span style={{fontWeight: '500', fontSize: '1.4rem', marginTop:'1.5rem'}}>We’re glad to have you back.</span>
         <form className="form-control sign-up-form" onSubmit={onSignup}>
 
 
             <div className='form_email'>
-                <FormInput label='Email address' placeholder='Enter Email' type='email' />
+                <FormInput label='Email address' placeholder='Enter Email' type='email' value={user.email} onInput={validateInput} />
             </div>
             
 
