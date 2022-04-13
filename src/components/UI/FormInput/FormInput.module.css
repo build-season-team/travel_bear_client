@@ -1,21 +1,35 @@
 
 .form_input{
-    display: flex;
-    flex-direction: column;
     position: relative;
     width: 100%;
 }
 
-.form_input input{
+.form_outline{
+    flex: 1;
     border: 1px solid #858585;
-    border-radius: 5px;
-    padding: 1rem;
+    border-radius: 1rem;
+    padding: .4rem;
+    display: flex;
+    justify-content: space-between;
+    transition: all .5s;
+    margin-bottom: 2.4rem;
 }
 
-.form_input input:focus{
+.form_outline input{
+    width: 85%;
+}
+
+.form_input input{
+    border: 0px;
+    outline: 0;
+    padding: 1rem 2rem;
+}
+
+
+.form_outline:focus{
     -webkit-transition: 0.5s;
     transition: 0.7s;
-    outline: none;
+    outline: 1px;
     border: 1px solid #2196F3;
 }
 
@@ -32,18 +46,15 @@
 }
 
 .some_copy{
+    margin-top: -2rem;
     margin-bottom: 0.5rem;
     padding-left: 0;
-    padding-top: 0.5rem;
+    padding-top: 0;
     font-size: 11px;
     font-weight: 400;
 }
 
-.form_input .icon{
-    position: absolute;
-    right: 0%;
-    bottom: 0%; 
-}
+
 
 
 .input_field{
@@ -61,4 +72,47 @@
 .error_message{
     font-size: 11px;
     font-weight: 400;
+}
+
+.border__blue  {
+    border: 1px solid var(--color-primary);
+}
+/* 
+input{
+    outline: 0px !important;
+    border: 0px solid
+} */
+
+.text__red {
+    color: var(--color-danger-dark);
+}
+
+input[type=file]{
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    text-align-last: center;
+    background-color: #F6F6F7;
+    border-radius: 8px;
+    border: 2px dotted #8C9196;
+    cursor: pointer;
+    
+}
+
+input[type=file]::before{
+        display: flex;
+        content: url(../../../assets/icons/upload.svg);
+        color: black;
+        display: inline-block;
+}
+
+input[type=file]::file-selector-button{
+    border: 2px solid #BABFC3;
+    padding: .2em .4em;
+    margin-top: 1rem;
+    color: #202223;
+    border-radius: .2em;
+    background-color: #fff;
+    transition: 1s;
+    
 }
