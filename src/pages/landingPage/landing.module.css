@@ -57,12 +57,14 @@
 
 .shortletContainer {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
 }
 
-.shortletContainer p{
+/* .shortletContainer p{
     display: none;
-}
+} */
 
 
 @media only screen and (max-width: 700px){
@@ -116,7 +118,6 @@
         font-size: 1.4rem;
         line-height: 140%;
         letter-spacing: 0.002em;
-        color: #007AEC;
         text-align: center;
 
     }

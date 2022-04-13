@@ -46,21 +46,21 @@ const landingPage = () => {
                 )
               })}
 
-              <p>See More</p>
+              
             </div>
           </div>
 
           <div className={classes.bookacc}>
             <div className={classes.topbody}>
-            <h3>Clean Accommodation</h3>
-            <p className={classes.place}>Hotel with standardized hygiene protocol.</p>
-            <div className={classes.buttonHolder}>
-              <Button primary name={"All"} />
-              <Button btnLink name={"Lagos"} />
-              <Button btnLink name={"Owerri"} />
-              <Button btnLink name={"Abuja"} />
-              <Button btnLink name={"Enugu"} />
-            </div>
+              <h3>Clean Accommodation</h3>
+              <p className={classes.place}>Hotel with standardized hygiene protocol.</p>
+              <div className={classes.buttonHolder}>
+                <Button primary name={"All"} />
+                <Button btnLink name={"Lagos"} />
+                <Button btnLink name={"Owerri"} />
+                <Button btnLink name={"Abuja"} />
+                <Button btnLink name={"Enugu"} />
+              </div>
             </div>
             <div className={classes.shortletContainer}>
               {num.map((cur, i) => {
@@ -76,7 +76,7 @@ const landingPage = () => {
                   />
                 )
               })}
-              <p>See More</p>
+              
             </div>
           </div>
         </main>
