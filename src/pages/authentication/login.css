@@ -1,6 +1,4 @@
-*{
-    overflow-x: hidden;
-}
+
 
 /* password input*/
 
@@ -33,8 +31,6 @@ input[type=password]{
 }
 
 .form-group-item{
-    border: 1px solid #858585;
-    border-radius: 0.5rem;
     width: 100% ;
     position: relative;
 }
@@ -118,11 +114,6 @@ input[type=password]{
     right: -1rem;
 }
 
-.page {
-    height: 100vh;
-    width: 100vw;
-    
-}
 
 /* .page {
     height: 100vh;

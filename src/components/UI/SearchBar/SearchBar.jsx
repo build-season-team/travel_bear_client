@@ -14,8 +14,14 @@ import SearchIcon from '../../../assets/images/search.svg'
 const SearchBar = () => {
 
     const [select, setSelect]=useState();
+
+    const [value, setValue] = useState('')
     const handleClick = ()=> setSelect({});
 
+    const onInputChange = (e, key) => {
+        setValue(e.target.value)
+    }
+ 
   return (
     <section className='search_bar'>
         <div className='search_box'>
@@ -51,7 +57,10 @@ const SearchBar = () => {
             </div>
 
             <div className='search_box_input'>
-                <FormInput className='search_box_input' icon={<Button  className='btn' primary name='' iconPosition='right' icon={SearchIcon} />} placeholder={'Quick search by type, city'} />
+                <div className='input_box'>
+                    <input className='search_box_input'    onChange={onInputChange}  placeholder={'Quick search by type, city'} />
+                    <Button  className='btn' primary name='' iconPosition='right' icon={SearchIcon} />
+                </div>
             </div>
         </div>  
 
@@ -60,16 +69,6 @@ const SearchBar = () => {
   )
 }
 
-// const SelectOptions = ()=>{
-//     return(
-//         <div className='select_options'>
-//             <ul>
-//                 <li>Hotels</li>
-//                 <li>Shortlets</li>
-//             </ul>
-            
-//         </div>
-//     )
-// }
+
 
 export default SearchBar

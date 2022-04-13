@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from "./Button.module.css";
 
-const Button = ({primary, secondary, dark, btnLink, bigCard, danger, disabled, icon, iconPosition, name, onClick, navBtn , authBtn}) => {
+const Button = ({primary, secondary, dark, btnLink, bigCard, danger, disabled, icon, iconPosition, name, onClick, navBtn , authBtn, formBtn}) => {
     let btn;
     let btnSpace;
     let width;
@@ -33,6 +33,7 @@ const Button = ({primary, secondary, dark, btnLink, bigCard, danger, disabled, i
   return (
     <div className={classes.btn}>
         <button 
+            type={formBtn ? 'submit' : ''}
             disabled={disabled} 
             className={`${classes.btn__link} ${classes[btn]} ${bigCard ? classes.btn__big__link : ''} ${width ? classes[width] : ''} `} 
             onClick={onClick ? onClick : () =>  {}} 

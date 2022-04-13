@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
 import Header from './components/UI/Header/index';
@@ -8,12 +9,21 @@ import Update from './components/Update/update';
 import Nav from './components/UI/Header/nav';
 import SignUp from './pages/authentication/sign-up';
 import Login from './pages/authentication/login';
+<<<<<<< HEAD
 import UploadShortlet from './pages/UploadShortlet/UploadShortlet'
 import FileUpload from './components/UI/FileUpload/FileUpload';
+=======
+import ShortletCard from './components/UI/ShortletCard';
+import { AuthContext } from './store/authContext/AuthProvider';
+
+
+>>>>>>> 26441760453af63ca913f6d49e0d4e73c2a30a25
 
 
 
 function App() {
+
+  const {authState: {isloggedIn}} = useContext(AuthContext);
   return (
     <div className="App">
       
@@ -23,11 +33,12 @@ function App() {
             <Header />
             <HeroSection />
             <SearchBar />
-             {/* <Footer /> */}
+            <ShortletCard />
+             <Footer />
              <Update />
           </div> } />
           <Route path='/' element={<div>hello world</div>} />
-          <Route path='/signup' element={<SignUp />} />
+          { <Route path='/signup' element={<SignUp />} />}
           <Route path='/login' element={<Login />} />
           <Route path='/upload' element={<UploadShortlet />} />
           <Route path='/file' element={<FileUpload/>} />
