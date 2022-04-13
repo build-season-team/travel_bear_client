@@ -130,43 +130,33 @@ const ChildComponent = () =>{
 
     return(
         <>
-
-        
-
-        <span style={{fontWeight: '500', fontSize: '1.4rem', marginTop:'1.5rem'}}>We’re glad to have you back.</span>
-        <form className="form-control sign-up-form" onSubmit={onSignup}>
-
-
-            <div className='form_email'>
-                <FormInput label='Email address' placeholder='Enter Email' type='email' value={user.email} onInput={validateInput} />
-            </div>
-            
-
-
-            <div className="form-item">
-                <label className='label'>Password</label>
-                <div className={`form-group-item ${borderColor && borderColor}`}>
-                    <input onFocus={() => setBorderColor('border__blue')} onBlur={() => setBorderColor(null)} type={!showPassword ? "password" : "text"} placeholder="Enter password" name="password" onChange={onInputChange} value={user.password} />
-                    <img className='password_icon' width='20px' src={!showPassword ? hide : show} alt="Show password" onClick={togglePassword} />
+            <span style={{fontWeight: '500', fontSize: '1.4rem', marginTop:'1.5rem'}}>We’re glad to have you back.</span>
+            <form className="form-control sign-up-form" onSubmit={onSignup}>
+                <div className='form_email'>
+                    <FormInput label='Email address' placeholder='Enter Email' type='email' value={user.email} onInput={validateInput} />
                 </div>
-            </div>
-
-            <div className='agreement'>
-                <div style={{display: 'flex'}}>
-                    <input type='checkbox' />
-                    <p style={{color: '#007AEC', marginLeft: '3px', cursor: 'pointer', }} > Keep me signed in </p>
+                <div className="form-item">
+                    <label className='label'>Password</label>
+                    <div className={`form-group-item ${borderColor && borderColor}`}>
+                        <input onFocus={() => setBorderColor('border__blue')} onBlur={() => setBorderColor(null)} type={!showPassword ? "password" : "text"} placeholder="Enter password" name="password" onChange={onInputChange} value={user.password} />
+                        <img className='password_icon' width='20px' src={!showPassword ? hide : show} alt="Show password" onClick={togglePassword} />
+                    </div>
                 </div>
-                
-                <p style={{color: '#007AEC', cursor: 'pointer'}}> Forgot Password</p>
-            </div>
-                <Button name='Sign in' authBtn primary />
-            <div style={{fontSize: '1.3rem', textAlign: 'center', marginTop: '1.6rem'}}>
-                <span style={{fontSize: '1.3rem', textAlign: 'center'}} >Not a member? <span style={{color: '#007AEC', textAlign: 'center'}}><Link to="/signup">Sign Up</Link></span></span>
-            </div>
-            
 
-        </form>
-    </>
+                <div className='agreement'>
+                    <div style={{display: 'flex'}}>
+                        <input type='checkbox' />
+                        <p style={{color: '#007AEC', marginLeft: '3px', cursor: 'pointer', }} > Keep me signed in </p>
+                    </div>
+                    
+                    <p style={{color: '#007AEC', cursor: 'pointer'}}> Forgot Password</p>
+                </div>
+                    <Button name='Sign in' authBtn primary />
+                <div style={{fontSize: '1.3rem', textAlign: 'center', marginTop: '1.6rem'}}>
+                    <span style={{fontSize: '1.3rem', textAlign: 'center'}} >Not a member? <span style={{color: '#007AEC', textAlign: 'center'}}><Link to="/signup">Sign Up</Link></span></span>
+                </div>
+            </form>
+        </>
     )
 }
 
