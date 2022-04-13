@@ -1,6 +1,15 @@
 
 /* password input*/
 
+.auth__page {
+    max-height: 100vh;
+}
+
+.page__header {
+    margin-bottom: 12.5rem;
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.05);
+}
+
 .label{
     padding-left: 0rem;
     font-size: 1.4rem;
@@ -24,6 +33,10 @@ input[type=password]{
     border: 1px solid #2196F3;
 } */
 
+.border__blue {
+    border: 1px solid var(--color-primary) !important;
+}
+
 .form-item{
     width: 100%;
     margin-top: -3rem;
@@ -31,9 +44,10 @@ input[type=password]{
 
 .form-group-item{
     border: 1px solid #858585;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     width: 100% ;
     position: relative;
+    padding: .5rem 1rem;
 }
 
 .form-item input {
@@ -62,7 +76,7 @@ input[type=password]{
     box-shadow: 0px 1rem 6.4rem rgba(0, 0, 0, 0.05);
     border-radius: 2rem;
     transition: all 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-    margin: 14.5rem auto;
+    margin: auto;
 }
 
 .box a {
@@ -96,7 +110,7 @@ input[type=password]{
 }
 
 .page {
-    height: 100vh;
+    height:fit-content;
     width: 100vw;
 }
 

@@ -60,16 +60,6 @@ const SearchBar = () => {
   )
 }
 
-// const SelectOptions = ()=>{
-//     return(
-//         <div className='select_options'>
-//             <ul>
-//                 <li>Hotels</li>
-//                 <li>Shortlets</li>
-//             </ul>
-            
-//         </div>
-//     )
-// }
+
 
 export default SearchBar

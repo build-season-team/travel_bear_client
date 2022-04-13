@@ -1,6 +1,6 @@
 .toast {
     position: absolute;
-    top: 2rem;
+    top: 10rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 5;
@@ -20,17 +20,17 @@
 
 @keyframes showToast {
     0% {
-        transform: translateY(-100rem);
+        transform: translateY(-100rem) translateX(-50%);
     }
 
     50% {
-        transform: translateY(2rem);
+        transform: translateY(2rem) translateX(-50%);
         
     }
 
     100% {
 
-        transform: translateY(0);
+        transform: translateY(0) translateX(-50%);
 
     }
 }

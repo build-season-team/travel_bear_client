@@ -12,6 +12,7 @@
     display: flex;
     justify-content: space-between;
     transition: all .5s;
+    margin-bottom: 2.4rem;
 }
 
 .form_outline input{

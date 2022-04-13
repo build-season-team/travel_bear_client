@@ -8,6 +8,7 @@ import Update from './components/Update/update';
 import Nav from './components/UI/Header/nav';
 import SignUp from './pages/authentication/sign-up';
 import Login from './pages/authentication/login';
+import ShortletCard from './components/UI/ShortletCard';
 
 
 
@@ -22,7 +23,8 @@ function App() {
             <Header />
             <HeroSection />
             <SearchBar />
-             {/* <Footer /> */}
+            <ShortletCard />
+             <Footer />
              <Update />
           </div> } />
           <Route path='/' element={<div>hello world</div>} />

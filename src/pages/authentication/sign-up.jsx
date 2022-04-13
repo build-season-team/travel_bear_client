@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
-import Page from '..'
+import Page from '.'
 import FormInput from '../../components/UI/FormInput/Index'
 import Button from '../../components/UI/Button'
 import './authentication.css'
@@ -10,14 +10,17 @@ import './authentication.css'
 import show from '../../assets/icons/show.png'
 import hide from '../../assets/icons/hide.svg'
 import Header from '../../components/UI/Header'
+import Toast from '../../components/UI/Toast'
 
 const SignUp = () => {
-    return <Page ChildComponent={ChildComponent} title="SignUp" caption="Sign up today to get started" />   
+    return <Page ChildComponent={ChildComponent} title="SignUp"/>   
 }
 
 const ChildComponent = () =>{
 
     const [showPassword, setShowpassword] = useState(false);
+
+    const [borderColor, setBorderColor] = useState(null);
 
     const navigate = useNavigate();
     const [user, setUser] = useState({
@@ -63,6 +66,8 @@ const ChildComponent = () =>{
     return (
         <>
 
+        
+
 
             
             <span style={{fontWeight: '500', fontSize: '1.4rem', marginTop:'1.5rem'}}>You’re a few steps away from an awesome experience </span>
@@ -82,8 +87,8 @@ const ChildComponent = () =>{
 
                 <div className="form-item">
                     <label className='label'>Password</label>
-                    <div className="form-group-item">
-                        <input type={!showPassword ? "password" : "text"} placeholder="Enter password" name="password" onChange={onInputChange} value={user.password} />
+                    <div className={`form-group-item ${borderColor && borderColor}`}>
+                        <input onFocus={() => setBorderColor('border__blue')} onBlur={() => setBorderColor(null)} type={!showPassword ? "password" : "text"} placeholder="Enter password" name="password" onChange={onInputChange} value={user.password} />
                         <img className='password_icon' width='20px' src={!showPassword ? hide : show} alt="Show password" onClick={togglePassword} />
                     </div>
                 </div>
@@ -95,7 +100,7 @@ const ChildComponent = () =>{
                 
                     <Button name='Create account' authBtn primary />
                 <div style={{fontSize: '1.3rem', textAlign: 'center', marginTop: '1.6rem'}}>
-                    <span style={{fontSize: '1.3rem', textAlign: 'center',}} >Have an account? <span style={{color: '#007AEC', textAlign: 'center'}}><a href="/login">Sign In</a></span></span>
+                    <span style={{fontSize: '1.3rem', textAlign: 'center',}} >Have an account? <span style={{color: '#007AEC', textAlign: 'center'}}><Link to="/login">Sign In</Link></span></span>
                 </div>
                 
 
