@@ -1,11 +1,13 @@
 .container {
     width: 90%;
-    margin: 0 auto;
+    margin: 0;
 }
-
+/*Check this very well*/
 .header {
-    height: 0px;
+    display: none;
+    /* height: 6rem; */
     width: 100%;
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.05);
 } 
 
 .logo {
@@ -18,20 +20,15 @@
 }
 
 .main-header {
-    height: 100%;
+    /* margin-top: 1rem; */
+    height: fit-content;
     display: flex;
     align-items: center;
     overflow: hidden;
 }
 
-
-.main-header-mini {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100%;
-    background-color: #fff;
-    z-index: 100;
+.main-header-mini{
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.05);
 }
 
 .logo-mini-container {
@@ -72,14 +69,23 @@
 
 
 
-@media screen and (min-width: 278px) and (max-width: 1200px) {
-    
+@media screen and (min-width: 150px) and (max-width: 970px) {
+    /* fix this */
     .main-header-mini {
-        position: fixed;
+            position: fixed !important;
+            padding: 2rem;
+            top: 0% !important;
+            left: 0 !important;
+            width: 100%;
+            background-color: #fff;
+            z-index: 100;
+            box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.05);
     }    
 
     .hamburger-menu{
         display: block;
+        position: relative;
+        left: 92%;
     }
 
     .main-header {
@@ -87,7 +93,7 @@
     }
 
     .logo-mini-container {
-        display: block;
+        display: none;
     }
 }
 

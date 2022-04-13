@@ -7,7 +7,7 @@
 .background{
     min-width: 100%;
     min-height: 30rem;
-    background: url('../../assets/images/BG.svg');
+    background: url('../../assets/icons/BG.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -24,6 +24,7 @@
     font-weight: 800;
     color: white;
     line-height: 54px;
+    width: 45rem;
 }
 
 .sub{
@@ -31,7 +32,7 @@
    width: 35rem;
    background-color: white;
    border-radius: 1rem;
-   padding: 2px;
+   padding: 0.5rem;
    display: flex;
    margin-top: 1.5rem;
 }
@@ -71,7 +72,8 @@
         position: absolute;
         width: 15.6rem;
         height: 14.263rem;
-        left: 11rem;
+        left: 50%;
+        transform: translateX(-50%);
         top: 19.769rem;
     }
 
@@ -89,22 +91,22 @@
         position: absolute;
         width: 31rem;
         height: 7.6rem;
-        left: 3.29rem;
+        left: 50%;
+        transform: translateX(-50%);
         top: 6.5rem;
     }
 
     .sub{
         border: none; 
-        width: 30rem;
         background-color: white;
         border-radius: 1rem;
-        padding: 0.4rem;
         display: flex;
         margin-top: 1rem;
+        padding: 0.5rem;
         position: absolute;
-        width: 32.8rem;
-        height: 5.1rem;
-        left: 2.3rem;
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
         top: 37rem;
      }
 
@@ -129,7 +131,7 @@
     .background{
         min-width: 100%;
         min-height: 30rem;
-        background: url('../../assets/images/BG.svg');
+        background: url('../../assets/icons/BG.svg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -146,6 +148,7 @@
     .sidebox{
         margin-left: 4rem ;
         padding : 8rem 0 0 0;
+        width: 44.5rem;
     }
     
     .sidebox h3{
@@ -154,14 +157,14 @@
         font-weight: 800;
         color: white;
         line-height: 3.4rem;
+        width: 35rem;
     }
     
     .sub{
        border: none; 
-       width: 30rem;
+       width: 100%;
        background-color: white;
        border-radius: 1rem;
-       padding: 1px;
        display: flex;
        margin-top: 1rem;
     }

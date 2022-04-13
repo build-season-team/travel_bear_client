@@ -26,8 +26,9 @@
     margin: 0px;
 }
 
-a.link:visited, a.visited{
+a, a.link:visited, a.visited{
     text-decoration: none;
+    color: #111827;
 }
 
 /* .nav .right > *:first-child {
@@ -36,6 +37,8 @@ a.link:visited, a.visited{
 
 .macro{
     margin-right: 2rem;
+    display: flex;
+    align-items: center;
 }
 
 .drop-menu-container {
@@ -92,6 +95,8 @@ a.link:visited, a.visited{
 
 .drop-menu ul {
     display: flex;
+    align-items: center;
+    margin-top: 10rem;
     justify-content: center;
     flex-direction: column;
     height: 200px;
@@ -99,13 +104,19 @@ a.link:visited, a.visited{
 
 .drop-menu ul li {
     
-    padding: 15px 0 15px 5rem;
+    padding: 15px 0 15px 0;
 }
+
+.drop-menu ul li a{
+    color: #000;
+    text-decoration: none;
+}
+
 
 .close {
     position: absolute;
-    left: 78%;
-    top: 4%;
+    left: 91%;
+    top: 5%;
     cursor: pointer;
 }
 
@@ -174,25 +185,23 @@ a.link:visited, a.visited{
     order: 2;
 }
 
-.iframe .logo {
-
-    width: 24px;
-    height: 24px;
+/* .right {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #0052CC;
-    margin: 0 20px;
-}
+} */
 
-.iframe .logo img {
-    width: 60%;
-}
-
-.right {
+.mini-btn{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: left;
+}
+
+.btn-class{
+    padding: 1rem;
+}
+
+.btn-class :last-child{
+    margin-left: 1rem;
 }
 
 /* Bell icon */
@@ -209,6 +218,7 @@ a.link:visited, a.visited{
 }
 
 .desktop_nav{
+    display: none;
     display: flex;
     justify-content: space-between;
     width: 90vw;
@@ -216,21 +226,33 @@ a.link:visited, a.visited{
 }
 
 .nav_Style{
-    margin: -4rem auto 0 auto;
+    margin: 0rem auto 0rem auto;
 }
 
-@media screen and (min-width: 200px) and (max-width: 1200px) {
+@media screen and (min-width: 200px) and (max-width: 970px) {
 
     .main-header {
         justify-content: space-between;
     }
 
     .desktop_nav_logo{
+        
         position: absolute;
-        bottom: 30%;
+        /* bottom:10%; */
         left: 10%;
         z-index: 100;
     }
+
+    .mini_btn{
+        margin-top: 3rem;
+        gap: 1.5rem;
+        align-items: center;
+
+    }
+/* important aspect */
+    .nav_Style{
+        margin: -3rem auto 0 auto;
+    }    
 
     .logo-mini-container {
         display: block;

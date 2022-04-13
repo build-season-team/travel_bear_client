@@ -1,21 +1,34 @@
 
 .form_input{
-    display: flex;
-    flex-direction: column;
     position: relative;
     width: 100%;
 }
 
-.form_input input{
+.form_outline{
+    flex: 1;
     border: 1px solid #858585;
-    border-radius: 5px;
-    padding: 1rem;
+    border-radius: 1rem;
+    padding: .4rem;
+    display: flex;
+    justify-content: space-between;
+    transition: all .5s;
 }
 
-.form_input input:focus{
+.form_outline input{
+    width: 85%;
+}
+
+.form_input input{
+    border: 0px;
+    outline: 0;
+    padding: 1rem 2rem;
+}
+
+
+.form_outline:focus{
     -webkit-transition: 0.5s;
     transition: 0.7s;
-    outline: none;
+    outline: 1px;
     border: 1px solid #2196F3;
 }
 
@@ -39,11 +52,7 @@
     font-weight: 400;
 }
 
-.form_input .icon{
-    position: absolute;
-    right: 0%;
-    bottom: 0%; 
-}
+
 
 
 .input_field{
@@ -62,6 +71,15 @@
     font-size: 11px;
     font-weight: 400;
 }
+
+.border__blue  {
+    border: 1px solid var(--color-primary);
+}
+/* 
+input{
+    outline: 0px !important;
+    border: 0px solid
+} */
 
 input[type=file]{
     padding: 3rem;

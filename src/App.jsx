@@ -1,40 +1,35 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
-import Button from './components/UI/Button';
+import Header from './components/UI/Header/index';
+import Footer from './components/UI/Footer';
+import HeroSection from './components/UI/HeroSection/HeroSection';
 import SearchBar from './components/UI/SearchBar/SearchBar';
-
-import WhyUs from './components/WhyUs/WhyUs.jsx'
-
-import FormInput from './components/UI/FormInput/Index';
-import Select from './components/UI/Select/select'
-import Update from './components/Update/update'
-import Header from './components/UI/Header/index'
-import UploadShortlet from './pages/UploadShortlet/UploadShortlet';
-
-import HeroSection from './components/UI/HeroSection/HeroSection'
+import Update from './components/Update/update';
+import Nav from './components/UI/Header/nav';
+import SignUp from './pages/authentication/sign-up';
+import Login from './pages/authentication/login';
 
 
-import DollarIcon from './assets/images/dollar-circle.svg';
-import Toast from './components/UI/Toast';
-import Divider from './components/UI/Divider';
-import ShortletCard from './components/UI/ShortletCard';
-import FooterWrap from './components/UI/Footer';
 
 
 function App() {
   return (
     <div className="App">
       
-      
-
-      {/* <Header /> */}
-      {/* <HeroSection />
-      <SearchBar/> */}
-
-      <UploadShortlet />
-
-      {/* <FooterWrap /> */}
-      
+      <Router >
+        <Routes>
+          <Route path='/nav' element={<div>
+            <Header />
+            <HeroSection />
+            <SearchBar />
+             {/* <Footer /> */}
+             <Update />
+          </div> } />
+          <Route path='/' element={<div>hello world</div>} />
+          <Route path='/signup' element={<SignUp />} />
+          <Route path='/login' element={<Login />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

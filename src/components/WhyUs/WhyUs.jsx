@@ -1,8 +1,8 @@
 import React from 'react'
 import classes from './WhyUs.module.css';
-import house from  '../../assets/images/svg-house.svg';
-import phone from  '../../assets/images/svg-phone.svg';
-import wallet from  '../../assets/images/svg-wallet.svg';
+import house from  '../../assets/icons/svg-house.svg';
+import phone from  '../../assets/icons/svg-phone.svg';
+import wallet from  '../../assets/icons/svg-wallet.svg';
 const WhyUs = () => {
   return (
     <div className={classes.whyUs}>
