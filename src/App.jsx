@@ -1,35 +1,42 @@
+import { useContext } from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
-import Button from './components/UI/Button';
-import DollarIcon from './assets/images/dollar-circle.svg';
-import Toast from './components/UI/Toast';
-import Divider from './components/UI/Divider';
+import Header from './components/UI/Header/index';
+import Footer from './components/UI/Footer';
+import HeroSection from './components/UI/HeroSection/HeroSection';
+import SearchBar from './components/UI/SearchBar/SearchBar';
+import Update from './components/Update/update';
+import Nav from './components/UI/Header/nav';
+import SignUp from './pages/authentication/sign-up';
+import Login from './pages/authentication/login';
 import ShortletCard from './components/UI/ShortletCard';
-import ErrorPage from './components/UI/404page';
-import FormInput from './components/UI/FormInput/Index';
+import ErrorPage from './components/UI/404page'
+import { AuthContext } from './store/authContext/AuthProvider';
+
+
+
+
 
 function App() {
+
+  const {authState: {isloggedIn}} = useContext(AuthContext);
   return (
     <div className="App">
       
       <Router >
         <Routes>
-          <Route path='/components' element={<div>
-            <Button name='primary' primary    />
-            <br></br> <br></br>
-            <Button name='secondary' secondary/>
-             <br></br> <br></br>
-            <Button name='danger' danger  />
-             <br></br> <br></br>
-            <Button name='dark' dark icon={DollarIcon} iconPosition='left' />
-             <br></br> <br></br>
-             <Toast emoji={'😱'} success />
-             <Divider />
-             <br></br> <br></br>
-             <ShortletCard  />
-            
-            </div>}></Route>
-            <Route path='/404' element={<ErrorPage />}></Route>
+          <Route path='/nav' element={<div>
+            <Header />
+            <HeroSection />
+            {/* <SearchBar /> */}
+            <ShortletCard />
+             <Footer />
+             <Update />
+          </div> } />
+          <Route path='/' element={<div>hello world</div>} />
+          { <Route path='/signup' element={<SignUp />} />}
+          <Route path='/login' element={<Login />} />
+          <Route path='*' element={<ErrorPage />} />
         </Routes>
       </Router>
     </div>

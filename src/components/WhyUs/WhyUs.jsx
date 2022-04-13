@@ -1,25 +1,29 @@
 import React from 'react'
 import classes from './WhyUs.module.css';
-import apartment_rent from  './../assets/images/Apartment-rent.png';
-
+import house from  '../../assets/icons/svg-house.svg';
+import phone from  '../../assets/icons/svg-phone.svg';
+import wallet from  '../../assets/icons/svg-wallet.svg';
 const WhyUs = () => {
   return (
-    <div>
+    <div className={classes.whyUs}>
+        
         <h1>Why book with TravelBear?</h1>
-        <div>
-            <img src={apartment_rent} alt="" />
-            <h4></h4>
-            <p></p>
+        <div className={classes.pics}>
+        <div className={classes.box}>
+            <img src={phone}/>
+            <h4> Hassle-Free</h4>
+            <p>Make a transaction from anywhere at<br/>any time, from desktop or mobile web. </p>
         </div>
-        <div>
-            <img src="" alt="" />
-            <h4></h4>
-            <p></p>
+        <div className={classes.box}>
+            <img src={house}/>
+            <h4>Service You Can Trust</h4>
+            <p>You get what you paid for -<br/> guaranteed.</p>
         </div>
-        <div>
-            <img src="" alt="" />
-            <h4></h4>
-            <p></p>
+        <div className={classes.box}>
+            <img src={wallet} />
+            <h4>One Time Payment</h4>
+            <p>Be sure to never be asked to pay <br/> extra charge as everything is done <br/> from the start.</p>
+        </div>
         </div>
     </div>
   )
