@@ -8,7 +8,8 @@ import Update from './components/Update/update';
 import Nav from './components/UI/Header/nav';
 import SignUp from './pages/authentication/sign-up';
 import Login from './pages/authentication/login';
-
+import UploadShortlet from './pages/UploadShortlet/UploadShortlet'
+import FileUpload from './components/UI/FileUpload/FileUpload';
 
 
 
@@ -28,6 +29,8 @@ function App() {
           <Route path='/' element={<div>hello world</div>} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/upload' element={<UploadShortlet />} />
+          <Route path='/file' element={<FileUpload/>} />
         </Routes>
       </Router>
     </div>

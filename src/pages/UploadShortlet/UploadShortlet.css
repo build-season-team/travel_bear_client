@@ -1,12 +1,13 @@
 .upload_shortlet{
-    padding: 2rem;
+    padding: 2rem 5rem;
     width: 100%;
     display: flex;
+    margin-top: 5rem;
     justify-content: space-between;
 }
 
 .upload_form{
-    width: 40%;
+    width: 50%;
 }
 
 p{
@@ -30,12 +31,13 @@ p{
 
 .house_details{
     display: flex;
-    width: 100%;
+    width: 80%;
     justify-content: space-between;
 }
 
 .house_details1{
     margin-top: 1.4rem;
+    width: 80%;
 }
 
 .house_condition{
@@ -50,7 +52,13 @@ p{
 }
 
 .form_input{
+    width: 48%;
     margin-bottom: 2.4rem;
+}
+
+.description_input{
+    margin-top: 2rem;
+    width: 80%;
 }
 
 .upload_images_Box{
@@ -65,3 +73,124 @@ p{
     font-weight: 500;
     margin-bottom: 3.6rem;
 }
+
+.link_to{
+    color: #007AEC;
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.link_to:hover{
+    color: #55A6F2;
+    margin-left: -1rem;
+    transition: ease-out 1000ms;
+    
+}
+
+/* .link_to span:hover{
+    flex-direction: start;
+    margin-left: -1rem ;
+    transition: ease-out 500ms;
+
+} */
+
+.link_to_link{
+    color: #007AEC;
+    font-size: 2rem;
+}
+
+.link_to_link:hover{
+    flex-direction: start;
+    margin-right: 1rem;
+    transition: ease-out 1000ms;
+}
+
+.btn{
+    margin-top: 2.8rem;
+}
+
+
+@media screen and (min-width: 150px) and (max-width: 667px) {
+    .upload_shortlet{
+        padding: 2rem 3rem;
+        width: 100%;
+        display: flex;
+        margin-top: 7rem;
+        justify-content: center;
+    }
+
+    .upload_form{
+        width: 80%;
+    }
+
+    .link_to{
+        color: #007AEC;
+        font-size: 1.4rem;
+        
+    }
+
+    .house_details{
+        display: block;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .form_input{
+        width: 100%;
+        margin-bottom: 2.4rem;
+    }
+
+    .description_input{
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    .house_details1{
+        width: 100%;
+    }
+    
+}
+
+@media screen and (min-width: 668px) and (max-width: 969px) {
+    
+    .upload_shortlet{
+        padding: 2rem 3rem;
+        width: 100%;
+        display: flex;
+        margin-top: 7rem;
+        justify-content: center;
+    }
+
+    .upload_form{
+        width: 90%;
+    }
+
+
+    .link_to{
+        color: #007AEC;
+        font-size: 1.4rem;
+        
+    }
+
+    .house_details{
+        display: block;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .form_input{
+        width: 100%;
+        margin-bottom: 2.4rem;
+    }
+
+    .description_input{
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    .house_details1{
+        width: 100%;
+    }
+    
+}
+
