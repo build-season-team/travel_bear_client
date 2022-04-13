@@ -147,6 +147,16 @@ input[type=password]{
     border-radius: 2rem;
 } */
 
+.red__text{
+    /* margin-top: -2rem; */
+    margin-bottom: 0.5rem;
+    padding-left: 0;
+    padding-top: 0;
+    font-size: 11px;
+    font-weight: 400;
+    color: red;
+}
+
 @media screen and (min-width: 0px) and (max-width: 667px) {
     .page-illustration img{
         display: none;
