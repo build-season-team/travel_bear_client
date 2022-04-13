@@ -24,12 +24,12 @@
     font-weight: 800;
     color: white;
     line-height: 54px;
-    width: 45rem;
+    width: 50rem;
 }
 
 .sub{
    border: none; 
-   width: 35rem;
+   width: 100%;
    background-color: white;
    border-radius: 1rem;
    padding: 0.5rem;
@@ -53,7 +53,7 @@
 }
 
 
-@media only screen and (max-width: 699px){
+@media only screen and (max-width: 760px){
     .back{
         padding: 0;
         height: 60rem;
@@ -121,7 +121,7 @@
   }
 
   
-@media (min-width: 700px) and (max-width: 1200px){
+@media (min-width: 761px) and (max-width: 1200px){
     .back{
         height: 40rem;
         width: 100%;
@@ -161,7 +161,7 @@
     
     .sub{
        border: none; 
-       width: 30rem;
+       width: 100%;
        background-color: white;
        border-radius: 1rem;
        display: flex;
