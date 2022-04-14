@@ -39,11 +39,12 @@
     padding: .5rem 1.2rem;
 }
 
-p{
-    padding-left: 1rem;
-    padding-right: 1rem;
+.search_box_options1 p {
+    padding: .5rem;
     font-size: 1.4rem;
 }
+
+
 
 .accomo{
     
@@ -286,7 +287,7 @@ p{
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: -5rem auto 0 auto;
+        margin: 0 auto 0 auto;
     }
     
     .search_box{
@@ -296,14 +297,16 @@ p{
         justify-content: space-between;
         border-radius: 8px;
         background-color: #fff;
-        padding: 3rem;
+        padding: 3rem 2rem;
         box-shadow: 0 5rem 10rem #0000001C;
+
     }
     
     .search_box_options{
         display: flex;
         width: 60%;
         justify-content: space-between;
+        font-size: 1rem;
         
     }
 

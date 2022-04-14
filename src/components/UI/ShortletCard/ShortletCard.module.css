@@ -65,6 +65,7 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 2.5rem;
+    padding: 0 1rem;
 }
 
 .card__footer_text {
@@ -92,7 +93,7 @@
 
     .card__rate {
         top: .761rem;
-        left: 9.8rem;
+        left: 75%;
     }
 
     .card__header {
@@ -137,7 +138,7 @@
 
     .card__big__rate {
         top: 1.3rem;
-        left: 24rem;
+        left: 75%;
     }
 
     .card__big__header {

@@ -48,7 +48,7 @@
      @media only screen and (max-width: 667px){
 
         .whyUs{
-            width: 100%;
+            width: 100vw;
             height: 75rem;
             padding: 0;
          }
@@ -71,7 +71,7 @@
 
     @media (min-width: 668px) and (max-width: 1200px){
         .whyUs{
-            width: 100%;
+            min-width: 100vw;
             height: 51.4rem;
          }
          
