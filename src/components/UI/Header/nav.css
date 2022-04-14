@@ -22,9 +22,7 @@
     list-style: none;
 }
 
-.nav .right > * {
-    margin: 0px;
-}
+
 
 a, a.link:visited, a.visited{
     text-decoration: none;
@@ -284,10 +282,12 @@ a, a.link:visited, a.visited{
     }
 
     .mini_btn{
-        margin-top: 3rem;
-        gap: 1.5rem;
-        align-items: center;
+        margin: 2rem;
 
+    }
+
+    .mini_btn div {
+        margin: 1rem 0;
     }
 /* important aspect */
     .nav_Style{
@@ -302,6 +302,7 @@ a, a.link:visited, a.visited{
     .macro{
         display: none;
     }
+
 
     .logo-mini{
         width: 120px;
