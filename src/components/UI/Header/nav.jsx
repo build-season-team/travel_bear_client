@@ -53,7 +53,7 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                             </div>
                             <div className='profile__text'>Hi, Code_max</div>
                         </div>}
-                        <Divider />
+                        {isLoggedIn && <Divider />}
                         {location.pathname == '/' ?  <ul>
                             <li><Link to='/'>Home</Link></li>
                             <li><Link to='/'>About Us</Link></li>
