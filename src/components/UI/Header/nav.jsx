@@ -98,6 +98,7 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                 <div className='desktop_nav'>
                     <span className='desktop_nav_logo' ><img src={ HeaderLogo } alt="Logo" /></span>
                     
+                    
                     {location.pathname == '/' ? <ul className="macro">
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/'>About Us</Link></li>
