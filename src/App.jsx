@@ -10,6 +10,7 @@ import Nav from './components/UI/Header/nav';
 import SignUp from './pages/authentication/sign-up';
 import Login from './pages/authentication/login';
 import ShortletCard from './components/UI/ShortletCard';
+import ErrorPage from './components/UI/404page'
 import LandingPage from './pages/landingPage';
 import { AuthContext } from './store/authContext/AuthProvider';
 
@@ -29,6 +30,7 @@ function App() {
           <Route path='/' element={<LandingPage />} />
           { <Route path='/signup' element={<SignUp />} />}
           <Route path='/login' element={<Login />} />
+          <Route path='*' element={<ErrorPage />} />
         </Routes>
       </Router>
     </div>
