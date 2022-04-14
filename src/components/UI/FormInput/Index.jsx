@@ -62,7 +62,7 @@ const FormInput = ({id, label, text, active, required, disabled, type, icon, err
 
           
             {icon && <span className={classes.icon}> {icon} </span>}
-            <span className={classes.error}> {valid === null ? null : valid === true ? <img src= { CheckMark } alt="" /> : <img src= { QuestionIcon } alt="" />} </span>
+            {valid && <span className={classes.error}> {valid === null ? null : valid === true ? <img src= { CheckMark } alt="" /> : <img src= { QuestionIcon } alt="" />} </span>}
           </div>
       {errors[name] && <p className={`${classes.some_copy} ${textColor ? classes[textColor] : ''}`}>{errors[name]}</p>}
 
