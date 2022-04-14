@@ -8,7 +8,7 @@ import QuestionIcon from '../../../assets/icons/question.svg'
 
 
 
-const FormInput = ({id, label, text, active, required, disabled, type, icon, errors, success, iconPosition, placeholder, name, form, onChange,
+const FormInput = ({id, label, text, active, required, disabled, type, icon, errors, success, pattern, iconPosition, placeholder, name, form, onChange, onBlur,
   ...props }) => {
 
     let emailRegex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
@@ -43,13 +43,16 @@ const FormInput = ({id, label, text, active, required, disabled, type, icon, err
               onChange={(e) =>{
                   onChange(e, name);
               } }
+              pattern={pattern ? pattern : null}
               label={label}            
               icon={icon}
               success={success}
               onFocus={() => setBorderColor('border__blue')}
-              onBlur = {()=>{
+              onBlur = {(e)=>{
                 setBorderColor(null);
                 if(value === '') setValid(null);
+                onBlur(e, name)
+
               }}
               {...props}
             />

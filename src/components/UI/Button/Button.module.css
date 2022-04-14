@@ -114,6 +114,11 @@
     min-width: 100%;
 }
 
+.btn__big__link {
+    padding: 1.2rem 2rem 1.2rem 2rem;
+    font-size: 1.4rem;
+}
+
 @media only screen and (max-width: 600px) {
     .btn__link {
         font-size: .8rem;

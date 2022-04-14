@@ -26,53 +26,25 @@ const ChildComponent = () =>{
     const [borderColor, setBorderColor] = useState(null);
     const [form, setForm] = useState({});
     const [errors, setErrors] = useState({err: 'error'});
-    const {authDispatch} = useContext(AuthContext);
+    const {authDispatch, authState: {loading, isLoggedIn}} = useContext(AuthContext);
     const navigate = useNavigate();
     
+    useEffect(() => {
+        if(isLoggedIn) {
+            navigate(-1)
+        }
+        authDispatch({type: CLEAR_MESSAGE})
+    }, [])
 
     // this goes off
    const onInputChange = (e, key)=> {
          setForm({...form, [key]: e.target.value})
-         if(key !== '') {
-            if(key === 'password') {
-                if(key.length < 8) {
-                    setErrors((prevState) => {
-                        return {...prevState, [key]: 'Password must be more than 7 characters'}
-                    })
-                }else {
-                    setErrors((prevState) => {
-                        return {...prevState, [key]: null}
-                    })
-                }
-            }else {
-                setErrors((prevState) => {
-                    return {...prevState, [key]: null}
-                })
-            }
-        }
     }
 
     const onLogin = (e)=> {
         e.preventDefault();
-        setErrors({});
-        if(!form.email || form.email.length < 6) {
-            setErrors((prevState) => {
-                return {...prevState, email: 'Email must be more than 6 characters'}
-            })
-        }
-        if(!form.password || form.password.length < 8) {
-            setErrors((prevState) => {
-                return {...prevState, password: 'password must be more than 7 characters'}
-            })
-        }
-
-        console.log('in login>>>>>');
-        console.log(Object.values(errors).every(item => !item ))
-        console.log(errors)
-
-        if(Object.values(errors).every(item => !item )) {
+        if(Object.values(form).every(item => item.length > 0 )) {
             login(form)(authDispatch)(() => {
-                console.log('in login');
                 setTimeout(() => {
                     navigate('/');
                 }, 5000);
@@ -82,10 +54,6 @@ const ChildComponent = () =>{
     }
        //Toggle password anonimity
     const togglePassword = ()=> setShowpassword(!showPassword);
-
-    useEffect(() => {
-        authDispatch({type: CLEAR_MESSAGE})
-    }, [])
 
     return(
         <>
@@ -111,7 +79,7 @@ const ChildComponent = () =>{
                     
                     <p style={{color: '#007AEC', cursor: 'pointer'}}> Forgot Password</p>
                 </div>
-                    <Button name='Sign in' formBtn bigCard authBtn primary />
+                    <Button name={loading ? 'loading....' : 'Sign in'} formBtn bigCard authBtn primary />
                 <div style={{fontSize: '1.3rem', textAlign: 'center', marginTop: '1.6rem'}}>
                     <span style={{fontSize: '1.3rem', textAlign: 'center'}} >Not a member? <span style={{color: '#007AEC', textAlign: 'center'}}><Link to="/signup">Sign Up</Link></span></span>
                 </div>

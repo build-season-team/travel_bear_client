@@ -11,6 +11,7 @@ import SignUp from './pages/authentication/sign-up';
 import Login from './pages/authentication/login';
 import ShortletCard from './components/UI/ShortletCard';
 import ErrorPage from './components/UI/404page'
+import LandingPage from './pages/landingPage';
 import { AuthContext } from './store/authContext/AuthProvider';
 
 
@@ -20,20 +21,13 @@ import { AuthContext } from './store/authContext/AuthProvider';
 function App() {
 
   const {authState: {isloggedIn}} = useContext(AuthContext);
+  
   return (
     <div className="App">
       
       <Router >
         <Routes>
-          <Route path='/nav' element={<div>
-            <Header />
-            <HeroSection />
-            {/* <SearchBar /> */}
-            <ShortletCard />
-             <Footer />
-             <Update />
-          </div> } />
-          <Route path='/' element={<div>hello world</div>} />
+          <Route path='/' element={<LandingPage />} />
           { <Route path='/signup' element={<SignUp />} />}
           <Route path='/login' element={<Login />} />
           <Route path='*' element={<ErrorPage />} />

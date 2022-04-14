@@ -1,9 +1,7 @@
 import { LOGIN_FAIL, LOGIN_LOADING, LOGIN_SUCCESS } from "../../../constants/actionTypes";
 import axiosInstance from "../../../utils/axiosInstance";
 
-export default ({email, password}) =>
-  (dispatch) =>
-  async (onSuccess) => {
+export default ({email, password}) =>(dispatch) => async (onSuccess) => {
     dispatch({
       type: LOGIN_LOADING,
     });
