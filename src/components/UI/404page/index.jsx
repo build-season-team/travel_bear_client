@@ -1,5 +1,4 @@
 
-import ReactDOM from 'react-dom';
 import './Errorpage.css'
 import ErrorImage from '../../../assets/images/404_Error.png'
 import Header from '../Header'
