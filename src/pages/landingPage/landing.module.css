@@ -50,9 +50,9 @@
 .buttonHolder{
     display: flex;
     width: 55rem;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 1rem;
+    gap: 2rem;
 }
 
 .shortletContainer {
@@ -93,6 +93,7 @@
         flex-direction: column;
         justify-content: space-around;
         height: 20rem;
+        width: 100%;
     }
 
     .topbody p{
@@ -121,6 +122,26 @@
         text-align: center;
 
     }
+
+    .buttonHolder{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 1rem;
+    gap: 1.5rem;
+    overflow-x: scroll;
+    
+}
+
+    .buttonHolder {
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+    }
+    .buttonHolder::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+
+
 
 }
 

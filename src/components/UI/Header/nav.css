@@ -36,7 +36,6 @@ a, a.link:visited, a.visited{
 } */
 
 .macro{
-    margin-right: 2rem;
     display: flex;
     align-items: center;
 }
@@ -100,7 +99,7 @@ a, a.link:visited, a.visited{
 
 .drop-menu ul {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-top: 10rem;
     justify-content: center;
     flex-direction: column;
