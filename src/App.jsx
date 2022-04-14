@@ -7,6 +7,7 @@ import Divider from './components/UI/Divider';
 import ShortletCard from './components/UI/ShortletCard';
 import ErrorPage from './components/UI/404page';
 import FormInput from './components/UI/FormInput/Index';
+import Sidebar from './components/Sidebar/index'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             
             </div>}></Route>
             <Route path='/404' element={<ErrorPage />}></Route>
+            <Route path='/Sidebar' element={<Sidebar/>}></Route>
         </Routes>
       </Router>
     </div>
