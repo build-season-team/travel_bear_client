@@ -52,8 +52,11 @@
     width: 55rem;
     justify-content: flex-start;
     padding: 1rem;
-    gap: 2rem;
 }
+
+.buttonHolder div {
+        margin-right: 2rem;
+    }
 
 .shortletContainer {
     display: flex;
@@ -133,10 +136,13 @@
     width: 100%;
     justify-content: flex-start;
     padding: 1rem;
-    gap: 1.5rem;
     overflow-x: scroll;
     
-}
+    }
+
+    .buttonHolder div {
+        margin-right: 1.5rem;
+    }
 
     .buttonHolder {
         -ms-overflow-style: none;  /* Internet Explorer 10+ */
