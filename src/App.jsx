@@ -9,6 +9,8 @@ import Update from './components/Update/update';
 import Nav from './components/UI/Header/nav';
 import SignUp from './pages/authentication/sign-up';
 import Login from './pages/authentication/login';
+import ShortletCard from './components/UI/ShortletCard';
+import ErrorPage from './components/UI/404page'
 import LandingPage from './pages/landingPage';
 import ErrorPage from './components/UI/404page'
 import { AuthContext } from './store/authContext/AuthProvider';
