@@ -38,7 +38,7 @@
     }
     
     .hero_section_background{
-        height: 100%;
+        min-height: 80vh;
         padding: 10.2rem 1.9rem 0 1.9rem;
         background-repeat: no-repeat;
     }
