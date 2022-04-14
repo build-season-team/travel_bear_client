@@ -2,7 +2,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
 import SignUp from './pages/authentication/sign-up';
 import Login from './pages/authentication/login';
-import LandingPage from './pages/landingPage';
+import LandingPage from './pages/landingPage/Index';
 import ErrorPage from './components/UI/404page';
 
 
