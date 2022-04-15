@@ -50,8 +50,8 @@ input {
 }
 
 .App {
- max-width: 100%;
- margin: 0 auto;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 
