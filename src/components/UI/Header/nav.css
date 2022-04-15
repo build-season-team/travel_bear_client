@@ -318,7 +318,8 @@ a, a.link:visited, a.visited{
         align-items: flex-start;
         justify-content: center;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1rem;
+        margin-top: 3rem;
     }
 
  
