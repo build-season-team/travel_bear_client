@@ -9,15 +9,13 @@ import Update from './components/Update/update';
 import Nav from './components/UI/Header/nav';
 import SignUp from './pages/authentication/sign-up';
 import Login from './pages/authentication/login';
-<<<<<<< HEAD
-import UploadShortlet from './pages/UploadShortlet/UploadShortlet'
+import UploadShortlet from './pages/UploadShortlet/ConfirmUpload'
 import FileUpload from './components/UI/FileUpload/FileUpload';
-=======
 import ShortletCard from './components/UI/ShortletCard';
 import { AuthContext } from './store/authContext/AuthProvider';
-
-
->>>>>>> 26441760453af63ca913f6d49e0d4e73c2a30a25
+import ConfirmPost from './pages/ConfirmPost/ConfirmPost';
+import SubHeader from './pages/Dashboard/components/Header/Header'
+import SideBar from './pages/Dashboard/components/SideBar/SideBar'
 
 
 
@@ -42,6 +40,9 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/upload' element={<UploadShortlet />} />
           <Route path='/file' element={<FileUpload/>} />
+          <Route path='/confirm-post' element={<ConfirmPost/>} />
+          <Route path='sub-header' element={<SubHeader/>} />
+          <Route path='sidebar' element={<SideBar/>} />
         </Routes>
       </Router>
     </div>
