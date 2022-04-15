@@ -86,8 +86,8 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                     <div className="right mini_btn ">
                         {!isLoggedIn ? 
                             <>
-                                <Button name='Sign Up' onClick={() => onclick('/signup')} navBtn primary link='/auth' />           
-                                <Button name='Log In' onClick={() => onclick('/login')} navBtn secondary link='/login' />
+                                <Button name='Sign Up' bigCard onClick={() => onclick('/signup')} navBtn primary link='/auth' />           
+                                <Button name='Log In' bigCard onClick={() => onclick('/login')} navBtn secondary link='/login' />
                             </>
                             :
                             <Button name='Log Out' onClick={() => onclick('/login')} navBtn secondary link='/login' />}
