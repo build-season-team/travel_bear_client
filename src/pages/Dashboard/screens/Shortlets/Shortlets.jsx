@@ -3,7 +3,9 @@ import './Shortlets.css'
 
 const Shortlets = () => {
   return (
-    <div>Shortlets</div>
+    <div>Shortlets
+    
+    </div>
   )
 }
 

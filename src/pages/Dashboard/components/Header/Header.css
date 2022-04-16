@@ -15,7 +15,17 @@
 }
 
 input{
-    padding: 1.3rem;
+    padding: 1rem;
+    outline: none;
+}
+
+.input_box{
+    height: 56px;
+    padding-top: .6rem 9rem;
+}
+
+.input_box:active{
+    /* outline: ; */
 }
 
 .header_profile_items{

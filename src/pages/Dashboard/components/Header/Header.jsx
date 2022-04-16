@@ -21,26 +21,26 @@ const SubHeader = () => {
   return (
       <>
       
-    <div className='header_nav'>
-        <div className='header_search'>
-            <div className='input_box'>
-                <input className='search_box_input'  onChange={onInputChange}  placeholder={'Search by type, name'} />
-                <Button  className='btn' primary name='' iconPosition='right' icon={SearchIcon} />
+        <div className='header_nav'>
+            <div className='header_search'>
+                <div className='input_box'>
+                    <input className='search_box_input' onChange={onInputChange}  placeholder={'Search by type, name'} />
+                    <Button  className='btn' primary name='' iconPosition='right' icon={SearchIcon} />
+                </div>
             </div>
-        </div>
 
-        <div className='header_profile_items'>
-            <img className='noti_bell' src={NotificationBell} alt="Notificaation bell" />
-            
-            <div className='user_id'>
-                <div className='user_name'>Hi, Victor</div>
-                <img className='dropdown_svg' src={DropDownIcon} alt="dropdown image" />
-                <div className='avatar'></div>
+            <div className='header_profile_items'>
+                <img className='noti_bell' src={NotificationBell} alt="Notificaation bell" />
+                
+                <div className='user_id'>
+                    <div className='user_name'>Hi, Victor</div>
+                    <img className='dropdown_svg' src={DropDownIcon} alt="dropdown image" />
+                    <div className='avatar'></div>
+                </div>
+                
             </div>
             
         </div>
-        
-    </div>
 
     </>
   )

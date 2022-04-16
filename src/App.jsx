@@ -9,13 +9,12 @@ import Update from './components/Update/update';
 import Nav from './components/UI/Header/nav';
 import SignUp from './pages/authentication/sign-up';
 import Login from './pages/authentication/login';
-import UploadShortlet from './pages/UploadShortlet/ConfirmUpload'
+import UploadShortlet from './pages/UploadShortlet/UploadShortlet'
 import FileUpload from './components/UI/FileUpload/FileUpload';
 import ShortletCard from './components/UI/ShortletCard';
 import { AuthContext } from './store/authContext/AuthProvider';
-import ConfirmPost from './pages/ConfirmPost/ConfirmPost';
-import SubHeader from './pages/Dashboard/components/Header/Header'
-import SideBar from './pages/Dashboard/components/SideBar/SideBar'
+
+import Dashboard from './pages/Dashboard';
 
 
 
@@ -39,10 +38,10 @@ function App() {
           { <Route path='/signup' element={<SignUp />} />}
           <Route path='/login' element={<Login />} />
           <Route path='/upload' element={<UploadShortlet />} />
-          <Route path='/file' element={<FileUpload/>} />
-          <Route path='/confirm-post' element={<ConfirmPost/>} />
-          <Route path='sub-header' element={<SubHeader/>} />
-          <Route path='sidebar' element={<SideBar/>} />
+
+          {/* Dashboard Routing */}
+          <Route path="/dashboard/:route" element={<Dashboard />} />
+        <Route path="/dashboard/:route/:sub" element={<Dashboard />} />
         </Routes>
       </Router>
     </div>
