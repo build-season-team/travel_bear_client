@@ -35,7 +35,7 @@ function App() {
              <Update />
           </div> } />
           <Route path='/' element={<div>hello world</div>} />
-          { <Route path='/signup' element={<SignUp />} />}
+          <Route path='/signup' element={<SignUp />} />
           <Route path='/login' element={<Login />} />
           <Route path='/upload' element={<UploadShortlet />} />
           <Route path='confirm' element={ <ConfirmPost/> } />
