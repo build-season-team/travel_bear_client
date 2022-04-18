@@ -140,6 +140,22 @@
   .wallet_activities p{
     font-size: 2.4rem;
   }
+
+  .all_activities{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    border-bottom-left-radius: .9rem;
+    border-bottom-right-radius: .9rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .all_activities img{
+    width: 30%;
+  }
   /* Tab Content Styles */
   /* .TabContent {
     font-size: 1.4rem;

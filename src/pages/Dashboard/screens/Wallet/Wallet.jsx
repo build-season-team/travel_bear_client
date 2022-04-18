@@ -43,11 +43,17 @@ const Wallet = () => {
 
           </div>
         </TabContent>
-        <TabContent className= {classes.nav_tab_content1} id="tab2" activeTab={activeTab}>
-          <div className={classes.withdrawal_container}>
-              <img src={Piggy} alt="piggy bank icon" />
-              <p>Your money is temporarily being saved on our platform, you can add <br /> new bank to be able to withdraw your money.</p>
-              <Button primary name='Add new bank' />
+        <TabContent  id="tab2" activeTab={activeTab}>
+          <div className= {classes.nav_tab_content1} >
+            <div className={classes.withdrawal_container}>
+                <img src={Piggy} alt="piggy bank icon" />
+                <p>Your money is temporarily being saved on our platform, you can add <br /> new bank to be able to withdraw your money.</p>
+                <Button primary name='Add new bank' />
+            </div>
+          </div>
+          
+          <div>
+            
           </div>
         </TabContent>
         
@@ -61,7 +67,10 @@ const Wallet = () => {
           <div><Button formBtn name='Clear' /></div>
         </div>
         <div>
-          ds
+          <div  className={classes.all_activities}>
+            <img src={ Activities } alt="" />
+            <p>All your activities will show here.</p>
+          </div>
         </div>
       </div>
     </>

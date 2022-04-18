@@ -21,11 +21,11 @@ input{
 
 .input_box{
     height: 56px;
-    padding-top: .6rem 9rem;
+    padding-top: .6rem;
 }
 
-.input_box:active{
-    /* outline: ; */
+.input_box:last-child{
+    padding-right: .2rem;
 }
 
 .header_profile_items{
@@ -35,7 +35,6 @@ input{
     justify-content: flex-end;
     margin-right: 6rem;
 }
-
 
 .noti_bell{
     padding-right: 2.9rem;

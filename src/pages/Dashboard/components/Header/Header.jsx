@@ -25,7 +25,7 @@ const SubHeader = () => {
             <div className='header_search'>
                 <div className='input_box'>
                     <input className='search_box_input' onChange={onInputChange}  placeholder={'Search by type, name'} />
-                    <Button  className='btn' primary name='' iconPosition='right' icon={SearchIcon} />
+                    <Button className='btn' primary name='' iconPosition='right' icon={SearchIcon} />
                 </div>
             </div>
 
