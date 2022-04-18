@@ -15,7 +15,7 @@ import ShortletCard from './components/UI/ShortletCard';
 import { AuthContext } from './store/authContext/AuthProvider';
 
 import Dashboard from './pages/Dashboard';
-
+import ConfirmPost from './pages/ConfirmPost/ConfirmPost'
 
 
 function App() {
@@ -38,6 +38,7 @@ function App() {
           { <Route path='/signup' element={<SignUp />} />}
           <Route path='/login' element={<Login />} />
           <Route path='/upload' element={<UploadShortlet />} />
+          <Route path='confirm' element={ <ConfirmPost/> } />
 
           {/* Dashboard Routing */}
           <Route path="/dashboard/:route" element={<Dashboard />} />

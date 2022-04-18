@@ -13,7 +13,7 @@ import Image5 from '../../assets/images/house5.jpg'
 // import ImageTrial from '../../assets/images/img-trial.jpg'
 
 
-const PostShortlet = () => {
+const ConfirmPost = () => {
   return (
     <>
       <Header/>
@@ -24,7 +24,7 @@ const PostShortlet = () => {
                   Quin Lay Hotel
                 </p>
                 <div className='location_desc'>Location: <span> Enugu </span></div>
-                <div className='amount' >N 45,000</div>
+                <div className='amount'>N 45,000</div>
             </div>
             
             <div className='link_to'>
@@ -65,4 +65,4 @@ const PostShortlet = () => {
   )
 }
 
-export default PostShortlet
+export default ConfirmPost

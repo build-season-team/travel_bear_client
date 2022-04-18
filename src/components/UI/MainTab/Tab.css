@@ -1,5 +1,5 @@
 /* Tab Container */
-.Tabs {
+.tabs {
     width: 100%;
     height: auto;
     min-height: 400px;
@@ -44,16 +44,7 @@
     /* border-bottom-left-radius: 2rem;
     border-top-left-radius: 2rem; */
   }
-   
-  ul.nav li:last-child {
-    /* border-bottom-right-radius: 2rem;
-    border-top-right-radius: 2rem; */
-  }
-   
-  /* ul.nav li:hover {
-    background: #80BCF5;
-  } */
-   
+
   ul.nav li.active {
     color: #007AEC;
     border-bottom: 2px solid #007AEC;

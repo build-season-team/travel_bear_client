@@ -8,7 +8,7 @@ const MainTab = () => {
   const [activeTab, setActiveTab] = useState("tab1");
  
   return (
-    <div className="Tabs">
+    <div className="tabs">
       <ul className="nav">
         <TabNavItem title="Description" id="tab1" activeTab={activeTab} setActiveTab={setActiveTab}/>
         <TabNavItem title="House Rules" id="tab2" activeTab={activeTab} setActiveTab={setActiveTab}/>
