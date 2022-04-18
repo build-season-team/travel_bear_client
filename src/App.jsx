@@ -23,6 +23,7 @@ function App() {
   const {authState: {isloggedIn}} = useContext(AuthContext);
   return (
     <div className="App">
+
       
       <Router >
         <Routes>
@@ -43,6 +44,7 @@ function App() {
           {/* Dashboard Routing */}
           <Route path="/dashboard/:route" element={<Dashboard />} />
         <Route path="/dashboard/:route/:sub" element={<Dashboard />} />
+        <Route path='/upload_input' element={<FileUpload />} />
         </Routes>
       </Router>
     </div>

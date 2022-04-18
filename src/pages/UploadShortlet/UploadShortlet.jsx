@@ -16,8 +16,8 @@ const UploadShortlet = () => {
                     <p className='shortlet_info'>Shortlet Information</p>
                     <p className='shortlet_sub_info'>Kindly provide us with the correct details as required below.</p>
 
-                    <form action="">
-                        <div className='house_details'>
+                    <form>
+                        {/* <div className='house_details'>
                             <div className='form_input'>
                                 <FormInput placeholder='House Title' />
                             </div>
@@ -25,9 +25,9 @@ const UploadShortlet = () => {
                                 <FormInput placeholder='Address' />
                             </div>
                             
-                        </div>
+                        </div> */}
 
-                        <div className='house_details'>
+                        {/* <div className='house_details'>
                             <div className='form_input'>
                                 <FormInput placeholder='Enter State' />
                             </div>
@@ -37,39 +37,38 @@ const UploadShortlet = () => {
                             </div>
                             
                             
-                        </div>
-                        <div className='house_details1'>
+                        </div> */}
+                        {/* <div className='house_details1'>
                             <FormInput placeholder='Enter Amount' />
-                        </div>
+                        </div> */}
                         
 
-                        <p className='house_condition'>
+                        {/* <p className='house_condition'>
                             What condition best describes your shortlet?
-                        </p>
+                        </p> */}
                         
                         <div className='radio_input'>
-                            {/* <FormInput type={'radio'} label={'fdf'} />
-                            <FormInput type={'radio'} label={'fdf'} /> */}
+                            
 
-                            <input type="radio" id="good" name="fav_language" value="HTML"/>
-                              <label for="good">Good</label>
-                              <input type="radio" id="excellent" name="fav_language" value="CSS" />
+                            <input type="radio" id="good" name="good" value="good"/>
+                             <label for="good">Good</label>
+                              <input type="radio" id="excellent" name="excellent" value="excellent" />
                               <label for="excellent">Excellent</label>
-                              <input type="radio" id="others" name="fav_language" value="JavaScript" />
+                              <input type="radio" id="others" name="others" value="others" />
                               <label for="others">Others</label>
                         </div>
                         
-                        <div className='description_input'>
+                        {/* <div className='description_input'>
                         <FormInput placeholder='Brief description of the house condition' />
-                        </div>
+                        </div> */}
 
-                        <div className='description_input'>
+                        {/* <div className='description_input'>
                         <FormInput placeholder='List the house rules and each can be seperated with comma i.e. no repainting , no re-adjustments' />
-                        </div>
+                        </div> */}
                         
                         
 
-                        <div className='upload_images'>
+                        {/* <div className='upload_images'>
                             <p className='upload_images_Box'>
                                 Upload Images
                             </p>
@@ -81,10 +80,10 @@ const UploadShortlet = () => {
                             <FormInput type='file' style={{width: "20%"}} />
                             </div> 
                             
-                        </div>
-                        <div className='btn'>
+                        </div> */}
+                        {/* <div className='btn'>
                             <Button primary name='Proceed' />
-                        </div>
+                        </div> */}
                         
                     </form>
                 </div>

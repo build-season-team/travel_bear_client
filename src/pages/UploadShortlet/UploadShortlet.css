@@ -48,6 +48,8 @@ p{
     margin-bottom: 1rem;
 }
 .radio_input{
+    display: flex;
+    align-items: center;
     margin-bottom: 1.5rem;
 }
 
@@ -87,12 +89,6 @@ p{
     
 }
 
-/* .link_to span:hover{
-    flex-direction: start;
-    margin-left: -1rem ;
-    transition: ease-out 500ms;
-
-} */
 
 .link_to_link{
     color: #007AEC;
