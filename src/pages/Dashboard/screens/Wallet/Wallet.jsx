@@ -28,7 +28,10 @@ const Wallet = () => {
       </ul>
  
       <div>
-        <TabContent className= {classes.nav_tab_content} id="tab1" activeTab={activeTab}>
+        <TabContent id="tab1" activeTab={activeTab}>
+          <div>
+
+          
           <div className={classes.wallet_container} >
 
               <div className={classes.available_shortlet}>
@@ -42,6 +45,9 @@ const Wallet = () => {
               </div>
 
           </div>
+          </div>
+
+
         </TabContent>
         <TabContent  id="tab2" activeTab={activeTab}>
           <div className= {classes.nav_tab_content1} >
@@ -59,20 +65,21 @@ const Wallet = () => {
         
       </div>
 
-      
+        
+
     </div>
-      <div>
-        <div className={classes.wallet_activities}>
-          <p>Activities</p>
-          <div><Button formBtn name='Clear' /></div>
-        </div>
-        <div>
-          <div  className={classes.all_activities}>
-            <img src={ Activities } alt="" />
-            <p>All your activities will show here.</p>
+    <div>
+                <div className={classes.wallet_activities}>
+                  <p>Activities</p>
+                  <div><Button formBtn name='Clear' /></div>
+                </div>
+                <div>
+                  <div  className={classes.all_activities}>
+                    <img src={ Activities } alt="" />
+                    <p>All your activities will show here.</p>
+                  </div>
+              </div> 
           </div>
-        </div>
-      </div>
     </>
   );
 };

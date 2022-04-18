@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import FooterWrap from '../../components/UI/Footer'
 import Header from '../../components/UI/Header'
 import MainTab from '../../components/UI/MainTab/MainTab'
+import Button from '../../components/UI/Button/index'
 import './ConfirmPost.css'
 
 import Image1 from '../../assets/images/house1.jpg'
@@ -56,7 +57,9 @@ const ConfirmPost = () => {
               
           </div>
           <MainTab />
-
+          <div>
+          <Button primary name='Publish' />
+          </div>
         </div>
         
       
