@@ -1,0 +1,222 @@
+.upload_shortlet{
+    padding: 2rem 5rem;
+    width: 100%;
+    display: flex;
+    margin-top: 5rem;
+    justify-content: space-between;
+}
+
+.upload_form{
+    width: 50%;
+}
+
+.upload_form p{
+    padding-left: 0;
+}
+
+.shortlet_info{
+    color: #FC980F;
+    font-size: 3.2rem;
+    font-weight: 500;
+    padding-left: 0;
+}
+
+.shortlet_sub_info{
+    margin-bottom: 4.6rem;
+    font-size: 2rem;
+    color: #2B2A2A;
+    padding-left: 0;
+}
+
+.house_details{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.house_details1{
+    margin-top: 1.4rem;
+    width: 100%;
+}
+
+.house_condition{
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding-left: 0;
+    margin-top: 4.6rem;
+    margin-bottom: 1rem;
+}
+.radio_input{
+    display: flex;
+    align-items: center;
+    justify-content: sp;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.radio_input > input{
+    margin-left: 3rem;
+}
+
+.radio_input > input:first-child{
+    margin-left: 0rem;
+}
+
+
+.radio_input > label{
+    margin-left: 1rem;
+    color: #CCCCCC;
+}
+
+.form_input{
+    width: 48%;
+    margin-bottom: 2.4rem;
+}
+
+.description_input{
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.upload_images_Box{
+    padding-left: 0;
+    font-size: 3.2rem;
+    font-weight: 500;
+    margin-top: 7rem;
+}
+
+.image_details{
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 3.6rem;
+}
+
+.link_to{
+    color: #007AEC;
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.link_to:hover{
+    color: #55A6F2;
+    margin-left: -1rem;
+    transition: ease-out 1000ms;
+    
+}
+
+
+.link_to_link{
+    color: #007AEC;
+    font-size: 2rem;
+}
+
+.link_to_link:hover{
+    flex-direction: start;
+    margin-right: 1rem;
+    transition: ease-out 1000ms;
+}
+
+.btn{
+    margin:  2.8rem 0 9rem 0;
+}
+
+textarea{
+    border-radius: 1rem;
+    border: 1px solid #676767;
+    width: 100%;
+    padding-top: 2rem;
+    padding-left: 1.8rem;
+}
+
+textarea:active{
+    outline: #007AEC;
+
+}
+
+
+@media screen and (min-width: 150px) and (max-width: 667px) {
+    .upload_shortlet{
+        padding: 2rem 3rem;
+        width: 100%;
+        display: flex;
+        margin-top: 7rem;
+        justify-content: center;
+    }
+
+    .upload_form{
+        width: 80%;
+    }
+
+    .link_to{
+        color: #007AEC;
+        font-size: 1.4rem;
+        
+    }
+
+    .house_details{
+        display: block;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .form_input{
+        width: 100%;
+        margin-bottom: 2.4rem;
+    }
+
+    .description_input{
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    .house_details1{
+        width: 100%;
+    }
+    
+}
+
+@media screen and (min-width: 668px) and (max-width: 969px) {
+    
+    .upload_shortlet{
+        padding: 2rem 3rem;
+        width: 100%;
+        display: flex;
+        margin-top: 7rem;
+        justify-content: center;
+    }
+
+    .upload_form{
+        width: 90%;
+    }
+
+
+    .link_to{
+        color: #007AEC;
+        font-size: 1.4rem;
+        
+    }
+
+    .house_details{
+        display: block;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .form_input{
+        width: 100%;
+        margin-bottom: 2.4rem;
+    }
+
+    .description_input{
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    .house_details1{
+        width: 100%;
+    }
+    
+}
+
