@@ -26,6 +26,7 @@ const FileUpload = props => {
              ref={hiddenFileInput}
              onChange={handleChange}
              style={{display:'none'}} 
+             multiple
       /> 
 
       <p>

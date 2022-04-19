@@ -20,7 +20,7 @@
     padding: 4rem 3rem;
 }
 
-ul{
+.side_bar ul{
     margin-top: 4rem;
 }
 
@@ -31,11 +31,9 @@ ul{
     font-size: 1.6rem;
 }
 
-.li_items :active{
-    
-}
 
-ul li{
+
+.side_bar ul li{
     cursor: pointer;
 }
 
