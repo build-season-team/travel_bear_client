@@ -37,7 +37,7 @@ const FormInput = ({id, label, text, active, required, disabled, type, icon, err
               type={type} 
               id={id} 
               placeholder={placeholder}
-              value={form[name] ? form[name] : ''}
+              value={form?.[name] ? form[name] : ''}
               disabled={disabled ? true : false}
               required={required ? true : false}
               onChange={(e) =>{
@@ -64,7 +64,7 @@ const FormInput = ({id, label, text, active, required, disabled, type, icon, err
             {icon && <span className={classes.icon}> {icon} </span>}
             {valid && <span className={classes.error}> {valid === null ? null : valid === true ? <img src= { CheckMark } alt="" /> : <img src= { QuestionIcon } alt="" />} </span>}
           </div>
-      {errors[name] && <p className={`${classes.some_copy} ${textColor ? classes[textColor] : ''}`}>{errors[name]}</p>}
+      {errors?.[name] && <p className={`${classes.some_copy} ${textColor ? classes[textColor] : ''}`}>{errors[name]}</p>}
 
           
       </div>
