@@ -22,9 +22,7 @@
     list-style: none;
 }
 
-.nav .right > * {
-    margin: 0px;
-}
+
 
 a, a.link:visited, a.visited{
     text-decoration: none;
@@ -36,7 +34,6 @@ a, a.link:visited, a.visited{
 } */
 
 .macro{
-    margin-right: 2rem;
     display: flex;
     align-items: center;
 }
@@ -100,7 +97,7 @@ a, a.link:visited, a.visited{
 
 .drop-menu ul {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-top: 10rem;
     justify-content: center;
     flex-direction: column;
@@ -285,10 +282,12 @@ a, a.link:visited, a.visited{
     }
 
     .mini_btn{
-        margin-top: 3rem;
-        gap: 1.5rem;
-        align-items: center;
+        margin: 2rem;
 
+    }
+
+    .mini_btn div {
+        margin: 1rem 0;
     }
 /* important aspect */
     .nav_Style{
@@ -298,12 +297,12 @@ a, a.link:visited, a.visited{
     .logo-mini-container {
         /* display: block; */
         z-index: 10;
-        margin-left: 1.8rem;
     }
 
     .macro{
         display: none;
     }
+
 
     .logo-mini{
         width: 120px;
@@ -319,7 +318,8 @@ a, a.link:visited, a.visited{
         align-items: flex-start;
         justify-content: center;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1rem;
+        margin-top: 3rem;
     }
 
  

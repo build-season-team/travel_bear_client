@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import classes from './FormInput.module.css'
 
 
@@ -8,7 +8,7 @@ import QuestionIcon from '../../../assets/icons/question.svg'
 
 
 
-const FormInput = ({id, label, text, active, required, disabled, type, icon, errors, success, iconPosition, placeholder, name, form, onChange,
+const FormInput = ({id, label, text, active, required, disabled, type, icon, errors, success, pattern, iconPosition, placeholder, name, form, onChange, onBlur,
   ...props }) => {
 
     let emailRegex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
@@ -43,13 +43,16 @@ const FormInput = ({id, label, text, active, required, disabled, type, icon, err
               onChange={(e) =>{
                   onChange(e, name);
               } }
+              pattern={pattern ? pattern : null}
               label={label}            
               icon={icon}
               success={success}
               onFocus={() => setBorderColor('border__blue')}
-              onBlur = {()=>{
+              onBlur = {(e)=>{
                 setBorderColor(null);
                 if(value === '') setValid(null);
+                onBlur(e, name)
+
               }}
               {...props}
             />
@@ -59,7 +62,7 @@ const FormInput = ({id, label, text, active, required, disabled, type, icon, err
 
           
             {icon && <span className={classes.icon}> {icon} </span>}
-            <span className={classes.error}> {valid === null ? null : valid === true ? <img src= { CheckMark } alt="" /> : <img src= { QuestionIcon } alt="" />} </span>
+            {valid && <span className={classes.error}> {valid === null ? null : valid === true ? <img src= { CheckMark } alt="" /> : <img src= { QuestionIcon } alt="" />} </span>}
           </div>
       {errors?.[name] && <p className={`${classes.some_copy} ${textColor ? classes[textColor] : ''}`}>{errors[name]}</p>}
 

@@ -71,7 +71,6 @@ input[type=password]{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 6.3rem 8.5rem;
     height: auto;
     width: 61rem;
     background: #FFFFFF;

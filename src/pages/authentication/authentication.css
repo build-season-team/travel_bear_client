@@ -3,10 +3,10 @@
 
 .auth__page {
     max-height: 100vh;
+    
 }
 
 .page__header {
-    margin-bottom: 12.5rem;
     box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.05);
 }
 
@@ -110,8 +110,13 @@ input[type=password]{
 }
 
 .page {
-    height:fit-content;
     width: 100vw;
+    background: url('../../assets//images/Frame.png');
+    background-size: cover;
+    background-position: bottom;
+    min-height: 93vh;
+    padding: 5rem 0 8rem 0;
+    margin-top: 1rem;
 }
 
 .page > img {
@@ -157,7 +162,13 @@ input[type=password]{
     color: red;
 }
 
-@media screen and (min-width: 0px) and (max-width: 667px) {
+@media screen and (min-width: 0px) and (max-width: 900px) {
+    .page {
+        background: none;
+        padding: 15rem 0 8rem 0;
+        margin-top: 1rem;
+    }
+
     .page-illustration img{
         display: none;
     } 
