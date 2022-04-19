@@ -1,14 +1,6 @@
 
+
 /* password input*/
-
-.auth__page {
-    max-height: 100vh;
-    
-}
-
-.page__header {
-    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.05);
-}
 
 .label{
     padding-left: 0rem;
@@ -33,21 +25,14 @@ input[type=password]{
     border: 1px solid #2196F3;
 } */
 
-.border__blue {
-    border: 1px solid var(--color-primary) !important;
-}
-
 .form-item{
     width: 100%;
-    margin-top: -3rem;
+    margin-top: 2.4rem;
 }
 
 .form-group-item{
-    border: 1px solid #858585;
-    border-radius: 1rem;
     width: 100% ;
     position: relative;
-    padding: .5rem 1rem;
 }
 
 .form-item input {
@@ -65,26 +50,46 @@ input[type=password]{
     right: 7%;
 }
 
+/* .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    padding: 6.3rem 8.5rem;
+    height: auto;
+    left: 0rem;
+    top: 10.55rem;
+    background: #FFFFFF;
+    box-shadow: 0px 1rem 6.4rem rgba(0, 0, 0, 0.05);
+    border-radius: 2rem; */
+    /* text-align: center; */
+    /* overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+} */
+
 .box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5.3rem;
     height: auto;
     width: 61rem;
     background: #FFFFFF;
     box-shadow: 0px 1rem 6.4rem rgba(0, 0, 0, 0.05);
     border-radius: 2rem;
     transition: all 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-    margin: auto;
+    margin: 5rem auto;
 }
 
-.box a {
+.box a:hover {
+    border-color: var(--primary-blue);
+}
+
+/* .box a {
     font-size: 1.4rem;
     color: var(--primary-blue);
     text-decoration: none;
     border-bottom: 1px solid transparent;
-}
+} */
 
 .box a:hover {
     border-color: var(--primary-blue);
@@ -95,7 +100,6 @@ input[type=password]{
     width: calc(490.96px * .9);
     height: calc(430.03px * .9);
     bottom: -10%;
-    overflow: hidden;
 }
 
 
@@ -109,14 +113,18 @@ input[type=password]{
     right: -1rem;
 }
 
-.page {
+
+/* .page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
-    background: url('../../assets//images/Frame.png');
-    background-size: cover;
-    background-position: bottom;
-    min-height: 93vh;
-    padding: 5rem 0 8rem 0;
-    margin-top: 1rem;
+} */
+
+.form_email{
+    width: 100%;
 }
 
 .page > img {
@@ -131,17 +139,19 @@ input[type=password]{
 
 
 .form-control {
+    width: 100%;
     margin-top: 4rem;
     margin-bottom: -3rem;
 }
 
 .agreement{
     display: flex;
+    justify-content: space-between;
     margin-top: 1.4rem;
     margin-bottom: 2.8rem;
 }
 .agreement :last-child{
-    margin-left: 0rem;
+    margin-left: 1rem;
 }
 
 /* .sign-up-form{
@@ -152,27 +162,10 @@ input[type=password]{
     border-radius: 2rem;
 } */
 
-.red__text{
-    /* margin-top: -2rem; */
-    margin-bottom: 0.5rem;
-    padding-left: 0;
-    padding-top: 0;
-    font-size: 11px;
-    font-weight: 400;
-    color: red;
-}
-
-@media screen and (min-width: 0px) and (max-width: 900px) {
-    .page {
-        background: none;
-        padding: 15rem 0 8rem 0;
-        margin-top: 1rem;
-    }
-
+@media screen and (min-width: 0px) and (max-width: 667px) {
     .page-illustration img{
         display: none;
     } 
-
 
 
     .form-control {
@@ -180,7 +173,7 @@ input[type=password]{
     }
 
     .box{
-        width: 90%;
+        width: 100%;
     }
 
     .form-group{
@@ -196,5 +189,9 @@ input[type=password]{
     .page-illustration img{
         display: none;
     } 
+
+    /* .page {
+
+    } */
 
 }

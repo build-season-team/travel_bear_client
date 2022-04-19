@@ -45,11 +45,13 @@ html {
 
 }
 
-/* .App {
-  padding: 1rem;
+input {
+  font-size: 16px !important;
 }
 
-.searchBar{
-  margin-top: 5rem;
+.App {
+  max-width: 100%;
+  overflow-x: hidden;
 }
-} */
+
+

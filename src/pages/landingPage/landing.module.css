@@ -1,0 +1,158 @@
+
+.Acc{
+    width: 100%;
+    height: 162.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 0px;
+   
+}
+
+.bookacc{
+     width: 85%;
+     height: 62.8rem;
+     margin: auto;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+}
+
+.topbody{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 55rem;
+    height: 15.8rem;
+}
+
+.topbody h3{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 3.2rem;
+    line-height: 120%;
+    letter-spacing: -0.002em;
+    color: #F29A23;
+    padding-left: 1rem;
+}
+
+.topbody p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0.002em
+}
+
+.buttonHolder{
+    display: flex;
+    width: 55rem;
+    justify-content: flex-start;
+    padding: 1rem;
+}
+
+.buttonHolder div {
+        margin-right: 2rem;
+    }
+
+.shortletContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+/* .shortletContainer p{
+    display: none;
+} */
+
+
+@media only screen and (max-width: 700px){
+    .Acc{
+        min-width: 100vw;
+        height: 430rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        padding: 0px;
+    }
+
+    .topbody h3 {
+        font-size: 2rem;
+    }
+
+    .bookacc{
+        width: 85%;
+        min-height: 0;
+        margin: auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+   }
+
+    .topbody{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 20rem;
+        width: 100%;
+    }
+
+    .topbody p{
+        padding: 0.5rem;
+        font-size: 1.2rem;
+    }
+    .topbody > p{
+        padding: 0 0rem 3rem 1rem;
+    }
+
+    .shortletContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 180rem;
+        width: 100%;
+    }
+    
+    .shortletContainer p{
+        display: inline-block;
+        font-family: 'Poppins';
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 140%;
+        letter-spacing: 0.002em;
+        text-align: center;
+
+    }
+
+    .buttonHolder{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 1rem;
+    overflow-x: scroll;
+    
+    }
+
+    .buttonHolder div {
+        margin-right: 1.5rem;
+    }
+
+    .buttonHolder {
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+    }
+    .buttonHolder::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+
+
+
+}
+
