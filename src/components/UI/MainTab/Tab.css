@@ -54,9 +54,11 @@
    
   /* Tab Content Styles */
   .TabContent {
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-top: 2rem;
-    text-align: center;
+    padding-left: 0rem;
+    text-align: left;
+    color: #333333;
   }
 
   @media screen and (min-width: 150px) and (max-width: 667px) {
@@ -103,9 +105,9 @@
      
     /* Tab Content Styles */
     .TabContent {
-      font-size: 2rem;
+      font-size: 1rem;
       margin-top: 2rem;
-      text-align: center;
+      text-align: left;
     }
       
   }
