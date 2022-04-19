@@ -89,7 +89,7 @@ const UploadShortlet = () => {
                     
                 </div>
                 <div className='btn'>
-                    <Button primary name='Proceed' />
+                    <Button primary bigCard authBtn  name='Proceed' />
                 </div>
                 
             </form>

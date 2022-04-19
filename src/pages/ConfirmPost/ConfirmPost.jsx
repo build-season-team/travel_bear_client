@@ -57,8 +57,8 @@ const ConfirmPost = () => {
               
           </div>
           <MainTab />
-          <div>
-          <Button primary name='Publish' />
+          <div className='btn_width'>
+          <Button primary bigCard authBtn name='Publish' />
           </div>
         </div>
         
