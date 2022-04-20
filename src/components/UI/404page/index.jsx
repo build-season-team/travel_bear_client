@@ -1,7 +1,7 @@
-import {useState} from 'react';
-import ReactDOM from 'react-dom';
+
 import './Errorpage.css'
 import ErrorImage from '../../../assets/images/404_Error.png'
+import Header from '../Header'
 
 
 function ErrorPage() {
@@ -10,6 +10,7 @@ function ErrorPage() {
 
     
     <div>
+      <Header />
        <div className='Error_page'>
             <img src={ErrorImage} alt="Logo" />
             <h2 className='head_1'>Oops...no page found</h2>

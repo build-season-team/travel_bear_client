@@ -21,7 +21,7 @@
 }
 
 
-img{
+.Error_page img{
     width: 50%;
 }
 
@@ -48,7 +48,7 @@ img{
         line-height: 19.6px;
 
     }
-    img{
+    .Error_page img{
         width: 80%;
     }
 }

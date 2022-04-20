@@ -1,0 +1,214 @@
+/* Tab Container */
+.tabs {
+    width: 100%;
+    min-height: 400px;
+    background: #fff;
+    margin-top: 3.5rem;
+    padding: 2rem 1rem;
+    color: #263238;
+    border-radius: .9rem;
+    @media (max-width: 769px) {
+      padding: 2rem 0;
+    }
+   
+  }
+   
+  /* Tab Navigation */
+  .nav_ul {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #E0E2E7;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 4rem;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+  }
+
+  .nav_ul li{
+    color: #8D8D8D;
+    text-align: left;
+    list-style: none;
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.s;
+  }
+
+  .nav_ul li:active{
+    color: #252F40;
+    border-bottom: 2px solid #007AEC;
+    font-size: 2.4rem;
+    font-weight: 500;
+  }
+
+  .nav_tab_content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4.6rem;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+  }
+
+  /* .nav_tab_content{
+    margin-left: 5rem;
+  } */
+   
+  .nav_ul li:first-child {
+    margin-right: 2rem;
+    /* border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem; */
+  }
+
+   
+  .withdrawal_container{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .withdrawal_container img{
+    width: 25%;
+    margin: 4.6rem 0rem 1rem;
+  }
+
+  .withdrawal_container p{
+    text-align: center;
+  }
+
+ .withdrawal_container button{
+    margin-top: 2rem;
+  }
+
+  .wallet_container{
+    display: flex;
+    margin-top: 4rem;
+    flex-direction: column;
+    justify-content: flex-start !important;
+  }
+
+  .available_shortlet{
+    display: flex;
+    flex-direction: row;
+    margin-left: 4rem;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .available_shortlet p{
+    color:#007AEC;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .available_balance{
+    margin-left: 4rem;
+    margin-top: 2.3rem;
+  }
+
+  .available_balance p{
+    color: #2D76F9;
+    font-size: 1.6rem;
+  }
+
+  .available_balance p:last-child{
+    color: #252F40;
+    margin-top: 1.1rem;
+    font-weight: 500;
+    font-size: 4rem;
+  }
+
+  .wallet_activities{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 4rem;
+    margin-top: 3rem;
+    border-top-left-radius: .9rem;
+    border-top-right-radius: .9rem;
+    border-bottom: 1px solid #E0E2E7;
+    background-color: #fff;
+    align-items: center;
+  }
+
+  .wallet_activities p{
+    font-size: 2.4rem;
+  }
+
+  .all_activities{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    border-bottom-left-radius: .9rem;
+    border-bottom-right-radius: .9rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .all_activities img{
+    width: 30%;
+  }
+  /* Tab Content Styles */
+  /* .TabContent {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    text-align: center;
+  } */
+
+  @media screen and (min-width: 150px) and (max-width: 667px) {
+    .Tabs {
+      margin: 3.5rem auto 1.5rem;
+      padding: 2rem 1rem;
+      color: #E8F0F2;
+      border-radius: 2rem;
+      @media (max-width: 769px) {
+        padding: 2rem 0;
+      }
+     
+    }
+     
+    /* Tab Navigation */
+    .nav_ul {
+      width: 100%;
+      display: flex;
+      border-bottom: 1px solid #E0E2E7;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 4.6rem;
+      @media (max-width: 768px) {
+        width: 90%;
+      }
+    }
+     
+    .nav_ul {
+
+      font-size: 1.2rem;
+    }
+     
+    .nav_ul:first-child {
+      margin-right: 1.9rem;
+    }
+     
+     
+    .nav_ul:active {
+      border-bottom: 2px solid #007AEC;
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+     
+    /* Tab Content Styles */
+    .TabContent {
+      font-size: 2rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+      
+  }
