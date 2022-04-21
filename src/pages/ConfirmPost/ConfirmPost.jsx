@@ -1,7 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import FooterWrap from '../../components/UI/Footer'
-import Header from '../../components/UI/Header'
+import { Link } from 'react-router-dom';
+import { FaAngleLeft } from 'react-icons/fa';
 import MainTab from '../../components/UI/MainTab/MainTab'
 import Button from '../../components/UI/Button/index'
 import './ConfirmPost.css'
@@ -14,10 +13,9 @@ import Image5 from '../../assets/images/house5.jpg'
 // import ImageTrial from '../../assets/images/img-trial.jpg'
 
 
-const ConfirmPost = () => {
+const ConfirmPost = ({setIsSubmitted}) => {
   return (
     <>
-      <Header/>
         <div className='destination_body'>
           <div className='destination_header'>
             <div>
@@ -29,9 +27,8 @@ const ConfirmPost = () => {
             </div>
             
             <div className='link_to'>
-                <span>&#x2039;</span>
-                <Link className='link_to_link' to='/upload' > Back</Link>
-            </div>
+                    <a className='link_to_link' onClick={() => setIsSubmitted(false)} > <span className='upload__icon'><FaAngleLeft  size={24}   /> </span> <span className='upload__text'>Back</span> </a>
+                </div>
             
           </div>
           <div className='image_grid'>
@@ -62,8 +59,6 @@ const ConfirmPost = () => {
           </div>
         </div>
         
-      
-      <FooterWrap/>
     </>
   )
 }

@@ -1,8 +1,7 @@
 .upload_shortlet{
-    padding: 2rem 5rem;
+    padding: 0 5rem;
     width: 100%;
     display: flex;
-    margin-top: 5rem;
     justify-content: space-between;
 }
 
@@ -96,26 +95,51 @@
 .link_to{
     color: #007AEC;
     font-size: 2rem;
-    margin-right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 15%;
 }
 
-.link_to:hover{
+/* .link_to:hover{
     color: #55A6F2;
     margin-left: -1rem;
     transition: ease-out 1000ms;
     
+} */
+
+.upload_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 2rem 5rem;
+    margin-top: 8rem;
 }
 
 
 .link_to_link{
     color: #007AEC;
     font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    
 }
 
-.link_to_link:hover{
-    flex-direction: start;
+.upload__icon {
+    display: block;
+    margin-top: .7rem;
     margin-right: 1rem;
-    transition: ease-out 1000ms;
+    transition: all .3s;
+}
+
+
+
+.link_to_link:hover .upload__icon {
+
+    margin-right: 2rem;
 }
 
 .btn{
@@ -126,7 +150,7 @@ textarea{
     border-radius: 1rem;
     border: 1px solid #676767;
     width: 100%;
-    padding-top: 2rem;
+    padding-top: rem;
     padding-left: 1.8rem;
 }
 
@@ -135,23 +159,27 @@ textarea:active{
 
 }
 
+.upload_arrow {
+    padding: 0;
+}
+
 
 @media screen and (min-width: 150px) and (max-width: 667px) {
     .upload_shortlet{
         padding: 2rem 3rem;
         width: 100%;
         display: flex;
-        margin-top: 7rem;
         justify-content: center;
     }
 
     .upload_form{
-        width: 80%;
+        width: 100%;
     }
 
     .link_to{
         color: #007AEC;
         font-size: 1.4rem;
+        display: none;
         
     }
 
@@ -173,6 +201,33 @@ textarea:active{
 
     .house_details1{
         width: 100%;
+    }
+
+
+    .shortlet_info {
+        font-size: 1.7rem;
+    }
+
+    .upload_header {
+        padding: 2rem 3rem;
+    }
+
+    .shortlet_sub_info{
+        margin-bottom: 4.6rem;
+        font-size: 1rem;
+        color: #2B2A2A;
+        padding-left: 0;
+    }
+
+    .link_to{
+        color: #007AEC;
+        font-size: 1rem;
+        text-align: right;
+        width: 30%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        display: none;
     }
     
 }
