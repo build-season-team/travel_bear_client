@@ -163,6 +163,134 @@
     text-align: center;
   } */
 
+  .initiate_withdrawal_body{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .initiate_withdrawal_body_left{
+    width: 50%;
+    padding: 4rem 3rem;
+    border-right: 1px solid #1A103699;
+  }
+
+  .radio_container p{
+    color: #252F40;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  .radio_input{
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.radio_input > input{
+    margin-left: 3rem;
+}
+
+.radio_input > input:first-child{
+    margin-left: 0rem;
+}
+
+.radio_input >label{
+  padding-left: .5rem;
+  font-size: 1rem;
+}
+
+.choose_bank{
+    border-bottom: 1px solid #e5e5e5;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.choose_bank p{
+    color: #252F40;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.choose_bank_radio{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 1rem;
+    
+    /* align-items: center; */
+}
+
+.choose_bank_radio:last-child{
+  padding-top: rem;
+}
+
+.indivi_radio{
+  display: flex;
+  align-items: center;
+}
+
+.indivi_radio > label{
+  padding-left: .9rem;
+}
+
+.indivi_last{
+  padding-top: 1rem;
+}
+
+.btn_left{
+  padding-top: 2.2rem;
+}
+
+/* styling forf banks */
+
+.initiate_withdrawal_body_right{
+  width: 50%;
+  padding: 4rem 3rem;
+}
+
+.withdrawal_banks{
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.first_bank{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 4.5rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid #E0E2E7;
+}
+
+.user_bank_details{
+  padding-left: 1.6rem;
+  flex: 2;
+}
+
+.user_name{
+  font-size: 1.4rem;
+}
+
+.remove{
+  /* flex: 1; */
+  justify-content: flex-end;
+  color: #FF3B3B;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.second_bank{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.3rem;
+  padding-bottom: 1.6rem;
+}
+
+
   @media screen and (min-width: 150px) and (max-width: 667px) {
     .Tabs {
       margin: 3.5rem auto 1.5rem;

@@ -22,14 +22,14 @@ function App() {
       
       <Router >
         <Routes>
-          <Route path='/nav' element={<div>
+          {/* <Route path='/nav' element={<div>
             <Header />
             <HeroSection />
             <SearchBar />
             <ShortletCard />
              <Footer />
              <Update />
-          </div> } />
+          </div> } /> */}
           <Route path='/' element={<div>hello world</div>} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/login' element={<Login />} />
