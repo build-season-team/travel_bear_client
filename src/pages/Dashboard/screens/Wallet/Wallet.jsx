@@ -10,6 +10,7 @@ import Divider from '../../../../components/UI/Divider';
 // icons
 import ShortletIcon from '../../../../assets/icons/house.svg'
 import Piggy from '../../../../assets/images/piggy.svg'
+import Refund from '../../../../assets/images/refund.svg'
 import Activities from '../../../../assets/images/activities.svg'
 import GTBank from '../../../../assets/images/gt-bank.svg'
 import FirstBank from '../../../../assets/images/first-bank.svg'
@@ -42,9 +43,9 @@ const Wallet = () => {
           
           <div className={classes.wallet_container} >
 
-              <div className={classes.available_shortlet}>
-                <img src={ ShortletIcon } alt="shortlet icon" />
-                <p>Shortlets Available</p>
+              <div className={classes.user_name_wallet}>
+                {/* <img src={ ShortletIcon } alt="shortlet icon" /> */}
+                <p>Maria Nnanna</p>
               </div>
 
               <div className={classes.available_balance}>
@@ -74,6 +75,8 @@ const Wallet = () => {
             : 
 
             <section className={classes.initiate_withdrawal_container}> 
+
+
                 <div className={classes.initiate_withdrawal_body}>
                   
                   {/* Enter amount */}
@@ -131,7 +134,7 @@ const Wallet = () => {
                       <div className={classes.first_bank}>
                         <img src={GTBank} alt="bank_icon" />
                         <div className={classes.user_bank_details}>
-                          <p className={classes.user_name}>Chidimma Chucho</p>
+                          <p className={classes.user_name}>Chidimma Samson</p>
                           <p className={classes.bank_name}>Guarantee Trust Bank</p>
                         </div>
                         <p className={classes.remove}>Remove</p>
@@ -181,7 +184,7 @@ const ActivityCard = () =>{
     <div>
         <div className={classes.wallet_activities}>
           <p>Activities</p>
-          <div><Button formBtn name='Clear' /></div>
+          <div className={classes.clear}>Clear All</div>
         </div>
         <div>
           <div  className={classes.all_activities}>
@@ -196,11 +199,22 @@ const ActivityCard = () =>{
 
 const TransactionHistory = () =>{
   return(
-    <>
+    
         <div>
-          rer
+          
+            <div className={classes.wallet_activities}>
+              <p>Transaction History</p>
+              <div className={classes.clear}>Clear All</div>
+            </div>
+            <div>
+              <div  className={classes.all_activities}>
+                <img src={ Refund } alt="" />
+                <p>No transaction at this time.</p>
+              </div>
+            </div> 
+
         </div>
-    </>
+    
   )
 }
  

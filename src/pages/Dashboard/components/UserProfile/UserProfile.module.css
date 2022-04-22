@@ -1,0 +1,39 @@
+.user_container{
+    display: flex;
+    align-items: center;
+}
+
+.user_image{
+    height: 20rem;
+    width: 20rem;
+    border-radius: .9rem;
+}
+
+.user_details{
+    padding-left: 2rem;
+}
+
+.user_details p:first-child{
+    font-size: 3rem;
+    color: #111827;
+    font-weight: 500;
+}
+
+.user_shortlet_container{
+    /* padding-top: 1rem; */
+}
+
+.user_shortlet{
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.user_shortlet p{
+    font-size: 1.4rem;
+    padding-left: .7rem;
+}
+
+.user_shortlet span{
+    font-weight: 500;
+}

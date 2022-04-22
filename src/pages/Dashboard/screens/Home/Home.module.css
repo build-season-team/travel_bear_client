@@ -1,0 +1,83 @@
+.dashboard_home{
+    display: flex;
+    background-color: #fff;
+    /* justify-content: center; */
+    /* align-items: center; */
+    border-radius: .9rem;
+    margin-top: 2rem;
+}
+
+.user_profile{
+    padding: 6rem 4rem;
+    flex: 1;
+}
+
+.dashboard_home > p{
+    font-size: 1.4rem;
+    color: #007AEC;
+    padding: 6rem 4rem;
+    cursor: pointer;
+}
+
+.big_container{
+    display: flex;
+    min-height: 40rem;
+    padding-top: 2rem;
+    justify-content: space-between;
+}
+
+.medium_container{
+    flex: 2;
+    background-color: #fff;
+    border-radius: .9rem;
+    margin-right: 2rem;
+}
+
+.small_container{
+    flex: 1;
+    background-color: #fff;
+    border-radius: .9rem;
+}
+
+.notification{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 2rem 1.2rem 2rem;
+    border-bottom: 1px solid #E0E2E7;
+}
+
+.notification p{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.notification span{
+    color: #007AEC;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.notification_body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: auto;
+}
+
+.notification_body p{
+    padding-top: padding;
+}
+
+.bank_summary{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bank_summary_title{
+    display: flex;
+    
+}
