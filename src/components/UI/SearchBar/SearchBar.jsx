@@ -9,6 +9,7 @@ import HeartIcon from '../../../assets/images/heart.svg'
 import HouseIcon from '../../../assets/images/house.svg'
 import DropDownIcon from '../../../assets/images/drop-down.svg'
 import SearchIcon from '../../../assets/images/search.svg'
+import { useNavigate } from 'react-router-dom'
 
 
 const SearchBar = () => {
@@ -17,6 +18,7 @@ const SearchBar = () => {
 
     const [value, setValue] = useState('')
     const handleClick = ()=> setSelect({});
+    const navigate = useNavigate()
 
     const onInputChange = (e, key) => {
         setValue(e.target.value)
@@ -50,7 +52,7 @@ const SearchBar = () => {
                     <p>Trips</p>
                 </div>
 
-                <div className='search_box_options1 house'>
+                <div className='search_box_options1 house' onClick={() => navigate('/upload')}>
                     <img src={HouseIcon} alt="a house icon" />
                     <p>Lease Shortlets</p>
                 </div>
