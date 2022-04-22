@@ -1,0 +1,47 @@
+.main{
+    display: flex;
+    flex-direction: row-reverse;
+    height: 2.8rem;
+}
+
+.body{
+    width: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5.5rem;
+}
+ .body img{
+     padding-right: 1.3rem;
+ }
+
+.body p{
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+    color: #007AEC;
+}
+
+@media only screen and (max-width: 900px){
+    .main{
+        height: 1.5rem;
+    };
+
+    .body p{
+    font-family: 'Poppins';
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0.002em;
+    }
+
+    .body{
+        margin: 0;
+    }
+
+    .body img{
+    height: 11.8px;
+    width: 5.3px;
+    padding: 0.12rem;
+    }
+}

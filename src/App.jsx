@@ -8,9 +8,11 @@ import UploadShortlet from './pages/UploadShortlet/UploadShortlet'
 import FileUpload from './components/UI/FileUpload/FileUpload';
 import ShortletCard from './components/UI/ShortletCard';
 import { AuthContext } from './store/authContext/AuthProvider';
+import SearchPage from './pages/SearchPage/search';
 
 import Dashboard from './pages/Dashboard';
-import ConfirmPost from './pages/ConfirmPost/ConfirmPost'
+import ConfirmPost from './pages/ConfirmPost/ConfirmPost';
+import Back from './components/UI/Back/Back';
 
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/upload' element={<UploadShortlet />} />
           <Route path='confirm' element={ <ConfirmPost/> } />
+          <Route path='/search' element={ <SearchPage/> } />
+          <Route path='/back' element={ <Back /> } />
 
           {/* Dashboard Routing */}
           <Route path="/dashboard/:route" element={<Dashboard />} />
