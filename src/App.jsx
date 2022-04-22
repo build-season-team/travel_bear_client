@@ -11,9 +11,12 @@ import { AuthContext } from './store/authContext/AuthProvider';
 
 import Dashboard from './pages/Dashboard';
 import ConfirmPost from './pages/ConfirmPost/ConfirmPost'
+import { useContext } from 'react';
 
 
 function App() {
+
+  const {authState: {isLoggedIn}} = useContext(AuthContext);
 
   
   return (
@@ -23,20 +26,23 @@ function App() {
       <Router >
         <Routes>
           <Route path='/' element={<LandingPage />} />
-          { <Route path='/signup' element={<SignUp />} />}
           <Route path='/login' element={<Login />} />
            <Route path='*' element={<ErrorPage />} />
           
           <Route path='/' element={<div>hello world</div>} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/upload' element={<UploadShortlet />} />
-          <Route path='confirm' element={ <ConfirmPost/> } />
+          { isLoggedIn &&
+            <>
+              <Route path='/upload' element={<UploadShortlet />} />
+              <Route path='confirm' element={ <ConfirmPost/> } />
 
-          {/* Dashboard Routing */}
-          <Route path="/dashboard/:route" element={<Dashboard />} />
-        <Route path="/dashboard/:route/:sub" element={<Dashboard />} />
-        <Route path='/upload_input' element={<FileUpload />} />
+              {/* Dashboard Routing */}
+              <Route path="/dashboard/:route" element={<Dashboard />} />
+              <Route path="/dashboard/:route/:sub" element={<Dashboard />} />
+              <Route path='/upload_input' element={<FileUpload />} />
+            </>
+        }
         </Routes>
       </Router>
     </div>

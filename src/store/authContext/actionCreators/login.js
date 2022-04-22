@@ -11,8 +11,14 @@ export default ({email, password}) =>(dispatch) => async (onSuccess) => {
         password,
       });
 
-      localStorage.setItem("token", res.data?.data?.token);
-      localStorage.setItem("user", res.data?.data?.user);
+      if(res) {
+        localStorage.setItem("token", res.data?.token);
+        localStorage.setItem(
+          "user",
+          JSON.stringify(res.data?.data?.user)
+        );
+      }
+
 
       dispatch({
         type: LOGIN_SUCCESS,

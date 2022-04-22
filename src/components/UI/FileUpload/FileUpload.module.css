@@ -8,6 +8,7 @@
     align-items: center;
     border: 1px dotted #8C9196;
     background-color: #F6F6F7;
+    gap: 1.5rem;
     
 }
 
@@ -16,8 +17,8 @@
     height: 40px;
 }
 
-.file_upload button{
-    margin-top: 1.7rem;
+.file_upload a{
+    /* margin-top: 1.7rem; */
     padding: .8rem 1.6rem;
     border-radius: .4rem;
     border: 1px solid #BABFC3;

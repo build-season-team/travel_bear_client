@@ -1,6 +1,6 @@
 import { CLEAR_MESSAGE, LOGIN_FAIL, LOGIN_LOADING, LOGIN_SUCCESS, REGISTER_FAIL, REGISTER_LOADING, REGISTER_SUCCESS } from "../../../constants/actionTypes";
 
-export default (state, { type, payload }) => {
+const authReducer =  (state, { type, payload }) => {
     switch (type) {
         case REGISTER_LOADING:
             return {
@@ -54,3 +54,5 @@ export default (state, { type, payload }) => {
             return state;
     }
 };
+
+export default authReducer;

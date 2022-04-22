@@ -21,8 +21,6 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
      const navigate = useNavigate();
     const handleClick = ()=> setSelect({});
 
-    console.log(location)
-
 
     // const navigate = useNavigate();
    const onclick = (link) => {
@@ -61,7 +59,7 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                         </ul>
                         :
                          <div className='search_box_options3'>
-                            <div className='search_box_options1 accomo' onClick={()=> handleClick}>
+                            <div className='search_box_options1 accomo' onClick={()=> onclick()}>
                                 <img src={ BuildingIcon } alt="an icon representing a building" />
                                 <p>Book Accomodation</p>
                                 <img src={DropDownIcon} alt=" a dropdown icon" />
@@ -77,7 +75,7 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                                 <p>Trips</p>
                             </div>
 
-                            <div className='search_box_options1 house'>
+                            <div className='search_box_options1 house' onClick={() => onclick('/upload')}>
                                 <img src={HouseIcon} alt="a house icon" />
                                 <p>Lease Shortlets</p>
                             </div>

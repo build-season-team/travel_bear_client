@@ -36,7 +36,6 @@ const landingPage = () => {
                 return (
                   <ShortletCard
                     key={i}
-                    big
                     image={test}
                     rating={4.5}
                     header={"3 bedroom Apartment"}
