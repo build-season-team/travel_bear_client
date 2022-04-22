@@ -1,22 +1,24 @@
 .main{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     height: 2.8rem;
+    width: 15rem;
+    justify-content: flex-end;
 }
 
 .body{
     width: 10rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     margin-right: 5.5rem;
+    
 }
  .body img{
      padding-right: 1.3rem;
  }
 
 .body p{
-    font-family: 'Poppins';
     font-weight: 400;
     font-size: 20px;
     line-height: 140%;
@@ -26,10 +28,9 @@
 @media only screen and (max-width: 900px){
     .main{
         height: 1.5rem;
-    };
+    }
 
     .body p{
-    font-family: 'Poppins';
     font-size: 14px;
     line-height: 140%;
     letter-spacing: 0.002em;
@@ -42,6 +43,6 @@
     .body img{
     height: 11.8px;
     width: 5.3px;
-    padding: 0.12rem;
+    padding: 0;
     }
 }

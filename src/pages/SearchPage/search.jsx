@@ -18,8 +18,10 @@ const search = () => {
       <main>
 
         <div className={classes.sidebar}>
-        <Back className={classes.sidebarBack}/>
-          <p>Search Result for<b>"3bedroom"</b> </p>
+          <div className={classes.side}>
+          <p>Search Result for <br/><b>"3bedroom"</b> </p>
+          <Back className={classes.sidebarBack}/>
+          </div>
           <div className={classes.search_box_input}>
             <div className={classes.input_box}>
               <input
@@ -33,9 +35,13 @@ const search = () => {
 
 
         <div className={classes.mainbar}>
+          <div className={classes.mainbar_header}>
+          <div className={classes.mainbar_headerB}>
           <h1>Search Results</h1>
-          <Back className={classes.mainbarBack}/>
           <p>Visit the most amazing places in Nigeria.</p>
+          </div>
+          <Back className={classes.mainbarBack}/>
+          </div>
           <aside>
           <div className={classes.shortlet}>
             {num.map((cur, i) => {
