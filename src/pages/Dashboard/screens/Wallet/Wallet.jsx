@@ -26,17 +26,15 @@ const Wallet = () => {
     
     <div className={classes.tabs}>
       <ul className={classes.nav_ul} >
-        <li>
-            <TabNavItem title="Wallet" id="tab1" activeTab={activeTab} setActiveTab={setActiveTab}/>
-        </li>
-        <li>
-            <TabNavItem title="Withdrawal" id="tab2" activeTab={activeTab} setActiveTab={setActiveTab}/>
-        </li>
         
+            <TabNavItem title="Wallet" id="tab1" activeTab={activeTab} setActiveTab={setActiveTab}/>
+            <TabNavItem title="Withdrawal" id="tab2" activeTab={activeTab} setActiveTab={setActiveTab}/>
         
       </ul>
  
       <div>
+
+        {/* First tab content */}
         <TabContent id="tab1" activeTab={activeTab}>
           <div>
 
@@ -58,6 +56,7 @@ const Wallet = () => {
 
 
         </TabContent>
+         {/* Second tab content */}
         <TabContent  id="tab2" activeTab={activeTab}>
 
           {!addWithdraw

@@ -18,7 +18,9 @@ const Dashboard = () => {
     <div className={classes.dashboard_screen}> 
       <SideBar />
       <section className={classes.dashboard_sub_screen}>
-          { params.sub ? null : <SubHeader /> }
+          <div className={classes.dash_header}>
+            { params.sub ? null : <SubHeader /> }
+          </div> 
 
           <main className={`${classes.dashboard_main_content} ${classes.main_container})`}>
 
