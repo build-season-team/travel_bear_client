@@ -190,6 +190,7 @@ aside{
          align-items: center;
          justify-content: center;
          margin: 5rem 0 20rem;
+         cursor: pointer;
     }
 
     .see_more p{
@@ -210,6 +211,7 @@ aside{
         background: #232325;
         border: 1px solid #232325;
         border-radius: 8px;
+        cursor: pointer;
     }
 
     .BudgetB{
