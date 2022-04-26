@@ -14,6 +14,8 @@ const Shortlets = () => {
     { value: 'unverified', label: 'Unverified' }
   ]
 
+  // select styling
+
   const styles = {
     menu: (provided, state) => ({
       ...provided,

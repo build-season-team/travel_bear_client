@@ -5,7 +5,8 @@ import TabContent from '../../components/WalletTab/TabContent';
 import TabNavItem from '../../components/WalletTab/TabNavItem';
 import Button from '../../../../components/UI/Button'
 import FormInput from '../../../../components/UI/FormInput/Index';
-import Divider from '../../../../components/UI/Divider';
+import Modal from '../../components/Modal/Modal'
+import Select from 'react-select'
 
 // icons
 import ShortletIcon from '../../../../assets/icons/house.svg'
@@ -14,11 +15,57 @@ import Refund from '../../../../assets/images/refund.svg'
 import Activities from '../../../../assets/images/activities.svg'
 import GTBank from '../../../../assets/images/gt-bank.svg'
 import FirstBank from '../../../../assets/images/first-bank.svg'
-
+import Bank from '../../../../assets/icons/bank.svg'
 
 const Wallet = () => {
   const [activeTab, setActiveTab] = useState("tab1");
   const [addWithdraw, setAddWithdraw] = useState(true)
+  const [isOpen, setIsOpen] = useState(false);
+
+  const options = [
+    { value: 'access', label: 'Access Bank' },
+    { value: 'citi-bank', label: 'Citi Bank' },
+    { value: 'eco', label: 'Ecobank Nigeria' },
+    { value: 'fidelity', label: 'Fidelity Bank' },
+    { value: 'first-bank', label: 'First Bank' },
+    { value: 'first-city', label: 'First City Monument Bank' },
+    { value: 'globus', label: 'Globus' },
+    { value: 'guaranty-bank', label: 'Guaranty Bank' },
+    { value: 'heritage', label: 'Heritage Banking Company' },
+    { value: 'key-stone', label: 'Key Stone Bank' },
+    { value: 'polaris', label: 'Polaris Bank' },
+    { value: 'stanbic', label: 'Stanbic IBTC' },
+    { value: 'standard-chartered', label: 'Standard-chartered Bank' },
+    { value: 'sterling', label: 'Sterling Bank' },
+    { value: 'union-bank', label: 'Union Bank' },
+    { value: 'united-bank', label: 'United Bank For Africa, UBA' },
+    { value: 'unity-bank', label: 'Unity Bank' },
+    { value: 'zenith', label: 'Zenith Bank' },
+    
+  ]
+
+  const styles = {
+    input: (provided, state) =>({
+      ...provided,
+      width: 'max-content',
+      height: '4.5rem',
+      
+    }),
+
+    placeholder: (provided, state) =>({
+      ...provided,
+      // content: 'Se',
+      
+    }),
+
+    control: (provided, state) =>({
+      ...provided,
+      border: '1px solid #858585',
+      borderRadius: '1rem',
+    }),
+  
+  
+  }
 
 
   return (
@@ -78,6 +125,11 @@ const Wallet = () => {
 
                 <div className={classes.initiate_withdrawal_body}>
                   
+                  <div className={classes.add_bank}>
+                    <img src={Bank} alt="" />
+                    <p onClick={() => setIsOpen(true)}>Add Bank</p>
+                    {isOpen && <Modal heading={'Add Bank'} description={'Add new bank details to withdraw your funds!!!'} label={'Bank Name'} select={<Select styles={styles} options={options} />} input={<FormInput label={'Account number'} placeholder={'Account number'} type='number'/>} addBtn={<Button primary name='Add Bank' />} closeBtn={<Button onClick={() => setIsOpen(false)} secondary name='Cancel' />} setIsOpen={setIsOpen} />}
+                  </div>
                   {/* Enter amount */}
                     <div className={classes.initiate_withdrawal_body_left}>
                       <div>
@@ -86,17 +138,27 @@ const Wallet = () => {
                       <div className={classes.radio_container}>
                         <p>Choose amount</p>
                           <div className={classes.radio_input}>
-                              <input type="radio" id="ten" name="ten thousand" value="10,000"/>
-                              <label for="ten">N10,000</label>
-                              <input type="radio" id="twenty" name="twenty thousand" value="20,000" />
-                              <label for="twenty">N20,000</label>
-                              <input type="radio" id="thirty" name="thirty thousand" value="30,000" />
-                              <label for="thirty">N30,000</label>
-                              <input type="radio" id="fifty" name="fifty thousand" value="50,000" />
-                              <label for="fifty">N50,000</label>
-                              <input type="radio" id="hundred" name="hundred thousand" value="100,000" />
-                              <label for="hundred">N100,000</label>
-
+                              <div className={classes.radio_input_items}>
+                                <input type="radio" id="ten" name="ten thousand" value="10,000"/>
+                                <label for="ten">N10,000</label>
+                              </div>
+                              <div className={classes.radio_input_items}>
+                                <input type="radio" id="twenty" name="twenty thousand" value="20,000" />
+                                <label for="twenty">N20,000</label>
+                              </div>  
+                              <div className={classes.radio_input_items}>
+                                <input type="radio" id="thirty" name="thirty thousand" value="30,000" />
+                                <label for="thirty">N30,000</label>
+                              </div>
+                              <div className={classes.radio_input_items}>
+                                <input type="radio" id="fifty" name="fifty thousand" value="50,000" />
+                                <label for="fifty">N50,000</label>
+                              </div>
+                              <div className={classes.radio_input_items}>
+                                <input type="radio" id="hundred" name="hundred thousand" value="100,000" />
+                                <label for="hundred">N100,000</label>
+                              </div>
+                              
                           </div>
 
                       </div>

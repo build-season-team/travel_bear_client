@@ -37,7 +37,7 @@
     transition: ease-out 0.6s;
   }
 
-  .nav_ul li.active{
+  .nav_ul li:active{
     color: #252F40;
     background-color: red;
     border-bottom: 2px solid #007AEC;
@@ -181,10 +181,34 @@
   .initiate_withdrawal_body{
     display: flex;
     flex-direction: row;
+    position: relative;
+  }
+
+  .add_bank{
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    align-items: center;
+    position: absolute;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    left: 85%;
+  }
+
+  .add_bank img{
+    width: 2.4rem;
+  }
+
+  .add_bank p{
+    font-size: 1.6rem;
+    color: #2D76F9;
+    padding-left: .9rem;
+    cursor: pointer;
   }
 
   .initiate_withdrawal_body_left{
     width: 50%;
+    margin-top: 6rem;
     padding: 4rem 3rem;
     border-right: 1px solid #1A103699;
   }
@@ -204,16 +228,18 @@
     font-weight: 400;
 }
 
-.radio_input > input{
-    margin-left: 3rem;
+.radio_input_items {
+  display: flex;
+  align-items: center;
 }
 
-.radio_input > input:first-child{
-    margin-left: 0rem;
+.radio_input_items > input{
+    margin-left: 1rem;
 }
 
-.radio_input >label{
-  padding-left: .5rem;
+
+.radio_input_items >label{
+  padding-left: .9rem;
   font-size: 1rem;
 }
 
@@ -269,6 +295,7 @@
 .withdrawal_banks{
   font-size: 1.6rem;
   font-weight: 500;
+  margin-top: 5.5rem;
 }
 
 .first_bank{
@@ -302,7 +329,6 @@
     font-weight: 500;
 }
 
-
 .second_bank{
   display: flex;
   justify-content: space-between;
@@ -324,61 +350,66 @@
 }
 
 
-  @media screen and (min-width: 150px) and (max-width: 367px) {
+  @media screen and (min-width: 150px) and (max-width: 400px) {
     .Tabs {
       margin: 3.5rem auto 1.5rem;
       padding: 2rem 1rem;
       color: #E8F0F2;
       border-radius: 2rem;
-      @media (max-width: 769px) {
-        padding: 2rem 0;
-      }
-     
     }
      
     /* Tab Navigation */
     .nav_ul {
       width: 100%;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       border-bottom: 1px solid #E0E2E7;
       align-items: center;
       justify-content: flex-start;
       margin-bottom: 4.6rem;
-      /* @media (max-width: 768px) {
-        width: 90%;
-      } */
+      
+    }
+
+    .initiate_withdrawal_body{
+      display: flex;
+      flex-direction: column;
+      position: relative;
     }
      
     .nav_ul {
-
-      font-size: 1.2rem;
+      width: 100%;
+      display: flex;
+      border-bottom: 1px solid #E0E2E7;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding-left: 2rem;
+      @media (max-width: 768px) {
+        width: 90%;
+      }
     }
-     
-    .nav_ul:first-child {
-      margin-right: 1.9rem;
-    }
-     
-     
-    .nav_ul:active {
-      border-bottom: 2px solid #007AEC;
-      font-size: 1.6rem;
-      font-weight: 500;
-    }
-     
-    /* Tab Content Styles */
-    .TabContent {
-      font-size: 2rem;
-      margin-top: 2rem;
+  
+    .nav_ul li{
+      color: #8D8D8D;
       text-align: center;
+      list-style: none;
+      font-size: 2rem;
+      font-weight: 400;
+      text-align: left;
+      cursor: pointer;
+      transition: ease-out 0.6s;
     }
-      
+  
+     
+       
   }
 
   @media screen and (min-width: 401px) and (max-width: 920px)  {
-    
+    .radio_input{
+      display: flex;
+      flex-direction: column;
+    }
   }
 
-  @media screen and (min-width: 150px) and (max-width: 400px) {
-    
-  }
+  /* @media screen and (min-width: 150px) and (max-width: 400px) {
+
+  } */
