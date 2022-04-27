@@ -32,17 +32,17 @@ function App() {
           <Route path='/' element={<div>hello world</div>} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/login' element={<Login />} />
-          { isLoggedIn &&
+          {/* { isLoggedIn && */}
             <>
               <Route path='/upload' element={<UploadShortlet />} />
-              <Route path='confirm' element={ <ConfirmPost/> } />
+              <Route path='/confirm' element={ <ConfirmPost/> } />
 
               {/* Dashboard Routing */}
               <Route path="/dashboard/:route" element={<Dashboard />} />
               <Route path="/dashboard/:route/:sub" element={<Dashboard />} />
               <Route path='/upload_input' element={<FileUpload />} />
             </>
-        }
+        {/* } */}
         </Routes>
       </Router>
     </div>
