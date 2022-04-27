@@ -1,0 +1,413 @@
+/* Tab Container */
+.tabs {
+    width: 100%;
+    min-height: 300px;
+    background: #fff;
+    margin-top: 3.5rem;
+    padding: 2rem 1rem;
+    color: #263238;
+    border-radius: .9rem;
+    @media (max-width: 769px) {
+      padding: 2rem 0;
+    }
+   
+  }
+   
+  /* Tab Navigation */
+  .nav_ul {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #E0E2E7;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 4rem;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+  }
+
+  .nav_ul li{
+    color: #8D8D8D;
+    text-align: left;
+    list-style: none;
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: left;
+    cursor: pointer;
+    transition: ease-out 0.6s;
+  }
+
+  .active{
+    color: #252F40;
+    border-bottom: 2px solid #007AEC;
+    font-size: 2.4rem;
+    font-weight: 500;
+  }
+
+
+  .nav_tab_content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4.6rem;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+  }
+
+  /* .nav_tab_content{
+    margin-left: 5rem;
+  } */
+   
+  .nav_ul li:first-child {
+    margin-right: 2rem;
+    /* border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem; */
+  }
+
+   
+  .withdrawal_container{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .withdrawal_container img{
+    width: 15%;
+    margin: 4.6rem 0rem 1rem;
+  }
+
+  .withdrawal_container p{
+    text-align: center;
+  }
+
+ .withdrawal_container button{
+    margin-top: 2rem;
+  }
+
+  .wallet_container{
+    display: flex;
+    padding-top: 5.5rem;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    margin-left: 4rem;
+  }
+
+  .available_shortlet{
+    display: flex;
+    flex-direction: row;
+    margin-left: 4rem;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .available_shortlet p{
+    color:#007AEC;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .available_balance{
+    padding-top: 4.4rem;
+  }
+
+  .available_balance p{
+    color: #2D76F9;
+    font-size: 1.6rem;
+  }
+
+  .available_balance p:last-child{
+    color: #252F40;
+    font-weight: 500;
+    font-size: 4rem;
+  }
+
+  .wallet_activities{
+    display: flex;
+    justify-content: space-between;
+    padding: 3.5rem 4.6rem 2.5rem 4.6rem ;
+    margin-top: 3rem;
+    border-top-left-radius: .9rem;
+    border-top-right-radius: .9rem;
+    border-bottom: 1px solid #E0E2E7;
+    background-color: #fff;
+    align-items: center;
+  }
+
+  .wallet_activities p{
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .all_activities{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    border-bottom-left-radius: .9rem;
+    border-bottom-right-radius: .9rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .all_activities img{
+    width: 15%;
+  }
+
+  .clear{
+    background-color: #007AEC21;
+    border-radius: .4rem;
+    color: #007AEC;
+    font-size: 1.4rem;
+    padding: .9rem 2.7rem;
+    cursor: po;
+  }
+
+  .all_activities p{
+    font-size: 1.5rem;
+    padding-top: 4rem;
+  }
+
+  .initiate_withdrawal_container{
+
+  }
+
+  .initiate_withdrawal_body{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+
+  .add_bank{
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    align-items: center;
+    position: absolute;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    left: 85%;
+  }
+
+  .add_bank img{
+    width: 2.4rem;
+  }
+
+  .add_bank p{
+    font-size: 1.6rem;
+    padding-left: .9rem;
+    cursor: pointer;
+  }
+
+  .initiate_withdrawal_body_left{
+    width: 50%;
+    margin-top: 6rem;
+    padding: 4rem 3rem;
+    border-right: 1px solid #1A103699;
+  }
+
+  .radio_container p{
+    color: #252F40;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  .radio_input{
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.radio_input_items {
+  display: flex;
+  align-items: center;
+}
+
+.radio_input_items > input{
+    margin-left: 1rem;
+}
+
+
+.radio_input_items >label{
+  padding-left: .9rem;
+  font-size: 1rem;
+}
+
+.choose_bank{
+    border-bottom: 1px solid #e5e5e5;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.choose_bank p{
+    color: #252F40;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.choose_bank_radio{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 1rem;
+    
+    /* align-items: center; */
+}
+
+.choose_bank_radio:last-child{
+  padding-top: rem;
+}
+
+.indivi_radio{
+  display: flex;
+  align-items: center;
+}
+
+.indivi_radio > label{
+  padding-left: .9rem;
+}
+
+.indivi_last{
+  padding-top: 1rem;
+}
+
+.btn_left{
+  padding-top: 2.2rem;
+}
+
+/* styling forf banks */
+
+.initiate_withdrawal_body_right{
+  width: 50%;
+  padding: 4rem 3rem;
+}
+
+.withdrawal_banks{
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-top: 5.5rem;
+}
+
+.first_bank{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 4.5rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid #E0E2E7;
+}
+
+.user_bank_details{
+  padding-left: 1.6rem;
+  flex: 2;
+}
+
+.user_name{
+  font-size: 1.4rem;
+}
+
+.remove{
+  /* flex: 1; */
+  justify-content: flex-end;
+  color: #FF3B3B;
+  font-weight: 500;
+  cursor: pointer;
+}
+.user_name_wallet{
+    font-size: 3rem;
+    color: #111827;
+    font-weight: 500;
+}
+
+.second_bank{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.3rem;
+  padding-bottom: 1.6rem;
+}
+
+.transaction_history{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 4rem;
+    margin-top: 3rem;
+    border-top-left-radius: .9rem;
+    border-top-right-radius: .9rem;
+    border-bottom: 1px solid #E0E2E7;
+    background-color: #fff;
+    align-items: center;
+}
+
+
+  @media screen and (min-width: 150px) and (max-width: 400px) {
+    .Tabs {
+      margin: 3.5rem auto 1.5rem;
+      padding: 2rem 1rem;
+      color: #E8F0F2;
+      border-radius: 2rem;
+    }
+     
+    /* Tab Navigation */
+    .nav_ul {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      border-bottom: 1px solid #E0E2E7;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 4.6rem;
+      
+    }
+
+    .initiate_withdrawal_body{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+     
+    .nav_ul {
+      width: 100%;
+      display: flex;
+      border-bottom: 1px solid #E0E2E7;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding-left: 2rem;
+      @media (max-width: 768px) {
+        width: 90%;
+      }
+    }
+  
+    .nav_ul li{
+      color: #8D8D8D;
+      text-align: center;
+      list-style: none;
+      font-size: 2rem;
+      font-weight: 400;
+      text-align: left;
+      cursor: pointer;
+      transition: ease-out 0.6s;
+    }
+  
+     
+       
+  }
+
+  @media screen and (min-width: 401px) and (max-width: 920px)  {
+    .radio_input{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  /* @media screen and (min-width: 150px) and (max-width: 400px) {
+
+  } */

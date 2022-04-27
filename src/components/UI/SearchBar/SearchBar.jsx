@@ -9,13 +9,21 @@ import HeartIcon from '../../../assets/images/heart.svg'
 import HouseIcon from '../../../assets/images/house.svg'
 import DropDownIcon from '../../../assets/images/drop-down.svg'
 import SearchIcon from '../../../assets/images/search.svg'
+import { useNavigate } from 'react-router-dom'
 
 
 const SearchBar = () => {
 
     const [select, setSelect]=useState();
-    const handleClick = ()=> setSelect({});
 
+    const [value, setValue] = useState('')
+    const handleClick = ()=> setSelect({});
+    const navigate = useNavigate()
+
+    const onInputChange = (e, key) => {
+        setValue(e.target.value)
+    }
+ 
   return (
     <section className='search_bar'>
         <div className='search_box'>
@@ -44,14 +52,17 @@ const SearchBar = () => {
                     <p>Trips</p>
                 </div>
 
-                <div className='search_box_options1 house'>
+                <div className='search_box_options1 house' onClick={() => navigate('/upload')}>
                     <img src={HouseIcon} alt="a house icon" />
                     <p>Lease Shortlets</p>
                 </div>
             </div>
 
             <div className='search_box_input'>
-                <FormInput className='search_box_input' icon={<Button  className='btn' primary name='' iconPosition='right' icon={SearchIcon} />} placeholder={'Quick search by type, city'} />
+                <div className='input_box'>
+                    <input className='search_box_input'    onChange={onInputChange}  placeholder={'Quick search by type, city'} />
+                    <Button  className='btn' primary name='' iconPosition='right' icon={SearchIcon} />
+                </div>
             </div>
         </div>  
 
@@ -60,16 +71,6 @@ const SearchBar = () => {
   )
 }
 
-// const SelectOptions = ()=>{
-//     return(
-//         <div className='select_options'>
-//             <ul>
-//                 <li>Hotels</li>
-//                 <li>Shortlets</li>
-//             </ul>
-            
-//         </div>
-//     )
-// }
+
 
 export default SearchBar

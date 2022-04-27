@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import classes from './FormInput.module.css'
 
 
@@ -8,32 +8,25 @@ import QuestionIcon from '../../../assets/icons/question.svg'
 
 
 
-const FormInput = ({id, name, label, text, active, required, disabled, type, icon, error, success, iconPosition, placeholder,
+const FormInput = ({id, label, text, active, required, disabled, type, icon, errors, success, pattern, iconPosition, placeholder, name, form, onChange, onBlur,
   ...props }) => {
-   
-    const pwdRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#-\$%\^&\*])(?=.{6,})")
+
     let emailRegex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
+    let textColor;
     
     const [valid , setValid] = useState(null)
     const [value, setValue] = useState('');
     const [borderColor, setBorderColor] = useState(null)
+
     const checkValid = (type,value) => {
-        
-        if(type === 'password') pwdRegex.test(value) ? setValid(true): setValid(false)
         if(type === 'email')  emailRegex.test(value) ? setValid(true): setValid(false)
         return
     }
-    const onChange = ({target})=>{
-       const {value} = target
-       setValue(value)
-       
-       checkValid(type, value)
+
+    if(errors) {
+      textColor = 'text__red';
     }
-   
-    let files;
-    if(type==='file') {
-      files = 'form_file';
-    }
+
   return (
     
     <div>
@@ -44,20 +37,24 @@ const FormInput = ({id, name, label, text, active, required, disabled, type, ico
               type={type} 
               id={id} 
               placeholder={placeholder}
-              value={value}
-              name={name}
+              value={form?.[name] ? form[name] : ''}
               disabled={disabled ? true : false}
               required={required ? true : false}
-              onChange={onChange}
+              onChange={(e) =>{
+                  onChange(e, name);
+              } }
+              pattern={pattern ? pattern : null}
               label={label}            
               icon={icon}
               success={success}
-              error={error}
               onFocus={() => setBorderColor('border__blue')}
-              onBlur = {()=>{
-                setBorderColor(null)
-                if(value === '') setValid(null)
+              onBlur = {(e)=>{
+                setBorderColor(null);
+                if(value === '') setValid(null);
+                onBlur(e, name)
+
               }}
+              {...props}
             />
 
               {/* {success && <p>""</p>}
@@ -65,12 +62,12 @@ const FormInput = ({id, name, label, text, active, required, disabled, type, ico
 
           
             {icon && <span className={classes.icon}> {icon} </span>}
-            <span className={classes.error}> {valid === null ? null : valid === true ? <img src= { CheckMark } alt="" /> : <img src= { QuestionIcon } alt="" />} </span>
+            {valid && <span className={classes.error}> {valid === null ? null : valid === true ? <img src= { CheckMark } alt="" /> : <img src= { QuestionIcon } alt="" />} </span>}
           </div>
+      {errors?.[name] && <p className={`${classes.some_copy} ${textColor ? classes[textColor] : ''}`}>{errors[name]}</p>}
 
           
       </div>
-      {text && <p className={classes.some_copy}>{text}</p>}
     </div>
   )
 }
