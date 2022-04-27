@@ -10,7 +10,7 @@ import UploadShortlet from './pages/UploadShortlet/UploadShortlet'
 import { AuthContext } from './store/authContext/AuthProvider';
 import SearchPage from './pages/SearchPage/search';
 
-import Dashboard from './pages/Dashboard';
+import Search from './pages/SearchPage/search';
 
 
 function App() {
@@ -28,8 +28,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/' element={<SearchPage />} />
           <Route path='/upload' element={<ProtectedRoutes ><UploadShortlet /></ProtectedRoutes>} />
-          <Route path='/dashboard/:route' element={<Dashboard />} />
-          <Route path='/dashboard/:route/:sub' element={<Dashboard />} />
+          <Route path='/search' element={<Search />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </Router>
