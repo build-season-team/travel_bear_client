@@ -1,17 +1,17 @@
+import { useContext } from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
+
 import SignUp from './pages/authentication/sign-up';
 import Login from './pages/authentication/login';
 import LandingPage from './pages/landingPage/Index';
 import ErrorPage from './components/UI/404page';
 import UploadShortlet from './pages/UploadShortlet/UploadShortlet'
 import FileUpload from './components/UI/FileUpload/FileUpload';
-import ShortletCard from './components/UI/ShortletCard';
 import { AuthContext } from './store/authContext/AuthProvider';
 
 import Dashboard from './pages/Dashboard';
 import ConfirmPost from './pages/ConfirmPost/ConfirmPost'
-import { useContext } from 'react';
 
 
 function App() {
