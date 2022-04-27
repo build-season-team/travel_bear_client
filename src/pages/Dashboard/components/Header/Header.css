@@ -14,15 +14,17 @@
     margin-left: 2rem;
 }
 
+.input_box{
+    height: 56px;
+    padding-top: .6rem;
+}
+
 input{
     padding: 1rem;
     outline: none;
 }
 
-.input_box{
-    height: 56px;
-    padding-top: .6rem;
-}
+
 
 .input_box:last-child{
     padding-right: .2rem;
@@ -66,4 +68,131 @@ input{
     border: 1px solid #7928CA82;
     margin-left: .7rem;
     
+}
+
+@media screen and (min-width: 150px) and (max-width: 400px)  {
+    .header_nav{
+        width: 100%;
+        /* overflow: hidden; */
+    }
+    
+    .header_profile_items{
+        display: none;
+    }
+
+    .header_search{
+        width: 100%;
+        padding: 1.7rem 4rem;
+        margin-left: 2rem;
+    }
+
+    ::placeholder {
+        font-size: 1.2rem;
+      }
+
+    input{
+        padding: 1rem;
+        outline: none;
+        position: relative;
+        bottom: 80%;
+    }
+    
+    .input_box{
+        position: relative;
+        height: 46px;
+        width: fit-content;
+        padding-top: .6rem;
+    }
+    
+    .input_box:last-child{
+        padding-right: .2rem;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 920px)  {
+    .header_nav{
+        width: 100%;
+        /* overflow: hidden; */
+    }
+    
+    .header_profile_items{
+        display: none;
+    }
+
+    .header_search{
+        width: 100%;
+        padding: 1.7rem 4rem;
+        margin-left: 2rem;
+    }
+
+    ::placeholder {
+        font-size: 1.2rem;
+      }
+
+    input{
+        padding: 1rem;
+        outline: none;
+        position: relative;
+        bottom: 80%;
+    }
+    
+    .input_box{
+        position: relative;
+        height: 46px;
+        width: fit-content;
+        padding-top: .6rem;
+    }
+    
+    .input_box:last-child{
+        padding-right: .2rem;
+    }
+}
+
+@media screen and (min-width: 921px) and (max-width: 992px)  {
+    .header_search{
+        width: 100%;
+        padding: 1.7rem 4rem;
+        margin-left: 2rem;
+    }   
+
+    ::placeholder {
+        font-size: 1.2rem;
+      }
+
+    input{
+        padding: 1rem;
+        outline: none;
+        position: relative;
+        bottom: 80%;
+    }
+    
+    .input_box{
+        position: relative;
+        height: 46px;
+        width: fit-content;
+        padding-top: .6rem;
+    }
+
+}
+
+@media screen and (min-width: 993px) and (max-width: 1459px)  {
+    .header_search{
+        width: 100%;
+        padding: 1.7rem 4rem;
+        margin-left: 2rem;
+    }   
+
+    input{
+        padding: 1rem;
+        outline: none;
+        position: relative;
+        bottom: 0%;
+    }
+
+    .input_box{
+        position: relative;
+        height: 46px;
+        width: fit-content;
+        padding-top: .6rem;
+    }
 }
