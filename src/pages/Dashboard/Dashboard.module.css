@@ -2,20 +2,24 @@
     width: 100%;
     height: 100%;
     background-color: #F8F8F8;
-    scroll-behavior: smooth;
+    display: flex;
+    justify-content: space-between;
 }
 
 .dashboard_sub_screen{
-    margin-left: 34rem;
-    padding-top: 2rem;
-    margin-right: 3.5rem;
+    margin-left: 20%;
+    padding: 2rem 6rem;
+    width: 80%;
 
+}
+
+.dash_header {
+    width: 100%;
 }
 
 .dashboard_main_content{
     width: 100%;
     height: 100%;
-    padding: 1rem;
 }
 
 
