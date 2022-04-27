@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import { FaAngleLeft } from "react-icons/fa";
 
 import FormInput from '../../components/UI/FormInput/Index'
