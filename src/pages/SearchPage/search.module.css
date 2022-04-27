@@ -3,7 +3,7 @@
     width: 100%;
 }
 
-main{
+.body main{
     margin-top: 7rem;
     display: flex;
     justify-content: space-evenly;

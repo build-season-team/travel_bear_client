@@ -14,7 +14,7 @@ import Heart from "../../assets/images/Love.svg";
 import House from "../../assets/images/Home.svg";
 import Dollar from "../../assets/images/dollar-circle.svg"
 
-const search = () => {
+const Search = () => {
   const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   return (
     <div className={classes.body}>
@@ -100,4 +100,4 @@ const search = () => {
   );
 };
 
-export default search;
+export default Search;
