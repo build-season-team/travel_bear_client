@@ -37,9 +37,8 @@
     transition: ease-out 0.6s;
   }
 
-  .nav_ul li:active{
+  .active{
     color: #252F40;
-    background-color: red;
     border-bottom: 2px solid #007AEC;
     font-size: 2.4rem;
     font-weight: 500;
@@ -201,7 +200,6 @@
 
   .add_bank p{
     font-size: 1.6rem;
-    color: #2D76F9;
     padding-left: .9rem;
     cursor: pointer;
   }

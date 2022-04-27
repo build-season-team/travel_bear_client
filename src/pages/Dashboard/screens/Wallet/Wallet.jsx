@@ -1,12 +1,12 @@
 import React, { useEffect, useState} from 'react'
-import classes from './Wallet.module.css'
+import Select from 'react-select'
 
+import classes from './Wallet.module.css'
 import TabContent from '../../components/WalletTab/TabContent';
 import TabNavItem from '../../components/WalletTab/TabNavItem';
 import Button from '../../../../components/UI/Button'
 import FormInput from '../../../../components/UI/FormInput/Index';
 import Modal from '../../components/Modal/Modal'
-import Select from 'react-select'
 
 // icons
 import ShortletIcon from '../../../../assets/icons/house.svg'
@@ -67,15 +67,17 @@ const Wallet = () => {
   
   }
 
-
+  console.log(activeTab);
+  
   return (
     <>
+    {isOpen && <Modal heading={'Add Bank'} description={'Add new bank details to withdraw your funds!!!'} label={'Bank Name'} select={<Select styles={styles} options={options} />} input={<FormInput label={'Account number'} placeholder={'Account number'} type='number'/>} addBtn={<Button authBtn primary name='Add Bank' />} closeBtn={<Button authBtn onClick={() => setIsOpen(false)} secondary name='Cancel' />} setIsOpen={setIsOpen} />}
     
     <div className={classes.tabs}>
       <ul className={classes.nav_ul} >
         
-            <TabNavItem title="Wallet" id="tab1" activeTab={activeTab} setActiveTab={setActiveTab}/>
-            <TabNavItem title="Withdrawal" id="tab2" activeTab={activeTab} setActiveTab={setActiveTab}/>
+            <TabNavItem className={classes.active} title="Wallet" id="tab1" activeTab={activeTab} setActiveTab={setActiveTab}/>
+            <TabNavItem className={classes.active} title="Withdrawal" id="tab2" activeTab={activeTab} setActiveTab={setActiveTab}/>
         
       </ul>
  
@@ -128,7 +130,6 @@ const Wallet = () => {
                   <div className={classes.add_bank}>
                     <img src={Bank} alt="" />
                     <p onClick={() => setIsOpen(true)}>Add Bank</p>
-                    {isOpen && <Modal heading={'Add Bank'} description={'Add new bank details to withdraw your funds!!!'} label={'Bank Name'} select={<Select styles={styles} options={options} />} input={<FormInput label={'Account number'} placeholder={'Account number'} type='number'/>} addBtn={<Button primary name='Add Bank' />} closeBtn={<Button onClick={() => setIsOpen(false)} secondary name='Cancel' />} setIsOpen={setIsOpen} />}
                   </div>
                   {/* Enter amount */}
                     <div className={classes.initiate_withdrawal_body_left}>
