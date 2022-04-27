@@ -13,6 +13,7 @@ import DropDownIcon from '../../../assets/images/drop-down.svg'
 import Avatar from '../../../assets/images/avatar2.jpeg'
 import Divider from '../Divider';
 import { AuthContext } from '../../../store/authContext/AuthProvider';
+import {ReactComponent as DropDown} from '../../../assets/images/drop-down.svg'
 
 const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
      const [select, setSelect]=useState();
@@ -20,8 +21,6 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
      const location = useLocation();
      const navigate = useNavigate();
     const handleClick = ()=> setSelect({});
-
-    console.log(location)
 
 
     // const navigate = useNavigate();
@@ -61,7 +60,7 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                         </ul>
                         :
                          <div className='search_box_options3'>
-                            <div className='search_box_options1 accomo' onClick={()=> handleClick}>
+                            <div className='search_box_options1 accomo' onClick={()=> onclick()}>
                                 <img src={ BuildingIcon } alt="an icon representing a building" />
                                 <p>Book Accomodation</p>
                                 <img src={DropDownIcon} alt=" a dropdown icon" />
@@ -77,7 +76,7 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                                 <p>Trips</p>
                             </div>
 
-                            <div className='search_box_options1 house'>
+                            <div className='search_box_options1 house' onClick={() => onclick('/upload')}>
                                 <img src={HouseIcon} alt="a house icon" />
                                 <p>Lease Shortlets</p>
                             </div>
@@ -129,8 +128,19 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                         </div>
                     </div>}
                     <div className="right macro btn-class"> 
-                        <Button name='Sign Up' onClick={() => onclick('/signup')} navBtn primary link='/auth'/>           
-                        <Button name='Log In' onClick={() => onclick('/login')} navBtn secondary link='/login' />
+                    {!isLoggedIn ? 
+                        <>
+                            <Button name='Sign Up' onClick={() => onclick('/signup')} navBtn primary link='/auth'/>           
+                            <Button name='Log In' onClick={() => onclick('/login')} navBtn secondary link='/login' />
+                        </>
+                        :
+                        <div className='landing__profile'>
+                            <p>Hi, CodeMax </p>
+                            <DropDown />
+                            <img src={Avatar} alt="profile" />
+                        </div>
+                    }
+
                     </div>
                 
 

@@ -13,52 +13,50 @@ import Image5 from '../../assets/images/house5.jpg'
 // import ImageTrial from '../../assets/images/img-trial.jpg'
 
 
-const ConfirmPost = ({setIsSubmitted}) => {
+const ConfirmPost = ({ setIsSubmitted, selectedImages, form, uploadShortlet, loading }) => {
+
+
   return (
     <>
-        <div className='destination_body'>
-          <div className='destination_header'>
-            <div>
-                <p className='destination_title'>
-                  Quin Lay Hotel
-                </p>
-                <div className='location_desc'>Location: <span> Enugu </span></div>
-                <div className='amount'>N 45,000</div>
-            </div>
-            
-            <div className='link_to'>
-                    <a className='link_to_link' onClick={() => setIsSubmitted(false)} > <span className='upload__icon'><FaAngleLeft  size={24}   /> </span> <span className='upload__text'>Back</span> </a>
-                </div>
-            
+      <div className='destination_body'>
+        <div className='destination_header'>
+          <div>
+            <p className='destination_title'>
+              {form.houseTitle}
+            </p>
+            <div className='location_desc'>Location: <span> {form.state} </span></div>
+            <div className='amount'>N {form.amount}</div>
           </div>
-          <div className='image_grid'>
-              <div className='img1'>
-                  <img className='img_size' src={Image1} alt="uploaded image" />  
-              </div>
 
-              <div className='in_grid'>
+          <div className='link_to'>
+            <a className='link_to_link' onClick={() => setIsSubmitted(false)} > <span className='upload__icon'><FaAngleLeft size={24} /> </span> <span className='upload__text'>Back</span> </a>
+          </div>
 
-                  <div className='img1'>
-                      <img className='img_size' src={Image2} alt="uploaded image" />  
-                  </div>
-                  <div className='img1'>
-                      <img className='img_size' src={Image3} alt="uploaded image" />  
-                  </div>
-                  <div className='img1'>
-                      <img className='img_size' src={Image4} alt="uploaded image" />  
-                  </div>
-                  <div className='img5'>
-                      <img className='img_size' src={Image5} alt="uploaded image" />  
-                  </div>
-              </div>
-              
-          </div>
-          <MainTab />
-          <div className='btn_width'>
-          <Button primary bigCard authBtn name='Publish' />
-          </div>
         </div>
-        
+        <div className='image_grid'>
+          <div className='img1'>
+            <img className='img_size' src={selectedImages[0]} alt="uploaded image" />
+          </div>
+
+          <div className='in_grid'>
+
+            {
+              
+            selectedImages.slice(1).map((image, i) => (
+              <div className={`img${i !== 3 ? 1 : 5 }`} key={i}>
+                <img className='img_size' src={image} alt="uploaded image" />
+              </div>
+            ))
+          }
+          </div>
+
+        </div>
+        <MainTab description={form.description} rules={form.houseRules} />
+        <div className='btn_width'>
+          <Button onClick={uploadShortlet} primary bigCard authBtn name={`${loading ? 'loading...' : 'Publish'}`} />
+        </div>
+      </div>
+
     </>
   )
 }
