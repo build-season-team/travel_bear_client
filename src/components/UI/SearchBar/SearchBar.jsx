@@ -23,7 +23,7 @@ const SearchBar = () => {
     const onInputChange = (e, key) => {
         setValue(e.target.value)
     }
- 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
   return (
     <section className='search_bar'>
         <div className='search_box'>
