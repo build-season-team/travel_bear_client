@@ -13,6 +13,7 @@ import DropDownIcon from '../../../assets/images/drop-down.svg'
 import Avatar from '../../../assets/images/avatar2.jpeg'
 import Divider from '../Divider';
 import { AuthContext } from '../../../store/authContext/AuthProvider';
+import {ReactComponent as DropDown} from '../../../assets/images/drop-down.svg'
 
 const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
      const [select, setSelect]=useState();
@@ -127,8 +128,19 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                         </div>
                     </div>}
                     <div className="right macro btn-class"> 
-                        <Button name='Sign Up' onClick={() => onclick('/signup')} navBtn primary link='/auth'/>           
-                        <Button name='Log In' onClick={() => onclick('/login')} navBtn secondary link='/login' />
+                    {!isLoggedIn ? 
+                        <>
+                            <Button name='Sign Up' onClick={() => onclick('/signup')} navBtn primary link='/auth'/>           
+                            <Button name='Log In' onClick={() => onclick('/login')} navBtn secondary link='/login' />
+                        </>
+                        :
+                        <div className='landing__profile'>
+                            <p>Hi, CodeMax </p>
+                            <DropDown />
+                            <img src={Avatar} alt="profile" />
+                        </div>
+                    }
+
                     </div>
                 
 

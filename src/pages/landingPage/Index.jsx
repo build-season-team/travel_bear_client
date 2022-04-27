@@ -41,6 +41,7 @@ const landingPage = () => {
                     header={"3 bedroom Apartment"}
                     text={"A fully furnished Apartment with Wifi"}
                     amount={"N50,000"}
+                    big
                   />
                 )
               })}
