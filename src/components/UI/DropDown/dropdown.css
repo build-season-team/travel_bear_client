@@ -1,0 +1,22 @@
+.dropdown{
+    border: 2px solid #000;
+    margin: 0 auto;
+    width: 30%;
+    border-radius: .8rem;
+}
+
+.select{
+    padding: .6rem;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.options{
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+p{
+    font-size: 1.6rem;
+    text-align: left;
+}

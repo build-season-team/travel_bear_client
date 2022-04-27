@@ -1,0 +1,113 @@
+/* Tab Container */
+.tabs {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    background: #fff;
+    margin: 3.5rem auto 1.5rem;
+    padding: 2rem 1rem;
+    color: #E8F0F2;
+    border-radius: 2rem;
+    @media (max-width: 769px) {
+      padding: 2rem 0;
+    }
+   
+  }
+   
+  /* Tab Navigation */
+  ul.nav {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #E0E2E7;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 4.6rem;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+  }
+   
+  ul.nav li {
+    /* width: fit-content; */
+    /* padding: 0rem; */
+    color: #8D8D8D;
+    list-style: none;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.4s;
+  }
+   
+  ul.nav li:first-child {
+    margin-right: 4rem;
+    /* border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem; */
+  }
+
+  ul.nav li.active {
+    color: #007AEC;
+    border-bottom: 2px solid #007AEC;
+    font-size: 2.6rem;
+    font-weight: 500;
+  }
+   
+  /* Tab Content Styles */
+  .TabContent {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    text-align: center;
+    color: #000;
+    text-align: left;
+  }
+
+  @media screen and (min-width: 150px) and (max-width: 667px) {
+    .Tabs {
+      margin: 3.5rem auto 1.5rem;
+      padding: 2rem 1rem;
+      color: #E8F0F2;
+      border-radius: 2rem;
+      @media (max-width: 769px) {
+        padding: 2rem 0;
+      }
+     
+    }
+     
+    /* Tab Navigation */
+    ul.nav {
+      width: 100%;
+      display: flex;
+      border-bottom: 1px solid #E0E2E7;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 4.6rem;
+      @media (max-width: 768px) {
+        width: 90%;
+      }
+    }
+     
+    ul.nav li {
+      /* width: fit-content; */
+      /* padding: 0rem; */
+      font-size: 1.2rem;
+    }
+     
+    ul.nav li:first-child {
+      margin-right: 1.9rem;
+    }
+     
+     
+    ul.nav li.active {
+      border-bottom: 2px solid #007AEC;
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+     
+    /* Tab Content Styles */
+    .TabContent {
+      font-size: 1rem;
+      margin-top: 2rem;
+    text-align: left;
+    }
+      
+  }

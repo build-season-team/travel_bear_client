@@ -1,0 +1,314 @@
+.search_bar{
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 0 auto;
+    transform: translateY(-50%);
+    
+}
+
+.search_box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 4rem 5.5rem;
+    box-shadow: 0 5rem 10rem #0000001C;
+    align-items: center;
+}
+
+.search_box_options{
+    display: flex;
+    width: 60%;
+    justify-content:flex-start;
+    margin-right: 3.5rem;
+    
+    
+}
+
+.search_box_options1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 16px; 
+    cursor: pointer;
+    /* padding-top: 1rem;
+    padding-bottom: 1rem; */
+    padding: .5rem 1.2rem;
+}
+
+.search_box_options1 p {
+    padding: .5rem;
+    font-size: 1.4rem;
+}
+
+
+
+.accomo{
+    
+    background-color: #007AEC1A;
+    border-radius: 0.4rem;
+    width: fit-content;
+}
+
+.travel{
+    background-color: #FF4B4B1A;
+    border-radius: 0.4rem;
+    margin-left: 2.5rem;
+}
+
+.trips{
+    background-color: #FC980F1A;
+    border-radius: 0.4rem;
+    margin-left: 2.5rem;
+}
+
+.house{
+    background-color: #007AEC1A;
+    border-radius: 0.4rem;
+    margin-left: 2.5rem;
+}
+
+.search_box_input{
+    /* width: 30%; */
+    flex: 1;
+}
+
+.input_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: .1rem solid #C4C4C4;
+    border-radius: 1rem;
+    padding: .6rem;
+}
+
+.search_box_input input {
+    border: none;
+    outline: none;
+    padding: .5rem 2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2.1rem;
+    margin-top: 0;
+}
+
+.search_box_input input:focus {
+    border: none;
+    outline: none;
+}
+
+.select_options{
+    background-color: rgb(122, 115, 115);
+    border-radius: 0.8rem;
+    padding: 2.5rem;
+    font-size: 1.6rem;
+    z-index: 100;
+    width: fit-content;
+}
+
+.select_options ul{
+    list-style: none;
+}
+
+.select_options ul li:last-child{
+    margin-top: 1rem;
+}
+
+.form_item2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: .1rem solid var(--color-dark);
+}
+
+@media only screen and (max-width: 767px){
+    .search_bar{
+        width: 95%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 0 auto;
+        transform: translateY(-20%);
+    }
+    
+    .search_box{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 5rem;
+        justify-content: center;
+        border-radius: 8px;
+        background-color: #fff;
+        padding: 3rem;
+        box-shadow: 0 4rem 5rem #0000001C;
+    }
+    
+    .search_box_options{
+        display: flex;
+        width: 90%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        
+    }
+    
+    .search_box_options1{
+        display: flex;
+        align-items: center;
+        font-size: 16px; 
+        margin-top: 2.4rem;
+        /* padding-top: 1rem;
+        padding-bottom: 1rem; */
+        padding: 1rem;
+    }
+    
+    
+    .accomo{
+        background-color: #007AEC1A;
+        border-radius: 0.4rem;
+        width: fit-content;
+        padding-right: 1rem;
+    }
+    
+    .travel{
+        background-color: #FF4B4B1A;
+        border-radius: 0.4rem;
+        margin-left: 0;
+        width: fit-content;
+    }
+    
+    .trips{
+        background-color: #FC980F1A;
+        border-radius: 0.4rem;
+        margin-left: 0;
+        width: fit-content;
+    }
+    
+    .house{
+        background-color: #007AEC1A;
+        border-radius: 0.4rem;
+        margin-left: 0;
+        width: fit-content;
+    }
+    
+    .search_box_input{
+        width: 100%;
+        margin: 5rem auto 0 auto;
+    }
+
+    
+       
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+    .search_bar{
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: -5rem auto 0 auto;
+    }
+    
+    .search_box{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 5rem;
+        justify-content: center;
+        border-radius: 8px;
+        background-color: #fff;
+        padding: 3rem;
+        box-shadow: 0 4rem 5rem #0000001C;
+    }
+    
+    .search_box_options{
+        display: flex;
+        width: 60%;
+        flex-direction: column;
+        justify-content: left;
+        
+    }
+    
+    .search_box_options1{
+        display: flex;
+        align-items: center;
+        font-size: 16px; 
+        margin-top: 2.4rem;
+        /* padding-top: 1rem;
+        padding-bottom: 1rem; */
+        padding: 1rem;
+    }
+    
+    
+    .accomo{
+        background-color: #007AEC1A;
+        border-radius: 0.4rem;
+        width: fit-content;
+        padding-right: 1rem;
+    }
+    
+    .travel{
+        background-color: #FF4B4B1A;
+        border-radius: 0.4rem;
+        margin-left: 0;
+        width: fit-content;
+    }
+    
+    .trips{
+        background-color: #FC980F1A;
+        border-radius: 0.4rem;
+        margin-left: 0;
+        width: fit-content;
+    }
+    
+    .house{
+        background-color: #007AEC1A;
+        border-radius: 0.4rem;
+        margin-left: 0;
+        width: fit-content;
+    }
+    
+    .search_box_input{
+        width: 80%;
+        margin: 5rem auto 0 auto;
+    }
+
+    .btn{
+        width: 10%;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1200px){
+    .search_bar{
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 0 auto;
+    }
+    
+    .search_box{
+        width: 100%;
+        display: flex;
+        padding: 5rem;
+        justify-content: space-between;
+        border-radius: 8px;
+        background-color: #fff;
+        padding: 3rem 2rem;
+        box-shadow: 0 5rem 10rem #0000001C;
+
+    }
+    
+    .search_box_options{
+        display: flex;
+        width: 60%;
+        justify-content: space-between;
+        font-size: 1rem;
+        
+    }
+
+    
+}

@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AuthProvider from './store/authContext/AuthProvider';
+import ShortletProvider from './store/shortletContext/ShortletProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <ShortletProvider>
+        <App />
+      </ShortletProvider>
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
