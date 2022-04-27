@@ -10,7 +10,11 @@ import UploadShortlet from './pages/UploadShortlet/UploadShortlet'
 import { AuthContext } from './store/authContext/AuthProvider';
 import SearchPage from './pages/SearchPage/search';
 
-import Search from './pages/SearchPage/search';
+import Dashboard from './pages/Dashboard';
+import Terms from './pages/T&C/Terms';
+import Home from './pages/Dashboard/screens/Home/Home';
+import Wallet from './pages/Dashboard/screens/Wallet/Wallet';
+import Shortlets from './pages/Dashboard/screens/Shortlets/Shortlets';
 
 
 function App() {
@@ -25,10 +29,16 @@ function App() {
         <Routes>
           <Route path='/' element={<LandingPage />} />
           <Route path='/signup' element={<SignUp />} />
+          <Route path='/terms' element={<Terms />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/' element={<SearchPage />} />
-          <Route path='/upload' element={<ProtectedRoutes ><UploadShortlet /></ProtectedRoutes>} />
-          <Route path='/search' element={<Search />} />
+          <Route path='/upload' element={<UploadShortlet />} />
+
+              {/* Dashboard Routing */}
+          <Route path="/dashboard" element={<Dashboard />} >
+            <Route index path="/dashboard/" element={<Home />} />
+            <Route index path="/dashboard/wallet" element={<Wallet />} />
+            <Route index path="/dashboard/shortlets" element={<Shortlets />} />
+          </Route>
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </Router>
