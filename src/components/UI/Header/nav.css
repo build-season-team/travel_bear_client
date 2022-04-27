@@ -9,6 +9,8 @@
     overflow: hidden;
 }
 
+
+
 .nav ul {
     list-style: none;
 }
@@ -267,6 +269,26 @@ a, a.link:visited, a.visited{
 .profile__text {
     font-size: 1.6rem;
     font-weight: 500;
+}
+
+.landing__profile {
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    cursor: pointer;
+
+}
+
+.landing__profile p {
+    font-weight: 500;
+}
+
+.landing__profile img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
 }
 
 
