@@ -6,6 +6,7 @@ import TabNavItem from '../../components/WalletTab/TabNavItem';
 import Button from '../../../../components/UI/Button'
 import FormInput from '../../../../components/UI/FormInput/Index';
 import Modal from '../../components/Modal/Modal'
+import { FaPlus } from 'react-icons/fa'
 import Select from 'react-select'
 
 // icons
@@ -151,6 +152,10 @@ const Wallet = () => {
                                 <label for="thirty">N30,000</label>
                               </div>
                               <div className={classes.radio_input_items}>
+                                <input type="radio" id="fourty" name="fourty thousand" value="30,000" />
+                                <label for="fourty">N40,000</label>
+                              </div>
+                              <div className={classes.radio_input_items}>
                                 <input type="radio" id="fifty" name="fifty thousand" value="50,000" />
                                 <label for="fifty">N50,000</label>
                               </div>
@@ -184,7 +189,7 @@ const Wallet = () => {
                         <Divider />
                       </div> */}
                       <div className={classes.btn_left}>
-                        <Button primary name='Withdraw funds' />
+                        <Button authBtn primary name='Withdraw funds' />
                       </div>
                       
                     </div>
@@ -208,6 +213,11 @@ const Wallet = () => {
                           <p className={classes.bank_name}>First Bank</p>
                         </div>
                         <p className={classes.remove}>Remove</p>
+                      </div>
+
+                      <div className={classes.add_bank_mobile}>
+                      <FaPlus /> 
+                      <p>Add Bank</p>
                       </div>
                     </div>
                 </div>
