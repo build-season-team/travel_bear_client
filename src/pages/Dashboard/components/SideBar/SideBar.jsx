@@ -16,38 +16,26 @@ import WalletIcon from '../../../../assets/icons/wallet.svg'
 import ShortletIcon from '../../../../assets/icons/house.svg'
 import Logout from '../../../../assets/icons/logout.svg'
 
-const SideBar = () => {
+const SideBar = ({className}) => {
+    const [activeNav, setActiveNav] = useState(0)
+    const tabItems =[
+        { text: "/dashboard/", TabIcon: DashboardIcon, TabIconActive: ActiveDashboard,  },
+        { text: "/dashboard/wallet", TabIcon: WalletIcon, TabIconActive: ActiveWallet, },
+        { text: "/dashboard/shortlets", TabIcon: ShortletIcon, TabIconActive: ActiveShortlet, },
+    ]
 
     const navigate = useNavigate();
     const params = useParams();
 
-    const [tabItems, setTabItems] = useState([
-        { text: "Dashboard", TabIcon: DashboardIcon, TabIconActive: ActiveDashboard, active: params.route === "index" },
-        { text: "Wallet", TabIcon: WalletIcon, TabIconActive: ActiveWallet, active: params.route === "wallet" },
-        { text: "Shortlets", TabIcon: ShortletIcon, TabIconActive: ActiveShortlet, active: params.route === "shortlets" },
-        
-        
-    ]);
 
 
 
-    const changeActiveTab = (idx, text) => {
-        console.log(idx, text);
-        //Make all tabs inactive
-        tabItems.forEach(tab => tab.active = false);
+    const changeActiveTab = (i, text) => {
+        setActiveNav(i);
+        navigate(text)
 
-        //Make copy of tabItems
-        const tabsCopy = tabItems.filter(tab => tab.active === false);
-
-        //Make current tab active
-        tabsCopy[idx].active = true;
-        setTabItems(tabsCopy);
-
-        //Route
-        navigate(text === "Dashboard" ? "/dashboard/index" : `/dashboard/${text.toLowerCase().replace(" ", "-")}`);
     }
 
-    const [close, setClose] = useState('large');
 
 
   return (
@@ -56,30 +44,33 @@ const SideBar = () => {
         <div className='sidebar_logo'>
             <img src={TravelBear} alt="TravelBear Logo" />
         </div>
-        
-        <ul>
+        <div className={classes.nav_items}>
+              <ul>
+                  {
+                      tabItems.map(({ TabIcon, TabIconActive, text }, i) => (
+                          <li key={i} onClick={() => changeActiveTab(i, text)} className={`${classes.li_items} ${activeNav === i ? classes.blue__text : ""}`} >
+                              {<img className={classes.icon_class} src={activeNav === i ? TabIconActive : TabIcon} alt={text} />}
+                              {text.split('/')[2] === '' ? 'Dashboard' : text.split('/')[2]}
+                          </li>
+                      ))
+                  }
 
-                {
-                    tabItems.map(({ TabIcon, TabIconActive, text, active }, idx) => (
-                        <li key={idx} onClick={() => changeActiveTab(idx, text)} className={classes.li_items} bg={active ? "#73DA9E" : null} color={active ? "#fff" : "#57575b"}>
-                            {<img className={classes.icon_class} src={active ? TabIconActive : TabIcon} alt={text} />}
-                            {text}
-                        </li>
-                    ))
-                }
-
-                {/* Logout Button */}
-                {/* <ListItem color="error.100" padding="4" pl="8" cursor="pointer" display="flex" borderRadius="8px" borderTopLeftRadius="0" borderBottomLeftRadius="0" alignItems="center" mt="204px">
+                  {/* Logout Button */}
+                  {/* <ListItem color="error.100" padding="4" pl="8" cursor="pointer" display="flex" borderRadius="8px" borderTopLeftRadius="0" borderBottomLeftRadius="0" alignItems="center" mt="204px">
                     <Image color="danger.100" src={ LogoutIcon } alt="Logout" mr="18px"/>
                     Logout
                 </ListItem> */}
 
-            </ul>
+              </ul>
 
-        <div className={classes.logout}>
-            <img src={Logout} alt="logout icon" />
-            <p>Logout</p>
+              <div className={classes.logout}>
+                  <img src={Logout} alt="logout icon" />
+                  <p>Logout</p>
+              </div>
         </div>
+        
+        
+
 
 
     </div>

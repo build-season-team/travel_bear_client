@@ -52,7 +52,7 @@ const SearchBar = () => {
                     <p>Trips</p>
                 </div>
 
-                <div className='search_box_options1 house' onClick={() => navigate('/upload')}>
+                <div className='search_box_options1 house' onClick={() => navigate('/terms')}>
                     <img src={HouseIcon} alt="a house icon" />
                     <p>Lease Shortlets</p>
                 </div>

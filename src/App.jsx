@@ -11,6 +11,10 @@ import { AuthContext } from './store/authContext/AuthProvider';
 
 import Dashboard from './pages/Dashboard';
 import ConfirmPost from './pages/ConfirmPost/ConfirmPost'
+import Terms from './pages/T&C/Terms';
+import Home from './pages/Dashboard/screens/Home/Home';
+import Wallet from './pages/Dashboard/screens/Wallet/Wallet';
+import Shortlets from './pages/Dashboard/screens/Shortlets/Shortlets';
 
 
 function App() {
@@ -25,12 +29,24 @@ function App() {
         <Routes>
           <Route path='/' element={<LandingPage />} />
           <Route path='/signup' element={<SignUp />} />
+          <Route path='/terms' element={<Terms />} />
           <Route path='/login' element={<Login />} />
+<<<<<<< HEAD
           <Route path='/upload' element={<ProtectedRoutes ><UploadShortlet /></ProtectedRoutes>} />
           <Route path='/dashboard/:route' element={<Dashboard />} />
           <Route path='/dashboard/:route/:sub' element={<Dashboard />} />
             
           
+=======
+          <Route path='/upload' element={<UploadShortlet />} />
+
+              {/* Dashboard Routing */}
+          <Route path="/dashboard" element={<Dashboard />} >
+            <Route index path="/dashboard/" element={<Home />} />
+            <Route index path="/dashboard/wallet" element={<Wallet />} />
+            <Route index path="/dashboard/shortlets" element={<Shortlets />} />
+          </Route>
+>>>>>>> e7ca6fe9cbee5f856f742df7ba72e78cc1d4d6fd
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </Router>
