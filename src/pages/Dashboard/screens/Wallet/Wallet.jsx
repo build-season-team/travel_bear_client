@@ -7,11 +7,8 @@ import TabNavItem from '../../components/WalletTab/TabNavItem';
 import Button from '../../../../components/UI/Button'
 import FormInput from '../../../../components/UI/FormInput/Index';
 import Modal from '../../components/Modal/Modal'
-<<<<<<< HEAD
 import { FaPlus } from 'react-icons/fa'
-import Select from 'react-select'
-=======
->>>>>>> 92b0c0903b44431537056df68e73276423a1544d
+// import Select from 'react-select'
 
 // icons
 import ShortletIcon from '../../../../assets/icons/house.svg'

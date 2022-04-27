@@ -31,13 +31,6 @@ function App() {
           <Route path='/signup' element={<SignUp />} />
           <Route path='/terms' element={<Terms />} />
           <Route path='/login' element={<Login />} />
-<<<<<<< HEAD
-          <Route path='/upload' element={<ProtectedRoutes ><UploadShortlet /></ProtectedRoutes>} />
-          <Route path='/dashboard/:route' element={<Dashboard />} />
-          <Route path='/dashboard/:route/:sub' element={<Dashboard />} />
-            
-          
-=======
           <Route path='/upload' element={<UploadShortlet />} />
 
               {/* Dashboard Routing */}
@@ -46,7 +39,6 @@ function App() {
             <Route index path="/dashboard/wallet" element={<Wallet />} />
             <Route index path="/dashboard/shortlets" element={<Shortlets />} />
           </Route>
->>>>>>> e7ca6fe9cbee5f856f742df7ba72e78cc1d4d6fd
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </Router>

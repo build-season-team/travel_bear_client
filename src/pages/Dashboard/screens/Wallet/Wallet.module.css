@@ -260,9 +260,6 @@
     /* align-items: center; */
 }
 
-.choose_bank_radio:last-child{
-  padding-top: rem;
-}
 
 .indivi_radio{
   display: flex;

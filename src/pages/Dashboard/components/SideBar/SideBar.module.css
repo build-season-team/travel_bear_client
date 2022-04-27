@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    text-transform: capitalize;
     background-color: #fff;
     box-shadow: 27px 0px 50px rgba(196, 196, 196, 0.16);;
     padding: 5rem 0 10rem 5rem;
@@ -43,6 +44,7 @@
 .blue__text {
     color: var(--color-primary);
 }
+
 
 
 .side_bar ul li{

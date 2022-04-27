@@ -27,9 +27,6 @@ const SideBar = ({className}) => {
     const navigate = useNavigate();
     const params = useParams();
 
-
-
-
     const changeActiveTab = (i, text) => {
         setActiveNav(i);
         navigate(text)
