@@ -36,7 +36,7 @@ function App() {
           <Route path='/shortlets' element={<Search />} />
 
               {/* Dashboard Routing */}
-          <Route path="/dashboard" element={<Dashboard />} >
+           <Route path="/dashboard" element={<Dashboard />} >
             <Route index path="/dashboard/" element={<Home />} />
             <Route index path="/dashboard/wallet" element={<Wallet />} />
             <Route index path="/dashboard/shortlets" element={<Shortlets />} />

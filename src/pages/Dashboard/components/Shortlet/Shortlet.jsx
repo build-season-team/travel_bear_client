@@ -1,17 +1,31 @@
-import React from 'react'
+import { useState } from 'react'
 import classes from './Shortlet.module.css'
 import Button from '../../../../components/UI/Button'
 
 import ShortletImage from '../../../../assets/images/house3.jpg'
 
+
+
 const Shortlet = () => {
+
+    const [verified, setVerified] = useState();
   return (
 
     <>
         <div className={classes.shortlet_data}>
             <div className={classes.shortlet_cover}>
                 <img className={classes.shortlet_image} src={ShortletImage} alt="" />
-                <span>Verified</span>
+                { verified
+                
+                ?
+                <span className={classes.unverified}>Unverified</span> 
+
+                :
+                <span className={classes.verified}>Verified</span>
+                    
+                }
+                
+                
             </div>
             
             <div className={classes.shortlet_details}>

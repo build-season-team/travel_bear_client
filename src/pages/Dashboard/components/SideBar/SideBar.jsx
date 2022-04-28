@@ -52,12 +52,6 @@ const SideBar = ({className}) => {
                       ))
                   }
 
-                  {/* Logout Button */}
-                  {/* <ListItem color="error.100" padding="4" pl="8" cursor="pointer" display="flex" borderRadius="8px" borderTopLeftRadius="0" borderBottomLeftRadius="0" alignItems="center" mt="204px">
-                    <Image color="danger.100" src={ LogoutIcon } alt="Logout" mr="18px"/>
-                    Logout
-                </ListItem> */}
-
               </ul>
 
               <div className={classes.logout}>

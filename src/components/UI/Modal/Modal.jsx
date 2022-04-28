@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./Modal.module.css";
 import { RiCloseLine } from "react-icons/ri";
 
-const Modal = ({ setIsOpen, heading, description, select, button }) => {
-  return (
+const Modal = ({ setIsOpen, heading, description, select, label, input, addBtn, closeBtn }) => {
+  const modalRef = useRef(null);
+  const closeModal = (e) => {
+    if(modalRef.current.contains(e.target)) return
+    setIsOpen(false)
+  }
+   return (
     <>
-      <div className={styles.darkBG} onClick={() => setIsOpen(false)} />
+      <div  className={styles.darkBG} onClick={closeModal} >
       <div className={styles.centered}>
-        <div className={styles.modal}>
+           <div ref={modalRef} className={styles.modal}>
           <div className={styles.modalHeader}>
             <h5 className={styles.heading}>{heading}</h5>
           </div>
@@ -18,34 +23,31 @@ const Modal = ({ setIsOpen, heading, description, select, button }) => {
             <div className={styles.modalDesc}>
                 {description}
             </div>
+            
             <div className={styles.select_option}>
+            <span>{label}</span>
                 {select}
             </div>
             <div className={styles.select_option}>
-                {select}
+                {input}
             </div>
 
-            <div>
-                {button}
+            <div className={styles.modal_btn}>
+                {addBtn}
+            </div>
+
+            <div className={styles.modal_btn}>
+                {closeBtn}
             </div>
           </div>
           <div className={styles.modalActions}>
             <div className={styles.actionsContainer}>
               
               
-              
-              {/* <button className={styles.deleteBtn} onClick={() => setIsOpen(false)}>
-                Delete
-              </button>
-              <button
-                className={styles.cancelBtn}
-                onClick={() => setIsOpen(false)}
-              >
-                Cancel
-              </button> */}
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

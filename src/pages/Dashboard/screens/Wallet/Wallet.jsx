@@ -57,7 +57,7 @@ const Wallet = () => {
     placeholder: (provided, state) =>({
       ...provided,
       // content: 'Se',
-      
+    
     }),
 
     control: (provided, state) =>({
@@ -217,7 +217,7 @@ const Wallet = () => {
                         <p className={classes.remove}>Remove</p>
                       </div>
 
-                      <div className={classes.add_bank_mobile}>
+                      <div onClick={() => setIsOpen(true)} className={classes.add_bank_mobile}>
                       <FaPlus /> 
                       <p>Add Bank</p>
                       </div>
