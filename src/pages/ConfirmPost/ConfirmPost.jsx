@@ -35,7 +35,7 @@ const ConfirmPost = ({ setIsSubmitted, selectedImages, form, uploadShortlet, loa
         </div>
         <div className='image_grid'>
           <div className='img1'>
-            <img className='img_size' src={selectedImages[0]} alt="uploaded image" />
+            <img className='first_image' src={selectedImages[0]} alt="uploaded image" />
           </div>
 
           <div className='in_grid'>
