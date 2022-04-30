@@ -1,5 +1,5 @@
 import React from 'react'
-import classes from './dropdown.css'
+import classes from './dropdown.module.css'
 
 const DropDown = ({select, opt1, opt2, opt3, opt4, opt5, ...props}) => {
 

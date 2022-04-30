@@ -3,7 +3,7 @@ import { BASE_URL, BASE_URL_DEV } from "../constants/base";
 
 let headers = {};
 const axiosInstance = axios.create({
-  baseURL: BASE_URL_DEV,
+  baseURL: BASE_URL_DEV ,
   headers,
 });
 

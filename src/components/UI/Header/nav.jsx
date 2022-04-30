@@ -89,7 +89,7 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                                 <Button name='Log In' bigCard onClick={() => onclick('/login')} navBtn secondary link='/login' />
                             </>
                             :
-                            <Button name='Log Out' onClick={() => onclick('/login')} navBtn secondary link='/login' />}
+                            <Button name='Log Out' bigCard onClick={() => onclick('/login')} navBtn secondary link='/login' />}
                     </div>
                 </div>
             </div>

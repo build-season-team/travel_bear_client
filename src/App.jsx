@@ -38,8 +38,8 @@ function App() {
               {/* Dashboard Routing */}
           <Route path="/dashboard" element={<Dashboard />} >
             <Route index path="/dashboard/" element={<Home />} />
-            <Route index path="/dashboard/wallet" element={<Wallet />} />
-            <Route index path="/dashboard/shortlets" element={<Shortlets />} />
+            <Route  path="/dashboard/wallet" element={<Wallet />} />
+            <Route  path="/dashboard/shortlets" element={<Shortlets />} />
           </Route>
           <Route path='*' element={<ErrorPage />} />
         </Routes>
