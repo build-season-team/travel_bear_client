@@ -4,6 +4,7 @@
     background-color: #F8F8F8;
     display: flex;
     justify-content: space-between;
+    z-index: 1000000000000000;
 }
 
 .dashboard_sub_screen{

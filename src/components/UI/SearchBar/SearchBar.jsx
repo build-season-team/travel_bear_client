@@ -17,7 +17,6 @@ const SearchBar = () => {
     const [select, setSelect]=useState();
 
     const [value, setValue] = useState('')
-    const handleClick = ()=> setSelect({});
     const navigate = useNavigate()
 
     const onInputChange = (e, key) => {
@@ -28,7 +27,7 @@ const SearchBar = () => {
     <section className='search_bar'>
         <div className='search_box'>
             <div className='search_box_options'>
-                <div className='search_box_options1 accomo' onClick={()=> handleClick}>
+                  <div className='search_box_options1 accomo' onClick={() => navigate('/shortlets')}>
                     <img src={ BuildingIcon } alt="an icon representing a building" />
                     <p>Book Accomodation</p>
                     <img src={DropDownIcon} alt=" a dropdown icon" />

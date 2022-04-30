@@ -118,7 +118,11 @@ aside{
 }
 
 @media only screen and (max-width: 945px){
+<<<<<<< HEAD
    .body main{
+=======
+    .body main{
+>>>>>>> af6970ff55db901dba61b2aa086ed26c6931cfc8
         display: block;
         margin-top: 15rem;
     }

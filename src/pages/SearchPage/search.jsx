@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import classes from "./search.module.css";
 import Header from "../../components/UI/Header/index";
 import Button from "../../components/UI/Button";
@@ -13,9 +13,18 @@ import Plane from "../../assets/images/Airplane.svg";
 import Heart from "../../assets/images/Love.svg";
 import House from "../../assets/images/Home.svg";
 import Dollar from "../../assets/images/dollar-circle.svg"
+import { ShortletContext } from "../../store/shortletContext/ShortletProvider";
+import getShortlet from "../../store/shortletContext/actionCreators/getShortlet";
+import { BASE_SHORTLET_URL, BASE_SHORTLET_URL_DEV } from "../../constants/base";
 
 const Search = () => {
-  const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  
+  const { shortletDispatch, shortletState: { loading, data } } = useContext(ShortletContext);
+
+  useEffect(() => {
+    getShortlet()(shortletDispatch);
+  }, [])
+
   return (
     <div className={classes.body}>
       <Header />
@@ -76,15 +85,15 @@ const Search = () => {
           </div>
           <aside>
             <div className={classes.shortlet}>
-              {num.map((cur, i) => {
+              {data.sort((a, b) => b.ratingsAverage - a.ratingsAverage).map((cur, i) => {
                 return (
                   <ShortletCard
                     key={i}
-                    image={test}
-                    rating={4.5}
-                    header={"3 bedroom Apartment"}
-                    text={"A fully furnished Apartment with Wifi"}
-                    amount={"N50,000"}
+                    image={BASE_SHORTLET_URL_DEV + cur.image[0]}
+                    rating={cur.ratingsAverage}
+                    header={cur.houseTitle}
+                    text={cur.description.length > 35 ? cur.description.substring(0, 35) + "....." : cur.description}
+                    amount={cur.amount}
                   />
                 );
               })}
