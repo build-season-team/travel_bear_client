@@ -10,7 +10,7 @@ function ErrorPage() {
 
     
     <div>
-      <Header />
+      <Header hideNav/>
        <div className='Error_page'>
             <img src={ErrorImage} alt="Logo" />
             <h2 className='head_1'>Oops...no page found</h2>

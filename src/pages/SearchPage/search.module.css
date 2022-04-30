@@ -110,7 +110,20 @@ aside{
 }
 
 .see_more{
-    display: none;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem 0 20rem;
+    cursor: pointer;
+}
+
+.see_more p{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0.002em;
+    color: #007AEC;
+
 }
 
 .Budget{

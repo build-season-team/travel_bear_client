@@ -19,7 +19,10 @@ import { BASE_SHORTLET_URL, BASE_SHORTLET_URL_DEV } from "../../constants/base";
 
 const Search = () => {
   
-  const { shortletDispatch, shortletState: { loading, data } } = useContext(ShortletContext);
+  let { shortletDispatch, shortletState: { loading, data } } = useContext(ShortletContext); 
+  if(data.length == 0) {
+    data = new Array(12).fill(0);
+  }
 
   useEffect(() => {
     getShortlet()(shortletDispatch);
@@ -89,10 +92,11 @@ const Search = () => {
                 return (
                   <ShortletCard
                     key={i}
-                    image={BASE_SHORTLET_URL_DEV + cur.image[0]}
-                    rating={cur.ratingsAverage}
+                    loading={loading}
+                    image={cur.image && BASE_SHORTLET_URL_DEV + cur.image[0]}
+                    rating={cur.ratingsAverage?.toFixed(1)}
                     header={cur.houseTitle}
-                    text={cur.description.length > 35 ? cur.description.substring(0, 35) + "....." : cur.description}
+                    text={cur.description?.length > 35 ? cur.description?.substring(0, 35) + "....." : cur.description}
                     amount={cur.amount}
                   />
                 );

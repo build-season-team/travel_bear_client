@@ -15,7 +15,7 @@ import Divider from '../Divider';
 import { AuthContext } from '../../../store/authContext/AuthProvider';
 import {ReactComponent as DropDown} from '../../../assets/images/drop-down.svg'
 
-const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
+const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible, hideNav })=> {
      const [select, setSelect]=useState();
      const {authState: {isLoggedIn}} = useContext(AuthContext);
      const location = useLocation();
@@ -46,6 +46,9 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                                     
                             <div className="close" onClick={closeDropMenu}> <img src={Close} alt=" close drop nav button" /> </div>
                         </div>
+                        {!hideNav &&
+                        <>
+                        
                         {isLoggedIn && <div className='profile__pic'>
                             <div className='profile__img'>
                                 <img src={Avatar} alt="profile image" />
@@ -81,7 +84,11 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                                 <p>Lease Shortlets</p>
                             </div>
                         </div>}
+                        </>
+                        
+                        }
                     </div>
+                    {!hideNav &&
                     <div className="right mini_btn ">
                         {!isLoggedIn ? 
                             <>
@@ -91,13 +98,15 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                             :
                             <Button name='Log Out' bigCard onClick={() => onclick('/login')} navBtn secondary link='/login' />}
                     </div>
+                    }
                 </div>
             </div>
             <div className='nav_Style'>
                 <div className='desktop_nav'>
                     <span className='desktop_nav_logo' ><img src={ HeaderLogo } alt="Logo" /></span>
-                    
-                    
+
+                    {!hideNav &&
+                    <>
                     {location.pathname == '/' ? <ul className="macro">
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/'>About Us</Link></li>
@@ -142,6 +151,11 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible })=> {
                     }
 
                     </div>
+                    
+                    </>
+                    }
+                    
+                    
                 
 
                 </div>

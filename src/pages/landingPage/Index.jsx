@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { SpinnerCircular } from 'spinners-react';
 
 
+
 import classes from "./landing.module.css";
 import Header from "../../components/UI/Header/index";
 import Footer from "../../components/UI/Footer/index";
@@ -21,15 +22,17 @@ const LandingPage = () => {
   const [stateInfo, setStateInfo] = useState('all')
   const [stateInfo2, setStateInfo2] = useState('all')
   const {shortletDispatch, shortletState: {loading, data}} = useContext(ShortletContext);
+  let visited = stateInfo === 'all' ? data.sort((a, b) => b.visited - a.visited).slice(0, 4) : data.sort((a, b) => b.ratingsAverage - a.ratingsAverage).filter(item => item.state === stateInfo).slice(0, 4);
+  let highRate = stateInfo2 === 'all' ? data.sort((a, b) => b.ratingsAverage - a.ratingsAverage).slice(0, 4) : data.sort((a, b) => b.ratingsAverage - a.ratingsAverage).filter(item => item.state === stateInfo2).slice(0, 4);
+  if(data.length === 0) {
+    visited = new Array(4).fill(0);
+    highRate = new Array(4).fill(0);
+  }
 
   useEffect(() => {
     getShortlet()(shortletDispatch);
   },[])
 
-
-  const visited = stateInfo === 'all' ? data.sort((a, b) => b.visited - a.visited).slice(0, 4) : data.sort((a, b) => b.ratingsAverage - a.ratingsAverage).filter(item => item.state === stateInfo).slice(0, 4);
-
-  const highRate = stateInfo2 === 'all' ? data.sort((a, b) => b.ratingsAverage - a.ratingsAverage).slice(0, 4) : data.sort((a, b) => b.ratingsAverage - a.ratingsAverage).filter(item => item.state === stateInfo2).slice(0, 4)
 
 
 
@@ -60,11 +63,12 @@ const LandingPage = () => {
                 visited.map((cur, i) => {
                   return (
                     <ShortletCard
+                      loading={loading}
                       key={i}
-                      image={BASE_SHORTLET_URL_DEV + cur.image[0]}
-                      rating={cur.ratingsAverage.toFixed(1) || 4.5}
+                      image={cur.image && BASE_SHORTLET_URL_DEV + cur.image?.[0]}
+                      rating={cur.ratingsAverage?.toFixed(1) || 4.5}
                       header={cur.houseTitle}
-                      text={cur.description.length > 35 ? cur.description.substring(0, 35) + "....." : cur.description }
+                      text={cur.description?.length > 35 ? cur.description?.substring(0, 35) + "....." : cur.description }
                       amount={cur.amount}
                       big
                     />
@@ -94,11 +98,12 @@ const LandingPage = () => {
                 return (
                   <ShortletCard
                     key={i}
+                    loading={loading}
                     big
-                    image={BASE_SHORTLET_URL_DEV + cur.image[0]}
-                    rating={cur.ratingsAverage.toFixed(1) || 4.5}
+                    image={cur.image && BASE_SHORTLET_URL_DEV + cur.image?.[0]}
+                    rating={cur.ratingsAverage?.toFixed(1)}
                     header={cur.houseTitle}
-                    text={cur.description.length > 35 ? cur.description.substring(0, 35) + "....." : cur.description}
+                    text={cur.description?.length > 35 ? cur.description?.substring(0, 35) + "....." : cur.description}
                     amount={cur.amount}
                   />
                 )
