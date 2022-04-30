@@ -17,7 +17,7 @@ import Wallet from './pages/Dashboard/screens/Wallet/Wallet';
 import Shortlets from './pages/Dashboard/screens/Shortlets/Shortlets';
 import Search from './pages/SearchPage/search';
 import ReservationPage from './pages/ReservationPage/ReservationPage';
-
+import Booking from './pages/BookingPage/Booking'
 
 function App() {
 
@@ -37,6 +37,9 @@ function App() {
           <Route path='/shortlets' element={<Search />} />
 
           <Route path='/reservation-page' element={<ReservationPage/>} />
+
+          {/* Booking */}
+          <Route path='/booking-page' element={ <Booking/> } />
 
               {/* Dashboard Routing */}
            <Route path="/dashboard" element={<Dashboard />} >

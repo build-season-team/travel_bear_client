@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import { SpinnerCircular } from 'spinners-react';
 
 
 import classes from "./landing.module.css";
