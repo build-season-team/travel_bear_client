@@ -4,8 +4,8 @@
 }
 
 .shortlet_image{
-    height: 16rem;
-    width: 18rem;
+    height: 18rem;
+    width: 20rem;
     border-radius: .64rem;
     /* position: relative; */
 }
@@ -74,27 +74,25 @@
     margin-top: 1.2rem;
 }
 
+.checkoutBtn{
+    width: 70%;
+}
+
 .disable_btn{
-    cursor: pointer;
-}
-
-.remove_btn{
-    cursor: pointer;
-}
-
-.dash_button span:first-child{
     padding: .66rem 2.3rem;
     color: #007AEC;
     background-color: #007AEC21; 
     border-radius: .4rem;
+    cursor: pointer;
 }
 
-.dash_button span:last-child{
+.remove_btn{
     padding: .66rem 2.3rem;
     color: #FF2020;
     border: 1px solid #FF2020;
     border-radius: .4rem;
     margin-left: 1.2rem;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 150px) and (max-width: 545px)  {
@@ -118,13 +116,13 @@
         text-align: center;
     }
 
-    .dash_button span:first-child{
+    .disable_btn{
         color: #007AEC;
         background-color: #007AEC21; 
         border-radius: .4rem;
     }
     
-    .dash_button span:last-child{
+    .remove_btn{
         color: #FF2020;
         margin-top: 1rem;
         border: 1px solid #FF2020;

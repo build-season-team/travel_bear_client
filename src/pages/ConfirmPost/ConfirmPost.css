@@ -52,6 +52,7 @@
 .image_grid{
     display: grid;
     width: 100%;
+    height: 235px;
     margin-bottom: 5.6rem;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -67,8 +68,8 @@
 }
 
 .img_size:hover{
-    opacity: 0.8;
-    transition: 2s all;
+    opacity: 0.9;
+    transition: .5s all;
 }
 
 .in_grid{

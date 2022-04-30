@@ -16,6 +16,9 @@ import WalletIcon from '../../../../assets/icons/wallet.svg'
 import ShortletIcon from '../../../../assets/icons/house.svg'
 import Logout from '../../../../assets/icons/logout.svg'
 
+import { FaTimes } from 'react-icons/fa'
+import { MdReorder } from 'react-icons/md'
+
 const SideBar = ({className}) => {
     const [activeNav, setActiveNav] = useState(0)
     const tabItems =[
@@ -32,14 +35,15 @@ const SideBar = ({className}) => {
         navigate(text)
 
     }
-
+    
 
 
   return (
     <div className={classes.side_bar}>
         
-        <div className='sidebar_logo'>
+        <div className={classes.sidebar_logo}>
             <img src={TravelBear} alt="TravelBear Logo" />
+            <FaTimes className={classes.close_icon} size={'2.2rem'}  />
         </div>
         <div className={classes.nav_items}>
               <ul>

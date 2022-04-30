@@ -1,5 +1,5 @@
 .side_bar{
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100%;
@@ -28,7 +28,15 @@
 }
 
 .sidebar_logo{
-    padding: 4rem 3rem;
+    /* padding: 4rem 3rem; */
+    display: flex;
+    align-items: center;
+}
+
+.close_icon{
+    border: 1px solid red;
+    color: var(--color-primary);
+    justify-content: flex-end;
 }
 
 .side_bar ul{

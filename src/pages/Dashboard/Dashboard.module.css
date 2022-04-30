@@ -7,7 +7,7 @@
 }
 
 .dashboard_sub_screen{
-    /* margin-left: 20%; */
+    margin-left: 20%;
     padding: 2rem 4rem;
     width: 80%;
 }
@@ -30,9 +30,10 @@
     }
 
     .dash_header{
-        width: 95%;
-        margin-left: 1rem;
-        margin-right: 1rem;
+        width: 100%;
+        margin-bottom: 1rem;
+        margin-left: 0rem;
+        margin-right: 0rem;
     }
     
     .dashboard_sub_screen{
@@ -49,6 +50,10 @@
         width: 100%;
         margin: auto;
         overflow: hidden;
+    }
+
+    .dash_header{
+        margin-bottom: 1rem;
     }
     
     .dashboard_sub_screen{
