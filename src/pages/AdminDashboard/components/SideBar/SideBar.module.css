@@ -37,7 +37,6 @@
     border: 1px solid red;
     color: var(--color-primary);
     justify-content: flex-end;
-    cursor: pointer;
 }
 
 .side_bar ul{

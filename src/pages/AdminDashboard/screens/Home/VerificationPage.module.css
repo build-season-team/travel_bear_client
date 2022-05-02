@@ -1,12 +1,17 @@
+.full_container{
+    height: 100vh;
+}
+
 .dashboard_home{
     display: flex;
     background-color: #fff;
     border-radius: .9rem;
     margin-top: 2rem;
+    width: 100%;
 }
 
-.user_profile{
-    padding: 6rem 4rem;
+.apartment_profile{
+    padding: 1rem 1rem 2.5rem 1rem;
     flex: 1;
 }
 
@@ -104,11 +109,6 @@
     background-color: #fff;
     min-height: 30rem;
     margin-top: 2rem;
-    /* padding: 2rem 1rem; */
-}
-
-.bank_summary_content{
-    padding: 2rem 4rem;
 }
 
 
@@ -140,6 +140,8 @@
 .small_box:last-child{
     margin-left: 1.6rem;
 }
+
+
 
 @media screen and (min-width: 150px) and (max-width: 400px)  {
     .dashboard_home{
@@ -256,7 +258,6 @@
     .full_container{
         width: 100%;
         margin: 0 auto;
-        /* border: 2px solid red; */
     }
     
     .dashboard_home{

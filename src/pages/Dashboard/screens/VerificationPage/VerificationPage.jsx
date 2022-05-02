@@ -1,26 +1,29 @@
 import React from 'react'
-import classes from './Home.module.css'
+import classes from './VerificationPage.module.css'
 
-import UserProfile from '../../components/UserProfile/UserProfile'
-import Shortlet from '../../components/Shortlet/Shortlet'
+
+import VerifyApartment from '../../components/VerifyApartment/VerifyApartment'
+import Button from '../../../../components/UI/Button'
 
 import NotificationBell from '../../../../assets/icons/notification.svg'
 import BankIcon from '../../../../assets/icons/bank.svg'
 import ShortletIcon from '../../../../assets/icons/shortlet.svg'
 
-const Home = () => {
+const VerificationPage = () => {
   return (
 
     <div className={classes.full_container}>
     
     
-    <div className={classes.dashboard_home}>
-      <div className={classes.user_profile}><UserProfile /></div>
+    <section className={classes.dashboard_home}>
+      <div className={classes.apartment_profile}> <VerifyApartment title='Hotel Gunawangsa MERR' name='Kachi Afudoh' description='Clean 3 bedroom apartment with seperate toilets but shared kitchen.' button={ <Button primary authBtn name='Accept' /> } btn1={ <Button danger authBtn name='Decline' /> } /></div>
 
-      <p className={classes.dash_p}>Edit Profile</p>
-    </div>
+      <div className={classes.apartment_profile}> <VerifyApartment title='Teneway Richmond Street' name='Kalu Emmanuel' description='Fully furnished 2 bedroom apartment in the choicest area.' button={ <Button primary authBtn name='Accept' /> } btn1={ <Button danger authBtn name='Decline' /> } /></div>
 
-    <section className={classes.big_container}>
+      {/* <p className={classes.dash_p}>Edit Profile</p> */}
+    </section>
+
+    {/* <section className={classes.big_container}>
         <div className={classes.medium_container}>
           <div className={classes.bank_summary_container}>
               <div className={classes.bank_summary}>
@@ -45,21 +48,17 @@ const Home = () => {
           <div className={classes.bank_summary_container1}>
               <div className={classes.bank_summary}>
                   <div className={classes.bank_summary_title}>
-                    <img src={ShortletIcon} alt="Shortlet icons " />
+                    <img src={ShortletIcon} alt="" />
                     <p>Shortlets</p>
                   </div>
                   <span>See All</span>
-              </div>
-                <div className={classes.bank_summary_content}>
-                 <Shortlet amount='N20,000' verifiedhome />
-                 <Shortlet />
-                 <Shortlet />
                 </div>
-                
+
+                dsdsdsds
           </div>
             
         </div>
-        {/* </div> */}
+        
         <div className={classes.small_container}>
             <div className={classes.notification}>
                 <p> Notification</p>
@@ -71,10 +70,10 @@ const Home = () => {
                   <p>No notification</p>
             </div>
         </div>
-    </section>
+    </section> */}
 
     </div>
   )
 }
 
-export default Home
+export default VerificationPage;

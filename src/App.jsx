@@ -19,6 +19,11 @@ import Search from './pages/SearchPage/search';
 import ReservationPage from './pages/ReservationPage/ReservationPage';
 import Booking from './pages/BookingPage/Booking'
 
+// admin Dashboard pages
+
+import VerificationPage from './pages/Dashboard/screens/VerificationPage/VerificationPage'
+import Withdrawal from './pages/Dashboard/screens/Withdrawal/Withdrawal';
+
 function App() {
 
 
@@ -38,15 +43,24 @@ function App() {
 
           <Route path='/reservation-page' element={<ReservationPage/>} />
 
-          {/* Booking */}
+            {/* Booking */}
           <Route path='/booking-page' element={ <Booking/> } />
 
               {/* Dashboard Routing */}
-           <Route path="/dashboard" element={<Dashboard />} >
+          <Route path="/dashboard" element={<Dashboard />} >
             <Route index path="/dashboard/" element={<Home />} />
             <Route  path="/dashboard/wallet" element={<Wallet />} />
-            <Route  path="/dashboard/shortlets" element={<Shortlets />} />
+            <Route  path="/dashboard/shortlets" element={<Shortlets />} />          
+            <Route path="/dashboard/verification" element={ <VerificationPage />} />
+            <Route path="/dashboard/withdrawal" element={<Withdrawal />} />
           </Route>
+
+            {/* Nested route for the admin screens */}
+          {/* <Route path='/dashboard/admin' element={<VerificationPage />} >           */}
+          {/* </Route> */}
+
+            
+
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </Router>

@@ -56,8 +56,8 @@
         font-weight: 500;
     }
 
-    .user_details{
-        padding-left: 0rem;
+    .user_details p:first-child{
+        font-size: 1.5rem;    
     }
 
     .user_shortlet{
@@ -84,10 +84,6 @@
         width: 16rem; 
 
         aspect-ratio: 2/1;
-    }
-
-    .user_details{
-        padding-left: 0rem !important;
     }
 
     .user_details p:first-child{

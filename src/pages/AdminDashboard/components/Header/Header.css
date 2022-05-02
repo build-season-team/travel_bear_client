@@ -15,12 +15,6 @@
     padding-top: 1.7rem;
     padding-bottom: 1.7rem;
     margin-left: 2rem;
-    display: flex;
-    flex-direction: row;
-}
-
-.hamburger_menu{
-    display: none;
 }
 
 .input_box{
@@ -90,22 +84,9 @@ input{
     }
 
     .header_search{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
         width: 100%;
-        padding: 1.7rem 1rem !important;
-        margin-left: 0rem;
-    }
-
-    .hamburger_menu{
-        padding-right: 1rem;
-        display: block;
-        margin-left: -1rem;
-        color: var(--color-primary);
-        justify-content: flex-end;
-        cursor: pointer;
+        padding: 1.7rem 4rem;
+        margin-left: 2rem;
     }
 
     ::placeholder {
