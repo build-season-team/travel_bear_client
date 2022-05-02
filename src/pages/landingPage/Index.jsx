@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import { SpinnerCircular } from 'spinners-react';
 
 
 
@@ -16,9 +15,11 @@ import Update from "../../components/Update/update"
 import getShortlet from "../../store/shortletContext/actionCreators/getShortlet";
 import {ShortletContext} from '../../store/shortletContext/ShortletProvider';
 import { BASE_SHORTLET_URL_DEV, BASE_URL, BASE_URL_DEV } from "../../constants/base";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
 
+  const navigate = useNavigate();
   const [stateInfo, setStateInfo] = useState('all')
   const [stateInfo2, setStateInfo2] = useState('all')
   const {shortletDispatch, shortletState: {loading, data}} = useContext(ShortletContext);
@@ -71,6 +72,7 @@ const LandingPage = () => {
                       text={cur.description?.length > 35 ? cur.description?.substring(0, 35) + "....." : cur.description }
                       amount={cur.amount}
                       big
+                      onClick={() => navigate('/booking/' + cur._id + `-${cur.houseTitle}`)}
                     />
                   )
                 })
@@ -105,6 +107,7 @@ const LandingPage = () => {
                     header={cur.houseTitle}
                     text={cur.description?.length > 35 ? cur.description?.substring(0, 35) + "....." : cur.description}
                     amount={cur.amount}
+                    onClick={() => navigate('/booking/' + cur._id + `-${cur.houseTitle}`)}
                   />
                 )
               })}

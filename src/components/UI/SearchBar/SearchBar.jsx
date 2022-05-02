@@ -29,7 +29,7 @@ const SearchBar = () => {
             <div className='search_box_options'>
                   <div className='search_box_options1 accomo' onClick={() => navigate('/shortlets')}>
                     <img src={ BuildingIcon } alt="an icon representing a building" />
-                    <p>Box Accomodation</p>
+                    <p>Book Accomodation</p>
                     <img src={DropDownIcon} alt=" a dropdown icon" />
                 </div>
 

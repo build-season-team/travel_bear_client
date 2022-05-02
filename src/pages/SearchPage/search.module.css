@@ -72,7 +72,6 @@ aside{
 
 .shortlet{
     display: flex;
-    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
@@ -151,8 +150,9 @@ aside{
 
     .shortlet{
         display: flex;
-        justify-content: space-evenly;
         flex-wrap: wrap; 
+        padding: 0 1rem;
+        gap: 1rem;
     }
 
     .sidebarBack{

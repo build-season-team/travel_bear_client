@@ -14,7 +14,6 @@ const getShortlet = () => async (dispatch) => {
         })
 
     }catch (error) {
-        console.log(error)
         dispatch({
             type: FETCH_SHORTLET_FAIL
         })

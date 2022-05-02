@@ -18,7 +18,7 @@ const UploadShortlet = () => {
 
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [form, setForm] = useState({roomCondition: 'good'});
-    const [errors, setErrors] = useState({images: 'use 5 images'});
+    const [errors, setErrors] = useState({images: 'Use 5 images'});
     const [images, setImages] = useState([]);
     const [imageFiles, setImageFiles] = useState([]);
     const [isChanged, setIsChanged] = useState(0);
@@ -64,7 +64,7 @@ const UploadShortlet = () => {
                 setErrors({ ...errors, description: 'description must be more than 4 characters' })
             }
             if(key == 'images' && images.length > 0 && images.length <  5) {
-                setErrors({ ...errors, images: 'images must be 5 images' })
+                setErrors({ ...errors, images: 'Images must be 5 images' })
             }
         }
     }

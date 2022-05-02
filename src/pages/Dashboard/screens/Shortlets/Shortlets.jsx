@@ -58,15 +58,15 @@ const Shortlets = () => {
         </div>
 
         <div className={classes.shortlet_container}>
-          <Shortlet />
+          <Shortlet verifiedhome={'Verified'} houseOwner amount={'N 16,700'} statustitle={'Status:'} status={'Public'} />
         </div>
 
         <div className={classes.shortlet_container}>
-          <Shortlet />
+          <Shortlet verifiedhome={'Verified'} houseOwner amount={'N 7,700'} status={'Public'}/>
         </div>
 
         <div className={classes.shortlet_container}>
-          <Shortlet />
+          <Shortlet verifiedhome={'Verified'} houseOwner amount={'N 39,999'} status={'Public'}/>
         </div>
       </div>
     </>

@@ -16,6 +16,9 @@ import WalletIcon from '../../../../assets/icons/wallet.svg'
 import ShortletIcon from '../../../../assets/icons/house.svg'
 import Logout from '../../../../assets/icons/logout.svg'
 
+import { FaTimes } from 'react-icons/fa'
+import { MdReorder } from 'react-icons/md'
+
 const SideBar = ({className}) => {
     const [activeNav, setActiveNav] = useState(0)
     const tabItems =[
@@ -27,22 +30,20 @@ const SideBar = ({className}) => {
     const navigate = useNavigate();
     const params = useParams();
 
-
-
-
     const changeActiveTab = (i, text) => {
         setActiveNav(i);
         navigate(text)
 
     }
-
+    
 
 
   return (
     <div className={classes.side_bar}>
         
-        <div className='sidebar_logo'>
+        <div className={classes.sidebar_logo}>
             <img src={TravelBear} alt="TravelBear Logo" />
+            <FaTimes className={classes.close_icon} size={'2.2rem'}  />
         </div>
         <div className={classes.nav_items}>
               <ul>
@@ -54,12 +55,6 @@ const SideBar = ({className}) => {
                           </li>
                       ))
                   }
-
-                  {/* Logout Button */}
-                  {/* <ListItem color="error.100" padding="4" pl="8" cursor="pointer" display="flex" borderRadius="8px" borderTopLeftRadius="0" borderBottomLeftRadius="0" alignItems="center" mt="204px">
-                    <Image color="danger.100" src={ LogoutIcon } alt="Logout" mr="18px"/>
-                    Logout
-                </ListItem> */}
 
               </ul>
 

@@ -14,10 +14,11 @@ import Avatar from '../../../assets/images/avatar2.jpeg'
 import Divider from '../Divider';
 import { AuthContext } from '../../../store/authContext/AuthProvider';
 import {ReactComponent as DropDown} from '../../../assets/images/drop-down.svg'
+import logout from '../../../store/authContext/actionCreators/logout';
 
 const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible, hideNav })=> {
      const [select, setSelect]=useState();
-     const {authState: {isLoggedIn}} = useContext(AuthContext);
+     const {authDispatch, authState: {isLoggedIn, user}} = useContext(AuthContext);
      const location = useLocation();
      const navigate = useNavigate();
     const handleClick = ()=> setSelect({});
@@ -31,6 +32,12 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible, hideNav })=> {
     const closeDropMenu = ()=> {
         setDropMenuIsVisible(false);
     }
+
+    const signout = () => {
+        logout()(authDispatch)(() => setTimeout(() => {
+            navigate('/')
+        }, 1000))
+    }
     
 
     return (
@@ -41,7 +48,7 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible, hideNav })=> {
 
                         <div className="main-header">
                             <div className="logo-mini-container">
-                                <span className="logo-mini"><img src={ HeaderLogo } alt="Logo" /></span>
+                                <span onClick={() => navigate('/')} className="logo-mini"><img src={ HeaderLogo } alt="Logo" /></span>
                             </div>
                                     
                             <div className="close" onClick={closeDropMenu}> <img src={Close} alt=" close drop nav button" /> </div>
@@ -49,11 +56,11 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible, hideNav })=> {
                         {!hideNav &&
                         <>
                         
-                        {isLoggedIn && <div className='profile__pic'>
+                        {isLoggedIn && <div onClick={signout} className='profile__pic'>
                             <div className='profile__img'>
                                 <img src={Avatar} alt="profile image" />
                             </div>
-                            <div className='profile__text'>Hi, Code_max</div>
+                            <div className='profile__text'>Hi, {user.firstName}</div>
                         </div>}
                         {isLoggedIn && <Divider />}
                         {location.pathname == '/' ?  <ul>
@@ -63,7 +70,7 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible, hideNav })=> {
                         </ul>
                         :
                          <div className='search_box_options3'>
-                            <div className='search_box_options1 accomo' onClick={()=> onclick()}>
+                            <div className='search_box_options1 accomo' onClick={()=> navigate('/shortlets')}>
                                 <img src={ BuildingIcon } alt="an icon representing a building" />
                                 <p>Book Accomodation</p>
                                 <img src={DropDownIcon} alt=" a dropdown icon" />
@@ -79,7 +86,7 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible, hideNav })=> {
                                 <p>Trips</p>
                             </div>
 
-                            <div className='search_box_options1 house' onClick={() => onclick('/upload')}>
+                            <div className='search_box_options1 house' onClick={() => onclick('/terms')}>
                                 <img src={HouseIcon} alt="a house icon" />
                                 <p>Lease Shortlets</p>
                             </div>
@@ -103,7 +110,7 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible, hideNav })=> {
             </div>
             <div className='nav_Style'>
                 <div className='desktop_nav'>
-                    <span className='desktop_nav_logo' ><img src={ HeaderLogo } alt="Logo" /></span>
+                    <span onClick={() => navigate('/')} className='desktop_nav_logo' ><img src={ HeaderLogo } alt="Logo" /></span>
 
                     {!hideNav &&
                     <>
@@ -114,7 +121,7 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible, hideNav })=> {
                     </ul>
                     :
                     <div className='search_box_options2'>
-                        <div className='search_box_options1 accomo2' onClick={()=> handleClick}>
+                                <div className='search_box_options1 accomo2' onClick={() => navigate('/shortlets')}>
                             <img src={ BuildingIcon } alt="an icon representing a building" />
                             <p>Book Accomodation</p>
                             <img src={DropDownIcon} alt=" a dropdown icon" />
@@ -131,7 +138,7 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible, hideNav })=> {
                             <p>Trips</p>
                         </div>
 
-                        <div className='search_box_options1 house2'>
+                                <div onClick={() => navigate('/terms')} className='search_box_options1 house2'>
                             <img src={HouseIcon} alt="a house icon" />
                             <p>Lease Shortlets</p>
                         </div>
@@ -143,8 +150,8 @@ const Nav = ({ dropMenuIsVisible,setDropMenuIsVisible, hideNav })=> {
                             <Button name='Log In' onClick={() => onclick('/login')} navBtn secondary link='/login' />
                         </>
                         :
-                        <div className='landing__profile'>
-                            <p>Hi, CodeMax </p>
+                        <div onClick={signout} className='landing__profile'>
+                                    <p>Hi, {user.firstName} </p>
                             <DropDown />
                             <img src={Avatar} alt="profile" />
                         </div>

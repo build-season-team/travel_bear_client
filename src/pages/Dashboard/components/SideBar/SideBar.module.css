@@ -3,14 +3,16 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 20%;
+    width: max-content;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    text-transform: capitalize;
     background-color: #fff;
     box-shadow: 27px 0px 50px rgba(196, 196, 196, 0.16);;
-    padding: 5rem 0 10rem 5rem;
+    padding: 5rem 4rem 10rem 5rem;
 }
 
 .nav_items {
@@ -26,7 +28,15 @@
 }
 
 .sidebar_logo{
-    padding: 4rem 3rem;
+    /* padding: 4rem 3rem; */
+    display: flex;
+    align-items: center;
+}
+
+.close_icon{
+    border: 1px solid red;
+    color: var(--color-primary);
+    justify-content: flex-end;
 }
 
 .side_bar ul{
@@ -43,6 +53,7 @@
 .blue__text {
     color: var(--color-primary);
 }
+
 
 
 .side_bar ul li{

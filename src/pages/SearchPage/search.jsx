@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import classes from "./search.module.css";
 import Header from "../../components/UI/Header/index";
 import Button from "../../components/UI/Button";
@@ -18,7 +19,8 @@ import getShortlet from "../../store/shortletContext/actionCreators/getShortlet"
 import { BASE_SHORTLET_URL, BASE_SHORTLET_URL_DEV } from "../../constants/base";
 
 const Search = () => {
-  
+
+  const navigate = useNavigate()
   let { shortletDispatch, shortletState: { loading, data } } = useContext(ShortletContext); 
   if(data.length == 0) {
     data = new Array(12).fill(0);
@@ -98,6 +100,7 @@ const Search = () => {
                     header={cur.houseTitle}
                     text={cur.description?.length > 35 ? cur.description?.substring(0, 35) + "....." : cur.description}
                     amount={cur.amount}
+                    onClick={() => navigate('/booking/' + cur._id + `-${cur.houseTitle}`)}
                   />
                 );
               })}

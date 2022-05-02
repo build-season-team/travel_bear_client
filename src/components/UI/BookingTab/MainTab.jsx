@@ -1,11 +1,10 @@
 import React, { useEffect, useState} from 'react'
-import Skeleton from 'react-loading-skeleton';
 
 import TabContent from '../Tab/TabContent';
 import TabNavItem from '../Tab/TabNavItem';
 import './Tab.css'
 
-const MainTab = ({description, rules, loading}) => {
+const MainTab = ({description, rules}) => {
   const [activeTab, setActiveTab] = useState("tab1");
  
   return (
@@ -19,16 +18,16 @@ const MainTab = ({description, rules, loading}) => {
         <TabContent id="tab1" activeTab={activeTab}>
           <div>
 
-          <p>{ loading ? <Skeleton /> : description}</p>
+          <p>{description}</p>
 
           </div>
         </TabContent>
         <TabContent id="tab2" activeTab={activeTab}>
           <ul>
-            {rules.split(',').filter(item => item !== '').map((rule, i) => (
+            {rules.split(',').map((rule, i) => (
               <React.Fragment key={i}>
 
-                <li>{loading ? <Skeleton /> : rule}</li>
+                  <li>{rule}</li>
               </React.Fragment>
             ))}
           </ul>

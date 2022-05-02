@@ -44,16 +44,6 @@ const Modal = ({ setIsOpen, heading, description, select, label, input, addBtn, 
             <div className={styles.actionsContainer}>
               
               
-              
-              {/* <button className={styles.deleteBtn} onClick={() => setIsOpen(false)}>
-                Delete
-              </button>
-              <button
-                className={styles.cancelBtn}
-                onClick={() => setIsOpen(false)}
-              >
-                Cancel
-              </button> */}
             </div>
           </div>
         </div>

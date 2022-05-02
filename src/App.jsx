@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import './App.css';
 
@@ -16,10 +16,29 @@ import Home from './pages/Dashboard/screens/Home/Home';
 import Wallet from './pages/Dashboard/screens/Wallet/Wallet';
 import Shortlets from './pages/Dashboard/screens/Shortlets/Shortlets';
 import Search from './pages/SearchPage/search';
-
+import ReservationPage from './pages/ReservationPage/ReservationPage';
+import Booking from './pages/BookingPage/Booking'
+import { LOGIN_SUCCESS } from './constants/actionTypes';
 
 function App() {
 
+  const { authDispatch, authState: { isLoggedIn } } = useContext(AuthContext);
+  const getUser = () => {
+    if(!isLoggedIn) {
+      const token = localStorage.getItem('token');
+      if(token) {
+        const user = JSON.parse(localStorage.getItem("user"));
+        authDispatch({
+          type: LOGIN_SUCCESS,
+          payload: user
+        })
+      }
+    }
+  }
+
+  useEffect(() => {
+    getUser();
+  },[isLoggedIn])
 
   
   return (
@@ -35,8 +54,13 @@ function App() {
           <Route path='/upload' element={<UploadShortlet />} />
           <Route path='/shortlets' element={<Search />} />
 
+          <Route path='/reservation-page' element={<ReservationPage/>} />
+
+          {/* Booking */}
+          <Route path='/booking/:houseID' element={ <Booking/> } />
+
               {/* Dashboard Routing */}
-          <Route path="/dashboard" element={<Dashboard />} >
+           <Route path="/dashboard" element={<Dashboard />} >
             <Route index path="/dashboard/" element={<Home />} />
             <Route  path="/dashboard/wallet" element={<Wallet />} />
             <Route  path="/dashboard/shortlets" element={<Shortlets />} />

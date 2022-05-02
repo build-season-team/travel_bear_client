@@ -10,7 +10,10 @@
 
 .header_search{
     width: 35%;
-    padding: 1.7rem 4rem;
+    /* padding: 1.7rem 4rem; */
+    padding-right: 1rem;
+    padding-top: 1.7rem;
+    padding-bottom: 1.7rem;
     margin-left: 2rem;
 }
 
@@ -24,11 +27,11 @@ input{
     outline: none;
 }
 
-
-
 .input_box:last-child{
     padding-right: .2rem;
 }
+
+
 
 .header_profile_items{
     width:45%;
@@ -70,7 +73,7 @@ input{
     
 }
 
-@media screen and (min-width: 150px) and (max-width: 400px)  {
+@media screen and (min-width: 150px) and (max-width: 665px)  {
     .header_nav{
         width: 100%;
         /* overflow: hidden; */
@@ -109,14 +112,13 @@ input{
     }
 }
 
-@media screen and (min-width: 401px) and (max-width: 920px)  {
+@media screen and (min-width: 667px) and (max-width: 920px)  {
     .header_nav{
         width: 100%;
-        /* overflow: hidden; */
     }
     
     .header_profile_items{
-        display: none;
+        /* display: none; */
     }
 
     .header_search{
