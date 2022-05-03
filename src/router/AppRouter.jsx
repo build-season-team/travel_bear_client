@@ -16,6 +16,8 @@ import Search from '../pages/SearchPage/search';
 import ReservationPage from '../pages/ReservationPage/ReservationPage';
 import Booking from '../pages/BookingPage/Booking'
 import { AuthContext } from '../store/authContext/AuthProvider';
+import VerificationPage from '../pages/Dashboard/screens/VerificationPage/VerificationPage'
+import Withdrawal from '../pages/Dashboard/screens/Withdrawal/Withdrawal';
 
 const AppRouter = () => {
   return (
@@ -39,6 +41,8 @@ const AppRouter = () => {
                     <Route index path="/dashboard/" element={<Home />} />
                     <Route path="/dashboard/wallet" element={<Wallet />} />
                     <Route path="/dashboard/shortlets" element={<Shortlets />} />
+                    <Route path="/dashboard/verification" element={<VerificationPage />} />
+                    <Route path="/dashboard/withdrawal" element={<Withdrawal />} />
                 </Route>
                 <Route path='*' element={<ErrorPage />} />
             </Routes>
