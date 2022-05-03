@@ -23,7 +23,7 @@
 }
 
 
-@media screen and (min-width: 150px) and (max-width: 400px)  {
+@media screen and (min-width: 150px) and (max-width: 450px)  {
     .dashboard_screen{
         width: 100%;
         display: block;
@@ -46,7 +46,7 @@
     }
 }
 
-@media screen and (min-width: 401px) and (max-width: 920px)  {
+@media screen and (min-width: 451px) and (max-width: 920px)  {
     .dashboard_screen{
         width: 100%;
         margin: auto;
@@ -60,8 +60,17 @@
     .dashboard_sub_screen{
         width: 100%;
         margin-left: 0rem;
-        padding-top: 2rem;
+        padding: 2rem 2rem;
         margin-right: 0rem;
+        
+    }
+}
+
+@media screen and (min-width: 921px) and (max-width: 1350px)  {
+    .dashboard_sub_screen{
+        
+        padding-right: 1rem;
+        
         
     }
 }

@@ -87,7 +87,7 @@
     }
 
     .user_details{
-        padding-left: 0rem !important;
+        padding-left: 1rem;
     }
 
     .user_details p:first-child{

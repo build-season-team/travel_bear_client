@@ -101,6 +101,7 @@ input{
 
     .hamburger_menu{
         padding-right: 1rem;
+        padding-left: 2rem;
         display: block;
         margin-left: -1rem;
         color: var(--color-primary);

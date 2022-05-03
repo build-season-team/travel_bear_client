@@ -6,7 +6,7 @@ import ShortletImage from '../../../../assets/images/house3.jpg'
 
 
 
-const Shortlet = ({statustitle, status, rating, amount, unverified, verifiedhome, disableBtn, removeBtn, button, houseOwner,}) => {
+const Shortlet = ({statustitle, removeVerified, status, rating, amount, unverified, verifiedhome, disableBtn, removeBtn, button, houseOwner,}) => {
 
 const [verified, setVerified] = useState();
 
@@ -17,19 +17,20 @@ const [verified, setVerified] = useState();
             <div className={classes.shortlet_cover}>
                 <img className={classes.shortlet_image} src={ShortletImage} alt="" />
                 
-                
-                { verified
-                
-                ?
-                <span className={classes.unverified}> {unverified} </span> 
-                            // Unverified
-                :
-                <span className={classes.verified}>{verifiedhome}</span>
-                    
-                // Verified
-                }
+                {/* <span  className={classes.remove_verified}> */}
 
-                
+                        {verified
+                        
+                        ?
+                        <span className={classes.unverified}> {unverified} </span> 
+                                    // Unverified
+                        :
+                        <span className={classes.verified}>{verifiedhome}</span>
+                            
+                        // Verified
+                        }
+
+                {/* </span> */}
                 
             </div>
             
