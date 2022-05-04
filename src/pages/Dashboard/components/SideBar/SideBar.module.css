@@ -20,6 +20,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    z-index: 10000;
 }
 
 .nav_test{
@@ -80,9 +81,10 @@
 
 @media screen and (min-width: 150px) and (max-width: 400px)  {
     .side_bar{
-        width: 65%;
+        width: 100%;
         z-index: 10;
         display: flex;
+        transform: translateX(-100%);
         position: relative;
         flex-direction: column;
         justify-content: flex-start;
@@ -91,6 +93,11 @@
         box-shadow: 27px 0px 50px rgba(196, 196, 196, 0.16);;
         position: fixed;
         padding: 5rem 0 10rem 3rem;
+        transition: all .3s;
+    }
+
+    .side_show {
+        transform: translateX(0);
     }
 
     .li_items{
@@ -117,6 +124,7 @@
         z-index: 10;
         display: flex;
         position: relative;
+        transform: translateX(-100%);
         flex-direction: column;
         justify-content: flex-start;
         background-color: #fff;
@@ -124,6 +132,10 @@
         box-shadow: 27px 0px 50px rgba(196, 196, 196, 0.16);;
         position: fixed;
         padding: 5rem 0 10rem 3rem;
+    }
+
+    .side_show {
+        transform: translateX(0);
     }
 
     .li_items{
@@ -149,6 +161,7 @@
         z-index: 10;
         display: flex;
         position: relative;
+        transform: translateX(-100%);
         flex-direction: column;
         justify-content: flex-start;
         background-color: #fff;
@@ -156,6 +169,10 @@
         box-shadow: 27px 0px 50px rgba(196, 196, 196, 0.16);;
         position: fixed;
         padding: 5rem 0 10rem 3rem;
+    }
+
+    .side_show {
+        transform: translateX(0);
     }
 
     .li_items{
@@ -181,6 +198,7 @@
         z-index: 10;
         display: flex;
         position: relative;
+        transform: translateX(-100%);
         flex-direction: column;
         justify-content: flex-start;
         background-color: #fff;
@@ -188,6 +206,10 @@
         box-shadow: 27px 0px 50px rgba(196, 196, 196, 0.16);;
         position: fixed;
         padding: 5rem 0 10rem 3rem;
+    }
+
+    .side_show {
+        transform: translateX(0);
     }
 
     .li_items{

@@ -270,7 +270,7 @@ const ActivityCard = () =>{
   
 };
 
-const TransactionHistory = () =>{
+const TransactionHistory = ({empty}) =>{
   return(
     
         <div>
@@ -279,6 +279,26 @@ const TransactionHistory = () =>{
               <p>Transaction History</p>
               <div className={classes.clear}>Clear All</div>
             </div>
+            {!empty
+
+            ?
+            <div className={classes.withdrawalContainer}>
+                <div className={classes.container_child}>
+                    <div className={classes.withdrawal_heading}>
+                        <ul>
+                            <li>User</li>
+                            <li>Amount</li>
+                            <li>Type</li>
+                            <li>Status</li>    
+                        </ul>
+                        <ActiveTransactionHistory user='Self' amount="25,000" type='Withdrawal' status />
+                        <ActiveTransactionHistory user='Self' amount="25,000" type='Withdrawal' status />
+                        <ActiveTransactionHistory user='Self' amount="25,000" type='Withdrawal' status />
+                    </div>
+                </div>
+            </div>
+
+            : 
             <div>
               <div  className={classes.all_activities}>
                 <img src={ Refund } alt="" />
@@ -286,9 +306,27 @@ const TransactionHistory = () =>{
               </div>
             </div> 
 
+            }
+            
+
         </div>
     
   )
+}
+
+const ActiveTransactionHistory = ({ user, amount, type, status})=>{
+    <>
+        <div className={classes.single_request}>
+            <ul> 
+              <li> <div className={classes.list_option}><span></span> <p>{user}</p></div> </li>
+              <li> <div className={classes.list_option}> <p>N{amount}</p></div> </li>
+              <li> <div className={classes.list_option} ><p>{type}</p></div> </li>
+              <li> <div className={classes.list_option} ><p>{status}</p></div> </li>
+              
+            </ul>
+          </div>
+    
+    </>
 }
  
 export default Wallet;

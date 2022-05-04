@@ -25,8 +25,10 @@ import { FaTimes } from 'react-icons/fa'
 import { MdClose } from 'react-icons/md'
 // import Withdrawal from '../../../AdminDashboard/screens/Withdrawal/Withdrawal'
 
-const SideBar = ({className}) => {
+const SideBar = ({className, show, setShow}) => {
+
     const [activeNav, setActiveNav] = useState(0)
+    const [dropMenuIsVisible, setDropMenuIsVisible] = useState(false);
     const tabItems =[
         { text: "/dashboard/", TabIcon: DashboardIcon, TabIconActive: ActiveDashboard,  },
         { text: "/dashboard/wallet", TabIcon: WalletIcon, TabIconActive: ActiveWallet, },
@@ -35,16 +37,7 @@ const SideBar = ({className}) => {
         { text: "/dashboard/withdrawal", TabIcon: WithdrawalCard, TabIconActive: ActiveWithdrawal, },
     ]
 
-    const [dropMenuIsVisible, setDropMenuIsVisible] = useState(false);
 
-    // const showDropMenu = ()=> {
-    //     setDropMenuIsVisible(true);
-    // }
-
-    const closeDropMenu = ()=> {
-        console.log('true')
-        setDropMenuIsVisible(!dropMenuIsVisible);
-    }
 
     const navigate = useNavigate();
     const params = useParams();
@@ -57,15 +50,18 @@ const SideBar = ({className}) => {
 
 
   return (
-    <div className={ dropMenuIsVisible ? classes.side_bar : classes.nav_test}>
+    <div className={`${classes.side_bar} ${(dropMenuIsVisible || show) ? classes.side_show : ''}`}>
         
         <div className={`${classes.sidebar_logo} ${classes.nav_test}`}>
             <img src={TravelBear} alt="TravelBear Logo" />
-            <div className={classes.close_icon} onClick={closeDropMenu}>
+            <div className={classes.close_icon} onClick={() => {
+                setDropMenuIsVisible(false);
+                setShow(false);
+                }}>
                 <MdClose size={'2.2rem'}  />        
             </div>
         </div>
-        <div className={ dropMenuIsVisible ? classes.nav_items : classes.nav_test} dropMenuIsVisible={dropMenuIsVisible} setDropMenuIsVisible={setDropMenuIsVisible} >
+        <div className={ classes.nav_items } dropMenuIsVisible={dropMenuIsVisible} setDropMenuIsVisible={setDropMenuIsVisible} >
               <ul>
                   {
                       tabItems.map(({ TabIcon, TabIconActive, text }, i) => (

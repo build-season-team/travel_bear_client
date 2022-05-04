@@ -37,7 +37,7 @@ const Withdrawal = () => {
   )
 }
 
-const WithdrawalRequest = ({name, amount, balance, bank, bankNumber})=>{
+export const WithdrawalRequest = ({name, amount, balance, bank, bankNumber})=>{
   return(
       <>
           <div className={classes.single_request}>

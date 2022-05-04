@@ -23,6 +23,8 @@ import Booking from './pages/BookingPage/Booking'
 
 import VerificationPage from './pages/Dashboard/screens/VerificationPage/VerificationPage'
 import Withdrawal from './pages/Dashboard/screens/Withdrawal/Withdrawal';
+import Modal from './components/UI/Modal/Modal';
+import Button from './components/UI/Button';
 
 function App() {
 
@@ -40,6 +42,10 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/upload' element={<UploadShortlet />} />
           <Route path='/shortlets' element={<Search />} />
+
+{/* modal test */}
+          <Route path='/modal' element={ <Modal heading='gdhdj' description='Sjisddf' checkOut date='Wed, 13 Apr 2022' addBtn={ <Button primary authBtn name='Confirm' /> } locationSummary select selectLabel='Check-in' houseLocation='dfjdjdfjdjfkjkdfjkdjjjjd' duration durationLabel='Duration' /> } />
+
 
           <Route path='/reservation-page' element={<ReservationPage/>} />
 

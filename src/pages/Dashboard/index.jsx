@@ -10,7 +10,7 @@ import { Outlet, useParams } from 'react-router-dom'
 
 const Dashboard = () => {
 
-  const [dropMenuIsVisible, setDropMenuIsVisible] = useState(true);
+  const [dropMenuIsVisible, setDropMenuIsVisible] = useState(false);
 
   const showSidebar = () =>{
     setDropMenuIsVisible( <SideBar /> )
@@ -21,12 +21,12 @@ const Dashboard = () => {
   return (
     <div className={classes.dashboard_screen}> 
     <div>
-        <SideBar className={classes.sidebar} />
+        <SideBar setShow={setDropMenuIsVisible} show={dropMenuIsVisible} className={classes.sidebar} />
     </div>
       
       <section className={classes.dashboard_sub_screen}>
           <div className={classes.dash_header}>
-              <div className={classes.hamburger_menu} onClick={console.log('dfhdf')}>
+              <div className={classes.hamburger_menu} onClick={() => setDropMenuIsVisible(true)}>
                   <MdOutlineNotes size={'2.2rem'} />
               </div>
                 { params.sub ? null : <SubHeader /> }
