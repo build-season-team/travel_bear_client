@@ -12,7 +12,9 @@ import BigHouse from "../../assets/images/Highrise.svg";
 import Plane from "../../assets/images/Airplane.svg";
 import Heart from "../../assets/images/Love.svg";
 import House from "../../assets/images/Home.svg";
-import Dollar from "../../assets/images/dollar-circle.svg"
+import Dollar from "../../assets/images/dollar-circle.svg";
+import DollarCircle from "../../assets/images/dollar-sign.svg";
+
 
 const Search = () => {
   const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -36,6 +38,21 @@ const Search = () => {
                 placeholder={"Quick search by type, city"}
               />
               <Button primary name="" iconPosition="right" icon={SearchIcon} />
+            </div>
+          </div>
+          <div className={classes.adjust}>
+            <div className={classes.adjustB}>
+              <img src={DollarCircle}/>
+              <p>Adjust Budget</p>
+            </div>
+              <p className={classes.sideP}>Set your budget range to help us filter your search</p>
+            <div className={classes.filter}>
+              <div><p><span>N</span>10,000</p></div>
+               <p className={classes.dash}></p>
+               <div><p><span>N</span>50,000</p></div>
+            </div>
+            <div className={classes.apply}>
+              <p>Apply</p>
             </div>
           </div>
           <div className={classes.Budget}>
