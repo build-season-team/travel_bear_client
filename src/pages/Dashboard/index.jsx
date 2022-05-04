@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import classes from './Dashboard.module.css'
 
 import SubHeader from './components/Header/Header'
@@ -6,7 +6,9 @@ import SideBar from './components/SideBar/SideBar'
 
 import { Outlet, useParams } from 'react-router-dom'
 
+
 const Dashboard = () => {
+
 
   const params = useParams();
 

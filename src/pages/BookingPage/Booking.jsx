@@ -9,23 +9,22 @@ import classes from './Booking.module.css'
 import Header from '../../components/UI/Header';
 import FooterWrap from '../../components/UI/Footer';
 import {ShortletContext} from '../../store/shortletContext/ShortletProvider';
-
-import Image1 from '../../assets/images/house1.jpg'
-import Image2 from '../../assets/images/house2.jpg'
-import Image3 from '../../assets/images/house3.jpg'
-import Image4 from '../../assets/images/house4.jpg'
-import Image5 from '../../assets/images/house5.jpg'
 import getOneShortlet from '../../store/shortletContext/actionCreators/getOneShortlet';
 import Skeleton from 'react-loading-skeleton';
 import { BASE_SHORTLET_URL_DEV } from '../../constants/base';
+import axiosInstance from '../../utils/axiosInstance';
+import { AuthContext } from '../../store/authContext/AuthProvider';
+
 
 
 const Booking = () => {
 
   const {shortletDispatch, shortletState: {loading, error, shortlet}} = useContext(ShortletContext);
+  const {authState: {user}} = useContext(AuthContext);
   const navigate = useNavigate();
   const {houseID} = useParams()
   let startDiv;
+  console.log(shortlet)
 
   useEffect(() => {
     getOneShortlet(houseID.split('-')[0])(shortletDispatch);
@@ -41,7 +40,24 @@ const Booking = () => {
     startDiv = '';
   }
 
- 
+  const getPaymentLink = async () => {
+    const details = {
+      amount: shortlet.amount,
+      image: BASE_SHORTLET_URL_DEV + shortlet.image[0],
+      title: shortlet.houseTitle,
+      apartment_id: shortlet._id,
+      user_id: user._id,
+      email: user.email,
+      name: user.firstName + " " + user.lastName,
+      phone: user.phone
+    }
+    try {
+      const res = await axiosInstance.post("/booking/getlink", details)
+      window.location.href = res.data.link;
+    }catch(err) {
+      console.log(err)
+    }
+  }
 
 
 
@@ -126,7 +142,7 @@ const Booking = () => {
         <MainTab rules={shortlet.houseRules || ''} description={shortlet.description || ''} loading={loading}  />
         <div className={classes.btn_width}>
 
-            {loading ? <Skeleton width={'100%'} height={60} /> :<Button  primary bigCard authBtn name='Book Now' />}
+          {loading ? <Skeleton width={'100%'} height={60} /> : <Button onClick={getPaymentLink} primary bigCard authBtn name='Book Now' />}
           {/* <Button onClick={uploadShortlet} primary bigCard authBtn name={`${loading ? 'loading...' : 'Publish'}`} /> */}
         </div>
       </div>

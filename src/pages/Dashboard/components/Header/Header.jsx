@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './Header.css'
 
 import Button from '../../../../components/UI/Button'
@@ -10,8 +10,11 @@ import DropDownIcon from '../../../../assets/images/drop-down.svg'
 import SearchIcon from '../../../../assets/images/search.svg'
 
 import { MdOutlineNotes } from 'react-icons/md'
+import { AuthContext } from '../../../../store/authContext/AuthProvider'
 
 const SubHeader = () => {
+
+    const {authState: {user}} = useContext(AuthContext)
 
     const [value, setValue] = useState('')
     const onInputChange = (e, key) => {
@@ -40,7 +43,7 @@ const SubHeader = () => {
                 <img className='noti_bell' src={NotificationBell} alt="Notificaation bell" />
                 
                 <div className='user_id'>
-                    <div className='user_name'>Hi, Maria</div>
+                    <div className='user_name'>Hi, {user.firstName}</div>
                     <img className='dropdown_svg' src={DropDownIcon} alt="dropdown image" />
                     <div className='avatar'></div>
                 </div>

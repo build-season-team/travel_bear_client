@@ -1,5 +1,6 @@
-import React, { useEffect, useState} from 'react'
+import React, { useContext, useEffect, useState} from 'react'
 import Select from 'react-select'
+import okra from 'okra-js';
 
 import classes from './Wallet.module.css'
 import TabContent from '../../components/WalletTab/TabContent';
@@ -18,11 +19,13 @@ import Activities from '../../../../assets/images/activities.svg'
 import GTBank from '../../../../assets/images/gt-bank.svg'
 import FirstBank from '../../../../assets/images/first-bank.svg'
 import Bank from '../../../../assets/icons/bank.svg'
+import { AuthContext } from '../../../../store/authContext/AuthProvider';
 
-const Wallet = () => {
+const Wallet = ({user}) => {
   const [activeTab, setActiveTab] = useState("tab1");
   const [addWithdraw, setAddWithdraw] = useState(true)
   const [isOpen, setIsOpen] = useState(false);
+
 
   const options = [
     { value: 'access', label: 'Access Bank' },
@@ -94,12 +97,12 @@ const Wallet = () => {
 
               <div className={classes.user_name_wallet}>
                 {/* <img src={ ShortletIcon } alt="shortlet icon" /> */}
-                <p>Maria Nnanna</p>
+                <p>{user.firstName + ' ' + user.lastName}</p>
               </div>
 
               <div className={classes.available_balance}>
                 <p>Available Balance</p>
-                <p>N 0.00</p>
+                <p>N {user.balance}</p>
               </div>
 
           </div>
@@ -118,7 +121,7 @@ const Wallet = () => {
               <div className={classes.withdrawal_container}>
                   <img src={Piggy} alt="piggy bank icon" />
                   <p>Your money is temporarily being saved on our platform, you can add <br /> new bank to be able to withdraw your money.</p>
-                  <Button primary name='Add new bank' />
+                  <Button onClick={() => setIsOpen(true)} primary name='Add new bank' />
               </div>
             </div>
 
@@ -200,7 +203,6 @@ const Wallet = () => {
                     <div className={classes.initiate_withdrawal_body_right}>
                       <p className={classes.withdrawal_banks}>Banks</p>
                       <div className={classes.first_bank}>
-                        <img src={GTBank} alt="bank_icon" />
                         <div className={classes.user_bank_details}>
                           <p className={classes.user_name}>Chidimma Samson</p>
                           <p className={classes.bank_name}>Guarantee Trust Bank</p>
@@ -209,7 +211,6 @@ const Wallet = () => {
                       </div>
 
                       <div className={classes.second_bank}>
-                        <img src={FirstBank} alt="bank_icon" />
                         <div className={classes.user_bank_details}>
                           <p className={classes.user_name}>Susan Godwin</p>
                           <p className={classes.bank_name}>First Bank</p>

@@ -20,6 +20,9 @@ import VerificationPage from '../pages/Dashboard/screens/VerificationPage/Verifi
 import Withdrawal from '../pages/Dashboard/screens/Withdrawal/Withdrawal';
 
 const AppRouter = () => {
+
+    const { authDispatch, authState: { isLoggedIn, user } } = useContext(AuthContext);
+
   return (
     <>
         <Router >
@@ -31,18 +34,18 @@ const AppRouter = () => {
                 <Route path='/upload' element={<UploadShortlet />} />
                 <Route path='/shortlets' element={<Search />} />
 
-                <Route path='/reservation-page' element={<ReservationPage />} />
+                <Route path='/reservation' element={<ReservationPage />} />
 
                 {/* Booking */}
                 <Route path='/booking/:houseID' element={<Booking />} />
 
                 {/* Dashboard Routing */}
-                <Route path="/dashboard" element={<Dashboard />} >
-                    <Route index path="/dashboard/" element={<Home />} />
-                    <Route path="/dashboard/wallet" element={<Wallet />} />
+                  <Route path="/dashboard" element={<ProtectedRoutes ><Dashboard /></ProtectedRoutes>} >
+                    <Route index path="/dashboard/" element={<Home user={user} />} />
+                    <Route path="/dashboard/wallet" element={<Wallet user={user} />} />
                     <Route path="/dashboard/shortlets" element={<Shortlets />} />
-                    <Route path="/dashboard/verification" element={<VerificationPage />} />
-                    <Route path="/dashboard/withdrawal" element={<Withdrawal />} />
+                      <Route path="/dashboard/verification" element={<RestrictedRoutes ><VerificationPage /></RestrictedRoutes> } />
+                      <Route path="/dashboard/withdrawal" element={<RestrictedRoutes><Withdrawal /></RestrictedRoutes> } />
                 </Route>
                 <Route path='*' element={<ErrorPage />} />
             </Routes>
@@ -53,12 +56,37 @@ const AppRouter = () => {
 
 const ProtectedRoutes = ({ children }) => {
     const { authState: { isLoggedIn } } = useContext(AuthContext);
-    console.log(isLoggedIn)
 
     if (!isLoggedIn) {
 
         return (
             <Navigate to="/login" />
+        )
+    }
+    return children;
+
+}
+
+const LandlordRoutes = ({ children }) => {
+    const { authState: { user } } = useContext(AuthContext);
+
+    if (user.role !== 'user') {
+
+        return (
+            <Navigate to="/login" />
+        )
+    }
+    return children;
+
+}
+
+const RestrictedRoutes = ({ children }) => {
+    const { authState: { user } } = useContext(AuthContext);
+
+    if (user.role !== 'admin') {
+
+        return (
+            <Navigate to="/" />
         )
     }
     return children;

@@ -4,10 +4,6 @@ import { AuthContext } from './store/authContext/AuthProvider';
 import { LOGIN_SUCCESS } from './constants/actionTypes';
 import AppRouter from './router/AppRouter';
 
-// admin Dashboard pages
-
-import VerificationPage from './pages/Dashboard/screens/VerificationPage/VerificationPage'
-import Withdrawal from './pages/Dashboard/screens/Withdrawal/Withdrawal';
 
 function App() {
 

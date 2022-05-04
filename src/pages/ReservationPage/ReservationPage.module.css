@@ -1,6 +1,7 @@
 .reservation_container{
     width: 100%;
     margin: 0 auto;
+    min-height: 60vh;
 }
 
 .reservation_header {
@@ -67,14 +68,10 @@
     display: flex;
     justify-content: space-between;
     padding: 2rem 8rem 2rem;
-    /* width: max-content; */
-    /* margin: 0 3rem 0rem 0rem; */
-    border: 1px solid red;
     border-bottom: 1px solid #DDDDDD7D;
 }
 
 .reservation_content_one{
-    border: 1px solid red;
     width: max-content;
 }
 
@@ -86,14 +83,12 @@
     justify-content: flex-end;
     align-items: center;
     margin-left: 3rem;
-    border: 1px solid red;
     width: 50%;
     padding: 1rem 3.5rem 5rem 2.8rem;
 }
 
 .house_address img{
     width: 10%;
-    border: 1px solid  red;
 }
 
 .house_address p{
@@ -162,9 +157,6 @@
         flex-direction: column;
         justify-content: space-between;
         padding: 0rem 1rem 2rem;
-        /* width: max-content; */
-        /* margin: 0 3rem 0rem 0rem; */
-        border: 1px solid red;
         border-bottom: 1px solid #DDDDDD7D;
     }
     
@@ -177,7 +169,6 @@
         align-items: center;
         margin-left: 0rem;
         margin-top: 2rem;
-        border: 1px solid red;
         width: 100%;
         padding: 1rem 0rem 5rem 0rem;
     }

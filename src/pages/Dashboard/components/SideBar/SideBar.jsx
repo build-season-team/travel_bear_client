@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import classes from './SideBar.module.css'
 
@@ -23,17 +23,31 @@ import Logout from '../../../../assets/icons/logout.svg'
 
 import { FaTimes } from 'react-icons/fa'
 import { MdClose } from 'react-icons/md'
+import { AuthContext } from '../../../../store/authContext/AuthProvider'
 // import Withdrawal from '../../../AdminDashboard/screens/Withdrawal/Withdrawal'
 
 const SideBar = ({className}) => {
+
+    const {authState: {user}} = useContext(AuthContext);
     const [activeNav, setActiveNav] = useState(0)
-    const tabItems =[
-        { text: "/dashboard/", TabIcon: DashboardIcon, TabIconActive: ActiveDashboard,  },
-        { text: "/dashboard/wallet", TabIcon: WalletIcon, TabIconActive: ActiveWallet, },
-        { text: "/dashboard/shortlets", TabIcon: ShortletIcon, TabIconActive: ActiveShortlet, },
+    let navLinks = [];
+    const adminLinks = [
         { text: "/dashboard/verification", TabIcon: VerificationIcon, TabIconActive: ActiveVerification, },
         { text: "/dashboard/withdrawal", TabIcon: WithdrawalCard, TabIconActive: ActiveWithdrawal, },
     ]
+    const userLinks =[
+        { text: "/dashboard/", TabIcon: DashboardIcon, TabIconActive: ActiveDashboard,  },
+        { text: "/dashboard/wallet", TabIcon: WalletIcon, TabIconActive: ActiveWallet, },
+        { text: "/dashboard/shortlets", TabIcon: ShortletIcon, TabIconActive: ActiveShortlet, }
+    ]
+
+    console.log(user.role);
+
+    if (user.role === 'admin') {
+        navLinks = [...navLinks, ...adminLinks]
+    }else {
+        navLinks = [...navLinks, ...userLinks]
+    }
 
     const [dropMenuIsVisible, setDropMenuIsVisible] = useState(false);
 
@@ -63,7 +77,7 @@ const SideBar = ({className}) => {
         <div className={classes.nav_items} dropMenuIsVisible={dropMenuIsVisible} setDropMenuIsVisible={setDropMenuIsVisible} >
               <ul>
                   {
-                      tabItems.map(({ TabIcon, TabIconActive, text }, i) => (
+                      navLinks.map(({ TabIcon, TabIconActive, text }, i) => (
                           <li key={i} onClick={() => changeActiveTab(i, text)} className={`${classes.li_items} ${activeNav === i ? classes.blue__text : ""}`} >
                               {<img className={classes.icon_class} src={activeNav === i ? TabIconActive : TabIcon} alt={text} />}
                               {text.split('/')[2] === '' ? 'Dashboard' : text.split('/')[2]}
