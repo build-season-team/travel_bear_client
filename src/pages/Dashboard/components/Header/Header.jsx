@@ -13,6 +13,12 @@ import { MdOutlineNotes } from 'react-icons/md'
 
 const SubHeader = () => {
 
+    const [dropMenuIsVisible, setDropMenuIsVisible] = useState(false);
+
+    const showDropMenu = ()=> {
+        setDropMenuIsVisible(true);
+    }
+
     const [value, setValue] = useState('')
     const onInputChange = (e, key) => {
         setValue(e.target.value)
@@ -25,9 +31,9 @@ const SubHeader = () => {
       
         <div className='header_nav'>
             <div className='header_search'>
-                <div className='hamburger_menu'>
+                {/* <div className='hamburger_menu' onClick={showDropMenu}>
                     <MdOutlineNotes size={'2.2rem'} />
-                </div>
+                </div> */}
                 <div className='input_box'>
                     <input className='search_box_input' onChange={onInputChange}  placeholder={'Search by type, name'} />
                     <div className='header_btn'>

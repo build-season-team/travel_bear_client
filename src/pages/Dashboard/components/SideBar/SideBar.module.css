@@ -22,6 +22,10 @@
     justify-content: space-between;
 }
 
+.nav_test{
+    display: none;
+}
+
 .icon_class{
     color: #9CA3AF;
     margin-right: 2rem;

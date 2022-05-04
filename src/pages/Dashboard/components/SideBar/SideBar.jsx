@@ -37,8 +37,13 @@ const SideBar = ({className}) => {
 
     const [dropMenuIsVisible, setDropMenuIsVisible] = useState(false);
 
-    const showDropMenu = ()=> {
-        setDropMenuIsVisible(true);
+    // const showDropMenu = ()=> {
+    //     setDropMenuIsVisible(true);
+    // }
+
+    const closeDropMenu = ()=> {
+        console.log('true')
+        setDropMenuIsVisible(!dropMenuIsVisible);
     }
 
     const navigate = useNavigate();
@@ -52,15 +57,15 @@ const SideBar = ({className}) => {
 
 
   return (
-    <div className={classes.side_bar}>
+    <div className={ dropMenuIsVisible ? classes.side_bar : classes.nav_test}>
         
-        <div className={classes.sidebar_logo}>
+        <div className={`${classes.sidebar_logo} ${classes.nav_test}`}>
             <img src={TravelBear} alt="TravelBear Logo" />
-            <div className={classes.close_icon}>
-                <MdClose size={'2.2rem'}  onClick={showDropMenu} />        
+            <div className={classes.close_icon} onClick={closeDropMenu}>
+                <MdClose size={'2.2rem'}  />        
             </div>
         </div>
-        <div className={classes.nav_items} dropMenuIsVisible={dropMenuIsVisible} setDropMenuIsVisible={setDropMenuIsVisible} >
+        <div className={ dropMenuIsVisible ? classes.nav_items : classes.nav_test} dropMenuIsVisible={dropMenuIsVisible} setDropMenuIsVisible={setDropMenuIsVisible} >
               <ul>
                   {
                       tabItems.map(({ TabIcon, TabIconActive, text }, i) => (

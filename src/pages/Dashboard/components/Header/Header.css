@@ -114,7 +114,7 @@ input{
       }
 
     input{
-        padding: 1rem;
+        padding: .8rem;
         outline: none;
         position: relative;
         bottom: 80%;
@@ -125,7 +125,14 @@ input{
         height: 46px;
         width: fit-content;
         padding-top: .6rem;
+        padding-bottom: .6rem;
     }
+
+    .header_btn{
+        padding-top: -.3rem;
+        padding-bottom: 0rem;
+    }
+
     
     .input_box:last-child{
         padding-right: .2rem;
