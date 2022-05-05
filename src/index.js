@@ -4,14 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AuthProvider from './store/authContext/AuthProvider';
+import ShortletProvider from './store/shortletContext/ShortletProvider';
+import AdminProvider from './store/adminContext/AdminProvider';
 
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
-      <App />
+      <ShortletProvider>
+        <AdminProvider>
+          <App />
+        </AdminProvider>
+      </ShortletProvider>
     </AuthProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

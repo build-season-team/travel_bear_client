@@ -8,7 +8,7 @@ import QuestionIcon from '../../../assets/icons/question.svg'
 
 
 
-const FormInput = ({id, label, text, active, required, disabled, type, icon, errors, success, pattern, iconPosition, placeholder, name, form, onChange, onBlur,
+const FormInput = ({id, label, text, active, required, disabled, type, icon, errors, success, pattern, iconPosition, placeholder, name, form, onChange, onBlur, className,
   ...props }) => {
 
     let emailRegex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
@@ -30,14 +30,14 @@ const FormInput = ({id, label, text, active, required, disabled, type, icon, err
   return (
     
     <div>
-      <div className={`${classes.form_input} ${classes.form_file}`}>
+      <div className={`${classes.form_input} ${classes.form_file} `}>
         {label && <label className={`${classes.label} `} htmlFor={id}>{label}</label>}
-          <div className={`${classes.form_outline} ${borderColor ? classes[borderColor] : ''}`}>
+        <div className={`${classes.form_outline} ${borderColor ? classes[borderColor] : ''} ${className && className}`}>
             <input 
               type={type} 
               id={id} 
               placeholder={placeholder}
-              value={form[name] ? form[name] : ''}
+              value={form?.[name] ? form[name] : ''}
               disabled={disabled ? true : false}
               required={required ? true : false}
               onChange={(e) =>{
@@ -64,7 +64,7 @@ const FormInput = ({id, label, text, active, required, disabled, type, icon, err
             {icon && <span className={classes.icon}> {icon} </span>}
             {valid && <span className={classes.error}> {valid === null ? null : valid === true ? <img src= { CheckMark } alt="" /> : <img src= { QuestionIcon } alt="" />} </span>}
           </div>
-      {errors[name] && <p className={`${classes.some_copy} ${textColor ? classes[textColor] : ''}`}>{errors[name]}</p>}
+      {errors?.[name] && <p className={`${classes.some_copy} ${textColor ? classes[textColor] : ''}`}>{errors[name]}</p>}
 
           
       </div>

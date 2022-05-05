@@ -1,6 +1,6 @@
-import { CLEAR_MESSAGE, LOGIN_FAIL, LOGIN_LOADING, LOGIN_SUCCESS, REGISTER_FAIL, REGISTER_LOADING, REGISTER_SUCCESS } from "../../../constants/actionTypes";
+import { CLEAR_MESSAGE, GET_ME, LOGIN_FAIL, LOGIN_LOADING, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_LOADING, REGISTER_SUCCESS } from "../../../constants/actionTypes";
 
-export default (state, { type, payload }) => {
+const authReducer =  (state, { type, payload }) => {
     switch (type) {
         case REGISTER_LOADING:
             return {
@@ -49,8 +49,22 @@ export default (state, { type, payload }) => {
             message: null,
             error: null,
             };
+        case GET_ME:
+            return {
+                ...state,
+                user: payload
+            }
+        case LOGOUT: {
+            return {
+              ...state,
+              user: {},
+              isLoggedIn: false
+            };
+        }
 
         default:
             return state;
     }
 };
+
+export default authReducer;

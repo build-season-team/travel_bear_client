@@ -23,11 +23,11 @@ const ChildComponent = () =>{
     const [borderColor, setBorderColor] = useState(null);
     const [form, setForm] = useState({});
     const [errors, setErrors] = useState({});
-    const {authDispatch, authState: {loading, isLoogedIn}} = useContext(AuthContext);
+    const {authDispatch, authState: {loading, isLoggedIn}} = useContext(AuthContext);
     const navigate = useNavigate();
 
     useEffect(() => {
-        if(isLoogedIn) navigate(-1)
+        if(isLoggedIn) navigate(-1)
         authDispatch({type: CLEAR_MESSAGE})
     }, []);
 
@@ -42,17 +42,19 @@ const ChildComponent = () =>{
     }
 
     const onblur = (e, key) => {
-        if(key == 'firstName' && form.firstName.length < 3) {
-            setErrors({...errors, firstName: 'First name must be more than 2 letters'})
-        }
-        if(key == 'lastName' && form.lastName.length < 3) {
-            setErrors({...errors, lastName: 'last name must be more than 2 letters'})
-        }
-        if(key == 'phone' && form.phone.length < 9 ) {
-            setErrors({...errors, phone: 'Invalid phone Number'})
-        }
-        if(key == 'password' && form.password.length < 8) {
-            setErrors( {...errors, password: 'password must be more than 7 characters'})
+        if (Object.values(form).length > 0){
+            if(key == 'firstName' && form.firstName.length < 3) {
+                setErrors({...errors, firstName: 'First name must be more than 2 letters'})
+            }
+            if(key == 'lastName' && form.lastName.length < 3) {
+                setErrors({...errors, lastName: 'last name must be more than 2 letters'})
+            }
+            if(key == 'phone' && form.phone.length < 9 ) {
+                setErrors({...errors, phone: 'Invalid phone Number'})
+            }
+            if(key == 'password' && form.password.length < 8) {
+                setErrors( {...errors, password: 'password must be more than 7 characters'})
+            }
         }
     }
     

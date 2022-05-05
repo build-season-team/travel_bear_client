@@ -18,7 +18,7 @@ const Page = ({title, caption, link, path=null, ChildComponent=null, user=null, 
         <div className="page__header">
             {message && <Toast emoji='🤗' message={message} success />}
             {error && <Toast emoji='😱' message={error} danger />}
-            <Header />
+            <Header  hideNav />
           </div>
         <div className='page'>
         

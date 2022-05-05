@@ -1,30 +1,38 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { useContext, useEffect } from 'react';
 import './App.css';
-import SignUp from './pages/authentication/sign-up';
-import Login from './pages/authentication/login';
-import LandingPage from './pages/landingPage/Index';
-import ErrorPage from './components/UI/404page';
-
-
-
+import { AuthContext } from './store/authContext/AuthProvider';
+import { LOGIN_SUCCESS } from './constants/actionTypes';
+import AppRouter from './router/AppRouter';
 
 
 function App() {
 
+  const { authDispatch, authState: { isLoggedIn } } = useContext(AuthContext);
+  const getUser = () => {
+    if(!isLoggedIn) {
+      const token = localStorage.getItem('token');
+      if(token) {
+        const user = JSON.parse(localStorage.getItem("user"));
+        authDispatch({
+          type: LOGIN_SUCCESS,
+          payload: user
+        })
+      }
+    }
+  }
+
+  useEffect(() => {
+    getUser();
+  },[isLoggedIn])
+
   
   return (
     <div className="App">
-      
-      <Router >
-        <Routes>
-          <Route path='/' element={<LandingPage />} />
-          { <Route path='/signup' element={<SignUp />} />}
-          <Route path='/login' element={<Login />} />
-           <Route path='*' element={<ErrorPage />} />
-        </Routes>
-      </Router>
+      <AppRouter />
     </div>
   );
 }
+
+
 
 export default App;
