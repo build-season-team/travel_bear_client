@@ -141,6 +141,17 @@
     margin-left: 1.6rem;
 }
 
+.empty_house_container img{
+    margin: 0rem auto;
+    padding: 2rem 2rem;
+    width: 50%;
+}
+
+.empty_house_container{
+    width: max-content;
+    margin: 0rem auto;
+}
+
 @media screen and (min-width: 150px) and (max-width: 500px)  {
     .dashboard_home{
         display: flex;
@@ -180,7 +191,7 @@
     .small_container{
         order: 1;
         flex: 1;
-        margin-top: 2rem;
+        margin-top: 5rem;
         width: 100%;
         background-color: #fff;
         border-radius: .9rem;

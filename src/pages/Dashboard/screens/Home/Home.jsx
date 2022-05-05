@@ -7,8 +7,9 @@ import Shortlet from '../../components/Shortlet/Shortlet'
 import NotificationBell from '../../../../assets/icons/notification.svg'
 import BankIcon from '../../../../assets/icons/bank.svg'
 import ShortletIcon from '../../../../assets/icons/shortlet.svg'
+import EmptyStateIcon from '../../../../assets/images/empty-house.svg'
 
-const Home = ({user}) => {
+const Home = ({user, emptyState}) => {
 
   console.log(user)
 
@@ -20,7 +21,7 @@ const Home = ({user}) => {
     <div className={classes.dashboard_home}>
       <div className={classes.user_profile}><UserProfile user={user} /></div>
 
-      <p className={classes.dash_p}>Edit Profile</p>
+      {/* <p className={classes.dash_p}>Edit Profile</p> */}
     </div>
 
     <section className={classes.big_container}>
@@ -35,11 +36,15 @@ const Home = ({user}) => {
                   </div>
                   <span>See All</span>
               </div>
-                <div className={classes.bank_summary_content}>
-                 <Shortlet amount='N20,000' verifiedhome />
-                 <Shortlet />
-                 <Shortlet />
-                </div>
+      
+              <div className={classes.bank_summary_content}>
+                  <Shortlet amount='N20,000' verifiedhome />
+                  <Shortlet />
+                  <Shortlet />
+              </div>
+
+              
+                
                 
           </div>
             
