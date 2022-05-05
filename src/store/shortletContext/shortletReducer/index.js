@@ -52,13 +52,19 @@ const shortletReducer = (state, {type, payload}) => {
           ...state,
           loading: false,
           shortlet: payload,
-          error: null
+          error: null,
         };
       case FETCH_ONE_SHORTLET_FAIL:
         return {
           ...state,
           loading: false,
           error: "Apartment does not exist",
+        };
+      case CLEAR_MESSAGE:
+        return {
+          ...state,
+          message: null,
+          error: null,
         };
       default:
         return state;

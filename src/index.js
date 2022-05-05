@@ -5,12 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AuthProvider from './store/authContext/AuthProvider';
 import ShortletProvider from './store/shortletContext/ShortletProvider';
+import AdminProvider from './store/adminContext/AdminProvider';
 
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
       <ShortletProvider>
+        <AdminProvider>
           <App />
+        </AdminProvider>
       </ShortletProvider>
     </AuthProvider>
   </React.StrictMode>,

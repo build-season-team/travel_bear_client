@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import classes from './VerificationPage.module.css'
 
 
@@ -8,17 +8,29 @@ import Button from '../../../../components/UI/Button'
 import NotificationBell from '../../../../assets/icons/notification.svg'
 import BankIcon from '../../../../assets/icons/bank.svg'
 import ShortletIcon from '../../../../assets/icons/shortlet.svg'
+import {AdminContext} from '../../../../store/adminContext/AdminProvider';
+import getApartments from '../../../../store/adminContext/actionCreator/getApartment'
 
 const VerificationPage = () => {
+
+  const { adminDispatch, adminState: { apartments } } = useContext(AdminContext)
+  console.log(apartments)
+
+  useEffect(() => {
+    getApartments()(adminDispatch);
+  },[])
+
   return (
 
     <div className={classes.full_container}>
     
     
     <section className={classes.dashboard_home}>
-      <div className={classes.apartment_profile}> <VerifyApartment title='Hotel Gunawangsa MERR' name='Kachi Afudoh' description='Clean 3 bedroom apartment with seperate toilets but shared kitchen.' button={ <Button primary authBtn name='Accept' /> } btn1={ <Button danger authBtn name='Decline' /> } /></div>
-
-      <div className={classes.apartment_profile}> <VerifyApartment title='Teneway Richmond Street' name='Kalu Emmanuel' description='Fully furnished 2 bedroom apartment in the choicest area.' button={ <Button primary authBtn name='Accept' /> } btn1={ <Button danger authBtn name='Decline' /> } /></div>
+      
+      {apartments.map((item, i) => (
+        
+        <div className={classes.apartment_profile}> <VerifyApartment title='Hotel Gunawangsa MERR' name='Kachi Afudoh' description='Clean 3 bedroom apartment with seperate toilets but shared kitchen.' button={<Button primary authBtn name='Accept' />} btn1={<Button danger authBtn name='Decline' />} /></div>
+      ))}
 
       {/* <p className={classes.dash_p}>Edit Profile</p> */}
     </section>

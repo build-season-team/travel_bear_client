@@ -6,7 +6,7 @@ import Select from 'react-select'
 
 
 
-const Shortlets = () => {
+const Shortlets = ({user}) => {
 
   const options = [
     { value: 'all', label: 'All' },
@@ -57,17 +57,11 @@ const Shortlets = () => {
           <div className={classes.option_select}><p>Filter: </p><Select styles={styles} options={options}/></div>
         </div>
 
-        <div className={classes.shortlet_container}>
-          <Shortlet verifiedhome={'Verified'} houseOwner amount={'N 16,700'} statustitle={'Status:'} status={'Public'} />
-        </div>
+        {user.apartments.map((apartment, i) => ( < div className = { classes.shortlet_container } >
+          <Shortlet isenabled={apartment.isEnabled} key={i} verified={apartment.isVerified} houseOwner amount={apartment.amount} title={apartment.houseTitle} image={apartment.image[0]} description={apartment.description} statustitle={'Status:'} status={'Public'} />
+                                                </div>))
+        }
 
-        <div className={classes.shortlet_container}>
-          <Shortlet verifiedhome={'Verified'} houseOwner amount={'N 7,700'} status={'Public'}/>
-        </div>
-
-        <div className={classes.shortlet_container}>
-          <Shortlet verifiedhome={'Verified'} houseOwner amount={'N 39,999'} status={'Public'}/>
-        </div>
       </div>
     </>
   )

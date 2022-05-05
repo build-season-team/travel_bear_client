@@ -20,69 +20,91 @@ import GTBank from '../../../../assets/images/gt-bank.svg'
 import FirstBank from '../../../../assets/images/first-bank.svg'
 import Bank from '../../../../assets/icons/bank.svg'
 import { AuthContext } from '../../../../store/authContext/AuthProvider';
+import { TransactionContext } from '../../../../store/transactionContext/TransactionProvider';
+import Toast from '../../../../components/UI/Toast';
+import addBank from '../../../../store/transactionContext/actionCreators/addBank';
+import getBanks from '../../../../store/transactionContext/actionCreators/getBanks';
+import Skeleton from 'react-loading-skeleton';
+import withdrawal from '../../../../store/transactionContext/actionCreators/withdrawal';
+import getme from '../../../../store/authContext/actionCreators/getme';
 
 const Wallet = ({user}) => {
   const [activeTab, setActiveTab] = useState("tab1");
   const [addWithdraw, setAddWithdraw] = useState(true)
   const [isOpen, setIsOpen] = useState(false);
+  const [form, setForm] = useState({});
+  const [isChanged, setIsChanged] = useState(0);
+  const {transactionDispatch, transactionState: {loading, message, error, banks, data}} = useContext(TransactionContext);
+  const { authDispatch} = useContext(AuthContext);
+  const [bank, setBank] = useState('');
+  const [errors, setErrors] = useState({});
 
-
-  const options = [
-    { value: 'access', label: 'Access Bank' },
-    { value: 'citi-bank', label: 'Citi Bank' },
-    { value: 'eco', label: 'Ecobank Nigeria' },
-    { value: 'fidelity', label: 'Fidelity Bank' },
-    { value: 'first-bank', label: 'First Bank' },
-    { value: 'first-city', label: 'First City Monument Bank' },
-    { value: 'globus', label: 'Globus' },
-    { value: 'guaranty-bank', label: 'Guaranty Bank' },
-    { value: 'heritage', label: 'Heritage Banking Company' },
-    { value: 'key-stone', label: 'Key Stone Bank' },
-    { value: 'polaris', label: 'Polaris Bank' },
-    { value: 'stanbic', label: 'Stanbic IBTC' },
-    { value: 'standard-chartered', label: 'Standard-chartered Bank' },
-    { value: 'sterling', label: 'Sterling Bank' },
-    { value: 'union-bank', label: 'Union Bank' },
-    { value: 'united-bank', label: 'United Bank For Africa, UBA' },
-    { value: 'unity-bank', label: 'Unity Bank' },
-    { value: 'zenith', label: 'Zenith Bank' },
-    
-  ]
-
-  const styles = {
-    input: (provided, state) =>({
-      ...provided,
-      width: 'max-content',
-      height: '4.5rem',
-      
-    }),
-
-    placeholder: (provided, state) =>({
-      ...provided,
-      // content: 'Se',
-    
-    }),
-
-    control: (provided, state) =>({
-      ...provided,
-      border: '1px solid #858585',
-      borderRadius: '1rem',
-    }),
   
-  
+
+
+  const onInputChange = (e, key) => {
+    setForm({ ...form, [key]: e.target.value })
+    if (key !== '') {
+      setErrors((prevState) => {
+        return { ...prevState, [key]: null }
+      })
+    }
   }
 
-  console.log(activeTab);
+  const onblur = (e, key) => {
+    if (Object.values(form).length > 0) {
+      if (key == 'bankName' && form.bankName.length < 3) {
+        setErrors({ ...errors, bankName: 'Bank name must be more than 2 letters' })
+      }
+      if (key == 'accountNumber' && form.accountNumber.length < 10) {
+        setErrors({ ...errors, accountNumber: 'account must be more  10 characters' })
+      }
+    }
+  }
+
+  const onRadioChange = (e, index) => {
+    setIsChanged(index)
+    setBank(e.target.value)
+  }
+
+
+
+  const onAddBank = (e) => {
+    form.accountName = user.firstName + " " + user.lastName;
+    if (Object.values(form).length >= 2 && Object.values(form).every(item => item.trim().length > 0) && Object.values(errors).every(item => !item)) {
+      addBank(form)(transactionDispatch)(() => {
+        setIsOpen(false);
+        setForm({})
+      } );
+    }
+
+  }
+
+  const withdraw = () => {
+    const index = banks.findIndex((item) => item.bankName == bank);
+    const details = {
+      amount: +form.amount,
+      bankName: banks[index]?.bankName || banks[0].bankName,
+      accountNumber: banks[index]?.accountNumber || banks[0].accountName,
+    }
+
+    withdrawal(details)(transactionDispatch);
+    getme()(authDispatch);
+  }
+
+
   
   return (
     <>
-    {isOpen && <Modal heading={'Add Bank'} description={'Add new bank details to withdraw your funds!!!'} label={'Bank Name'} select={<Select styles={styles} options={options} />} input={<FormInput label={'Account number'} placeholder={'Account number'} type='number'/>} addBtn={<Button authBtn primary name='Add Bank' />} closeBtn={<Button authBtn onClick={() => setIsOpen(false)} secondary name='Cancel' />} setIsOpen={setIsOpen} />}
+      {message && <Toast emoji='🤗' message={message} success />}
+      {error && <Toast emoji='😱' message={error} danger />}
+      {isOpen && <Modal dispatch={transactionDispatch} heading={'Add Bank'} description={'Add new bank details to withdraw your funds!!!'} label={'Bank Name'} select={<FormInput className={errors?.bankName == null ? classes.mb : ''} errors={errors} onBlur={onblur} form={form} onChange={onInputChange} name='bankName' placeholder='Bank name' type='bank name' required />} input={<FormInput errors={errors} onBlur={onblur} form={form} onChange={onInputChange} name='accountNumber' label='Account Number' placeholder='Account Number' type='number' required />} addBtn={<Button onClick={onAddBank} authBtn primary name={`${loading ? 'Loading...' : 'Add Bank'} `} />} closeBtn={<Button authBtn onClick={() => setIsOpen(false)} secondary name='Cancel' />} setIsOpen={setIsOpen} />}
     
     <div className={classes.tabs}>
       <ul className={classes.nav_ul} >
         
             <TabNavItem className={classes.active} title="Wallet" id="tab1" activeTab={activeTab} setActiveTab={setActiveTab}/>
-            <TabNavItem className={classes.active} title="Withdrawal" id="tab2" activeTab={activeTab} setActiveTab={setActiveTab}/>
+          <TabNavItem className={classes.active} getFunc={() => getBanks()(transactionDispatch)} title="Withdrawal" id="tab2" activeTab={activeTab} setActiveTab={setActiveTab}/>
         
       </ul>
  
@@ -139,54 +161,21 @@ const Wallet = ({user}) => {
                   {/* Enter amount */}
                     <div className={classes.initiate_withdrawal_body_left}>
                       <div>
-                        <FormInput label='Enter Custom Amount' placeholder='N 0.00' />
-                      </div>
-                      <div className={classes.radio_container}>
-                        <p>Choose amount</p>
-                          <div className={classes.radio_input}>
-                              <div className={classes.radio_input_items}>
-                                <input type="radio" id="ten" name="ten thousand" value="10,000"/>
-                                <label for="ten">N10,000</label>
-                              </div>
-                              <div className={classes.radio_input_items}>
-                                <input type="radio" id="twenty" name="twenty thousand" value="20,000" />
-                                <label for="twenty">N20,000</label>
-                              </div>  
-                              <div className={classes.radio_input_items}>
-                                <input type="radio" id="thirty" name="thirty thousand" value="30,000" />
-                                <label for="thirty">N30,000</label>
-                              </div>
-                              <div className={classes.radio_input_items}>
-                                <input type="radio" id="fourty" name="fourty thousand" value="30,000" />
-                                <label for="fourty">N40,000</label>
-                              </div>
-                              <div className={classes.radio_input_items}>
-                                <input type="radio" id="fifty" name="fifty thousand" value="50,000" />
-                                <label for="fifty">N50,000</label>
-                              </div>
-                              <div className={classes.radio_input_items}>
-                                <input type="radio" id="hundred" name="hundred thousand" value="100,000" />
-                                <label for="hundred">N100,000</label>
-                              </div>
-                              
-                          </div>
-
+                      <FormInput errors={errors} onBlur={onblur} form={form} onChange={onInputChange} name='amount' placeholder='N0.00' type='withdraw' required />
                       </div>
                       
                       <div className={classes.choose_bank}>
                         <p>Choose Bank</p>
                         <div className={classes.choose_bank_radio}>
-                          
-                          <div className={classes.indivi_radio}>
-                            <input type="radio" id="bank1" name="bank 1" value="bank1"/>
-                            <label for="bank1">GTBank</label>
-                          </div>
-                          <div className={`${classes.indivi_radio} ${classes.indivi_last}`}>
-                            <input type="radio" id="bank2" name="bank 2" value="bank2" />
-                            <label for="bank2">First Bank</label>
-                          </div>
-                          
 
+                          {
+                          banks.length > 0 && banks.map((bank , index) => (
+                            <div key={index} className={classes.indivi_radio}>
+                              <input type="radio" id={bank.bankName} onChange={(e) => onRadioChange(e, index)} name="fav_language" value={bank.bankName} checked={index == isChanged} />
+                              <label htmlFor={bank.bankName}>{bank.bankName}</label>
+                            </div>
+                          ))
+                        }
                         </div>
                       </div>
 
@@ -194,7 +183,7 @@ const Wallet = ({user}) => {
                         <Divider />
                       </div> */}
                       <div className={classes.btn_left}>
-                        <Button authBtn primary name='Withdraw funds' />
+                        <Button onClick={withdraw} authBtn primary name='Withdraw funds' />
                       </div>
                       
                     </div>
@@ -202,21 +191,35 @@ const Wallet = ({user}) => {
                   {/* Banks */}
                     <div className={classes.initiate_withdrawal_body_right}>
                       <p className={classes.withdrawal_banks}>Banks</p>
-                      <div className={classes.first_bank}>
-                        <div className={classes.user_bank_details}>
-                          <p className={classes.user_name}>Chidimma Samson</p>
-                          <p className={classes.bank_name}>Guarantee Trust Bank</p>
-                        </div>
-                        <p className={classes.remove}>Remove</p>
-                      </div>
+                      {
+                        loading ?
+                        (
+                          <div className={classes.first_bank}>
+                            <div className={classes.user_bank_details}>
+                              <p className={classes.user_name}> <Skeleton /> </p>
+                              <p className={classes.bank_name}><Skeleton /></p>
+                            </div>
+                            <p className={classes.remove}><Skeleton /></p>
+                          </div>
+                        )
+                        :
+                         banks.map((bank, i) => (
+                            <div key={i} className={classes.first_bank}>
+                            <div className={classes.user_bank_details}>
+                              <p className={classes.user_name}>{user.firstName + " " + user.lastName}</p>
+                              <p className={classes.bank_name}>{bank.bankName}</p>
+                            </div>
+                            <p className={classes.remove}>Remove</p>
+                          </div>
 
-                      <div className={classes.second_bank}>
-                        <div className={classes.user_bank_details}>
-                          <p className={classes.user_name}>Susan Godwin</p>
-                          <p className={classes.bank_name}>First Bank</p>
-                        </div>
-                        <p className={classes.remove}>Remove</p>
-                      </div>
+                        )) 
+                        }
+
+                        {banks.length == 0 && 
+                          <div className={classes.first_bank}>
+                            <div style={{ width: '100%', height: "100%", margin: "0px auto" }}> You No banks yet</div>
+                          </div>
+                        }
 
                       <div onClick={() => setIsOpen(true)} className={classes.add_bank_mobile}>
                       <FaPlus /> 
@@ -240,14 +243,14 @@ const Wallet = ({user}) => {
     </div>
 
     
-        <div>
-        <ActivityCard />
-        </div>
 
         <div>
           <TransactionHistory />
         </div>
     
+        <div>
+        <ActivityCard />
+        </div>
     
     </>
   );

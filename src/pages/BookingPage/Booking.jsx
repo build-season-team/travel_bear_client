@@ -14,6 +14,7 @@ import Skeleton from 'react-loading-skeleton';
 import { BASE_SHORTLET_URL_DEV } from '../../constants/base';
 import axiosInstance from '../../utils/axiosInstance';
 import { AuthContext } from '../../store/authContext/AuthProvider';
+import Modal from '../../components/UI/Modal/Modal';
 
 
 
@@ -63,7 +64,6 @@ const Booking = () => {
 
   return (
     <>
-
     <Header />
 
       <div className={classes.destination_body}>
@@ -122,20 +122,6 @@ const Booking = () => {
               <div className={classes.img_size}>
               {loading ? <Skeleton width={'100%'} height={'100%'} /> : <img src={shortlet.image?.[4] && BASE_SHORTLET_URL_DEV + shortlet.image?.[4]} alt="uploaded image" />}
               </div>
-
-                
-                
-                
-                
-
-            {/* {
-              
-            selectedImages.slice(1).map((image, i) => (
-              <div className={classes[`img${i !== 3 ? 1 : 5 }`]} key={i}>
-                <img className={classes.img_size} src={image} alt="uploaded image" />
-              </div>
-            ))
-          } */}
           </div>
 
         </div>

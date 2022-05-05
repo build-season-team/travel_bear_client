@@ -3,64 +3,35 @@
     background-color: #fff;
     margin-top: 2rem;
     padding: 2rem 3rem;
-    border-radius: .9rem;
+    border-radius: none;
     width: 100%;
-}
-
-.withdrawal_heading ul{
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-}
-
-.withdrawal_heading ul li{
-    color: #6B7280;
-    font-weight: 500;
     font-size: 1.6rem;
-    width: 25%;
+    
 }
 
-.list_option{
-    display: flex;
-    justify-content: space-between;
-    width: max-content;
-    /* align-items: center; */
-    color: #111827;
-    font-size: 1.3rem;
+.withdrawal_heading table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-.list_option span{
-    width: 2rem;
-    height: 2rem;
-    margin-right: 1rem;
-    background-image: url(../../../../assets/images/avatar.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    /* background-color: #6B7280; */
-    border-radius: 50%;
-    border: 1px solid purple;
-    position: relative;
+.withdrawal_heading  table, tr, td {
+    border: none;
 }
 
-.list_option span img{
-    width: 2rem;
-    height: 2rem;
+.withdrawal_heading td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  
 }
 
-.list_option_last{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+.withdrawal_heading tr:nth-child(even) {
+  background-color: #dddddd;
+  
 }
 
-.decline_btn{
-    width: 48%;
-}
 
-.single_request{
-    width: 100%;
-    padding-top: 3rem;
-}
 
 @media screen and (min-width: 150px) and (max-width: 540px)  {
     .withdrawalContainer{

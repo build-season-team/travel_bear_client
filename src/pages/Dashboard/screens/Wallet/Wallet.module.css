@@ -12,6 +12,10 @@
     }
    
   }
+
+  .mb {
+    margin-bottom: 0;
+  }
    
   /* Tab Navigation */
   .nav_ul {

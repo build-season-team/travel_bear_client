@@ -69,7 +69,7 @@ const LandingPage = () => {
                       image={cur.image && BASE_SHORTLET_URL_DEV + cur.image?.[0]}
                       rating={cur.ratingsAverage?.toFixed(1) || 4.5}
                       header={cur.houseTitle}
-                      text={cur.description?.length > 35 ? cur.description?.substring(0, 35) + "....." : cur.description }
+                      text={cur.description?.length > 35 ? cur.description?.substring(0, 40) + "....." : cur.description }
                       amount={cur.amount}
                       big
                       onClick={() => navigate('/booking/' + cur._id + `-${cur.houseTitle}`)}

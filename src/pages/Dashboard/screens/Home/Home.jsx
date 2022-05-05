@@ -35,10 +35,9 @@ const Home = ({user}) => {
                   </div>
                   <span>See All</span>
               </div>
-                <div className={classes.bank_summary_content}>
-                 <Shortlet amount='N20,000' verifiedhome />
-                 <Shortlet />
-                 <Shortlet />
+                <div className={classes.bank_summary_content}>{user.apartments.map((apartment, i) => (<Shortlet key={i} isenabled={apartment.isEnabled} verified={apartment.isVerified} image={apartment.image[0]} title={apartment.houseTitle} description={apartment.description } amount={apartment.amount} verifiedhome />))}
+              
+                 
                 </div>
                 
           </div>
