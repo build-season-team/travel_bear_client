@@ -161,7 +161,7 @@
   }
 
   .all_activities img{
-    width: 15%;
+    width: 20%;
   }
 
   .clear{
@@ -170,7 +170,7 @@
     color: #007AEC;
     font-size: 1.4rem;
     padding: .9rem 2.7rem;
-    cursor: po;
+    cursor: pointer;
   }
 
   .all_activities p{
@@ -352,11 +352,71 @@
   display: none;
 }
 
+/* Transaction_history active state */
+
+.withdrawalContainer{
+  height: 100vh;
+  background-color: #fff;
+  margin-top: 0rem;
+  padding: 2rem 3rem;
+  border-radius: 0rem;
+  width: 100%;
+}
+
+.withdrawal_heading ul{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.withdrawal_heading ul li{
+  color: #6B7280;
+  font-weight: 500;
+  font-size: 1.6rem;
+  width: 25%;
+}
+
+.list_option{
+  display: flex;
+  justify-content: space-between;
+  width: max-content;
+  /* align-items: center; */
+  color: #111827;
+  font-size: 1.3rem;
+}
+
+.list_option{
+  display: flex;
+  justify-content: space-between;
+  width: max-content;
+  /* align-items: center; */
+  color: #111827;
+  font-size: 1.3rem;
+}
+
+.list_option span{
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  background-image: url(../../../../assets/images/avatar.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* background-color: #6B7280; */
+  border-radius: 50%;
+  border: 1px solid purple;
+  position: relative;
+}
+
+.list_option span img{
+  width: 2rem;
+  height: 2rem;
+}
+
 
   @media screen and (min-width: 150px) and (max-width: 920px) {
     .tabs {
       margin: 0rem auto 1.5rem;
-      padding: 2rem 1rem;
+      padding: 2rem 0rem;
       /* color: #E8F0F2; */
       border-radius: .9rem;
       width: 100;
@@ -393,6 +453,15 @@
       
     } 
 
+    .withdrawal_container img{
+      width: 15%;
+      margin: 4.6rem 0rem 1rem;
+    }
+
+    .all_activities img{
+      width: 25%;
+    }
+
     .add_bank{
       display: none;
     }
@@ -403,11 +472,16 @@
       font-weight: 500;
   }
 
+  .user_name_wallet p{
+    padding-left: 2rem;
+  }
+
   .available_balance{
     padding-top: 4.4rem;
   }
 
   .available_balance p{
+    padding-left: 2rem;
     color: #2D76F9;
     font-size: 1.3rem;
   }
@@ -467,6 +541,24 @@
 
 .btn_left{
   width: 70%;
+}
+
+.wallet_activities{
+  margin-top: 2rem;
+  padding: 3rem 2rem 2.5rem 2rem ;
+}
+
+.wallet_activities p{
+  font-size: 1.4rem;
+}
+
+.clear{
+  background-color: #007AEC21;
+  border-radius: .4rem;
+  color: #007AEC;
+  font-size: 1.4rem;
+  padding: .9rem 2rem;
+  cursor: pointer;
 }
 
 .add_bank_mobile{

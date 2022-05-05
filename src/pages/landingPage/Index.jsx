@@ -50,7 +50,7 @@ const LandingPage = () => {
           <div className={classes.bookacc}>
             <div className={classes.topbody}>
             <h3>Most Visited Locations</h3>
-            <p>Visit the most amazing Shortlets across Nigeria. </p>
+            <p>Get the best shortlet apartments across Nigeria. </p>
               <div className={classes.buttonHolder}>
                 <Button onClick={() => setStateInfo('all')} primary={stateInfo === 'all' ? true : false} btnLink={stateInfo !== 'all' ? true : false} name={"All"} />
                 <Button onClick={() => setStateInfo('Lagos')} primary={stateInfo === 'Lagos' ? true : false} btnLink={stateInfo !== 'Lagos' ? true : false} name={"Lagos"} />
@@ -86,7 +86,7 @@ const LandingPage = () => {
           <div className={classes.bookacc}>
             <div className={classes.topbody}>
               <h3>Highest Rated Accommodation</h3>
-              <p className={classes.place}>Shortlets with Highest Ratings </p>
+              <p className={classes.place}>Shortlets with the highest ratings.</p>
               <div className={classes.buttonHolder}>
                 <Button onClick={() => setStateInfo2('all')} primary={stateInfo2 === 'all' ? true : false} btnLink={stateInfo2 !== 'all' ? true : false} name={"All"} />
                 <Button onClick={() => setStateInfo2('Lagos')} primary={stateInfo2 === 'Lagos' ? true : false} btnLink={stateInfo2 !== 'Lagos' ? true : false} name={"Lagos"} />

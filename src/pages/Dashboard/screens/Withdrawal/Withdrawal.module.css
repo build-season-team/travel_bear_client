@@ -33,20 +33,35 @@
 
 
 
-@media screen and (min-width: 150px) and (max-width: 540px)  {
+@media screen and (min-width: 150px) and (max-width: 920px)  {
     .withdrawalContainer{
+        width: 100%;
+        margin-top: 0rem;
+        margin-right: 0rem !important;
+        overflow-x: scroll;
         padding: 2rem 1rem;
+    }
+
+    .container_child{
+        width: 100%;
+        overflow: scroll;
     }
     
     .withdrawal_heading ul{
         display: flex;
         justify-content: space-between;
         list-style: none;
+        width: 150%;
+    }
+
+    .withdrawal_heading{
+        width: 100%;
     }
     
     .withdrawal_heading ul li{
         font-weight: 500;
         font-size: 1.2rem;
+        /* width: 100%; */
     }
 
     .list_option{

@@ -57,7 +57,7 @@ const AppRouter = () => {
 const ProtectedRoutes = ({ children }) => {
     const { authState: { isLoggedIn } } = useContext(AuthContext);
 
-    if (!isLoggedIn) {
+    if (isLoggedIn) {
 
         return (
             <Navigate to="/login" />

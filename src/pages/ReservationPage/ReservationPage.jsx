@@ -35,7 +35,7 @@ const ReservationPage = () => {
 
                 <div className={classes.reservation_content}>
                     <div className={classes.reservation_content_one}>
-                        <Shortlet button={<Button authBtn primary name='Checkout'  />} />
+                        <Shortlet  button={<Button authBtn primary name='Checkout'  />} />
                     </div>
 
                     <div className={classes.house_address}>

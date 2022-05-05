@@ -30,7 +30,18 @@ const Shortlet = ({image, amount, isenabled, unverified, verified, disableBtn, r
                 // Verified
                 }
 
-                
+                        {verified
+                        
+                        ?
+                        <span className={classes.unverified}> {unverified} </span> 
+                                    // Unverified
+                        :
+                        <span className={classes.verified}>{verifiedhome}</span>
+                            
+                        // Verified
+                        }
+
+                {/* </span> */}
                 
             </div>
             

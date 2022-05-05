@@ -26,10 +26,20 @@ import { MdClose } from 'react-icons/md'
 import { AuthContext } from '../../../../store/authContext/AuthProvider'
 // import Withdrawal from '../../../AdminDashboard/screens/Withdrawal/Withdrawal'
 
-const SideBar = ({className}) => {
+// const SideBar = ({className, show, setShow}) => {
+
+//     const [activeNav, setActiveNav] = useState(0)
+//     const [dropMenuIsVisible, setDropMenuIsVisible] = useState(false);
+//     const tabItems =[
+//         { text: "/dashboard/", TabIcon: DashboardIcon, TabIconActive: ActiveDashboard,  },
+//         { text: "/dashboard/wallet", TabIcon: WalletIcon, TabIconActive: ActiveWallet, },
+//         { text: "/dashboard/shortlets", TabIcon: ShortletIcon, TabIconActive: ActiveShortlet, },
+const SideBar = ({className, show, setShow}) => {
 
     const {authState: {user}} = useContext(AuthContext);
     const [activeNav, setActiveNav] = useState(0)
+    const [dropMenuIsVisible, setDropMenuIsVisible] = useState(false);
+
     let navLinks = [];
     const adminLinks = [
         { text: "/dashboard/verification", TabIcon: VerificationIcon, TabIconActive: ActiveVerification, },
@@ -49,11 +59,7 @@ const SideBar = ({className}) => {
         navLinks = [...navLinks, ...userLinks]
     }
 
-    const [dropMenuIsVisible, setDropMenuIsVisible] = useState(false);
 
-    const showDropMenu = ()=> {
-        setDropMenuIsVisible(true);
-    }
 
     const navigate = useNavigate();
     const params = useParams();
@@ -66,15 +72,18 @@ const SideBar = ({className}) => {
 
 
   return (
-    <div className={classes.side_bar}>
+    <div className={`${classes.side_bar} ${(dropMenuIsVisible || show) ? classes.side_show : ''}`}>
         
-        <div className={classes.sidebar_logo}>
+        <div className={`${classes.sidebar_logo} ${classes.nav_test}`}>
             <img src={TravelBear} alt="TravelBear Logo" />
-            <div className={classes.close_icon}>
-                <MdClose size={'2.2rem'}  onClick={showDropMenu} />        
+            <div className={classes.close_icon} onClick={() => {
+                setDropMenuIsVisible(false);
+                setShow(false);
+                }}>
+                <MdClose size={'2.2rem'}  />        
             </div>
         </div>
-        <div className={classes.nav_items} dropMenuIsVisible={dropMenuIsVisible} setDropMenuIsVisible={setDropMenuIsVisible} >
+        <div className={ classes.nav_items } dropMenuIsVisible={dropMenuIsVisible} setDropMenuIsVisible={setDropMenuIsVisible} >
               <ul>
                   {
                       navLinks.map(({ TabIcon, TabIconActive, text }, i) => (
