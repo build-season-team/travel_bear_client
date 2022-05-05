@@ -5,7 +5,7 @@ import './header.css'
 import HeaderLogo from '../../../assets/icons/logo.svg'
 import Hamburger from '../../../assets/icons/hamburger.svg'
 
-const Header = ()=> {
+const Header = ({hideNav})=> {
 
     const [dropMenuIsVisible, setDropMenuIsVisible] = useState(false);
 
@@ -22,16 +22,18 @@ const Header = ()=> {
                 <div className="logo-mini-container">
                     <span className="logo-mini"><img src={ HeaderLogo } alt="Logo" /></span>
                 </div>
-                        
-                <div className="hamburger-menu hamburger-mini mini" onClick={showDropMenu}>
-                    <img src={Hamburger} alt="hamburger menu" />
+                
+                {!hideNav &&
+                    <div className="hamburger-menu hamburger-mini mini" onClick={showDropMenu}>
+                        <img src={Hamburger} alt="hamburger menu" />
 
-                    {/* <span style={{"--w": 1}}></span>
-                    <span style={{"--w": .75}}></span>
-                    <span style={{"--w": .5}}></span> */}
-                 </div>
+                        {/* <span style={{"--w": 1}}></span>
+                        <span style={{"--w": .75}}></span>
+                        <span style={{"--w": .5}}></span> */}
+                    </div>
+                }        
             </div>
-            <Nav dropMenuIsVisible={dropMenuIsVisible} setDropMenuIsVisible={setDropMenuIsVisible} />
+            <Nav hideNav={hideNav} dropMenuIsVisible={dropMenuIsVisible} setDropMenuIsVisible={setDropMenuIsVisible} />
         </div> 
         
         <header className="header macro">
@@ -40,7 +42,7 @@ const Header = ()=> {
 
                 {/* Navigation component belongs here */}
                 
-                <Nav />
+                <Nav ideNav={hideNav} />
             </div>  
         </header>
         

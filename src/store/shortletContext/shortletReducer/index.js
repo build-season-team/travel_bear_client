@@ -1,4 +1,4 @@
-import {CLEAR_MESSAGE, FETCH_SHORTLET_FAIL, FETCH_SHORTLET_LOADING, FETCH_SHORTLET_SUCCESS, UPLOAD_SHORTLET_FAIL, UPLOAD_SHORTLET_LOADING, UPLOAD_SHORTLET_SUCCESS} from '../../../constants/actionTypes';
+import {CLEAR_MESSAGE, FETCH_ONE_SHORTLET_FAIL, FETCH_ONE_SHORTLET_LOADING, FETCH_ONE_SHORTLET_SUCCESS, FETCH_SHORTLET_FAIL, FETCH_SHORTLET_LOADING, FETCH_SHORTLET_SUCCESS, UPLOAD_SHORTLET_FAIL, UPLOAD_SHORTLET_LOADING, UPLOAD_SHORTLET_SUCCESS} from '../../../constants/actionTypes';
 
 const shortletReducer = (state, {type, payload}) => {
     switch (type) {
@@ -27,20 +27,39 @@ const shortletReducer = (state, {type, payload}) => {
         };
       case FETCH_SHORTLET_LOADING:
         return {
-          ...state, loading: true
-        }
+          ...state,
+          loading: true,
+        };
       case FETCH_SHORTLET_SUCCESS:
         return {
-          ...state, 
+          ...state,
           loading: false,
-          data: [...payload]
-        }
+          data: [...payload],
+        };
       case FETCH_SHORTLET_FAIL:
         return {
           ...state,
           loading: false,
-          error: 'something went wrong'
-        }
+          error: "something went wrong",
+        };
+      case FETCH_ONE_SHORTLET_LOADING:
+        return {
+          ...state,
+          loading: true,
+        };
+      case FETCH_ONE_SHORTLET_SUCCESS:
+        return {
+          ...state,
+          loading: false,
+          shortlet: payload,
+          error: null
+        };
+      case FETCH_ONE_SHORTLET_FAIL:
+        return {
+          ...state,
+          loading: false,
+          error: "Apartment does not exist",
+        };
       default:
         return state;
     }

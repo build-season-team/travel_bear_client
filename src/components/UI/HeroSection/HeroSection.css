@@ -1,18 +1,19 @@
 .hero-section{
     height: 60vh;
-    width: 100%;
+    max-width: 100%;
     
     
 }
 
 .hero_section_background{
-    min-height: 70vh;
+    height: 70vh;
     padding: 18rem 9rem;
     background-image: url(../../../assets/icons/hero-background.svg);
     background-size :cover;
     background-position: center;
     display: flex;
     align-items: center;
+    max-height: 90rem;
     
 }
 

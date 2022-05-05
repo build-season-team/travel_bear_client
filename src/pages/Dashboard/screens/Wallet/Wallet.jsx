@@ -1,5 +1,6 @@
-import React, { useEffect, useState} from 'react'
+import React, { useContext, useEffect, useState} from 'react'
 import Select from 'react-select'
+import okra from 'okra-js';
 
 import classes from './Wallet.module.css'
 import TabContent from '../../components/WalletTab/TabContent';
@@ -18,11 +19,13 @@ import Activities from '../../../../assets/images/activities.svg'
 import GTBank from '../../../../assets/images/gt-bank.svg'
 import FirstBank from '../../../../assets/images/first-bank.svg'
 import Bank from '../../../../assets/icons/bank.svg'
+import { AuthContext } from '../../../../store/authContext/AuthProvider';
 
-const Wallet = () => {
+const Wallet = ({user}) => {
   const [activeTab, setActiveTab] = useState("tab1");
   const [addWithdraw, setAddWithdraw] = useState(true)
   const [isOpen, setIsOpen] = useState(false);
+
 
   const options = [
     { value: 'access', label: 'Access Bank' },
@@ -94,12 +97,12 @@ const Wallet = () => {
 
               <div className={classes.user_name_wallet}>
                 {/* <img src={ ShortletIcon } alt="shortlet icon" /> */}
-                <p>Maria Nnanna</p>
+                <p>{user.firstName + ' ' + user.lastName}</p>
               </div>
 
               <div className={classes.available_balance}>
                 <p>Available Balance</p>
-                <p>N 0.00</p>
+                <p>₦ {user.balance}</p>
               </div>
 
           </div>
@@ -118,7 +121,7 @@ const Wallet = () => {
               <div className={classes.withdrawal_container}>
                   <img src={Piggy} alt="piggy bank icon" />
                   <p>Your money is temporarily being saved on our platform, you can add <br /> new bank to be able to withdraw your money.</p>
-                  <Button primary name='Add new bank' />
+                  <Button onClick={() => setIsOpen(true)} primary name='Add new bank' />
               </div>
             </div>
 
@@ -143,27 +146,27 @@ const Wallet = () => {
                           <div className={classes.radio_input}>
                               <div className={classes.radio_input_items}>
                                 <input type="radio" id="ten" name="ten thousand" value="10,000"/>
-                                <label for="ten">N10,000</label>
+                                <label for="ten">₦10,000</label>
                               </div>
                               <div className={classes.radio_input_items}>
                                 <input type="radio" id="twenty" name="twenty thousand" value="20,000" />
-                                <label for="twenty">N20,000</label>
+                                <label for="twenty">₦20,000</label>
                               </div>  
                               <div className={classes.radio_input_items}>
                                 <input type="radio" id="thirty" name="thirty thousand" value="30,000" />
-                                <label for="thirty">N30,000</label>
+                                <label for="thirty">₦30,000</label>
                               </div>
                               <div className={classes.radio_input_items}>
                                 <input type="radio" id="fourty" name="fourty thousand" value="30,000" />
-                                <label for="fourty">N40,000</label>
+                                <label for="fourty">₦40,000</label>
                               </div>
                               <div className={classes.radio_input_items}>
                                 <input type="radio" id="fifty" name="fifty thousand" value="50,000" />
-                                <label for="fifty">N50,000</label>
+                                <label for="fifty">₦50,000</label>
                               </div>
                               <div className={classes.radio_input_items}>
                                 <input type="radio" id="hundred" name="hundred thousand" value="100,000" />
-                                <label for="hundred">N100,000</label>
+                                <label for="hundred">₦100,000</label>
                               </div>
                               
                           </div>
@@ -200,7 +203,6 @@ const Wallet = () => {
                     <div className={classes.initiate_withdrawal_body_right}>
                       <p className={classes.withdrawal_banks}>Banks</p>
                       <div className={classes.first_bank}>
-                        <img src={GTBank} alt="bank_icon" />
                         <div className={classes.user_bank_details}>
                           <p className={classes.user_name}>Chidimma Samson</p>
                           <p className={classes.bank_name}>Guarantee Trust Bank</p>
@@ -209,7 +211,6 @@ const Wallet = () => {
                       </div>
 
                       <div className={classes.second_bank}>
-                        <img src={FirstBank} alt="bank_icon" />
                         <div className={classes.user_bank_details}>
                           <p className={classes.user_name}>Susan Godwin</p>
                           <p className={classes.bank_name}>First Bank</p>
@@ -291,9 +292,8 @@ const TransactionHistory = ({empty}) =>{
                             <li>Type</li>
                             <li>Status</li>    
                         </ul>
-                        <ActiveTransactionHistory user='Self' amount="25,000" typeOfTransaction='Withdrawal' status />
-                        <ActiveTransactionHistory user='Self' amount="25,000" typeOfTransaction='Withdrawal' status />
-                        <ActiveTransactionHistory user='Self' amount="25,000" typeOfTransaction='Payment' status />
+                        <ActiveTransactionHistory person='Self' amount="25,000" typeOfTransaction='Withdrawal' status />
+                        
                     </div>
                 </div>
             </div>
@@ -314,13 +314,13 @@ const TransactionHistory = ({empty}) =>{
   )
 }
 
-const ActiveTransactionHistory = ({ user, amount, typeOfTransaction, status})=>{
+const ActiveTransactionHistory = ({ person, amount, typeOfTransaction, status})=>{
     <>
         <div className={classes.single_request}>
             <ul> 
-              <li> <div className={classes.list_option}><span></span> <p>{user}</p></div> </li>
+              <li> <div className={classes.list_option}><span></span> <p>{person}</p></div> </li>
               <li> <div className={classes.list_option}> <p>N{amount}</p></div> </li>
-              <li> <div className={classes.list_option} ><p>{typeOfTransaction}</p></div> </li>
+              <li> <div className={classes.list_option}><p>{typeOfTransaction}</p></div> </li>
               <li> <div className={classes.list_option} ><p>{status}</p></div> </li>
               
             </ul>
