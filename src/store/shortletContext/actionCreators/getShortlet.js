@@ -7,7 +7,7 @@ const getShortlet = () => async (dispatch) => {
     })
     try {
         const res = await axiosInstance.get('/apartment/viewAll');
-        console.log(res)
+        // console.log(res)
         dispatch({
             type: FETCH_SHORTLET_SUCCESS,
             payload: res.data.data

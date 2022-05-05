@@ -7,7 +7,6 @@ import SideBar from './components/SideBar/SideBar'
 import { MdOutlineNotes } from 'react-icons/md'
 
 import { Outlet, useParams } from 'react-router-dom'
-import TransactionProvider from '../../store/transactionContext/TransactionProvider'
 
 
 const Dashboard = () => {
@@ -21,6 +20,8 @@ const Dashboard = () => {
   const params = useParams();
 
   return (
+    
+      
     <div className={classes.dashboard_screen}> 
     <div>
         <SideBar setShow={setDropMenuIsVisible} show={dropMenuIsVisible} className={classes.sidebar} />
@@ -38,9 +39,6 @@ const Dashboard = () => {
             <Outlet />
           </main>
       </section>
-    
-    
-    
     </div>
   )
 }

@@ -36,6 +36,7 @@ const Nav = ({ dropMenuIsVisible, setDropMenuIsVisible, hideNav }) => {
     }
 
     const signout = () => {
+        console.log('signed out')
         logout()(authDispatch)(() => setTimeout(() => {
             navigate('/')
         }, 1000))
@@ -62,7 +63,7 @@ const Nav = ({ dropMenuIsVisible, setDropMenuIsVisible, hideNav }) => {
                                     <div className='profile__img'>
                                         <img src={Avatar} alt="profile image" />
                                     </div>
-                                    <div className='profile__text'>Hi, {user.firstName}</div>
+                                    <div className='profile__text'>Hi, {user?.firstName}</div>
                                 </div>}
                                 {isLoggedIn && <Divider />}
                                 {location.pathname == '/' ? <ul>
@@ -153,7 +154,7 @@ const Nav = ({ dropMenuIsVisible, setDropMenuIsVisible, hideNav }) => {
                                     </>
                                     :
                                     <div onClick={signout} className='landing__profile'>
-                                        <p>Hi, {user.firstName} </p>
+                                        <p>Hi, {user?.firstName} </p>
                                         <DropDown />
                                         <img src={Avatar} alt="profile" />
                                     </div>
