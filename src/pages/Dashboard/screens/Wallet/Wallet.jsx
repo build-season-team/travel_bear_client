@@ -291,9 +291,9 @@ const TransactionHistory = ({empty}) =>{
                             <li>Type</li>
                             <li>Status</li>    
                         </ul>
-                        <ActiveTransactionHistory user='Self' amount="25,000" type='Withdrawal' status />
-                        <ActiveTransactionHistory user='Self' amount="25,000" type='Withdrawal' status />
-                        <ActiveTransactionHistory user='Self' amount="25,000" type='Withdrawal' status />
+                        <ActiveTransactionHistory user='Self' amount="25,000" typeOfTransaction='Withdrawal' status />
+                        <ActiveTransactionHistory user='Self' amount="25,000" typeOfTransaction='Withdrawal' status />
+                        <ActiveTransactionHistory user='Self' amount="25,000" typeOfTransaction='Payment' status />
                     </div>
                 </div>
             </div>
@@ -314,13 +314,13 @@ const TransactionHistory = ({empty}) =>{
   )
 }
 
-const ActiveTransactionHistory = ({ user, amount, type, status})=>{
+const ActiveTransactionHistory = ({ user, amount, typeOfTransaction, status})=>{
     <>
         <div className={classes.single_request}>
             <ul> 
               <li> <div className={classes.list_option}><span></span> <p>{user}</p></div> </li>
               <li> <div className={classes.list_option}> <p>N{amount}</p></div> </li>
-              <li> <div className={classes.list_option} ><p>{type}</p></div> </li>
+              <li> <div className={classes.list_option} ><p>{typeOfTransaction}</p></div> </li>
               <li> <div className={classes.list_option} ><p>{status}</p></div> </li>
               
             </ul>
