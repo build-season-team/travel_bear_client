@@ -31,13 +31,13 @@ const AppRouter = () => {
                 <Route path='/signup' element={<SignUp />} />
                 <Route path='/terms' element={<Terms />} />
                 <Route path='/login' element={<Login />} />
-                <Route path='/upload' element={<UploadShortlet />} />
+                  <Route path='/upload' element={<ProtectedRoutes><UploadShortlet /></ProtectedRoutes>} />
                 <Route path='/shortlets' element={<Search />} />
 
-                <Route path='/reservation' element={<ReservationPage />} />
+                  <Route path='/reservation' element={<ProtectedRoutes><ReservationPage /></ProtectedRoutes>} />
 
                 {/* Booking */}
-                <Route path='/booking/:houseID' element={<Booking />} />
+                  <Route path='/booking/:houseID' element={<ProtectedRoutes><Booking /></ProtectedRoutes>} />
 
                 {/* Dashboard Routing */}
                   <Route path="/dashboard" element={<ProtectedRoutes ><Dashboard /></ProtectedRoutes>} >

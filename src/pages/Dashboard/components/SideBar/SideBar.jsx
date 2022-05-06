@@ -24,16 +24,8 @@ import Logout from '../../../../assets/icons/logout.svg'
 import { FaTimes } from 'react-icons/fa'
 import { MdClose } from 'react-icons/md'
 import { AuthContext } from '../../../../store/authContext/AuthProvider'
-// import Withdrawal from '../../../AdminDashboard/screens/Withdrawal/Withdrawal'
+import logout from '../../../../store/authContext/actionCreators/logout'
 
-// const SideBar = ({className, show, setShow}) => {
-
-//     const [activeNav, setActiveNav] = useState(0)
-//     const [dropMenuIsVisible, setDropMenuIsVisible] = useState(false);
-//     const tabItems =[
-//         { text: "/dashboard/", TabIcon: DashboardIcon, TabIconActive: ActiveDashboard,  },
-//         { text: "/dashboard/wallet", TabIcon: WalletIcon, TabIconActive: ActiveWallet, },
-//         { text: "/dashboard/shortlets", TabIcon: ShortletIcon, TabIconActive: ActiveShortlet, },
 const SideBar = ({className, show, setShow}) => {
 
     const {authState: {user}} = useContext(AuthContext);
@@ -96,7 +88,11 @@ const SideBar = ({className, show, setShow}) => {
 
               </ul>
 
-              <div className={classes.logout}>
+              <div className={classes.logout} onClick={() => {
+                  logout()(authDispatch)(() => setTimeout(() => {
+                      navigate('/')
+                  }, 1000))
+              }}>
                   <img src={Logout} alt="logout icon" />
                   <p>Logout</p>
               </div>
