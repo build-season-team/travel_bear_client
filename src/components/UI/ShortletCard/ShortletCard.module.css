@@ -18,6 +18,10 @@
     box-shadow: 0px 10px 64px rgba(0, 0, 0, 0.2);
 }
 
+.per_night{
+    padding-left: 1rem;
+}
+
 
 .card__img {
     width: 100%;
@@ -68,7 +72,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2.5rem;
+    margin-top: 1rem !important;
     padding: 0 1rem;
 }
 
