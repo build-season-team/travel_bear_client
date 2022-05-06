@@ -67,7 +67,7 @@ const SideBar = ({className, show, setShow}) => {
     <div className={`${classes.side_bar} ${(dropMenuIsVisible || show) ? classes.side_show : ''}`}>
         
         <div className={`${classes.sidebar_logo} ${classes.nav_test}`}>
-            <img src={TravelBear} alt="TravelBear Logo" />
+            <img src={TravelBear} alt="TravelBear Logo" onClick={() => navigate('/')} />
             <div className={classes.close_icon} onClick={() => {
                 setDropMenuIsVisible(false);
                 setShow(false);
