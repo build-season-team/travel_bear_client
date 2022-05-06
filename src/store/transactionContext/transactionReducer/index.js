@@ -1,4 +1,4 @@
-import { ADD_BANK_FAIL, ADD_BANK_LOADING, ADD_BANK_SUCCESS, CLEAR_MESSAGE, GET_BANK_FAIL, GET_BANK_LOADING, GET_BANK_SUCCESS, GET_TRANSACTION_LOADING, GET_TRANSACTION_SUCCESS, GET_TRANS_LOADING, GET_TRANS_SUCCESS, WITHDRAWAL_FAIL, WITHDRAWAL_LOADING, WITHDRAWAL_SUCCESS } from "../../../constants/actionTypes";
+import { ADD_BANK_FAIL, ADD_BANK_LOADING, ADD_BANK_SUCCESS, CLEAR_MESSAGE, GET_BANK_FAIL, GET_BANK_LOADING, GET_BANK_SUCCESS, GET_TRANSACTION_LOADING, GET_TRANSACTION_SUCCESS, GET_TRANS_LOADING, GET_TRANS_SUCCESS, MAKE_TRANSFER_LOADING, MAKE_TRANSFER_SUCCESS, WITHDRAWAL_FAIL, WITHDRAWAL_LOADING, WITHDRAWAL_SUCCESS } from "../../../constants/actionTypes";
 
 export default (state, {type, payload}) => {
 
@@ -72,14 +72,26 @@ export default (state, {type, payload}) => {
       case GET_TRANS_LOADING:
         return {
           ...state,
-          loading: false,
-          trans: payload
-        };
+          loading: true,
+        }
       case GET_TRANS_SUCCESS:
         return {
           ...state,
-          loading: true,
+          loading: false,
+          trans: payload
         };
+
+        case MAKE_TRANSFER_LOADING: 
+          return {
+            ...state,
+            loading: true
+          }
+        case MAKE_TRANSFER_SUCCESS:
+          return {
+            ...state,
+            message: payload,
+            loading: false
+          }
 
       case CLEAR_MESSAGE:
         return {

@@ -92,7 +92,7 @@ const Wallet = ({user}) => {
     const details = {
       amount: +form.amount,
       bankName: banks[index]?.bankName || banks[0].bankName,
-      accountNumber: banks[index]?.accountNumber || banks[0].accountName,
+      accountNumber: banks[index]?.accountNumber || banks[0].accountNumber,
     }
 
     withdrawal(details)(transactionDispatch);
@@ -178,8 +178,8 @@ const Wallet = ({user}) => {
                           {
                           banks.length > 0 && banks.map((bank , index) => (
                             <div key={index} className={classes.indivi_radio}>
-                              <input type="radio" id={bank.bankName} onChange={(e) => onRadioChange(e, index)} name="fav_language" value={bank.bankName} checked={index == isChanged} />
-                              <label htmlFor={bank.bankName}>{bank.bankName}</label>
+                              <input type="radio" id={bank?.bankName} onChange={(e) => onRadioChange(e, index)} name="fav_language" value={bank?.bankName} checked={index == isChanged} />
+                              <label htmlFor={bank?.bankName}>{bank?.bankName}</label>
                             </div>
                           ))
                         }
@@ -213,8 +213,8 @@ const Wallet = ({user}) => {
                          banks.map((bank, i) => (
                             <div key={i} className={classes.first_bank}>
                             <div className={classes.user_bank_details}>
-                              <p className={classes.user_name}>{user.firstName + " " + user.lastName}</p>
-                              <p className={classes.bank_name}>{bank.bankName}</p>
+                              <p className={classes.user_name}>{user?.firstName + " " + user?.lastName}</p>
+                              <p className={classes.bank_name}>{bank?.bankName}</p>
                             </div>
                             <p className={classes.remove}>Remove</p>
                           </div>

@@ -12,7 +12,7 @@ const getTrans = () => async (dispatch) => {
   });
   try {
     const res = await axiosInstance.get("/transaction/gettransact");
-    console.log(res.sata.data);
+    console.log(res.data.data);
     dispatch({
       type: GET_TRANS_SUCCESS,
       payload: res.data.data,

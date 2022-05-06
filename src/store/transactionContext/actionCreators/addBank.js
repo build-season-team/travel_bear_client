@@ -19,7 +19,7 @@ const addBank = (form) =>  (dispatch) => async (onsuccess) => {
   } catch (err) {
     dispatch({
       type: ADD_BANK_FAIL,
-      payload: err.response.data?.message,
+      payload: err.respons,
     });
   }
 };

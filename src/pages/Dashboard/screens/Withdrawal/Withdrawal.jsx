@@ -6,6 +6,8 @@ import Button from '../../../../components/UI/Button'
 import Avatar from '../../../../assets/images/avatar.png'
 import { TransactionContext } from '../../../../store/transactionContext/TransactionProvider'
 import getTrans from '../../../../store/transactionContext/actionCreators/getTrans'
+import transfers from '../../../../store/transactionContext/actionCreators/transfers'
+import Toast from '../../../../components/UI/Toast'
 
 const Withdrawal = () => {
 
@@ -15,12 +17,14 @@ const Withdrawal = () => {
     getTrans()(transactionDispatch);
   }, [])
 
-  console.log(trans)
+  const transfer = (user, trans, amount) => {
+    transfers({user, trans, amount})(transactionDispatch);
+  }
 
   return (
     
     <>
-
+      {message && <Toast emoji='🤗' message={message} success />}
         <div className={classes.withdrawalContainer}>
             <div className={classes.container_child}>
 
@@ -32,26 +36,23 @@ const Withdrawal = () => {
               <th>Name</th>
               <th>Bank</th>
               <th>Account Number</th>
-              <th>Balance</th>
+              <th>Amount</th>
               <th>Accept</th>
               <th>Decline</th>
             </tr>
-            <tr>
-              <td>Alfreds Futterkiste</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
-              <td>Germany</td>
-              <td><Button primary name={'Accept'} onClick={() => { }} /></td>
-              <td><Button danger name={'Decline'} onClick={() => { }} /></td>
-            </tr>
-            <tr>
-              <td>Centro comercial Moctezuma</td>
-              <td>Francisco Chang</td>
-              <td>Mexico</td>
-              <td>Germany</td>
-              <td><Button primary name={'Accept'} onClick={() => { }} /></td>
-              <td><Button danger name={'Decline'} onClick={() => { }} /></td>
-            </tr>
+            {
+
+            trans.map((cur, i) => (
+              <tr key={i}>
+                <td>{cur.user.firstName + " " + cur.user.lastName}</td>
+                <td>{cur.bankName}</td>
+                <td>{cur.accountNumber}</td>
+                <td>{cur.amount}</td>
+                <td><Button primary name={'Accept'} onClick={() => transfer(cur.user._id, cur._id, cur.amount)} /></td>
+                <td><Button danger name={'Decline'} onClick={() => { }} /></td>
+              </tr>
+              ))
+            }
 
           </table>
             </div>
@@ -61,23 +62,6 @@ const Withdrawal = () => {
     </>
   )
 }
-const WithdrawalRequest = ({name, amount, balance, bank, bankNumber})=>{
-  return(
-      <>
-          <div className={classes.single_request}>
-            <ul> 
-              <li> <div className={classes.list_option}><span></span> <p>{name}</p></div> </li>
-              <li> <div className={classes.list_option}> <p>₦{amount}</p></div> </li>
-              <li> <div className={classes.list_option} ><p>{bank}</p></div> </li>
-              <li> <div className={classes.list_option} ><p>{bankNumber}</p></div> </li>
-              <li> <div className={classes.list_option}> <p>₦{balance}</p></div> </li>
-              <li> <div className={classes.list_option_last}> <div className={classes.decline_btn}> <Button primary authBtn name='Accept' /> </div> <div className={classes.decline_btn}> <Button secondary authBtn name='Decline' /> </div>  </div></li>
-            </ul>
-          </div>
-      
-      </>
 
-  )
-}
 
 export default Withdrawal
