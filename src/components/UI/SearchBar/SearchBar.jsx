@@ -59,7 +59,7 @@ const SearchBar = () => {
 
             <div className='search_box_input'>
                 <div className='input_box'>
-                    <input className='search_box_input'    onChange={onInputChange}  placeholder={'Quick search by type, city'} />
+                    <input className='search_box_input' onChange={onInputChange}  placeholder={'Quick search by type, city'} />
                     <Button  className='btn' primary name='' iconPosition='right' icon={SearchIcon} />
                 </div>
             </div>

@@ -72,7 +72,7 @@ const ChildComponent = () =>{
                 </div>
 
                 <div className='agreement'>
-                    <div style={{display: 'flex'}}>
+                    <div className='agreement_check'>
                         <input type='checkbox' />
                         <p style={{color: '#007AEC', marginLeft: '3px', cursor: 'pointer', }} > Keep me signed in </p>
                     </div>

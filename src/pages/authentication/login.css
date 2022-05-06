@@ -154,6 +154,11 @@ input[type=password]{
     margin-left: 1rem;
 }
 
+.agreement_check{
+    display: flex;
+    align-items: center;
+}
+
 /* .sign-up-form{
     width: 85%;
     margin: 0 auto;
@@ -167,6 +172,9 @@ input[type=password]{
         display: none;
     } 
 
+    .agreement_check{
+        padding-top: 2rem;
+    }
 
     .form-control {
         width: 100%;
