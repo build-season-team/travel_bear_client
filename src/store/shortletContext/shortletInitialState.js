@@ -3,5 +3,6 @@ export default {
     message: null,
     error: null,
     data: [],
-    shortlet: {}
+    shortlet: {},
+    bookings:[]
 }

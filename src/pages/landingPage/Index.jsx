@@ -23,22 +23,19 @@ const LandingPage = () => {
   const [stateInfo, setStateInfo] = useState('all')
   const [stateInfo2, setStateInfo2] = useState('all')
   const {shortletDispatch, shortletState: {loading, data}} = useContext(ShortletContext);
-  let visited = stateInfo === 'all' ? data.sort((a, b) => b.visited - a.visited).slice(0, 4) : data.sort((a, b) => b.ratingsAverage - a.ratingsAverage).filter(item => item.state === stateInfo).slice(0, 4);
-  let highRate = stateInfo2 === 'all' ? data.sort((a, b) => b.ratingsAverage - a.ratingsAverage).slice(0, 4) : data.sort((a, b) => b.ratingsAverage - a.ratingsAverage).filter(item => item.state === stateInfo2).slice(0, 4);
-  if(data.length === 0) {
+  
+  let visited = stateInfo === 'all' ? data?.filter(item => (item.isVerified === true) && (item.isOccupied === false)).sort((a, b) => b.visited - a.visited).slice(0, 4) : data?.filter(item => (item.isVerified === true) && (item.isOccupied === false)).sort((a, b) => b.ratingsAverage - a.ratingsAverage).filter(item => item.state === stateInfo).slice(0, 4);
+  let highRate = stateInfo2 === 'all' ? data?.filter(item => (item.isVerified === true) && (item.isOccupied === false)).sort((a, b) => b.ratingsAverage - a.ratingsAverage).slice(0, 4) : data?.filter(item => (item.isVerified === true) && (item.isOccupied === false)).sort((a, b) => b.ratingsAverage - a.ratingsAverage).filter(item => item.state === stateInfo2).slice(0, 4);
+  if(data?.length === 0) {
     visited = new Array(4).fill(0);
     highRate = new Array(4).fill(0);
   }
 
+ 
+
   useEffect(() => {
     getShortlet()(shortletDispatch);
   },[])
-
-
-
-
-
-
 
   return (
     <div>
@@ -61,7 +58,7 @@ const LandingPage = () => {
             </div>
             <div className={classes.shortletContainer}>
               {
-                visited.map((cur, i) => {
+                visited?.map((cur, i) => {
                   return (
                     <ShortletCard
                       loading={loading}
@@ -96,7 +93,7 @@ const LandingPage = () => {
               </div>
             </div>
             <div className={classes.shortletContainer}>
-              {highRate.map((cur, i) => {
+              {highRate?.map((cur, i) => {
                 return (
                   <ShortletCard
                     key={i}

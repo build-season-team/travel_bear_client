@@ -84,9 +84,9 @@ const Nav = ({ dropMenuIsVisible, setDropMenuIsVisible, hideNav }) => {
                                             <p>Travel</p>
                                         </div>
 
-                                        <div className='search_box_options1 trips'>
+                                    <div onClick={() => navigate('/reservation')}  className='search_box_options1 trips'>
                                             <img src={HeartIcon} alt="a heart icon" />
-                                            <p>Trips</p>
+                                            <p>Reservations</p>
                                         </div>
 
                                         <div className='search_box_options1 house' onClick={() => onclick('/terms')}>
@@ -136,9 +136,9 @@ const Nav = ({ dropMenuIsVisible, setDropMenuIsVisible, hideNav }) => {
                                         <p>Travel</p>
                                     </div>
 
-                                    <div className='search_box_options1 trips2'>
+                                <div onClick={() => navigate('/reservation')}  className='search_box_options1 trips2'>
                                         <img src={HeartIcon} alt="a heart icon" />
-                                        <p>Trips</p>
+                                        <p>Reservations</p>
                                     </div>
 
                                     <div onClick={() => navigate('/terms')} className='search_box_options1 house2'>

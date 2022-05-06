@@ -27,6 +27,7 @@ import getBanks from '../../../../store/transactionContext/actionCreators/getBan
 import Skeleton from 'react-loading-skeleton';
 import withdrawal from '../../../../store/transactionContext/actionCreators/withdrawal';
 import getme from '../../../../store/authContext/actionCreators/getme';
+import getTransactions from '../../../../store/transactionContext/actionCreators/getTransactions';
 
 const Wallet = ({user}) => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -34,12 +35,18 @@ const Wallet = ({user}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [form, setForm] = useState({});
   const [isChanged, setIsChanged] = useState(0);
-  const {transactionDispatch, transactionState: {loading, message, error, banks, data}} = useContext(TransactionContext);
+  const {transactionDispatch, transactionState: {loading, message, error, banks, transactions}} = useContext(TransactionContext);
   const { authDispatch} = useContext(AuthContext);
   const [bank, setBank] = useState('');
   const [errors, setErrors] = useState({});
 
+
+
   
+  useEffect(() => {
+    getTransactions()(transactionDispatch);
+    console.log('run')
+  }, [])
 
 
   const onInputChange = (e, key) => {
@@ -245,36 +252,21 @@ const Wallet = ({user}) => {
     
 
         <div>
-          <TransactionHistory />
+          <TransactionHistory loading={loading} data={transactions} user={user} />
         </div>
     
-        <div>
-        <ActivityCard />
-        </div>
+        
     
     </>
   );
 };
 
-const ActivityCard = () =>{
-  return(
-    <div>
-        <div className={classes.wallet_activities}>
-          <p>Activities</p>
-          <div className={classes.clear}>Clear All</div>
-        </div>
-        <div>
-          <div  className={classes.all_activities}>
-            <img src={ Activities } alt="" />
-            <p>All your activities will show here.</p>
-          </div>
-        </div> 
-    </div>
-  );
-  
-};
 
-const TransactionHistory = ({empty}) =>{
+
+const TransactionHistory = ({data, user, loading}) =>{
+
+  
+  
   return(
     
         <div>
@@ -283,19 +275,39 @@ const TransactionHistory = ({empty}) =>{
               <p>Transaction History</p>
               <div className={classes.clear}>Clear All</div>
             </div>
-            {!empty
-
+            { !loading &&
+            
+            data?.length > 0
             ?
             <div className={classes.withdrawalContainer}>
                 <div className={classes.container_child}>
                     <div className={classes.withdrawal_heading}>
-                        <ul>
-                            <li>User</li>
-                            <li>Amount</li>
-                            <li>Type</li>
-                            <li>Status</li>    
-                        </ul>
-                        <ActiveTransactionHistory person='Self' amount="25,000" typeOfTransaction='Withdrawal' status />
+                    <table>
+                      <thead>
+
+                      <tr>
+                        <th>Reference</th>
+                        <th>Amount</th>
+                        <th>Type</th>
+                        <th>status</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+
+                      {
+                        data.map((transaction, i) => (
+                          <tr key={i}>
+                            <td>{transaction?.ref}</td>
+                            <td>{transaction?.amount}</td>
+                            <td>{transaction?.type}</td>
+                            <td>{transaction?.status}</td>
+                          </tr>
+                        ))
+                      }
+                      </tbody>
+                      
+
+                    </table>
                         
                     </div>
                 </div>
@@ -317,19 +329,6 @@ const TransactionHistory = ({empty}) =>{
   )
 }
 
-const ActiveTransactionHistory = ({ person, amount, typeOfTransaction, status})=>{
-    <>
-        <div className={classes.single_request}>
-            <ul> 
-              <li> <div className={classes.list_option}><span></span> <p>{person}</p></div> </li>
-              <li> <div className={classes.list_option}> <p>N{amount}</p></div> </li>
-              <li> <div className={classes.list_option}><p>{typeOfTransaction}</p></div> </li>
-              <li> <div className={classes.list_option} ><p>{status}</p></div> </li>
-              
-            </ul>
-          </div>
-    
-    </>
-}
+
  
 export default Wallet;

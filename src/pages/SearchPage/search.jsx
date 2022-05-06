@@ -107,7 +107,7 @@ const Search = () => {
           </div>
           <aside>
             <div className={classes.shortlet}>
-              {data.sort((a, b) => b.ratingsAverage - a.ratingsAverage).map((cur, i) => {
+              {data.filter(item => (item.isVerified === true) && (item.isOccupied === false)).sort((a, b) => b.ratingsAverage - a.ratingsAverage).map((cur, i) => {
                 return (
                   <ShortletCard
                     key={i}
