@@ -3,7 +3,11 @@ import classes from "./Terms.module.css";
 import Header from "../../components/UI/Header/index";
 import Footer from "../../components/UI/Footer";
 import Button from "../../components/UI/Button";
+import { useNavigate } from "react-router-dom";
 const Terms = () => {
+
+  const navigate = useNavigate()
+
   return (
     <div>
       <Header />
@@ -71,8 +75,8 @@ const Terms = () => {
         </div>
         <aside className={classes.btn}>
           <div>
-            <Button primary name="Yes, I agree" />
-            <Button link name="No, I disagree" />
+            <Button primary name="Yes, I agree" onClick={() => navigate('/upload')} />
+            <Button link name="No, I disagree" onClick={() => navigate('/')} />
           </div>
         </aside>
       </div>

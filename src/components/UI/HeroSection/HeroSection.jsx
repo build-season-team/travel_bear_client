@@ -12,8 +12,8 @@ const HeroSection = () => {
                     Find The Best Hotels & Shortlets Around.
                 </h3>
                 <p className='hero_img_explainer' >
-                Visit the most amazing places across Nigeria. Book hotels, 
-                shortlets and enjoy the best experiences as you explore and have your dream vacation.
+                Visit the most amazing places across Nigeria. Book shortlets
+                apartments and enjoy the best experiences as you explore and have your dream vacation.
                 </p>
             </div>
         </div>

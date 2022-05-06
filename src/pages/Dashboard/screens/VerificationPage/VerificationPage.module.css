@@ -1,0 +1,427 @@
+.full_container{
+    height: 100vh;
+}
+
+.dashboard_home{
+    display: flex;
+    background-color: #fff;
+    border-radius: .9rem;
+    margin-top: 2rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.apartment_profile{
+    padding: 1rem 1rem 2.5rem 1rem;
+    /* flex: 1; */
+}
+
+.dashboard_home > p{
+    font-size: 1.4rem;
+    color: #007AEC;
+    padding: 6rem 4rem;
+    cursor: pointer;
+}
+
+.big_container{
+    display: flex;
+    min-height: 40rem;
+    padding-top: 2rem;
+    justify-content: space-between;
+}
+
+.medium_container{
+    flex: 2;
+    border-radius: .9rem;
+    margin-right: 2rem;
+}
+
+.small_container{
+    flex: 1;
+    background-color: #fff;
+    border-radius: .9rem;
+    max-height: 50rem;
+}
+
+.notification{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 2rem 1.5rem 2rem;
+    border-bottom: 1px solid #E0E2E7;
+}
+
+.notification p{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.notification span{
+    color: #007AEC;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.notification_body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: auto;
+}
+
+
+
+.bank_summary_container{
+    border-radius: .9rem;
+    background-color: #fff;
+    min-height: 30rem;
+}
+
+.bank_summary{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #E0E2E7;
+}
+
+.bank_summary span{
+    color: #007AEC;
+    cursor: pointer;
+    font-size: 1.4rem;
+    padding-right: 3.6rem;
+}
+
+.bank_summary_title{
+    display: flex;
+    padding: 3rem 5rem 1.5rem;
+    justify-content: space-between;  
+}
+
+.bank_summary_title p{
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding-left: .8rem;
+}
+
+.bank_summary_container1{
+    border-radius: .9rem;
+    background-color: #fff;
+    min-height: 30rem;
+    margin-top: 2rem;
+}
+
+
+.shortlet_summary{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    margin-top: 2rem;
+    min-height: 30rem;
+    border-radius: .9rem;
+    justify-content: space-between;
+    border-bottom: 1px solid #E0E2E7;
+}
+
+.bank_boxes{
+    display: flex;
+    padding-left: 4.8rem;
+    padding-top: 4.2rem;
+}
+
+.small_box{
+    height: 10rem;
+    width: 10rem;
+    background-color: #e5e5e5;
+    border-radius: .7rem;
+}
+
+
+.small_box:last-child{
+    margin-left: 1.6rem;
+}
+
+
+
+@media screen and (min-width: 150px) and (max-width: 400px)  {
+    .dashboard_home{
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: .9rem;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .user_profile{
+        padding: 2rem 1.5rem;
+        flex: 1;
+    }
+
+    .dashboard_home > p{
+        padding: 1rem 1.5rem;
+    }
+
+    .big_container{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        min-height: 40rem;
+        padding-top: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .medium_container{
+        flex: 1;
+        width: 100%;
+        border-radius: .9rem;
+        margin-right: 0rem;
+    }
+    
+    .small_container{
+        order: 1;
+        flex: 1;
+        margin-top: 2rem;
+        width: 100%;
+        background-color: #fff;
+        border-radius: .9rem;
+        max-height: 50rem;
+    }
+    
+    .notification{
+        order: 1;
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        justify-content: space-between;
+        padding: 3rem 2rem 1.5rem rem;
+        border-bottom: 1px solid #E0E2E7;
+    }
+    
+    .notification p{
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+    
+    .notification span{
+        color: #007AEC;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    
+    .notification_body{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 5rem;
+        margin-bottom: auto;
+    }
+
+    .bank_summary span{
+        color: #007AEC;
+        cursor: pointer;
+        font-size: 1.2rem;
+        padding-right: 2rem;
+    }
+    
+    .bank_summary_title{
+        display: flex;
+        padding: 3rem 2rem 1.5rem;
+        align-items: center;
+        justify-content: space-between;  
+    }
+    
+    .bank_summary_title p{
+        font-size: 1.4rem;
+        font-weight: 500;
+        padding-left: .8rem;
+    }
+
+    .bank_boxes{
+        display: flex;
+        padding-left: 2rem;
+        padding-top: 2rem;
+    }
+    
+    .small_box{
+        height: 8rem;
+        width: 8rem;
+        background-color: #e5e5e5;
+        border-radius: .7rem;
+    }
+    
+}
+
+@media screen and (min-width: 401px) and (max-width: 920px)  {
+    .full_container{
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .dashboard_home{
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: .9rem;
+        width: 100%;
+        margin-top: 1rem;
+        margin: 0 auto;
+    }
+
+    .user_profile{
+        padding: 2rem 1.5rem;
+        flex: 1;
+    }
+
+    .dashboard_home > p{
+        padding: 1rem 1.5rem;
+    }
+
+    .big_container{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        min-height: 40rem;
+        padding-top: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .medium_container{
+        flex: 1;
+        width: 100%;
+        border-radius: .9rem;
+        margin-right: 0rem;
+    }
+    
+    .small_container{
+        order: 1;
+        flex: 1;
+        margin-top: 2rem;
+        width: 100%;
+        background-color: #fff;
+        border-radius: .9rem;
+        max-height: 50rem;
+    }
+    
+    .notification{
+        order: 1;
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        justify-content: space-between;
+        padding: 3rem 2rem 1.5rem rem;
+        border-bottom: 1px solid #E0E2E7;
+    }
+    
+    .notification p{
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+    
+    .notification span{
+        color: #007AEC;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    
+    .notification_body{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 5rem;
+        margin-bottom: auto;
+    }
+
+    .bank_summary span{
+        color: #007AEC;
+        cursor: pointer;
+        font-size: 1.2rem;
+        padding-right: 2rem;
+    }
+    
+    .bank_summary_title{
+        display: flex;
+        padding: 3rem 2rem 1.5rem;
+        align-items: center;
+        justify-content: space-between;  
+    }
+    
+    .bank_summary_title p{
+        font-size: 1.4rem;
+        font-weight: 500;
+        padding-left: .8rem;
+    }
+
+    .bank_boxes{
+        display: flex;
+        padding-left: 2rem;
+        padding-top: 2rem;
+    }
+    
+    .small_box{
+        height: 8rem;
+        width: 8rem;
+        background-color: #e5e5e5;
+        border-radius: .7rem;
+    }
+}
+
+@media screen and (min-width: 921px) and (max-width: 1049px) {
+    .notification p{
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+    
+    .notification span{
+        color: #007AEC;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    
+    .notification_body{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 5rem;
+        margin-bottom: auto;
+    }
+
+    .bank_summary span{
+        color: #007AEC;
+        cursor: pointer;
+        font-size: 1.2rem;
+        padding-right: 2rem;
+    }
+    
+    .bank_summary_title{
+        display: flex;
+        padding: 3rem 2rem 1.5rem;
+        align-items: center;
+        justify-content: space-between;  
+    }
+    
+    .bank_summary_title p{
+        font-size: 1.3rem;
+        font-weight: 500;
+        padding-left: .8rem;
+    }
+
+    .bank_boxes{
+        display: flex;
+        padding-left: 2rem;
+        padding-top: 2rem;
+    }
+    
+    .small_box{
+        height: 8rem;
+        width: 8rem;
+        background-color: #e5e5e5;
+        border-radius: .7rem;
+    }
+}

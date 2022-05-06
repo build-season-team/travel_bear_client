@@ -1,52 +1,38 @@
-import { useContext } from 'react';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { useContext, useEffect } from 'react';
 import './App.css';
-
-import SignUp from './pages/authentication/sign-up';
-import Login from './pages/authentication/login';
-import LandingPage from './pages/landingPage/Index';
-import ErrorPage from './components/UI/404page';
-import UploadShortlet from './pages/UploadShortlet/UploadShortlet'
-import FileUpload from './components/UI/FileUpload/FileUpload';
 import { AuthContext } from './store/authContext/AuthProvider';
-
-import Dashboard from './pages/Dashboard';
-import ConfirmPost from './pages/ConfirmPost/ConfirmPost'
+import { LOGIN_SUCCESS } from './constants/actionTypes';
+import AppRouter from './router/AppRouter';
 
 
 function App() {
 
-  const {authState: {isLoggedIn}} = useContext(AuthContext);
+  const { authDispatch, authState: { isLoggedIn } } = useContext(AuthContext);
+  const token = localStorage.getItem('token');
+  const getUser = () => {
+    if(!isLoggedIn && token) {
+      if(token !== 'undefined') {
+        const user = JSON.parse(localStorage.getItem("user"));
+        authDispatch({
+          type: LOGIN_SUCCESS,
+          payload: user
+        })
+      }
+    }
+  }
+
+  useEffect(() => {
+    getUser();
+  },[isLoggedIn])
 
   
   return (
     <div className="App">
-
-      
-      <Router >
-        <Routes>
-          <Route path='/' element={<LandingPage />} />
-          <Route path='/login' element={<Login />} />
-           <Route path='*' element={<ErrorPage />} />
-          
-          <Route path='/' element={<div>hello world</div>} />
-          <Route path='/signup' element={<SignUp />} />
-          <Route path='/login' element={<Login />} />
-          {/* { isLoggedIn && */}
-            <>
-              <Route path='/upload' element={<UploadShortlet />} />
-              <Route path='/confirm' element={ <ConfirmPost/> } />
-
-              {/* Dashboard Routing */}
-              <Route path="/dashboard/:route" element={<Dashboard />} />
-              <Route path="/dashboard/:route/:sub" element={<Dashboard />} />
-              <Route path='/upload_input' element={<FileUpload />} />
-            </>
-        {/* } */}
-        </Routes>
-      </Router>
+      <AppRouter />
     </div>
   );
 }
+
+
 
 export default App;

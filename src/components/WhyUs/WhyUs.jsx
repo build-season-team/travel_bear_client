@@ -21,8 +21,8 @@ const WhyUs = () => {
         </div>
         <div className={classes.box}>
             <img src={wallet} />
-            <h4>One Time Payment</h4>
-            <p>Be sure to never be asked to pay <br/> extra charge as everything is done <br/> from the start.</p>
+            <h4>Secure Payment</h4>
+            <p>We provide you a safe and secured way to<br/> to pay for the shortlet of your <br/> choice.</p>
         </div>
         </div>
     </div>

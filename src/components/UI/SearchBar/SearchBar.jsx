@@ -17,20 +17,19 @@ const SearchBar = () => {
     const [select, setSelect]=useState();
 
     const [value, setValue] = useState('')
-    const handleClick = ()=> setSelect({});
     const navigate = useNavigate()
 
     const onInputChange = (e, key) => {
         setValue(e.target.value)
     }
- 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
   return (
     <section className='search_bar'>
         <div className='search_box'>
             <div className='search_box_options'>
-                <div className='search_box_options1 accomo' onClick={()=> handleClick}>
+                  <div className='search_box_options1 accomo' onClick={() => navigate('/shortlets')}>
                     <img src={ BuildingIcon } alt="an icon representing a building" />
-                    <p>Box Accomodation</p>
+                    <p>Book Accomodation</p>
                     <img src={DropDownIcon} alt=" a dropdown icon" />
                 </div>
 
@@ -47,12 +46,12 @@ const SearchBar = () => {
                     <p>Travel</p>
                 </div>
 
-                <div className='search_box_options1 trips'>
+                  <div onClick={() => navigate('/reservation')} className='search_box_options1 trips' >
                     <img src={HeartIcon} alt="a heart icon" />
-                    <p>Trips</p>
+                    <p>Reservations</p>
                 </div>
 
-                <div className='search_box_options1 house' onClick={() => navigate('/upload')}>
+                <div className='search_box_options1 house' onClick={() => navigate('/terms')}>
                     <img src={HouseIcon} alt="a house icon" />
                     <p>Lease Shortlets</p>
                 </div>

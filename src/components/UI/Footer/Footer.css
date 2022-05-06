@@ -1,7 +1,8 @@
 .footer{
     background-color: #0E0E0E;
     display: flex;
-    min-width: 100vw;
+    width: 100vw;
+    max-width: 100%;
     justify-content: center;
     flex-direction: column;
     color: aliceblue;

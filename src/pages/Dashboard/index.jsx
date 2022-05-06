@@ -1,44 +1,44 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import classes from './Dashboard.module.css'
 
 import SubHeader from './components/Header/Header'
 import SideBar from './components/SideBar/SideBar'
 
-import Home from './screens/Home/Home'
-import Wallet from './screens/Wallet/Wallet'
-import Shortlets from './screens/Shortlets/Shortlets'
+import { MdOutlineNotes } from 'react-icons/md'
 
-import { useParams } from 'react-router-dom'
+import { Outlet, useParams } from 'react-router-dom'
+
 
 const Dashboard = () => {
+
+  const [dropMenuIsVisible, setDropMenuIsVisible] = useState(false);
+
+  const showSidebar = () =>{
+    setDropMenuIsVisible( <SideBar /> )
+  }
 
   const params = useParams();
 
   return (
+    
+      
     <div className={classes.dashboard_screen}> 
-      <SideBar />
+    <div>
+        <SideBar setShow={setDropMenuIsVisible} show={dropMenuIsVisible} className={classes.sidebar} />
+    </div>
+      
       <section className={classes.dashboard_sub_screen}>
           <div className={classes.dash_header}>
-            { params.sub ? null : <SubHeader /> }
+              <div className={classes.hamburger_menu} onClick={() => setDropMenuIsVisible(true)}>
+                  <MdOutlineNotes size={'2.2rem'} />
+              </div>
+                { params.sub ? null : <SubHeader /> }
           </div> 
 
           <main className={`${classes.dashboard_main_content} ${classes.main_container})`}>
-
-            {
-                params.route === "index" 
-                ? <Home /> 
-                : params.route === "wallet" 
-                ? <Wallet /> 
-                : params.route === "shortlets"
-                ? <Shortlets />
-                : null
-            }
-
+            <Outlet />
           </main>
       </section>
-    
-    
-    
     </div>
   )
 }

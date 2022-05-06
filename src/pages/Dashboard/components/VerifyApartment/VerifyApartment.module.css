@@ -1,0 +1,236 @@
+.verify_container{
+    background-color: #fff;
+}
+.shortlet_data{
+    display: flex;
+    height: max-content;
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: .8rem;
+    background-color: #fff;
+}
+
+.shortlet_image{
+    height: 18rem;
+    width: 22rem;
+    border-radius: .64rem;
+    /* position: relative; */
+}
+
+.shortlet_cover{
+    position: relative;
+}
+
+/* .verified{
+    font-size: 1rem;
+    color: #fff;
+    background-color: #6BB03B;
+    padding: .4rem 1.9rem;
+    border-top-right-radius: .64rem;
+    position: absolute;
+    right: 0%;
+}
+
+.unverified{
+    font-size: 1rem;
+    color: #000;
+    background-color: #e5e5e5;
+    padding: .4rem 1.9rem;
+    border-top-right-radius: .64rem;
+    position: absolute;
+    right: 0%;
+} */
+
+
+.shortlet_details{
+    padding-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+}
+
+.shortlet_title{
+    color: #111827;
+    font-weight: 700;
+    padding-top: 1rem;
+    font-size: 1.6rem;
+}
+
+.shortlet_desc{
+    margin-top: .71rem;
+    color: #4B5563;
+    font-size: 1rem;
+    width: 80%;
+}
+
+.shortlet_details > :nth-child(3){
+    margin-top: .71rem;
+    font-size: 1.2rem;
+    color: #4B5563;
+}
+
+.shortlet_details > :nth-child(4){
+    margin-top: .71rem;
+}
+
+.shortlet_details > :nth-child(4) span{
+    color: #059669;
+}
+
+.shortlet_details > :nth-child(5){
+    margin-top: 1.2rem;
+}
+
+.checkoutBtn{
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.acceptBtn{
+    width: 48%;
+}
+
+
+.disable_btn{
+    padding: .66rem 2.3rem;
+    color: #007AEC;
+    background-color: #007AEC21; 
+    border-radius: .4rem;
+    cursor: pointer;
+}
+
+.remove_btn{
+    padding: .66rem 2.3rem;
+    color: #FF2020;
+    border: 1px solid #FF2020;
+    border-radius: .4rem;
+    margin-left: 1.2rem;
+    cursor: pointer;
+}
+
+.admin_details{
+    display: flex;
+    align-items: center;
+}
+
+.admin_details p{
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding-left: 1rem;
+}
+
+.admin_details span{
+    height: 3rem;
+    width: 3rem;
+    border: 1px solid purple;
+    background-color: #4B5563;
+    border-radius: 50%;
+}
+
+.house_address{
+    display: flex;
+    /* flex-direction: row; */
+    background-color: #F1F1F16B;
+    border-radius: .8rem;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 1.5rem;
+    width: 95%;
+    padding: 1rem;
+}
+
+.house_address img{
+    width: 10%;
+}
+
+.house_address p{
+    padding-left: 1.1rem;
+    font-size: 1.4rem;
+}
+
+.house_address span{
+    color: #333333;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+@media screen and (min-width: 150px) and (max-width: 700px)  {
+    .shortlet_data{
+        display: block;
+        height: max-content;
+    }
+
+    .shortlet_details{
+        padding-left: 0rem;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+    
+    .dash_button{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 40%;
+        text-align: center;
+    }
+
+    .disable_btn{
+        color: #007AEC;
+        background-color: #007AEC21; 
+        border-radius: .4rem;
+    }
+    
+    .remove_btn{
+        color: #FF2020;
+        margin-top: 1rem;
+        border-radius: .4rem;
+        margin-left: 0rem;
+    }
+
+    .shortlet_image{
+        height: 18rem;
+        width: 22rem;
+        border-radius: .64rem;
+        position: relative;
+    }
+
+    .shortlet_cover{
+        position: none;
+    }    
+
+    .verified{
+        position: absolute;
+        right: 41%;
+    }
+
+    .shortlet_desc{
+        margin-top: .71rem;
+        color: #4B5563;
+        font-size: 1rem;
+        width: 80%;
+    }
+
+    .checkoutBtn{
+        width: max-content;
+    }
+
+    .house_address img{
+        width: 8%;
+    }
+    
+    .house_address p{
+        padding-left: 1.1rem;
+        font-size: 1.2rem;
+    }
+    
+    .house_address span{
+        color: #333333;
+        font-weight: 700;
+        font-size: 1.4rem;
+    }
+    
+    
+}

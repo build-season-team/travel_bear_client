@@ -1,22 +1,42 @@
 
 .Acc{
     width: 100%;
-    height: 162.9rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
-    padding: 0px;
+    margin: 10rem auto;
+
+    
    
 }
 
+.spinner {
+    margin: 0 auto;
+    animation-name: spin;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateY(0);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+
+
 .bookacc{
      width: 85%;
-     height: 62.8rem;
-     margin: auto;
+     margin: 0 auto;
      display: flex;
      flex-direction: column;
-     justify-content: space-between;
+     margin-bottom: 10rem;
 }
 
 .topbody{
@@ -44,7 +64,8 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 140%;
-    letter-spacing: 0.002em
+    letter-spacing: 0.002em;
+    padding-left: 1rem;
 }
 
 .buttonHolder{
@@ -60,7 +81,6 @@
 
 .shortletContainer {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 2.5rem;
 }
@@ -73,12 +93,11 @@
 @media only screen and (max-width: 700px){
     .Acc{
         min-width: 100vw;
-        height: 430rem;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        justify-content: space-around;
         padding: 0px;
+        margin: 2rem auto;
     }
 
     .topbody h3 {
@@ -87,12 +106,10 @@
 
     .bookacc{
         width: 85%;
-        min-height: 0;
         margin: auto;
-        height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        margin-bottom: 10rem;
    }
 
     .topbody{
@@ -114,9 +131,7 @@
     .shortletContainer {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
         align-items: center;
-        height: 180rem;
         width: 100%;
     }
     
