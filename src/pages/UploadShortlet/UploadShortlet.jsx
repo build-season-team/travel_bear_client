@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, Navigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate, } from 'react-router-dom'
 import { FaAngleLeft } from "react-icons/fa";
 
 import FormInput from '../../components/UI/FormInput/Index'
@@ -26,6 +26,7 @@ const UploadShortlet = () => {
     const [isChanged, setIsChanged] = useState(0);
     const { shortletDispatch, shortletState: {loading, message, error}} = useContext(ShortletContext)
     const { authDispatch } = useContext(AuthContext);
+    const navigate = useNavigate()
 
     const onInputChange = (e, key)=> {
          setForm({...form, [key]: e.target.value})
@@ -118,7 +119,9 @@ const UploadShortlet = () => {
             forms.append(`image`, image);
         });
 
-        addShortlet(forms)(shortletDispatch);
+        addShortlet(forms)(shortletDispatch)(() => {
+            navigate('/dasboard/')
+        });
         getme()(authDispatch)
     }
 

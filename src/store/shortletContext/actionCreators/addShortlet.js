@@ -1,7 +1,7 @@
 import { UPLOAD_SHORTLET_FAIL, UPLOAD_SHORTLET_LOADING, UPLOAD_SHORTLET_SUCCESS } from "../../../constants/actionTypes"
 import axiosInstance from "../../../utils/axiosInstance";
 
-export default (formData) => async (dispatch) => {
+export default (formData) =>  (dispatch) =>  async (onsuccess) => {
     dispatch({
         type: UPLOAD_SHORTLET_LOADING
     });
@@ -12,6 +12,7 @@ export default (formData) => async (dispatch) => {
             type: UPLOAD_SHORTLET_SUCCESS,
             payload: res.data.message
         })
+        onsuccess();
     }catch(error) {
         console.log(error.response);
         dispatch({
