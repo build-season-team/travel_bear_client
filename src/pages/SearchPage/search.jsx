@@ -39,10 +39,10 @@ const Search = () => {
       <main>
         <div className={classes.sidebar}>
           <div className={classes.side}>
-            <p>
+            {/* <p>
               Search Result for <br />
               <b>"3bedroom"</b>{" "}
-            </p>
+            </p> */}
             <Back className={classes.sidebarBack} />
           </div>
           <div className={classes.search_box_input}>
@@ -54,7 +54,7 @@ const Search = () => {
               <Button primary name="" iconPosition="right" icon={SearchIcon} />
             </div>
           </div>
-          <div className={classes.adjust}>
+          {/* <div className={classes.adjust}>
             <div className={classes.adjustB}>
               <img src={DollarCircle} />
               <p>Adjust Budget</p>
@@ -68,7 +68,7 @@ const Search = () => {
             <div className={classes.apply}>
               <p>Apply</p>
             </div>
-          </div>
+          </div> */}
           <div className={classes.Budget}>
             <div className={classes.BudgetB}>
               <img src={Dollar}/>
