@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import classes from './ReservationPage.module.css'
 
-import { Link, Navigate, useSearchParams } from 'react-router-dom'
+import { Link, Navigate, useNavigate, useSearchParams } from 'react-router-dom'
 import { FaAngleLeft } from "react-icons/fa";
 
 
