@@ -16,12 +16,14 @@ import Divider from '../Divider';
 import { AuthContext } from '../../../store/authContext/AuthProvider';
 import { ReactComponent as DropDown } from '../../../assets/images/drop-down.svg'
 import logout from '../../../store/authContext/actionCreators/logout';
+import Drop from '../DropDown/DropDown'
 
 const Nav = ({ dropMenuIsVisible, setDropMenuIsVisible, hideNav }) => {
     const [select, setSelect] = useState();
     const { authDispatch, authState: { isLoggedIn, user } } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
+    const [isSeen, setISeen] = useState(false)
     const handleClick = () => setSelect({});
     console.log(location.pathname)
 
@@ -153,11 +155,13 @@ const Nav = ({ dropMenuIsVisible, setDropMenuIsVisible, hideNav }) => {
                                         <Button name='Log In' onClick={() => onclick('/login')} navBtn secondary link='/login' />
                                     </>
                                     :
-                                    <div onClick={signout} className='landing__profile'>
+                                    <div onClick={() => setISeen(!isSeen)} className='landing__profile'>
                                         <p>Hi, {user?.firstName} </p>
                                         <DropDown />
                                         <img src={Avatar} alt="profile" />
+                                        {isSeen && <Drop logout={signout} style={{transform: `translateY(${isSeen ? 0 : '-100%'})`}} setISeen={setISeen} />}
                                     </div>
+
                                 }
 
                             </div>

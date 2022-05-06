@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import classes from './Withdrawal.module.css'
 
 import Button from '../../../../components/UI/Button'
 
 import Avatar from '../../../../assets/images/avatar.png'
+import { TransactionContext } from '../../../../store/transactionContext/TransactionProvider'
+import getTrans from '../../../../store/transactionContext/actionCreators/getTrans'
 
 const Withdrawal = () => {
+
+  const { transactionDispatch, transactionState: { loading, message, error, banks, transactions, trans } } = useContext(TransactionContext);
+
+  useEffect(() => {
+    getTrans()(transactionDispatch);
+  }, [])
+
+  console.log(trans)
+
   return (
     
     <>

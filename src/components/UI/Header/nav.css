@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    overflow: hidden;
+    /* overflow: hidden; */
     max-width: 100%;
 }
 
@@ -282,6 +282,7 @@ a, a.link:visited, a.visited{
     justify-content: flex-end;
     gap: 1rem;
     cursor: pointer;
+    position: relative;
 
 }
 
