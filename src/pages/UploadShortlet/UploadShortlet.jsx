@@ -120,7 +120,9 @@ const UploadShortlet = () => {
         });
 
         addShortlet(forms)(shortletDispatch)(() => {
-            navigate('/dasboard/')
+            setTimeout(() => {
+                navigate('/dashboard/');
+            }, 1500)
         });
         getme()(authDispatch)
     }
