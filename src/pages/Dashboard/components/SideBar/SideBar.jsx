@@ -28,7 +28,7 @@ import logout from '../../../../store/authContext/actionCreators/logout'
 
 const SideBar = ({className, show, setShow}) => {
 
-    const {authState: {user}} = useContext(AuthContext);
+    const {authDispatch, authState: {user}} = useContext(AuthContext);
     const [activeNav, setActiveNav] = useState(0)
     const [dropMenuIsVisible, setDropMenuIsVisible] = useState(false);
 
