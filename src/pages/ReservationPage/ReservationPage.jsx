@@ -23,6 +23,7 @@ import Toast from '../../components/UI/Toast';
 const ReservationPage = () => {
 
     const [searchParams] = useSearchParams()
+    const navigate = useNavigate();
     const {shortletDispatch, shortletState: {bookings, message, loading}} = useContext(ShortletContext);
 
     useEffect(() => {
@@ -57,7 +58,7 @@ const ReservationPage = () => {
                     bookings.map((curr, i) => (
                         <div key={i} className={classes.reservation_content}>
                             <div className={classes.reservation_content_one}>
-                                <Shortlet description={curr.apartment?.description.substring(0, 40) + "..."} title={curr.apartment?.houseTitle} amount={curr.apartment?.amount} image={curr.apartment?.image[0]}  button={<Button authBtn primary name='Checkout' />} />
+                                <Shortlet description={curr.apartment?.description.substring(0, 40) + "..."} title={curr.apartment?.houseTitle} amount={curr.apartment?.amount} image={curr.apartment?.image[0]}  button={<Button onClick={() => navigate('/')} authBtn primary name='Checkout' />} />
                             </div>
 
                             <div className={classes.house_address}>
