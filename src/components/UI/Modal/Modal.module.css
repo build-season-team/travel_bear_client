@@ -14,12 +14,12 @@
   .centered {
     position: relative;
     border-radius: 2rem;
-    border: 1px solid red;
     z-index: 120;
     animation: scaleModal .3s ease-in;
     background: #fff;
     transition:all 0.3s ease-in-out;
     opacity: 1;
+    width: 60rem;
   }
 
  
@@ -55,7 +55,6 @@
     width: max-content;
     height: max-content;
     background: white;
-    border: 1px solid red;
     width: 100%;
     padding: 3rem 6rem;
     color: white;
@@ -97,10 +96,16 @@
   .selectStyle{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: .6rem .5rem;
     border-radius: 1rem;
     border: 1px solid #82868B;
+    width: 100%;
   }
+
+   .selectStyle input {
+    flex: 1;
+   }
 
   .select_img{
     padding-right: .3rem;
@@ -178,6 +183,7 @@
 
   .checkout_text{
     padding-top: 3rem;
+    margin-bottom: 4rem;
   }
 
   .checkout_text p{

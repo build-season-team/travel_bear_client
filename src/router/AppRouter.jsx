@@ -48,9 +48,9 @@ const AppRouter = () => {
                   <Route path="/dashboard" element={<ProtectedRoutes ><Dashboard /></ProtectedRoutes>} >
                     <Route index path="/dashboard/" element={<Home user={user} />} />
                     <Route path="/dashboard/wallet" element={<Wallet user={user} />} />
-                    <Route path="/dashboard/shortlets" element={<Shortlets />} />
-                      <Route path="/dashboard/verification" element={<RestrictedRoutes ><VerificationPage /></RestrictedRoutes> } />
-                      <Route path="/dashboard/withdrawal" element={<RestrictedRoutes><Withdrawal /></RestrictedRoutes> } />
+                      <Route path="/dashboard/shortlets" element={<Shortlets user={user} />} />
+                      <Route path="/dashboard/verification" element={<RestrictedRoutes ><VerificationPage user={user} /></RestrictedRoutes> } />
+                      <Route path="/dashboard/withdrawal" element={<RestrictedRoutes><Withdrawal user={user} /></RestrictedRoutes> } />
                 </Route>
                 <Route path='*' element={<ErrorPage />} />
             </Routes>
@@ -62,7 +62,7 @@ const AppRouter = () => {
 const ProtectedRoutes = ({ children }) => {
     const { authState: { isLoggedIn } } = useContext(AuthContext);
 
-    if (isLoggedIn) {
+    if (!isLoggedIn) {
 
         return (
             <Navigate to="/login" />

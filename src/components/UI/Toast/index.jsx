@@ -1,8 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { CLEAR_MESSAGE } from '../../../constants/actionTypes';
+import { AdminContext } from '../../../store/adminContext/AdminProvider';
+import { AuthContext } from '../../../store/authContext/AuthProvider';
+import { ShortletContext } from '../../../store/shortletContext/ShortletProvider';
+import { TransactionContext } from '../../../store/transactionContext/TransactionProvider';
 
 import classes from './Toast.module.css';
 
 const Toast = ({success, info, danger, message, emoji}) => {
+    const {authDispatch} = useContext(AuthContext);
+    const { transactionDispatch} = useContext(TransactionContext);
+    const { shortletDispatch } = useContext(ShortletContext)
+    const { adminDispatch } = useContext(AdminContext);
+
     const [showToast, setShowToast] = useState(true)
     let stroke, toastType;
     if(success) {
@@ -20,12 +30,36 @@ const Toast = ({success, info, danger, message, emoji}) => {
         if(!danger) {
             setTimeout(() => {
                 setShowToast(false);
+                authDispatch({
+                    type: CLEAR_MESSAGE
+                })
+                transactionDispatch({
+                    type: CLEAR_MESSAGE
+                })
+                shortletDispatch({
+                    type: CLEAR_MESSAGE
+                })
+                adminDispatch({
+                    type: CLEAR_MESSAGE
+                })
             }, 5000)
         }
     }, [])
 
     const handleCtaClick = () => {
         setShowToast(false);
+        authDispatch({
+            type: CLEAR_MESSAGE
+        })
+        transactionDispatch({
+            type: CLEAR_MESSAGE
+        })
+        shortletDispatch({
+            type: CLEAR_MESSAGE
+        })
+        adminDispatch({
+            type: CLEAR_MESSAGE
+        })
     }
 
     const cta = (<svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

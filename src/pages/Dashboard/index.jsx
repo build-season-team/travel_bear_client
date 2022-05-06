@@ -20,6 +20,8 @@ const Dashboard = () => {
   const params = useParams();
 
   return (
+    
+      
     <div className={classes.dashboard_screen}> 
     <div>
         <SideBar setShow={setDropMenuIsVisible} show={dropMenuIsVisible} className={classes.sidebar} />
@@ -37,9 +39,6 @@ const Dashboard = () => {
             <Outlet />
           </main>
       </section>
-    
-    
-    
     </div>
   )
 }

@@ -23,11 +23,11 @@ const ChildComponent = () =>{
     const [borderColor, setBorderColor] = useState(null);
     const [form, setForm] = useState({});
     const [errors, setErrors] = useState({});
-    const {authDispatch, authState: {loading, isLoogedIn}} = useContext(AuthContext);
+    const {authDispatch, authState: {loading, isLoggedIn}} = useContext(AuthContext);
     const navigate = useNavigate();
 
     useEffect(() => {
-        if(isLoogedIn) navigate(-1)
+        if(isLoggedIn) navigate(-1)
         authDispatch({type: CLEAR_MESSAGE})
     }, []);
 

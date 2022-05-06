@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FaAngleLeft } from 'react-icons/fa';
 import { MdOutlineStar, MdOutlineStarOutline, MdOutlineStarHalf } from "react-icons/md";
@@ -14,13 +14,17 @@ import Skeleton from 'react-loading-skeleton';
 import { BASE_SHORTLET_URL_DEV } from '../../constants/base';
 import axiosInstance from '../../utils/axiosInstance';
 import { AuthContext } from '../../store/authContext/AuthProvider';
+import Modal from '../../components/UI/Modal/Modal';
 
 
 
 const Booking = () => {
 
+  const [isOpen, setIsOpen] = useState(false);
   const {shortletDispatch, shortletState: {loading, error, shortlet}} = useContext(ShortletContext);
   const {authState: {user}} = useContext(AuthContext);
+  const [details, setDetails] = useState({})
+  const [isAble, setIsAble] = useState(false)
   const navigate = useNavigate();
   const {houseID} = useParams()
   let startDiv;
@@ -41,7 +45,7 @@ const Booking = () => {
   }
 
   const getPaymentLink = async () => {
-    const details = {
+    setDetails({
       amount: shortlet.amount,
       image: BASE_SHORTLET_URL_DEV + shortlet.image[0],
       title: shortlet.houseTitle,
@@ -49,13 +53,29 @@ const Booking = () => {
       user_id: user._id,
       email: user.email,
       name: user.firstName + " " + user.lastName,
-      phone: user.phone
-    }
-    try {
-      const res = await axiosInstance.post("/booking/getlink", details)
-      window.location.href = res.data.link;
-    }catch(err) {
-      console.log(err)
+      phone: user.phone,
+      owner: shortlet.user?._id
+    })
+    setIsOpen(true)
+    // try {
+    //   const res = await axiosInstance.post("/booking/getlink", details)
+    //   window.location.href = res.data.link;
+    // }catch(err) {
+    //   console.log(err)
+    // }
+  }
+
+  const pay = async () => {
+    console.log('in pay')
+    if(details.amount < shortlet.amount) {
+      setIsAble(false)
+    }else{
+        try {
+        const res = await axiosInstance.post("/booking/getlink", details)
+        window.location.href = res.data.link;
+      }catch(err) {
+        console.log(err)
+      }
     }
   }
 
@@ -63,8 +83,8 @@ const Booking = () => {
 
   return (
     <>
-
-    <Header />
+    {isOpen &&  <Modal isAble={isAble} setIsAble={setIsAble} amount={shortlet.amount} details={details} setDetails={setDetails} heading='How long will you stay' durationLabel='Duration' selectLabel='Check-in' description='Adjust your check-out date' locationSummary select duration checkOut date='13th May, 2022' addBtn={ <Button primary={isAble} onClick={pay} disabled={!isAble} authBtn name='Confirm' /> } houseLocation={`${shortlet.city}, ${shortlet.state}.`} setIsOpen={setIsOpen} />}
+    <Header  />
 
       <div className={classes.destination_body}>
         <div className={classes.destination_header}>
@@ -122,20 +142,6 @@ const Booking = () => {
               <div className={classes.img_size}>
               {loading ? <Skeleton width={'100%'} height={'100%'} /> : <img src={shortlet.image?.[4] && BASE_SHORTLET_URL_DEV + shortlet.image?.[4]} alt="uploaded image" />}
               </div>
-
-                
-                
-                
-                
-
-            {/* {
-              
-            selectedImages.slice(1).map((image, i) => (
-              <div className={classes[`img${i !== 3 ? 1 : 5 }`]} key={i}>
-                <img className={classes.img_size} src={image} alt="uploaded image" />
-              </div>
-            ))
-          } */}
           </div>
 
         </div>

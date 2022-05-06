@@ -13,8 +13,8 @@
    
   }
 
-  .tabs::-webkit-scrollbar{
-    
+  .mb {
+    margin-bottom: 0;
   }
    
   /* Tab Navigation */
@@ -355,7 +355,7 @@
 /* Transaction_history active state */
 
 .withdrawalContainer{
-  height: 100vh;
+  min-height: 50vh;
   background-color: #fff;
   margin-top: 0rem;
   padding: 2rem 3rem;
@@ -374,6 +374,31 @@
   font-weight: 500;
   font-size: 1.6rem;
   width: 25%;
+}
+
+.withdrawal_heading table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 1.6rem;
+}
+
+.withdrawal_heading  table, tr, td {
+    border: none;
+}
+
+.withdrawal_heading td {
+  padding: 3rem;
+}
+
+.withdrawal_heading td, th {
+  text-align: left;
+  padding: 2rem;
+  
+}
+
+.withdrawal_heading tr:nth-child(even) {
+  background-color: #dddddd;
 }
 
 .list_option{

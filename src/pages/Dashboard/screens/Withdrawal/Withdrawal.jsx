@@ -15,20 +15,34 @@ const Withdrawal = () => {
 
             
             <div className={classes.withdrawal_heading}>
-                <ul>
-                    <li>User</li>
-                    <li>Amount</li>
-                    <li>Bank Name</li>
-                    <li>Account Number</li>
-                    <li>Available Balance</li>
-                    <li>Action</li>
-                    
-                </ul>
-                <WithdrawalRequest name='Nancy Isime' amount='50,000' bank='First Bank' bankNumber='0034556831' balance='700,000' />
+          
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Bank</th>
+              <th>Account Number</th>
+              <th>Balance</th>
+              <th>Accept</th>
+              <th>Decline</th>
+            </tr>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+              <td>Germany</td>
+              <td><Button primary name={'Accept'} onClick={() => { }} /></td>
+              <td><Button danger name={'Decline'} onClick={() => { }} /></td>
+            </tr>
+            <tr>
+              <td>Centro comercial Moctezuma</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+              <td>Germany</td>
+              <td><Button primary name={'Accept'} onClick={() => { }} /></td>
+              <td><Button danger name={'Decline'} onClick={() => { }} /></td>
+            </tr>
 
-                <WithdrawalRequest name='Linda Osifo' amount='50,000' bank='UBA' bankNumber='0034556831' balance='810,000' />
-
-                <WithdrawalRequest name='Ramsey' amount='155,000' bank='Abeg' bankNumber='0034556831' balance='350,000' />
+          </table>
             </div>
           </div>
         </div>

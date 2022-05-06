@@ -46,6 +46,8 @@ const Wallet = () => {
     
   ]
 
+  
+
   const styles = {
     input: (provided, state) =>({
       ...provided,

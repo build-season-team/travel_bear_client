@@ -3,43 +3,42 @@ import classes from './Shortlet.module.css'
 import Button from '../../../../components/UI/Button'
 
 import ShortletImage from '../../../../assets/images/house3.jpg'
+import { BASE_SHORTLET_URL_DEV } from '../../../../constants/base'
 
 
 
-const Shortlet = ({statustitle, removeVerified, status, rating, amount, unverified, verifiedhome, disableBtn, removeBtn, button, houseOwner,}) => {
+const Shortlet = ({image, amount, isenabled, unverified, verified, disableBtn, removeBtn, button, houseOwner, title, description}) => {
 
-const [verified, setVerified] = useState();
+
 
   return (
 
     <>
         <div className={classes.shortlet_data}>
             <div className={classes.shortlet_cover}>
-                <img className={classes.shortlet_image} src={ShortletImage} alt="" />
+                <img className={classes.shortlet_image} src={BASE_SHORTLET_URL_DEV + image} alt="" />
                 
-                {/* <span  className={classes.remove_verified}> */}
-
-                        {verified
-                        
-                        ?
-                        <span className={classes.unverified}> {unverified} </span> 
-                                    // Unverified
-                        :
-                        <span className={classes.verified}>{verifiedhome}</span>
-                            
-                        // Verified
-                        }
+                
+                { !verified
+                
+                ?
+                <span className={classes.unverified}> not-verified </span> 
+                            // Unverified
+                :
+                <span className={classes.verified}>verified</span>
+                    
+                // Verified
+                }
 
                 {/* </span> */}
                 
             </div>
             
             <div className={classes.shortlet_details}>
-                <p className={classes.shortlet_title}>Hotel Gunawangsa MERR</p>
-                <p className={classes.shortlet_desc}>Clean 3bedrorom apartment with seperate toilets but shared kitchen.</p>
+                <p className={classes.shortlet_title}>{title}</p>
+                  <p className={classes.shortlet_desc}>{description?.substring(0, 40) + '...'}</p>
                 <span> {amount}</span>
-                <p> {statustitle} <span>{status}</span></p>
-                {/* Status: <span>Public</span> */}
+                <span>status: <span style={{color: `${isenabled ? 'green': 'grey'}`}}>{isenabled ? 'public' : "private"}</span></span>
                 
                 <div className={classes.dash_button}>
                     

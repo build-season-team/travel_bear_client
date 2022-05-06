@@ -4,8 +4,9 @@
     border-radius: .9rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    padding: 3rem;
 }
 
 .header_search{

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Select from 'react-select'
 
 import Calender from '../../../assets/icons/calendar.svg'
@@ -11,29 +11,25 @@ import { RiCloseLine } from "react-icons/ri";
 
 import DarkLocation from '../../../assets/icons/location-dark.svg'
 
-const Modal = ({ setIsOpen, heading, description, select, selectLabel, durationLabel, input, date, checkOut, addBtn, closeBtn, locationSummary, houseLocation, duration }) => {
+const Modal = ({ setIsAble, amount, setDetails, details, setIsOpen, heading, description, select, selectLabel, durationLabel, input, date, checkOut, addBtn, closeBtn, locationSummary, houseLocation, duration }) => {
+
+
+  
   const modalRef = useRef(null);
   const closeModal = (e) => {
     if(modalRef.current.contains(e.target)) return
     setIsOpen(false)
   }
 
-  const options = [
-    { value: 'one', label: '1 Night' },
-    { value: 'two', label: '2 Nights' },
-    { value: 'three', label: '3 Nights' },
-    { value: 'four', label: '4 Nights' },
-    { value: 'five', label: '5 Nights' },
-    { value: 'six', label: '6 Nights' },
-    { value: 'seven', label: '7 Nights' },
-    { value: 'eight', label: '8 Nights' },
-    { value: 'nine', label: '9 Nights' },
-    { value: 'ten', label: '10 Nights' },
-    { value: 'eleven', label: '11 Nights' },
-    { value: 'twelve', label: '12 Nights' },
-    { value: 'thirteen', label: '13 Nights' },
-    { value: 'fourteen', label: '14 Nights' },
-  ]
+  const onInputChange = (e) => {
+    if(e.target.value > 0) {
+      setIsAble(true)
+      setDetails({ ...details, amount: amount * e.target.value});
+    }
+  }
+
+
+
 
    return (
     <>
@@ -70,7 +66,7 @@ const Modal = ({ setIsOpen, heading, description, select, selectLabel, durationL
                 ?
                 <div className={styles.selectStyle}>
                     <img src={Calender} alt="calender icon" />
-                    <input className={styles.calender_style} type="date" />
+                     <input className={styles.calender_style}  type="date" />
                 </div>
 
                 : null
@@ -89,7 +85,7 @@ const Modal = ({ setIsOpen, heading, description, select, selectLabel, durationL
                 ?
                 <div className={styles.selectStyle}>
                     <img src={Moon} alt="calender icon" />
-                    <input type="number" placeholder="Enter number of days" />
+                     <input onChange={(e) => onInputChange(e)}  type="number" placeholder="Enter number of days" />
                     <img className={styles.select_img} src={ Dropdown } alt="dropdown" />
                 </div>
 
@@ -99,17 +95,7 @@ const Modal = ({ setIsOpen, heading, description, select, selectLabel, durationL
             </div>
               
             <div className={styles.checkout_text}>
-              {checkOut
-
-              ?
-
-              <div>
-                <p>Check-Out Date: <span> {date} </span> </p>
-              </div>
-
-              : null
-
-              }
+              
               
             </div>
               
