@@ -10,7 +10,7 @@ import LocationIcon from '../../../../assets/icons/location.svg'
 
 
 
-const VerifyApartment = ({statustitle, name, status, rating, title, amount, unverified, verifiedhome, disableBtn, removeBtn, button, btn1, houseOwner, description}) => {
+const VerifyApartment = ({state, city, address, statustitle, name, status, rating, title, amount, unverified, verifiedhome, disableBtn, removeBtn, button, btn1, houseOwner, description}) => {
 
     const [verified, setVerified] = useState();
     
@@ -59,7 +59,7 @@ const VerifyApartment = ({statustitle, name, status, rating, title, amount, unve
             </div>
             <div className={classes.house_address}>
                 <img src={ LocationIcon } alt="an icon representing location for the shortlet address" />
-                <p><span>Location:</span> 1. Okpara avenue, Enugu Enugu, Nigeria Coordinate: 6.4401961, 7.48643789 ; Chime Avenue, New Haven Enugu. Enugu, Nigeria</p>
+                      <p><span>Location:</span> {`${address}, ${city}, ${state}, Nigeria`}.</p>
             </div>
             </div>
         </>

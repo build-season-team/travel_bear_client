@@ -8,10 +8,10 @@ import AppRouter from './router/AppRouter';
 function App() {
 
   const { authDispatch, authState: { isLoggedIn } } = useContext(AuthContext);
+  const token = localStorage.getItem('token');
   const getUser = () => {
-    if(!isLoggedIn) {
-      const token = localStorage.getItem('token');
-      if(token) {
+    if(!isLoggedIn && token) {
+      if(token !== 'undefined') {
         const user = JSON.parse(localStorage.getItem("user"));
         authDispatch({
           type: LOGIN_SUCCESS,

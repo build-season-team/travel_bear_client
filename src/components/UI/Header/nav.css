@@ -164,6 +164,7 @@ a, a.link:visited, a.visited{
 }
 
 .logo-mini img {
+    cursor: pointer;
     width: 80% !important;
     border-radius: 0 !important;
     height: auto;

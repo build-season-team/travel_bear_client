@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { CLEAR_MESSAGE } from '../../../constants/actionTypes';
+import { AdminContext } from '../../../store/adminContext/AdminProvider';
 import { AuthContext } from '../../../store/authContext/AuthProvider';
 import { ShortletContext } from '../../../store/shortletContext/ShortletProvider';
 import { TransactionContext } from '../../../store/transactionContext/TransactionProvider';
@@ -10,6 +11,7 @@ const Toast = ({success, info, danger, message, emoji}) => {
     const {authDispatch} = useContext(AuthContext);
     const { transactionDispatch} = useContext(TransactionContext);
     const { shortletDispatch } = useContext(ShortletContext)
+    const { adminDispatch } = useContext(AdminContext);
 
     const [showToast, setShowToast] = useState(true)
     let stroke, toastType;
@@ -28,6 +30,18 @@ const Toast = ({success, info, danger, message, emoji}) => {
         if(!danger) {
             setTimeout(() => {
                 setShowToast(false);
+                authDispatch({
+                    type: CLEAR_MESSAGE
+                })
+                transactionDispatch({
+                    type: CLEAR_MESSAGE
+                })
+                shortletDispatch({
+                    type: CLEAR_MESSAGE
+                })
+                adminDispatch({
+                    type: CLEAR_MESSAGE
+                })
             }, 5000)
         }
     }, [])
@@ -41,6 +55,9 @@ const Toast = ({success, info, danger, message, emoji}) => {
             type: CLEAR_MESSAGE
         })
         shortletDispatch({
+            type: CLEAR_MESSAGE
+        })
+        adminDispatch({
             type: CLEAR_MESSAGE
         })
     }

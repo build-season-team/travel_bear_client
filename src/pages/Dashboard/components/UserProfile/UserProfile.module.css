@@ -34,7 +34,7 @@
     font-weight: 500;
 }
 
-@media screen and (min-width: 150px) and (max-width: 400px) {
+@media screen and (min-width: 150px) and (max-width: 500px) {
     .user_container{
         display: flex;
         flex-direction: column;
@@ -87,7 +87,7 @@
     }
 
     .user_details{
-        padding-left: 0rem !important;
+        padding-left: 1rem;
     }
 
     .user_details p:first-child{

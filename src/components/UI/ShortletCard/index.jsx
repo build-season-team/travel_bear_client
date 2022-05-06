@@ -21,7 +21,7 @@ const ShortletCard = ({big, image, header, text, amount, rating, loading, onClic
         </div>
         <Divider />
         <div className={`${classes.card__footer} ${big ? classes.card__big__footer : ''}`}>
-        <div className={`${classes.card__footer_text} ${big ? classes.card__big__footer_text : ''}`}> {!loading ? `N${amount || ''}` : <Skeleton height={60} width={100} />} </div>
+        <div className={`${classes.card__footer_text} ${big ? classes.card__big__footer_text : ''}`}> {!loading ? `₦${amount || ''}` : <Skeleton height={60} width={100} />} </div>
         {!loading ? big ? <Button name='Book Now' onClick={onClick} bigCard primary /> : <Button onClick={onClick} name='Book Now' primary /> : <Skeleton height={60} width={100} />}
         </div>
     </div>

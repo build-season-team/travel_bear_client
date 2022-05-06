@@ -1,4 +1,4 @@
-import {CLEAR_MESSAGE, FETCH_ONE_SHORTLET_FAIL, FETCH_ONE_SHORTLET_LOADING, FETCH_ONE_SHORTLET_SUCCESS, FETCH_SHORTLET_FAIL, FETCH_SHORTLET_LOADING, FETCH_SHORTLET_SUCCESS, UPLOAD_SHORTLET_FAIL, UPLOAD_SHORTLET_LOADING, UPLOAD_SHORTLET_SUCCESS} from '../../../constants/actionTypes';
+import {CLEAR_MESSAGE, FETCH_ONE_SHORTLET_FAIL, FETCH_ONE_SHORTLET_LOADING, FETCH_ONE_SHORTLET_SUCCESS, FETCH_SHORTLET_FAIL, FETCH_SHORTLET_LOADING, FETCH_SHORTLET_SUCCESS, GET_BOOKING_LOADING, GET_BOOKING_SUCCESS, New_BOOKING, UPLOAD_SHORTLET_FAIL, UPLOAD_SHORTLET_LOADING, UPLOAD_SHORTLET_SUCCESS} from '../../../constants/actionTypes';
 
 const shortletReducer = (state, {type, payload}) => {
     switch (type) {
@@ -60,6 +60,20 @@ const shortletReducer = (state, {type, payload}) => {
           loading: false,
           error: "Apartment does not exist",
         };
+        case GET_BOOKING_LOADING: 
+         return { ...state,
+              loading: true,
+            }
+        case GET_BOOKING_SUCCESS:
+          return {
+            loading: false,
+            bookings: payload
+          }
+        case New_BOOKING:
+          return {
+            ...state,
+            message: "Booking was successful"
+          }
       case CLEAR_MESSAGE:
         return {
           ...state,

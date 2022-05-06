@@ -43,8 +43,8 @@ const ConfirmPost = ({ setIsSubmitted, selectedImages, form, uploadShortlet, loa
             {
               
             selectedImages.slice(1).map((image, i) => (
-              <div className={`img${i !== 3 ? 1 : 5 }`} key={i}>
-                <img className='img_size' src={image} alt="uploaded image" />
+              <div className={`img_size`} key={i}>
+                <img  src={image} alt="uploaded image" />
               </div>
             ))
           }

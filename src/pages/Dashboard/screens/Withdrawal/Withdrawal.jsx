@@ -11,6 +11,8 @@ const Withdrawal = () => {
     <>
 
         <div className={classes.withdrawalContainer}>
+            <div className={classes.container_child}>
+
             
             <div className={classes.withdrawal_heading}>
           
@@ -42,21 +44,22 @@ const Withdrawal = () => {
 
           </table>
             </div>
-
+          </div>
         </div>
 
     </>
   )
 }
-
-const WithdrawalRequest = ({name, amount, balance})=>{
+const WithdrawalRequest = ({name, amount, balance, bank, bankNumber})=>{
   return(
       <>
           <div className={classes.single_request}>
             <ul> 
               <li> <div className={classes.list_option}><span></span> <p>{name}</p></div> </li>
-              <li> <div className={classes.list_option}> <p>N{amount}</p></div> </li>
-              <li> <div className={classes.list_option}> <p>N{balance}</p></div> </li>
+              <li> <div className={classes.list_option}> <p>₦{amount}</p></div> </li>
+              <li> <div className={classes.list_option} ><p>{bank}</p></div> </li>
+              <li> <div className={classes.list_option} ><p>{bankNumber}</p></div> </li>
+              <li> <div className={classes.list_option}> <p>₦{balance}</p></div> </li>
               <li> <div className={classes.list_option_last}> <div className={classes.decline_btn}> <Button primary authBtn name='Accept' /> </div> <div className={classes.decline_btn}> <Button secondary authBtn name='Decline' /> </div>  </div></li>
             </ul>
           </div>

@@ -34,6 +34,10 @@
     right: 0%;
 }
 
+.remove_verified{
+    display: none;
+}
+
 
 .shortlet_details{
     padding-left: 1.2rem;
@@ -89,7 +93,6 @@
 .remove_btn{
     padding: .66rem 2.3rem;
     color: #FF2020;
-    border: 1px solid #FF2020;
     border-radius: .4rem;
     margin-left: 1.2rem;
     cursor: pointer;
@@ -125,7 +128,6 @@
     .remove_btn{
         color: #FF2020;
         margin-top: 1rem;
-        border: 1px solid #FF2020;
         border-radius: .4rem;
         margin-left: 0rem;
     }
@@ -146,8 +148,6 @@
         right: 41%;
     }
 
-    .unverified{
-        
-    }
+    
     
 }

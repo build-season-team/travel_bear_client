@@ -16,7 +16,7 @@ const UserProfile = ({user}) => {
                 <div className={classes.user_shortlet_container}>
                     <div className={classes.user_shortlet}>
                         <img src={ShortletIcon} alt="shortlet" />
-                        <p>Shortlets: <span> {user.apartments.length}</span></p>
+                        <p>Shortlets: <span> {user.apartments?.length}</span></p>
                     </div>
                     <div className={classes.user_shortlet}>
                         <img src={EmailIcon} alt="shortlet" />

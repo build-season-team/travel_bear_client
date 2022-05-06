@@ -23,22 +23,19 @@ const LandingPage = () => {
   const [stateInfo, setStateInfo] = useState('all')
   const [stateInfo2, setStateInfo2] = useState('all')
   const {shortletDispatch, shortletState: {loading, data}} = useContext(ShortletContext);
-  let visited = stateInfo === 'all' ? data.sort((a, b) => b.visited - a.visited).slice(0, 4) : data.sort((a, b) => b.ratingsAverage - a.ratingsAverage).filter(item => item.state === stateInfo).slice(0, 4);
-  let highRate = stateInfo2 === 'all' ? data.sort((a, b) => b.ratingsAverage - a.ratingsAverage).slice(0, 4) : data.sort((a, b) => b.ratingsAverage - a.ratingsAverage).filter(item => item.state === stateInfo2).slice(0, 4);
-  if(data.length === 0) {
+  
+  let visited = stateInfo === 'all' ? data?.filter(item => (item.isVerified === true) && (item.isOccupied === false)).sort((a, b) => b.visited - a.visited).slice(0, 4) : data?.filter(item => (item.isVerified === true) && (item.isOccupied === false)).sort((a, b) => b.ratingsAverage - a.ratingsAverage).filter(item => item.state === stateInfo).slice(0, 4);
+  let highRate = stateInfo2 === 'all' ? data?.filter(item => (item.isVerified === true) && (item.isOccupied === false)).sort((a, b) => b.ratingsAverage - a.ratingsAverage).slice(0, 4) : data?.filter(item => (item.isVerified === true) && (item.isOccupied === false)).sort((a, b) => b.ratingsAverage - a.ratingsAverage).filter(item => item.state === stateInfo2).slice(0, 4);
+  if(data?.length === 0) {
     visited = new Array(4).fill(0);
     highRate = new Array(4).fill(0);
   }
 
+ 
+
   useEffect(() => {
     getShortlet()(shortletDispatch);
   },[])
-
-
-
-
-
-
 
   return (
     <div>
@@ -50,7 +47,7 @@ const LandingPage = () => {
           <div className={classes.bookacc}>
             <div className={classes.topbody}>
             <h3>Most Visited Locations</h3>
-            <p>Visit the most amazing Shortlets across Nigeria. </p>
+            <p>Get the best shortlet apartments across Nigeria. </p>
               <div className={classes.buttonHolder}>
                 <Button onClick={() => setStateInfo('all')} primary={stateInfo === 'all' ? true : false} btnLink={stateInfo !== 'all' ? true : false} name={"All"} />
                 <Button onClick={() => setStateInfo('Lagos')} primary={stateInfo === 'Lagos' ? true : false} btnLink={stateInfo !== 'Lagos' ? true : false} name={"Lagos"} />
@@ -61,7 +58,7 @@ const LandingPage = () => {
             </div>
             <div className={classes.shortletContainer}>
               {
-                visited.map((cur, i) => {
+                visited?.map((cur, i) => {
                   return (
                     <ShortletCard
                       loading={loading}
@@ -86,7 +83,7 @@ const LandingPage = () => {
           <div className={classes.bookacc}>
             <div className={classes.topbody}>
               <h3>Highest Rated Accommodation</h3>
-              <p className={classes.place}>Shortlets with Highest Ratings </p>
+              <p className={classes.place}>Shortlets with the highest ratings.</p>
               <div className={classes.buttonHolder}>
                 <Button onClick={() => setStateInfo2('all')} primary={stateInfo2 === 'all' ? true : false} btnLink={stateInfo2 !== 'all' ? true : false} name={"All"} />
                 <Button onClick={() => setStateInfo2('Lagos')} primary={stateInfo2 === 'Lagos' ? true : false} btnLink={stateInfo2 !== 'Lagos' ? true : false} name={"Lagos"} />
@@ -96,7 +93,7 @@ const LandingPage = () => {
               </div>
             </div>
             <div className={classes.shortletContainer}>
-              {highRate.map((cur, i) => {
+              {highRate?.map((cur, i) => {
                 return (
                   <ShortletCard
                     key={i}

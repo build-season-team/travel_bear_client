@@ -16,6 +16,7 @@ const Withdrawal = () => {
                 <ul>
                     <li>User</li>
                     <li>Amount</li>
+                    <li>Bank Name</li>
                     <li>Available Balance</li>
                     <li>Action</li>
                     
@@ -33,7 +34,7 @@ const Withdrawal = () => {
   )
 }
 
-const WithdrawalRequest = ({name, amount, balance})=>{
+const WithdrawalRequest = ({name, amount, balance, bank, bankNumber})=>{
   return(
       <>
           <div className={classes.single_request}>
