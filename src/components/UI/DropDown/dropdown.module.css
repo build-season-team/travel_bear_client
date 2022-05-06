@@ -1,0 +1,30 @@
+.dropdown{
+    border: 1px solid #e7e6e6;
+    margin: 0 auto;
+    width: 90%;
+    border-radius: .8rem;
+}
+
+.dropdown ul{
+    list-style: none;
+    padding: 1rem;
+}
+
+
+
+.dropdown ul li{
+    padding: 1.5rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+
+
+.list_item{
+    margin-top: .5rem;
+    /* background-color: #F7F7F9; */
+}
+
+.dropdown ul li:hover{
+    background-color: #F7F7F9
+}

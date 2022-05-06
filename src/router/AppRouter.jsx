@@ -18,6 +18,9 @@ import Booking from '../pages/BookingPage/Booking'
 import { AuthContext } from '../store/authContext/AuthProvider';
 import VerificationPage from '../pages/Dashboard/screens/VerificationPage/VerificationPage'
 import Withdrawal from '../pages/Dashboard/screens/Withdrawal/Withdrawal';
+import Button from '../components/UI/Button';
+import ModalReview from '../pages/Dashboard/components/ModalReview/ModalReview';
+import DropDown from '../components/UI/DropDown/DropDown';
 
 const AppRouter = () => {
 
@@ -28,6 +31,8 @@ const AppRouter = () => {
         <Router >
             <Routes>
                 <Route path='/' element={<LandingPage />} />
+                <Route path='/drop' element={ <DropDown/> } />
+                <Route path='/modal' element={<ModalReview ratingCard heading='Did you enjoy your stay?' description='fdfdf' addBtn={<Button primary authBtn name='Submit' />} />} />
                 <Route path='/signup' element={<SignUp />} />
                 <Route path='/terms' element={<Terms />} />
                 <Route path='/login' element={<Login />} />

@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
-import styles from "./Modal.module.css";
+import styles from "./ModalReview.module.css";
 import { RiCloseLine } from "react-icons/ri";
 
-const Modal = ({ setIsOpen, heading, description, select, label, input, addBtn, closeBtn, ratingCard, rating, ratingBtn }) => {
+const ModalReview = ({ setIsOpen, heading, description, select, label, input, addBtn, closeBtn, ratingCard, rating, ratingBtn }) => {
   const modalRef = useRef(null);
   const closeModal = (e) => {
     if(modalRef.current.contains(e.target)) return
@@ -50,4 +50,4 @@ const Modal = ({ setIsOpen, heading, description, select, label, input, addBtn, 
   );
 };
 
-export default Modal;
+export default ModalReview
