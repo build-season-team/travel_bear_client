@@ -8,7 +8,7 @@ import QuestionIcon from '../../../assets/icons/question.svg'
 
 
 
-const FormInput = ({id, label, text, active, required, disabled, type, icon, errors, success, pattern, iconPosition, placeholder, name, form, onChange, onBlur,
+const FormInput = ({id, label, text, active, required, disabled, type, icon, errors, success, pattern, iconPosition, placeholder, name, form, onChange, onBlur, className,
   ...props }) => {
 
     let emailRegex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
@@ -30,9 +30,9 @@ const FormInput = ({id, label, text, active, required, disabled, type, icon, err
   return (
     
     <div>
-      <div className={`${classes.form_input} ${classes.form_file}`}>
+      <div className={`${classes.form_input} ${classes.form_file} `}>
         {label && <label className={`${classes.label} `} htmlFor={id}>{label}</label>}
-          <div className={`${classes.form_outline} ${borderColor ? classes[borderColor] : ''}`}>
+        <div className={`${classes.form_outline} ${borderColor ? classes[borderColor] : ''} ${className && className}`}>
             <input 
               type={type} 
               id={id} 

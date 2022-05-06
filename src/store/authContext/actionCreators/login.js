@@ -1,7 +1,13 @@
-import { LOGIN_FAIL, LOGIN_LOADING, LOGIN_SUCCESS } from "../../../constants/actionTypes";
+import {
+  LOGIN_FAIL,
+  LOGIN_LOADING,
+  LOGIN_SUCCESS,
+} from "../../../constants/actionTypes";
 import axiosInstance from "../../../utils/axiosInstance";
 
-export default ({email, password}) =>(dispatch) => async (onSuccess) => {
+export default ({ email, password }) =>
+  (dispatch) =>
+  async (onSuccess) => {
     dispatch({
       type: LOGIN_LOADING,
     });
@@ -11,15 +17,8 @@ export default ({email, password}) =>(dispatch) => async (onSuccess) => {
         password,
       });
 
-      if(res) {
-        localStorage.setItem("token", res.data?.token);
-        localStorage.setItem(
-          "user",
-          JSON.stringify(res.data?.data?.user)
-        );
-      }
-
-
+      localStorage.setItem("token", res.data?.token);
+      localStorage.setItem("user", JSON.stringify(res.data?.data?.user));
       dispatch({
         type: LOGIN_SUCCESS,
         payload: res.data?.data?.user,

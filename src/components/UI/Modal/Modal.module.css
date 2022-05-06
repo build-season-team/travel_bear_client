@@ -1,55 +1,120 @@
 .darkBG {
-    background-color: rgba(0, 0, 0, 0.2);
-    width: 100vw;
-    height: 100vh;
-    z-index: 100;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-  }
-  
-  .centered {
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top:0px;
+    left:0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(0, 0, 0, 0.6);
     z-index: 100;
-    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .centered {
+    position: relative;
+    border-radius: 2rem;
+    z-index: 120;
+    animation: scaleModal .3s ease-in;
+    background: #fff;
+    transition:all 0.3s ease-in-out;
+    opacity: 1;
+    width: 60rem;
+  }
+
+ 
+
+  @keyframes scaleModal {
+    0% {
+      transform: scale(0);
+      opacity: .2;
+       transition:all 0.3s ease-in-out;
+
+    }
+
+    25% {
+      transform: scale(0.25);
+      opacity:.4;
+       transition:all 0.3s ease-in-out;
+    }
+
+    50% {
+      transform: scale(0.5);
+      opacity:.6;
+       transition:all 0.3s ease-in-out;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+       transition:all 0.3s ease-in-out;
+    }
   }
   
   .modal {
     width: max-content;
     height: max-content;
     background: white;
-    padding: 3rem 2rem;
+    width: 100%;
+    padding: 3rem 6rem;
     color: white;
     z-index: 100;
     border-radius: 2rem;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    box-shadow: 0 .5rem 2rem 0 rgba(0, 0, 0, 0.04);
   }
   
   .modalHeader {
-    height: 50px;
+    height: 5rem;
     background: white;
     overflow: hidden;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
+    border-top-left-radius: 1.6rem;
+    border-top-right-radius: 1.6rem;
   }
   
   .heading {
     margin: 0;
-    padding: 10px;
+    padding: 1rem;
     color: #2c3e50;
     font-weight: 500;
-    font-size: 18px;
-    text-align: center;
+    font-size: 1.8rem;
+    text-align: left;
   }
   
   .modalContent {
-    padding: 10px;
-    font-size: 14px;
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.4rem;
     color: #2c3e50;
-    text-align: center;
+    text-align: left;
+  }
+
+  .select_option{
+    
+      padding-top: 2rem;
+  }
+
+  .selectStyle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .6rem .5rem;
+    border-radius: 1rem;
+    border: 1px solid #82868B;
+    width: 100%;
+  }
+
+   .selectStyle input {
+    flex: 1;
+   }
+
+  .select_img{
+    padding-right: .3rem;
+  }
+
+  .select_option span{
+      color: #28293D;
+      font-size: 1.6rem;
+      font-weight: 500;
   }
   
   .modalActions {
@@ -88,41 +153,68 @@
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
     transform: translate(-4px, 4px);
   }
+
+  .modal_btn{
+      margin-top: 3rem;
+      margin: 0 auto;
+  }
   
-  .deleteBtn {
-    margin-top: 10px;
-    cursor: pointer;
+  .modal_btn:last-child{
+    margin-top: 1.5rem;
+  }
+
+  .modalDesc{
+      padding-bottom: 2rem;
+      color: #28293D;
+      font-weight: 500;
+      font-size: 1.2rem;
+  }
+
+  .localDesc{
+    display: flex;
+    border-radius: 1rem;
+    background-color: #EAF4FD;
+    padding: 1.5rem;
+  }
+
+  .localDesc p{
+    padding-left: .7rem;
+  }
+
+  .checkout_text{
+    padding-top: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  .checkout_text p{
+    font-size: 2rem;
     font-weight: 500;
-    padding: 11px 28px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    border: none;
-    color: #fff;
-    background: #ff3e4e;
-    transition: all 0.25s ease;
   }
-  
-  .deleteBtn:hover {
-    box-shadow: 0 10px 20px -10px rgba(255, 62, 78, 0.6);
-    transform: translateY(-5px);
-    background: #ff3e4e;
+
+  .checkout_text span{
+    font-size: 1.4rem;
+    font-weight: 400;
   }
-  
-  .cancelBtn {
-    margin-top: 10px;
-    cursor: pointer;
-    font-weight: 500;
-    padding: 11px 28px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    border: none;
-    color: #2c3e50;
-    background: #fcfcfc;
-    transition: all 0.25s ease;
+
+  .calender_style{
+    width: 100%;
   }
-  
-  .cancelBtn:hover {
-    box-shadow: none;
-    transform: none;
-    background: whitesmoke;
+
+  @media screen and (min-width: 150px) and (max-width: 400px) {
+
+    /* .centered{
+        width: 80%;
+        height: 100%;
+    } */
+
+    .modal {
+
+        /* width: 90%;
+        height: 100%; */
+        /* width: max-content;
+        height: max-content; */
+        background: white;
+        padding: 3rem 6rem;
+        
+      }
   }

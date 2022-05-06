@@ -104,6 +104,11 @@
     background-color: #fff;
     min-height: 30rem;
     margin-top: 2rem;
+    /* padding: 2rem 1rem; */
+}
+
+.bank_summary_content{
+    padding: 2rem 4rem;
 }
 
 
@@ -136,7 +141,18 @@
     margin-left: 1.6rem;
 }
 
-@media screen and (min-width: 150px) and (max-width: 400px)  {
+.empty_house_container img{
+    margin: 0rem auto;
+    padding: 2rem 2rem;
+    width: 50%;
+}
+
+.empty_house_container{
+    width: max-content;
+    margin: 0rem auto;
+}
+
+@media screen and (min-width: 150px) and (max-width: 500px)  {
     .dashboard_home{
         display: flex;
         flex-direction: column;
@@ -175,7 +191,7 @@
     .small_container{
         order: 1;
         flex: 1;
-        margin-top: 2rem;
+        margin-top: 5rem;
         width: 100%;
         background-color: #fff;
         border-radius: .9rem;
@@ -247,11 +263,11 @@
     
 }
 
-@media screen and (min-width: 401px) and (max-width: 920px)  {
+@media screen and (min-width: 501px) and (max-width: 920px)  {
     .full_container{
         width: 100%;
         margin: 0 auto;
-        border: 2px solid red;
+        /* border: 2px solid red; */
     }
     
     .dashboard_home{

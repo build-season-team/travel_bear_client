@@ -4,14 +4,24 @@
     border-radius: .9rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    padding: 3rem;
 }
 
 .header_search{
     width: 35%;
-    padding: 1.7rem 4rem;
+    /* padding: 1.7rem 4rem; */
+    padding-right: 1rem;
+    padding-top: 1.7rem;
+    padding-bottom: 1.7rem;
     margin-left: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.hamburger_menu{
+    display: none;
 }
 
 .input_box{
@@ -24,11 +34,11 @@ input{
     outline: none;
 }
 
-
-
 .input_box:last-child{
     padding-right: .2rem;
 }
+
+
 
 .header_profile_items{
     width:45%;
@@ -61,16 +71,19 @@ input{
 }
 
 .avatar{
-    background-color: #e5e5e5;
+    /* background-color: #e5e5e5; */
+    background-image: url(../../../../assets/images/avatar.png);
+    background-size: contain;
+    background-repeat: no-repeat;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 3rem;
+    height: 3rem;
     border: 1px solid #7928CA82;
     margin-left: .7rem;
     
 }
 
-@media screen and (min-width: 150px) and (max-width: 400px)  {
+@media screen and (min-width: 150px) and (max-width: 665px)  {
     .header_nav{
         width: 100%;
         /* overflow: hidden; */
@@ -81,9 +94,23 @@ input{
     }
 
     .header_search{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         width: 100%;
-        padding: 1.7rem 4rem;
-        margin-left: 2rem;
+        padding: 1.7rem 1rem !important;
+        margin-left: 0rem;
+    }
+
+    .hamburger_menu{
+        padding-right: 1rem;
+        padding-left: 2rem;
+        display: block;
+        margin-left: -1rem;
+        color: var(--color-primary);
+        justify-content: flex-end;
+        cursor: pointer;
     }
 
     ::placeholder {
@@ -91,7 +118,7 @@ input{
       }
 
     input{
-        padding: 1rem;
+        padding: .8rem;
         outline: none;
         position: relative;
         bottom: 80%;
@@ -102,21 +129,27 @@ input{
         height: 46px;
         width: fit-content;
         padding-top: .6rem;
+        padding-bottom: .6rem;
     }
+
+    .header_btn{
+        padding-top: -.3rem;
+        padding-bottom: 0rem;
+    }
+
     
     .input_box:last-child{
         padding-right: .2rem;
     }
 }
 
-@media screen and (min-width: 401px) and (max-width: 920px)  {
+@media screen and (min-width: 667px) and (max-width: 920px)  {
     .header_nav{
         width: 100%;
-        /* overflow: hidden; */
     }
     
     .header_profile_items{
-        display: none;
+        /* display: none; */
     }
 
     .header_search{

@@ -212,7 +212,7 @@ aside{
     display: none;
 }
 
-@media only screen and (max-width: 945px){
+@media only screen and (max-zwidth: 945px){
     .body main{
         display: block;
         margin-top: 15rem;

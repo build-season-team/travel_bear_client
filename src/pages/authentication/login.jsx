@@ -46,7 +46,7 @@ const ChildComponent = () =>{
         if(Object.values(form).every(item => item.length > 0 )) {
             login(form)(authDispatch)(() => {
                 setTimeout(() => {
-                    navigate('/');
+                    navigate(-1);
                 }, 2000);
             });
         }

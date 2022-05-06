@@ -13,16 +13,19 @@ import { ShortletContext } from '../../store/shortletContext/ShortletProvider';
 import Toast from './../../components/UI/Toast';
 import addShortlet from '../../store/shortletContext/actionCreators/addShortlet';
 import { CLEAR_MESSAGE } from '../../constants/actionTypes';
+import getme from '../../store/authContext/actionCreators/getme';
+import { AuthContext } from '../../store/authContext/AuthProvider';
 
 const UploadShortlet = () => {
 
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [form, setForm] = useState({roomCondition: 'good'});
-    const [errors, setErrors] = useState({images: 'use 5 images'});
+    const [errors, setErrors] = useState({images: 'Use 5 images'});
     const [images, setImages] = useState([]);
     const [imageFiles, setImageFiles] = useState([]);
     const [isChanged, setIsChanged] = useState(0);
     const { shortletDispatch, shortletState: {loading, message, error}} = useContext(ShortletContext)
+    const { authDispatch } = useContext(AuthContext);
 
     const onInputChange = (e, key)=> {
          setForm({...form, [key]: e.target.value})
@@ -64,7 +67,7 @@ const UploadShortlet = () => {
                 setErrors({ ...errors, description: 'description must be more than 4 characters' })
             }
             if(key == 'images' && images.length > 0 && images.length <  5) {
-                setErrors({ ...errors, images: 'images must be 5 images' })
+                setErrors({ ...errors, images: 'Images must be 5 images' })
             }
         }
     }
@@ -116,13 +119,14 @@ const UploadShortlet = () => {
         });
 
         addShortlet(forms)(shortletDispatch);
+        getme()(authDispatch)
     }
 
     const onSubmit = (e) => {
         e.preventDefault();
         console.log('submit')
         if (Object.values(form).length === 8 && Object.values(form).every(item => item.trim().length > 0) && Object.values(errors).every(item => !item)) {
-            console.log('submited')
+            
                 setIsSubmitted(true)
         };
     }

@@ -3,14 +3,18 @@
     width: 100%;
     min-height: 300px;
     background: #fff;
-    margin-top: 3.5rem;
-    padding: 2rem 1rem;
+    margin-top: 2rem;
+    padding: 4rem 1rem 2rem 1rem;
     color: #263238;
     border-radius: .9rem;
     @media (max-width: 769px) {
       padding: 2rem 0;
     }
    
+  }
+
+  .mb {
+    margin-bottom: 0;
   }
    
   /* Tab Navigation */
@@ -34,14 +38,15 @@
     font-weight: 400;
     text-align: left;
     cursor: pointer;
-    transition: ease-out 0.6s;
+    transition: ease-out 0.2s;
   }
 
   .active{
-    color: #252F40;
-    border-bottom: 2px solid #007AEC;
+    color: #000;
+    border-bottom: 3px solid #007AEC;
     font-size: 2.4rem;
     font-weight: 500;
+    transition: ease-out .2sec;
   }
 
 
@@ -156,7 +161,7 @@
   }
 
   .all_activities img{
-    width: 15%;
+    width: 20%;
   }
 
   .clear{
@@ -165,7 +170,7 @@
     color: #007AEC;
     font-size: 1.4rem;
     padding: .9rem 2.7rem;
-    cursor: po;
+    cursor: pointer;
   }
 
   .all_activities p{
@@ -199,6 +204,7 @@
   .add_bank p{
     font-size: 1.6rem;
     padding-left: .9rem;
+    color: #007AEC;
     cursor: pointer;
   }
 
@@ -260,9 +266,6 @@
     /* align-items: center; */
 }
 
-.choose_bank_radio:last-child{
-  padding-top: rem;
-}
 
 .indivi_radio{
   display: flex;
@@ -345,25 +348,120 @@
     align-items: center;
 }
 
+.add_bank_mobile{
+  display: none;
+}
 
-  @media screen and (min-width: 150px) and (max-width: 400px) {
-    .Tabs {
-      margin: 3.5rem auto 1.5rem;
-      padding: 2rem 1rem;
-      color: #E8F0F2;
-      border-radius: 2rem;
+/* Transaction_history active state */
+
+.withdrawalContainer{
+  min-height: 50vh;
+  background-color: #fff;
+  margin-top: 0rem;
+  padding: 2rem 3rem;
+  border-radius: 0rem;
+  width: 100%;
+}
+
+.withdrawal_heading ul{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.withdrawal_heading ul li{
+  color: #6B7280;
+  font-weight: 500;
+  font-size: 1.6rem;
+  width: 25%;
+}
+
+.withdrawal_heading table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 1.6rem;
+}
+
+.withdrawal_heading  table, tr, td {
+    border: none;
+}
+
+.withdrawal_heading td {
+  padding: 3rem;
+}
+
+.withdrawal_heading td, th {
+  text-align: left;
+  padding: 2rem;
+  
+}
+
+.withdrawal_heading tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.list_option{
+  display: flex;
+  justify-content: space-between;
+  width: max-content;
+  /* align-items: center; */
+  color: #111827;
+  font-size: 1.3rem;
+}
+
+.list_option{
+  display: flex;
+  justify-content: space-between;
+  width: max-content;
+  /* align-items: center; */
+  color: #111827;
+  font-size: 1.3rem;
+}
+
+.list_option span{
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  background-image: url(../../../../assets/images/avatar.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* background-color: #6B7280; */
+  border-radius: 50%;
+  border: 1px solid purple;
+  position: relative;
+}
+
+.list_option span img{
+  width: 2rem;
+  height: 2rem;
+}
+
+
+  @media screen and (min-width: 150px) and (max-width: 920px) {
+    .tabs {
+      margin: 0rem auto 1.5rem;
+      padding: 2rem 0rem;
+      /* color: #E8F0F2; */
+      border-radius: .9rem;
+      width: 100;
+    }
+
+    .nav_ul {
+      display: flex;
+      border-bottom: 1px solid #E0E2E7;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
      
-    /* Tab Navigation */
-    .nav_ul {
-      width: 100%;
+    .wallet_container{
       display: flex;
-      flex-direction: row;
-      border-bottom: 1px solid #E0E2E7;
-      align-items: center;
-      justify-content: flex-start;
-      margin-bottom: 4.6rem;
-      
+      padding-top: 2rem;
+      flex-direction: column;
+      justify-content: flex-start !important;
+      margin-left: 0rem;
     }
 
     .initiate_withdrawal_body{
@@ -371,41 +469,172 @@
       flex-direction: column;
       position: relative;
     }
-     
-    .nav_ul {
-      width: 100%;
-      display: flex;
-      border-bottom: 1px solid #E0E2E7;
-      align-items: flex-end;
-      justify-content: space-between;
-      padding-left: 2rem;
-      @media (max-width: 768px) {
-        width: 90%;
-      }
+
+    .initiate_withdrawal_body_left{
+      width: 80%;
+      margin-top: 0rem;
+      padding: 2rem 1rem;
+      border-right: 0px;
+      
+    } 
+
+    .withdrawal_container img{
+      width: 15%;
+      margin: 4.6rem 0rem 1rem;
+    }
+
+    .all_activities img{
+      width: 25%;
+    }
+
+    .add_bank{
+      display: none;
     }
   
-    .nav_ul li{
-      color: #8D8D8D;
-      text-align: center;
-      list-style: none;
+    .user_name_wallet{
       font-size: 2rem;
-      font-weight: 400;
-      text-align: left;
-      cursor: pointer;
-      transition: ease-out 0.6s;
+      color: #111827;
+      font-weight: 500;
+  }
+
+  .user_name_wallet p{
+    padding-left: 2rem;
+  }
+
+  .available_balance{
+    padding-top: 4.4rem;
+  }
+
+  .available_balance p{
+    padding-left: 2rem;
+    color: #2D76F9;
+    font-size: 1.3rem;
+  }
+
+  .available_balance p:last-child{
+    color: #252F40;
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
+  .radio_input{
+    display: grid;
+    margin-left: 10;
+    grid-template-columns: auto auto auto;
+    padding: 1rem 0rem;
+  }
+
+  .radio_input_items {
+    padding: .3rem;
+  }
+
+  .radio_input_items:first-child{
+    margin-left: 0rem;
+  }
+  
+  .radio_input_items > input{
+      margin-left: 0rem;
+  }
+  
+  
+  .radio_input_items >label{
+    padding-left: .9rem;
+    font-size: 1rem;
+  }
+
+  .initiate_withdrawal_body_right{
+    width: 80%;
+    padding: 0rem 1rem;
+    /* border-top: 1px solid #E0E2E7; */
+  }
+   
+
+  .withdrawal_banks{
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-top: 0rem;
+  }
+  
+  .first_bank{
+    padding-top: 2rem;
+  }
+  .choose_bank{
+    border-bottom: 0px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.btn_left{
+  width: 70%;
+}
+
+.wallet_activities{
+  margin-top: 2rem;
+  padding: 3rem 2rem 2.5rem 2rem ;
+}
+
+.wallet_activities p{
+  font-size: 1.4rem;
+}
+
+.clear{
+  background-color: #007AEC21;
+  border-radius: .4rem;
+  color: #007AEC;
+  font-size: 1.4rem;
+  padding: .9rem 2rem;
+  cursor: pointer;
+}
+
+.add_bank_mobile{
+  display: flex;
+  color: #007AEC;
+  align-items: center;
+}
+
+.add_bank_mobile p{
+  padding-left: .5rem;
+}
+  
+  }
+
+  @media screen and (min-width: 921px) and (max-width: 1380px)  {
+    
+    .add_bank{
+      display: flex;
+      flex-direction: row;
+      width: max-content;
+      align-items: center;
+      position: absolute;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      left: 85%;
+    }
+    
+    .radio_input{
+      display: grid;
+      margin-left: 10;
+      grid-template-columns: auto auto auto;
+      padding: 1rem 0rem;
     }
   
-     
-       
-  }
-
-  @media screen and (min-width: 401px) and (max-width: 920px)  {
-    .radio_input{
-      display: flex;
-      flex-direction: column;
+    .radio_input_items {
+      padding: .3rem;
     }
+  
+    .radio_input_items:first-child{
+      margin-left: 0rem;
+    }
+    
+    .radio_input_items > input{
+        margin-left: 0rem;
+    }
+    
+    .radio_input_items >label{
+      padding-left: .9rem;
+      font-size: 1rem;
+    }
+  
   }
 
-  /* @media screen and (min-width: 150px) and (max-width: 400px) {
-
-  } */
+  

@@ -34,7 +34,7 @@
     font-weight: 500;
 }
 
-@media screen and (min-width: 150px) and (max-width: 400px) {
+@media screen and (min-width: 150px) and (max-width: 500px) {
     .user_container{
         display: flex;
         flex-direction: column;
@@ -56,8 +56,8 @@
         font-weight: 500;
     }
 
-    .user_details p:first-child{
-        font-size: 1.5rem;    
+    .user_details{
+        padding-left: 0rem;
     }
 
     .user_shortlet{
@@ -84,6 +84,10 @@
         width: 16rem; 
 
         aspect-ratio: 2/1;
+    }
+
+    .user_details{
+        padding-left: 1rem;
     }
 
     .user_details p:first-child{

@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
+    max-width: 100%;
 }
 
 
@@ -163,6 +164,7 @@ a, a.link:visited, a.visited{
 }
 
 .logo-mini img {
+    cursor: pointer;
     width: 80% !important;
     border-radius: 0 !important;
     height: auto;
@@ -225,11 +227,13 @@ a, a.link:visited, a.visited{
     display: flex;
     justify-content: space-between;
     width: 90vw;
+    max-width: 100%;
     align-items: center;
 }
 
 .nav_Style{
     margin: 0rem auto 0rem auto;
+    max-width: 100%;
 }
 
 .search_box_options2{

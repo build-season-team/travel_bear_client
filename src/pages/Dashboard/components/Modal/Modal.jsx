@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import styles from "./Modal.module.css";
 import { RiCloseLine } from "react-icons/ri";
 
-const Modal = ({ setIsOpen, heading, description, select, label, input, addBtn, closeBtn }) => {
+const Modal = ({ setIsOpen, heading, description, select, label, input, addBtn, closeBtn, dispatch }) => {
   const modalRef = useRef(null);
   const closeModal = (e) => {
     if(modalRef.current.contains(e.target)) return
@@ -44,16 +44,6 @@ const Modal = ({ setIsOpen, heading, description, select, label, input, addBtn, 
             <div className={styles.actionsContainer}>
               
               
-              
-              {/* <button className={styles.deleteBtn} onClick={() => setIsOpen(false)}>
-                Delete
-              </button>
-              <button
-                className={styles.cancelBtn}
-                onClick={() => setIsOpen(false)}
-              >
-                Cancel
-              </button> */}
             </div>
           </div>
         </div>

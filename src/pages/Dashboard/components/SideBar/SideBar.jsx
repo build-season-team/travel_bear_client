@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import classes from './SideBar.module.css'
 
@@ -9,57 +9,90 @@ import TravelBear from '../../../../assets/icons/logo.svg'
 import ActiveDashboard from '../../../../assets/icons/active-dashboard.svg'
 import ActiveWallet from '../../../../assets/icons/active-wallet.svg'
 import ActiveShortlet from '../../../../assets/icons/active-shortlet.svg'
+import ActiveVerification from '../../../../assets/icons/active-verification.svg'
+import ActiveWithdrawal from '../../../../assets/icons/active-card.svg'
 
 //normal Dashboard Icons
 import DashboardIcon from '../../../../assets/icons/dashboard.svg'
 import WalletIcon from '../../../../assets/icons/wallet.svg'
 import ShortletIcon from '../../../../assets/icons/house.svg'
+import VerificationIcon from '../../../../assets/icons/shield-tick.svg'
+import WithdrawalCard from '../../../../assets/icons/card.svg'
+
 import Logout from '../../../../assets/icons/logout.svg'
 
-const SideBar = ({className}) => {
+import { FaTimes } from 'react-icons/fa'
+import { MdClose } from 'react-icons/md'
+import { AuthContext } from '../../../../store/authContext/AuthProvider'
+// import Withdrawal from '../../../AdminDashboard/screens/Withdrawal/Withdrawal'
+
+// const SideBar = ({className, show, setShow}) => {
+
+//     const [activeNav, setActiveNav] = useState(0)
+//     const [dropMenuIsVisible, setDropMenuIsVisible] = useState(false);
+//     const tabItems =[
+//         { text: "/dashboard/", TabIcon: DashboardIcon, TabIconActive: ActiveDashboard,  },
+//         { text: "/dashboard/wallet", TabIcon: WalletIcon, TabIconActive: ActiveWallet, },
+//         { text: "/dashboard/shortlets", TabIcon: ShortletIcon, TabIconActive: ActiveShortlet, },
+const SideBar = ({className, show, setShow}) => {
+
+    const {authState: {user}} = useContext(AuthContext);
     const [activeNav, setActiveNav] = useState(0)
-    const tabItems =[
+    const [dropMenuIsVisible, setDropMenuIsVisible] = useState(false);
+
+    let navLinks = [];
+    const adminLinks = [
+        { text: "/dashboard/verification", TabIcon: VerificationIcon, TabIconActive: ActiveVerification, },
+        { text: "/dashboard/withdrawal", TabIcon: WithdrawalCard, TabIconActive: ActiveWithdrawal, },
+    ]
+    const userLinks =[
         { text: "/dashboard/", TabIcon: DashboardIcon, TabIconActive: ActiveDashboard,  },
         { text: "/dashboard/wallet", TabIcon: WalletIcon, TabIconActive: ActiveWallet, },
-        { text: "/dashboard/shortlets", TabIcon: ShortletIcon, TabIconActive: ActiveShortlet, },
+        { text: "/dashboard/shortlets", TabIcon: ShortletIcon, TabIconActive: ActiveShortlet, }
     ]
 
-    const navigate = useNavigate();
-    const params = useParams();
+    console.log(user.role);
 
-
-
-
-    const changeActiveTab = (i, text) => {
-        setActiveNav(i);
-        navigate(text)
-
+    if (user.role === 'admin') {
+        navLinks = [...navLinks, ...adminLinks]
+    }else {
+        navLinks = [...navLinks, ...userLinks]
     }
 
 
 
+    const navigate = useNavigate();
+    const params = useParams();
+
+    const changeActiveTab = (i, text) => {
+        setActiveNav(i);
+        navigate(text)
+    }
+    
+
+
   return (
-    <div className={classes.side_bar}>
+    <div className={`${classes.side_bar} ${(dropMenuIsVisible || show) ? classes.side_show : ''}`}>
         
-        <div className='sidebar_logo'>
+        <div className={`${classes.sidebar_logo} ${classes.nav_test}`}>
             <img src={TravelBear} alt="TravelBear Logo" />
+            <div className={classes.close_icon} onClick={() => {
+                setDropMenuIsVisible(false);
+                setShow(false);
+                }}>
+                <MdClose size={'2.2rem'}  />        
+            </div>
         </div>
-        <div className={classes.nav_items}>
+        <div className={ classes.nav_items } dropMenuIsVisible={dropMenuIsVisible} setDropMenuIsVisible={setDropMenuIsVisible} >
               <ul>
                   {
-                      tabItems.map(({ TabIcon, TabIconActive, text }, i) => (
+                      navLinks.map(({ TabIcon, TabIconActive, text }, i) => (
                           <li key={i} onClick={() => changeActiveTab(i, text)} className={`${classes.li_items} ${activeNav === i ? classes.blue__text : ""}`} >
                               {<img className={classes.icon_class} src={activeNav === i ? TabIconActive : TabIcon} alt={text} />}
                               {text.split('/')[2] === '' ? 'Dashboard' : text.split('/')[2]}
                           </li>
                       ))
                   }
-
-                  {/* Logout Button */}
-                  {/* <ListItem color="error.100" padding="4" pl="8" cursor="pointer" display="flex" borderRadius="8px" borderTopLeftRadius="0" borderBottomLeftRadius="0" alignItems="center" mt="204px">
-                    <Image color="danger.100" src={ LogoutIcon } alt="Logout" mr="18px"/>
-                    Logout
-                </ListItem> */}
 
               </ul>
 
