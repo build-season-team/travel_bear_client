@@ -44,7 +44,7 @@ const VerificationPage = () => {
       
       {apartments.filter(item => item.isVerified === false).map((item, i) => (
         
-        <div className={classes.apartment_profile}> <VerifyApartment title={item.houseTitle} name={item.user?.firstName + " " + item.user?.lastName} description={item.description?.substring(0, 36) + "...."} state={item.state} address={item.address} city={item.city} button={<Button onClick={() => verify(item._id)} primary authBtn name={`${loading ? 'loading...' : 'Accept'}`} />} btn1={<Button danger authBtn name={`${loading ? 'loading...' : 'Decline'}`} />} /></div>
+        <div className={classes.apartment_profile}> <VerifyApartment title={item.houseTitle} image={item.image[0]} name={item.user?.firstName + " " + item.user?.lastName} description={item.description?.substring(0, 36) + "...."} state={item.state} address={item.address} city={item.city} button={<Button onClick={() => verify(item._id)} primary authBtn name={`${loading ? 'loading...' : 'Accept'}`} />} btn1={<Button danger authBtn name={`${loading ? 'loading...' : 'Decline'}`} />} /></div>
       ))}
 
       {/* <p className={classes.dash_p}>Edit Profile</p> */}

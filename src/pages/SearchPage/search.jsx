@@ -112,7 +112,7 @@ const Search = () => {
                   <ShortletCard
                     key={i}
                     loading={loading}
-                    image={cur.image && BASE_SHORTLET_URL_DEV + cur.image[0]}
+                    image={cur.image?.[0]}
                     rating={cur.ratingsAverage?.toFixed(1)}
                     header={cur.houseTitle}
                     text={cur.description?.length > 35 ? cur.description?.substring(0, 35) + "....." : cur.description}

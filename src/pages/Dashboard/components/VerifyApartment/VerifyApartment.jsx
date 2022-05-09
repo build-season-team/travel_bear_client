@@ -10,7 +10,7 @@ import LocationIcon from '../../../../assets/icons/location.svg'
 
 
 
-const VerifyApartment = ({state, city, address, statustitle, name, status, rating, title, amount, unverified, verifiedhome, disableBtn, removeBtn, button, btn1, houseOwner, description}) => {
+const VerifyApartment = ({state, image, city, address, statustitle, name, status, rating, title, amount, unverified, verifiedhome, disableBtn, removeBtn, button, btn1, houseOwner, description}) => {
 
     const [verified, setVerified] = useState();
     
@@ -20,7 +20,7 @@ const VerifyApartment = ({state, city, address, statustitle, name, status, ratin
             <div className={classes.verify_container}>
             <div className={classes.shortlet_data}>
                 <div className={classes.shortlet_cover}>
-                    <img className={classes.shortlet_image} src={ShortletImage} alt="" />
+                    <img className={classes.shortlet_image} src={image} alt="" />
     
                     
                     

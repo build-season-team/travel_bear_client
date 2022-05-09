@@ -47,7 +47,7 @@ const Booking = () => {
   const getPaymentLink = async () => {
     setDetails({
       amount: shortlet.amount,
-      image: BASE_SHORTLET_URL_DEV + shortlet.image[0],
+      image: shortlet.image[0],
       title: shortlet.houseTitle,
       apartment_id: shortlet._id,
       user_id: user._id,
@@ -124,23 +124,23 @@ const Booking = () => {
 
           <div className={classes.img1}>
             {loading ? <Skeleton width={'100%'} height={'100%'} /> : 
-              <img className={classes.first_image} src={shortlet.image?.[0] && BASE_SHORTLET_URL_DEV + shortlet.image?.[0] } alt="beautiful apartment" />
+              <img className={classes.first_image} src={shortlet.image?.[0] && shortlet.image?.[0] } alt="beautiful apartment" />
             }
             {/* <img className={classes.img_size} src={selectedImages[0]} alt="uploaded image" /> */}
           </div>
 
           <div className={classes.in_grid}>
               <div className={classes.img_size}>
-              {loading ? <Skeleton width={'100%'} height={'100%'} /> : <img src={shortlet.image?.[1] && BASE_SHORTLET_URL_DEV + shortlet.image?.[1]} alt="uploaded image" />}
+              {loading ? <Skeleton width={'100%'} height={'100%'} /> : <img src={shortlet.image?.[1] && shortlet.image?.[1]} alt="uploaded image" />}
               </div>
               <div className={classes.img_size}>
-              {loading ? <Skeleton width={'100%'} height={'100%'} /> : <img src={shortlet.image?.[2] && BASE_SHORTLET_URL_DEV + shortlet.image?.[2]} alt="uploaded image" />}
+              {loading ? <Skeleton width={'100%'} height={'100%'} /> : <img src={shortlet.image?.[2] && shortlet.image?.[2]} alt="uploaded image" />}
               </div>
               <div className={classes.img_size}>
-              {loading ? <Skeleton width={'100%'} height={'100%'} /> : <img src={shortlet.image?.[3] && BASE_SHORTLET_URL_DEV + shortlet.image?.[3]} alt="uploaded image" />}
+              {loading ? <Skeleton width={'100%'} height={'100%'} /> : <img src={shortlet.image?.[3] && shortlet.image?.[3]} alt="uploaded image" />}
               </div>
               <div className={classes.img_size}>
-              {loading ? <Skeleton width={'100%'} height={'100%'} /> : <img src={shortlet.image?.[4] && BASE_SHORTLET_URL_DEV + shortlet.image?.[4]} alt="uploaded image" />}
+              {loading ? <Skeleton width={'100%'} height={'100%'} /> : <img src={shortlet.image?.[4] && shortlet.image?.[4]} alt="uploaded image" />}
               </div>
           </div>
 

@@ -17,7 +17,7 @@ export default (formData) =>  (dispatch) =>  async (onsuccess) => {
         console.log(error.response);
         dispatch({
           type: UPLOAD_SHORTLET_FAIL,
-          payload: error.response.data?.message,
+          payload: error.response?.data?.message,
         });
     }
 }

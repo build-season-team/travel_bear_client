@@ -16,7 +16,7 @@ const Shortlet = ({image, amount, isenabled, unverified, verified, disableBtn, r
     <>
         <div className={classes.shortlet_data}>
             <div className={classes.shortlet_cover}>
-                <img className={classes.shortlet_image} src={BASE_SHORTLET_URL_DEV + image} alt="" />
+                <img className={classes.shortlet_image} src={image} alt="" />
                 
                 
                 { !verified

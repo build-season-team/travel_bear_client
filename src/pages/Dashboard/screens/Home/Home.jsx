@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import classes from './Home.module.css'
 
 import UserProfile from '../../components/UserProfile/UserProfile'
@@ -8,10 +8,15 @@ import NotificationBell from '../../../../assets/icons/notification.svg'
 import BankIcon from '../../../../assets/icons/bank.svg'
 import ShortletIcon from '../../../../assets/icons/shortlet.svg'
 import EmptyStateIcon from '../../../../assets/images/empty-house.svg'
+import getme from '../../../../store/authContext/actionCreators/getme';
+import { AuthContext } from '../../../../store/authContext/AuthProvider'
 
 const Home = ({user, emptyState}) => {
+  const { authDispatch } = useContext(AuthContext);
 
-  console.log(user)
+  useEffect(() => {
+    getme()(authDispatch);
+  }, [])
 
   return (
 

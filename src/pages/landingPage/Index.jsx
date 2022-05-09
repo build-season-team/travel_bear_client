@@ -63,7 +63,7 @@ const LandingPage = () => {
                     <ShortletCard
                       loading={loading}
                       key={i}
-                      image={cur.image && BASE_SHORTLET_URL_DEV + cur.image?.[0]}
+                      image={cur.image?.[0]}
                       rating={cur.ratingsAverage?.toFixed(1) || 4.5}
                       header={cur.houseTitle}
                       text={cur.description?.length > 35 ? cur.description?.substring(0, 40) + "....." : cur.description }
@@ -99,7 +99,7 @@ const LandingPage = () => {
                     key={i}
                     loading={loading}
                     big
-                    image={cur.image && BASE_SHORTLET_URL_DEV + cur.image?.[0]}
+                    image={cur.image?.[0]}
                     rating={cur.ratingsAverage?.toFixed(1)}
                     header={cur.houseTitle}
                     text={cur.description?.length > 35 ? cur.description?.substring(0, 35) + "....." : cur.description}
