@@ -124,7 +124,6 @@ const UploadShortlet = () => {
                 navigate('/dashboard/');
             }, 1500)
         });
-        getme()(authDispatch)
     }
 
     const onSubmit = (e) => {

@@ -1,7 +1,10 @@
 import axios from "axios";
 import { BASE_URL, BASE_URL_DEV } from "../constants/base";
 
-let headers = {};
+let headers = {
+    "Access-Control-Allow-Origin": "*",
+}
+
 const axiosInstance = axios.create({
   baseURL: BASE_URL_DEV ,
   headers,
